@@ -32,7 +32,7 @@ namespace DaysCounter2
 
         public long GetDelta(MyDateTime now, long nowJulian)
         {
-            MyDateTime destDateTime = dateTime;
+            MyDateTime destDateTime = dateTime.Clone();
             long destJulian;
             if (loopType != LoopTypes.None && destDateTime.EarlierThan(now))
             {

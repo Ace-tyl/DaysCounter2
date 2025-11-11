@@ -32,6 +32,12 @@ namespace DaysCounter2
             this.second = second;
         }
 
+        public MyDateTime Clone()
+        {
+            // Used for deep copy
+            return new MyDateTime(year, month, day, hour, minute, second);
+        }
+
         public static bool IsLeapYear(int year)
         {
             if (year <= 1582)

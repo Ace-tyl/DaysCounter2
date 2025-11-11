@@ -29,19 +29,25 @@ To edit an event, select the event and click the **Edit** button. The event edit
 
 To delete an event, select the event and click the **Delete** button. This step is irrevocable, so be cautious!
 
+The operation to events list (adding, editing, deleting) is saved at once, so the events can be automatically loaded the next time you start this program.
+
 ### Event Date
 
 The event date can be set to a wide range, from 4713 BC to 9999 AD. The date is subject to the current Gregorian calendar, which was revised by Pope Gregory XIII in 1582 based on the existing Julian calendar. Specifically, the date is calculated as the following rules:
 
-* After Oct 15, 1582 (inclusive): The Gregorian calendar is applied, with 31 days in January, 28 or 29 days in February, 31 days in March, 30 days in April, 31 days in May, 30 days in June, 31 days in July, 31 days in August, 30 days in September, 31 days in October, 30 days in November, and 31 days in December. Among them, February has 29 days in leap years and 28 days in common years. A year is considered a leap year if it is a multiple of 400, or if the year is a multiple of 4 but not a multiple of 100.
+* After Oct 15, 1582 (inclusive): The Gregorian calendar is applied, with 31 days in January, 28 or 29 days in February, 31 days in March, 30 days in April, 31 days in May, 30 days in June, 31 days in July, 31 days in August, 30 days in September, 31 days in October, 30 days in November, and 31 days in December. Among them, February has 29 days in leap years and 28 days in common years. A year is considered a leap year if it is a multiple of 400, or if it is a multiple of 4 but not a multiple of 100.
 * From Oct 5, 1582 to Oct 14, 1582 (inclusive): These dates do not exist and have been omitted. After Oct 4 of that year, the date becomes Oct 15.
 * Before Oct 4, 1582 (inclusive): The Julian calendar is applied, with the same number of days in each month as the Gregorian calendar, but a year is considered a leap year only if it is a multiple of 4.
-* Although the Julian calendar was only implemented in 45 BC and underwent several adjustments in its early stages, today humans are accustomed to using the final rules of the Julian calendar to deduce all dates before Oct 4, 1582. Note that the year 0 AD does not exist; that is, the year following BC 1 is AD 1. Therefore, years such as BC 1, BC 5, BC 9, BC 13, and so on should be considered leap years.
+* Although the Julian calendar was only implemented in 45 BC and underwent several adjustments in its early stages, today humans are accustomed to using the final rules of the Julian calendar to deduce all dates before Oct 4, 1582. Note that the year 0 AD does not exist; that is, the year following 1 BC is 1 AD. Therefore, years such as 1 BC, 5 BC, 9 BC, 13 BC, and so on should be considered leap years.
 
-When entering a year before the Common Era such as x BC, the number -(x - 1) is required to input. For example, Emperor Qin Shi Huang unified the six states in 221 BC, so the Year value should be set to -220 in order to add this event. A prompt will be displayed if you input a year before the Common Era.
+When entering a year before the Common Era such as x BC, the number -(x - 1) is required to input. For example, Emperor Qin Shi Huang unified the six states in 221 BC, so the Year value should be set to -220 in order to add this event. A prompt will be displayed if you input a year before the Common Era (non-positive).
 
 ## Credits
 
 This project is based on [.NET 8](https://dotnet.microsoft.com/) and [Avalonia UI](https://avaloniaui.net/), and is packaged by [Costura.Fody](https://github.com/Fody/Costura).
+
+Other NuGet packages used:
+
+* [MessageBox.Avalonia](https://github.com/CreateLab/MessageBox.Avalonia)
 
 The icon of the software is [Chisato Nishikigi (錦木 千束)](https://en.wikipedia.org/wiki/Chisato_Nishikigi) from [Lycoris Recoil](https://en.wikipedia.org/wiki/Lycoris_Recoil).

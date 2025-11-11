@@ -6,8 +6,10 @@ using System.Linq;
 using System.Runtime.Serialization.Json;
 using System.Text.Json;
 using System.Threading;
+using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Threading;
+using MsBox.Avalonia;
 
 namespace DaysCounter2
 {
@@ -171,9 +173,15 @@ namespace DaysCounter2
             EditButton.IsEnabled = (TimerList.SelectedIndex != -1);
         }
 
-        private void DeleteButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private async void DeleteButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             if (TimerList.SelectedItem == null)
+            {
+                return;
+            }
+            var msgbox = MessageBoxManager.GetMessageBoxStandard("Warning", "Do you really want to delete this event?\nThe operation is irrevocable!", MsBox.Avalonia.Enums.ButtonEnum.YesNo);
+            var result = await msgbox.ShowWindowDialogAsync(this);
+            if (result != MsBox.Avalonia.Enums.ButtonResult.Yes)
             {
                 return;
             }
