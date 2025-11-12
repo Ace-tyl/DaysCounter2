@@ -150,7 +150,7 @@ namespace DaysCounter2
             }
             if (YearValue.Value <= 0)
             {
-                YearText.Text = (string)YearText.DataContext + String.Format(" ({0:.} BC)", 1 - YearValue.Value);
+                YearText.Text = (string)YearText.DataContext + String.Format(Lang.Resources.editor_year_bc, 1 - YearValue.Value);
             }
             else
             {

@@ -2,30 +2,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="using:DaysCounter2"
+        xmlns:lang="clr-namespace:DaysCounter2.Lang"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DaysCounter2.EventEditor" x:DataType="local:EventEditor"
-        Title="Edit Event" Width="800" Height="450" MinWidth="800" MinHeight="400">
+        Title="{x:Static lang:Resources.editor_title}" Width="800" Height="450" MinWidth="800" MinHeight="400">
   <DockPanel Margin="10" VerticalSpacing="10">
       <Grid DockPanel.Dock="Top" Height="40" ColumnDefinitions="115,*" ColumnSpacing="10">
-          <TextBlock Grid.Column="0" VerticalAlignment="Center" FontSize="18">Event Name:</TextBlock>
+          <TextBlock Grid.Column="0" VerticalAlignment="Center" FontSize="18" Text="{x:Static lang:Resources.editor_name}"></TextBlock>
           <TextBox Grid.Column="1" FontSize="18" VerticalContentAlignment="Center" x:Name="EventNameValue" TextChanged="EventNameValue_TextChanged" MaxLength="200"></TextBox>
       </Grid>
       <Grid DockPanel.Dock="Top" Height="75" RowDefinitions="*,40" ColumnDefinitions="115,150,150,150,*" ColumnSpacing="10" RowSpacing="10">
-          <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" DataContext="Year" x:Name="YearText">Year</TextBlock>
-          <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom">Month</TextBlock>
-          <TextBlock Grid.Row="0" Grid.Column="3" VerticalAlignment="Bottom">Day</TextBlock>
-          <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="18">Event Date:</TextBlock>
+          <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" DataContext="{x:Static lang:Resources.editor_date_year}" x:Name="YearText" Text="{x:Static lang:Resources.editor_date_year}"></TextBlock>
+          <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_date_month}"></TextBlock>
+          <TextBlock Grid.Row="0" Grid.Column="3" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_date_day}"></TextBlock>
+          <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="18" Text="{x:Static lang:Resources.editor_date}"></TextBlock>
           <NumericUpDown Grid.Row="1" Grid.Column="1" Minimum="-4712" Maximum="9999" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="YearValue" ValueChanged="YearValue_ValueChanged"></NumericUpDown>
           <NumericUpDown Grid.Row="1" Grid.Column="2" Minimum="1" Maximum="12" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="MonthValue" ValueChanged="MonthValue_ValueChanged"></NumericUpDown>
           <NumericUpDown Grid.Row="1" Grid.Column="3" Minimum="1" Maximum="31" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="DayValue" ValueChanged="DayValue_ValueChanged"></NumericUpDown>
       </Grid>
       <Grid DockPanel.Dock="Top" Height="75" RowDefinitions="*,40" ColumnDefinitions="115,150,150,150,150,*" ColumnSpacing="10" RowSpacing="10">
-          <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom">Hour</TextBlock>
-          <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom">Minute</TextBlock>
-          <TextBlock Grid.Row="0" Grid.Column="3" VerticalAlignment="Bottom">Second</TextBlock>
-          <TextBlock Grid.Row="0" Grid.Column="4" VerticalAlignment="Bottom">Time Zone</TextBlock>
-          <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="18">Event Time:</TextBlock>
+          <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_time_hour}"></TextBlock>
+          <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_time_minute}"></TextBlock>
+          <TextBlock Grid.Row="0" Grid.Column="3" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_time_second}"></TextBlock>
+          <TextBlock Grid.Row="0" Grid.Column="4" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_time_timeZone}"></TextBlock>
+          <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="18" Text="{x:Static lang:Resources.editor_time}"></TextBlock>
           <NumericUpDown Grid.Row="1" Grid.Column="1" Value="0" Minimum="0" Maximum="23" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="HourValue"></NumericUpDown>
           <NumericUpDown Grid.Row="1" Grid.Column="2" Value="0" Minimum="0" Maximum="59" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="MinuteValue"></NumericUpDown>
           <NumericUpDown Grid.Row="1" Grid.Column="3" Value="0" Minimum="0" Maximum="59" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="SecondValue"></NumericUpDown>
@@ -41,19 +42,19 @@
           </ComboBox>
       </Grid>
       <Grid DockPanel.Dock="Top" Height="75" RowDefinitions="*,40" ColumnDefinitions="115,150,150,*" ColumnSpacing="10" RowSpacing="10">
-          <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="500" x:Name="LoopWarn" IsVisible="False">Loop will be activated only after the set time has elapsed.</TextBlock>
-          <CheckBox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="18" x:Name="LoopCheck" IsCheckedChanged="LoopCheck_IsCheckedChanged">Loop</CheckBox>
+          <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="500" x:Name="LoopWarn" IsVisible="False" Text="{x:Static lang:Resources.editor_loop_warn}"></TextBlock>
+          <CheckBox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="18" x:Name="LoopCheck" IsCheckedChanged="LoopCheck_IsCheckedChanged" Content="{x:Static lang:Resources.editor_loop}"></CheckBox>
           <NumericUpDown Grid.Row="1" Grid.Column="1" Value="1" Minimum="1" Maximum="999999" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="LoopValue" IsVisible="False"></NumericUpDown>
           <ComboBox Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" x:Name="LoopType" SelectedIndex="5" IsVisible="False">
-              <ComboBoxItem>Second(s)</ComboBoxItem>
-              <ComboBoxItem>Minute(s)</ComboBoxItem>
-              <ComboBoxItem>Hour(s)</ComboBoxItem>
-              <ComboBoxItem>Day(s)</ComboBoxItem>
-              <ComboBoxItem>Month(s)</ComboBoxItem>
-              <ComboBoxItem>Year(s)</ComboBoxItem>
+              <ComboBoxItem Content="{x:Static lang:Resources.editor_loop_second}"></ComboBoxItem>
+              <ComboBoxItem Content="{x:Static lang:Resources.editor_loop_minute}"></ComboBoxItem>
+              <ComboBoxItem Content="{x:Static lang:Resources.editor_loop_hour}"></ComboBoxItem>
+              <ComboBoxItem Content="{x:Static lang:Resources.editor_loop_day}"></ComboBoxItem>
+              <ComboBoxItem Content="{x:Static lang:Resources.editor_loop_month}"></ComboBoxItem>
+              <ComboBoxItem Content="{x:Static lang:Resources.editor_loop_year}"></ComboBoxItem>
           </ComboBox>
       </Grid>
-      <Button DockPanel.Dock="Bottom" Height="40" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" IsEnabled="False" x:Name="SaveButton" Click="SaveButton_Click">Save</Button>
+      <Button DockPanel.Dock="Bottom" Height="40" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" IsEnabled="False" x:Name="SaveButton" Click="SaveButton_Click" Content="{x:Static lang:Resources.editor_save}"></Button>
       <TextBlock></TextBlock>
   </DockPanel>
 </Window>

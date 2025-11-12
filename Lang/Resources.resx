@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ui_currentTime" xml:space="preserve">
+    <value>Current Time: </value>
+  </data>
+  <data name="ui_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ui_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="editor_date" xml:space="preserve">
+    <value>Event Date:</value>
+  </data>
+  <data name="editor_date_day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="editor_date_month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="editor_date_year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="editor_name" xml:space="preserve">
+    <value>Event Name:</value>
+  </data>
+  <data name="editor_title" xml:space="preserve">
+    <value>Edit Event</value>
+  </data>
+  <data name="ui_new" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="ui_settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ui_timerAgo" xml:space="preserve">
+    <value>{0}d {1}h {2}m {3}s ago</value>
+  </data>
+  <data name="ui_timerLater" xml:space="preserve">
+    <value>{0}d {1}h {2}m {3}s later</value>
+  </data>
+  <data name="ui_version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="editor_year_bc" xml:space="preserve">
+    <value> ({0:.} BC)</value>
+  </data>
+  <data name="editor_time" xml:space="preserve">
+    <value>Event Time:</value>
+  </data>
+  <data name="editor_time_hour" xml:space="preserve">
+    <value>Hour</value>
+  </data>
+  <data name="editor_time_minute" xml:space="preserve">
+    <value>Minute</value>
+  </data>
+  <data name="editor_time_second" xml:space="preserve">
+    <value>Second</value>
+  </data>
+  <data name="editor_time_timeZone" xml:space="preserve">
+    <value>Time Zone</value>
+  </data>
+  <data name="editor_loop" xml:space="preserve">
+    <value>Loop</value>
+  </data>
+  <data name="editor_loop_warn" xml:space="preserve">
+    <value>Loop will be activated only after the set time has elapsed.</value>
+  </data>
+  <data name="editor_loop_second" xml:space="preserve">
+    <value>Second(s)</value>
+  </data>
+  <data name="editor_loop_minute" xml:space="preserve">
+    <value>Minute(s)</value>
+  </data>
+  <data name="editor_loop_hour" xml:space="preserve">
+    <value>Hour(s)</value>
+  </data>
+  <data name="editor_loop_day" xml:space="preserve">
+    <value>Day(s)</value>
+  </data>
+  <data name="editor_loop_month" xml:space="preserve">
+    <value>Month(s)</value>
+  </data>
+  <data name="editor_loop_year" xml:space="preserve">
+    <value>Year(s)</value>
+  </data>
+  <data name="editor_save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="ui_delete_warn" xml:space="preserve">
+    <value>Do you really want to delete this event?
+The operation is irrevocable!</value>
+  </data>
+  <data name="timeZone_neg1200" xml:space="preserve">
+    <value>Anywhere on Earth (AoE);
+Baker Island, Howland Island</value>
+  </data>
+  <data name="timeZone_neg1100" xml:space="preserve">
+    <value>American Samoa, Jarvis Island, Kingman Reef, Midway Atoll, Niue, Palmyra Atoll</value>
+  </data>
+  <data name="timeZone_neg1000" xml:space="preserve">
+    <value>Cook Islands, French Polynesia (most), Johnston Atoll, United States (Hawaii);
+United States (Andreanof Islands, Islands of Four Mountains, Near Islands, Rat Islands) without DST</value>
+  </data>
+  <data name="timeZone_neg0930" xml:space="preserve">
+    <value>French Polynesia (Marquesas Islands)</value>
+  </data>
+  <data name="timeZone_neg0900" xml:space="preserve">
+    <value>French Polynesia (Gambier Islands);
+United States (Alaska (most)) without DST;
+United States (Andreanof Islands, Islands of Four Mountains, Near Islands, Rat Islands) with DST</value>
+  </data>
+  <data name="timeZone_neg0800" xml:space="preserve">
+    <value>Clipperton Island, Pitcairn Islands;
+Canada (British Columbia (most)), Mexico (Baja California), United States (California, Idaho (north), Nevada (most), Oregon (most), Washington) without DST;
+United States (Alaska (most)) with DST</value>
+  </data>
+  <data name="timeZone_neg0700" xml:space="preserve">
+    <value>Canada (British Columbia (northeast), Yukon), Mexico (Baja California Sur, Nayarit (most), Sinaloa, Sonora), United States (Arizona (most));
+Canada (Alberta, British Columbia (southeast), Northwest Territories, Nunavut (west), Saskatchewan (Lloydminster area)), Mexico (Chihuahua (northwest border)), United States (Arizona (Navajo Nation), Colorado, Idaho (most), Kansas (west), Montana, Nebraska (west), New Mexico, Nevada (northeast border), North Dakota (southwest), Oregon (east), South Dakota (west), Texas (west), Utah, Wyoming) without DST;
+Canada (British Columbia (most)), Mexico (Baja California), United States (California, Idaho (north), Nevada (most), Oregon (most), Washington) with DST</value>
+  </data>
+  <data name="timeZone_neg0600" xml:space="preserve">
+    <value>Belize, Canada (Saskatchewan (most)), Costa Rica, Ecuador (Galápagos), El Salvador, Guatemala, Honduras, Mexico (most), Nicaragua;
+Canada (Manitoba, Nunavut (central), Ontario (west)), Chile (Easter Island), Mexico (northeast border), United States (Alabama, Arkansas, Florida (northwest), Illinois, Indiana (northwest, southwest), Iowa, Kansas (most), Kentucky (west), Louisiana, Michigan (northwest border), Minnesota, Mississippi, Missouri, Nebraska (most), North Dakota (most), Oklahoma, South Dakota (most), Tennessee (most), Texas (most), Wisconsin) without DST;
+Canada (Alberta, British Columbia (southeast), Northwest Territories, Nunavut (west), Saskatchewan (Lloydminster area)), Mexico (Chihuahua (northwest border)), United States (Arizona (Navajo Nation), Colorado, Idaho (most), Kansas (west), Montana, Nebraska (west), New Mexico, Nevada (northeast border), North Dakota (southwest), Oregon (east), South Dakota (west), Texas (west), Utah, Wyoming) with DST</value>
+  </data>
+  <data name="timeZone_neg0500" xml:space="preserve">
+    <value>Brazil (Acre, Amazonas (southwest)), Canada (Atikokan, Mishkeegogamang, Southampton Island), Cayman Islands, Colombia, Ecuador (most), Jamaica, Mexico (Quintana Roo), Navassa Island, Panama, Peru;
+Bahamas, Canada (Nunavut (east), Ontario (most), Quebec (most)), Cuba, Haiti, Turks and Caicos Islands, United States (Connecticut, Delaware, District of Columbia, Florida (most), Georgia, Indiana (most), Kentucky (east), Maine, Maryland, Massachusetts, Michigan (most), New Hampshire, New Jersey, New York, North Carolina, Ohio, Pennsylvania, Rhode Island, South Carolina, Tennessee (east), Vermont, Virginia, West Virginia) without DST;
+Canada (Manitoba, Nunavut (central), Ontario (west)), Chile (Easter Island), Mexico (northeast border), United States (Alabama, Arkansas, Florida (northwest), Illinois, Indiana (northwest, southwest), Iowa, Kansas (most), Kentucky (west), Louisiana, Michigan (northwest border), Minnesota, Mississippi, Missouri, Nebraska (most), North Dakota (most), Oklahoma, South Dakota (most), Tennessee (most), Texas (most), Wisconsin) with DST</value>
+  </data>
+  <data name="timeZone_neg0400" xml:space="preserve">
+    <value>Anguilla, Antigua and Barbuda, Aruba, Barbados, Bolivia, Brazil (Amazonas (most), Mato Grosso, Mato Grosso do Sul, Rondônia, Roraima), British Virgin Islands, Canada (Quebec (east)), Caribbean Netherlands, Curaçao, Dominica, Dominican Republic, Grenada, Guadeloupe, Guyana, Martinique, Montserrat, Puerto Rico, Saint Barthélemy, Saint Kitts and Nevis, Saint Lucia, Saint Martin, Saint Vincent and the Grenadines, Sint Maarten, Trinidad and Tobago, U.S. Virgin Islands, Venezuela;
+Bermuda, Canada (Labrador (most), New Brunswick, Nova Scotia, Prince Edward Island), Chile (most), Greenland (Pituffik Space Base) without DST;
+Bahamas, Canada (Nunavut (east), Ontario (most), Quebec (most)), Cuba, Haiti, Turks and Caicos Islands, United States (Connecticut, Delaware, District of Columbia, Florida (most), Georgia, Indiana (most), Kentucky (east), Maine, Maryland, Massachusetts, Michigan (most), New Hampshire, New Jersey, New York, North Carolina, Ohio, Pennsylvania, Rhode Island, South Carolina, Tennessee (east), Vermont, Virginia, West Virginia) with DST</value>
+  </data>
+  <data name="timeZone_neg0330" xml:space="preserve">
+    <value>Canada (Newfoundland, Labrador (southeast)) without DST</value>
+  </data>
+  <data name="timeZone_neg0300" xml:space="preserve">
+    <value>Argentina, Brazil (most), Chile (Aysén, Magallanes), Falkland Islands, French Guiana, Paraguay, Suriname, Uruguay;
+Saint Pierre and Miquelon without DST;
+Bermuda, Canada (Labrador (most), New Brunswick, Nova Scotia, Prince Edward Island), Chile (most), Greenland (Pituffik Space Base) with DST</value>
+  </data>
+  <data name="timeZone_neg0230" xml:space="preserve">
+    <value>Canada (Newfoundland, Labrador (southeast)) with DST</value>
+  </data>
+  <data name="timeZone_neg0200" xml:space="preserve">
+    <value>Brazil (Fernando de Noronha), South Georgia and the South Sandwich Islands;
+Greenland (most) without DST;
+Saint Pierre and Miquelon with DST</value>
+  </data>
+  <data name="timeZone_neg0100" xml:space="preserve">
+    <value>Cape Verde;
+Portugal (Azores) without DST;
+Greenland (most) with DST</value>
+  </data>
+  <data name="timeZone_pos0000" xml:space="preserve">
+    <value>Burkina Faso, Gambia, Ghana, Greenland (National Park (east coast)), Guinea, Guinea-Bissau, Iceland, Ivory Coast, Liberia, Mali, Mauritania, Saint Helena, Ascension and Tristan da Cunha, Senegal, Sierra Leone, São Tomé and Príncipe, Togo;
+Faroe Islands, Guernsey, Ireland, Isle of Man, Jersey, Portugal (most), Spain (Canary Islands), United Kingdom without DST;
+Portugal (Azores) with DST</value>
+  </data>
+  <data name="timeZone_pos0048" xml:space="preserve">
+    <value>Kindom of Elleore without DST</value>
+  </data>
+  <data name="timeZone_pos0100" xml:space="preserve">
+    <value>Algeria, Angola, Benin, Cameroon, Central African Republic, Chad, Congo, DR Congo (Équateur, Kinshasa, Kongo Central, Kwango, Kwilu, Mai-Ndombe, Mongala, Nord-Ubangi, Sud-Ubangi, Tshuapa), Equatorial Guinea, Gabon, Morocco, Niger, Nigeria, Tunisia;
+Albania, Andorra, Austria, Belgium, Bosnia and Herzegovina, Croatia, Czech Republic, Denmark, France (metropolitan), Germany, Gibraltar, Hungary, Italy, Liechtenstein, Luxembourg, Malta, Monaco, Montenegro, Netherlands (European), North Macedonia, Norway, Poland, San Marino, Serbia, Slovakia, Slovenia, Spain (most), Sweden, Switzerland, Vatican City without DST;
+Faroe Islands, Guernsey, Ireland, Isle of Man, Jersey, Portugal (most), Spain (Canary Islands), United Kingdom with DST</value>
+  </data>
+  <data name="timeZone_pos0148" xml:space="preserve">
+    <value>Kindom of Elleore with DST</value>
+  </data>
+  <data name="timeZone_pos0200" xml:space="preserve">
+    <value>Botswana, Burundi, DR Congo (most), Eswatini, Lesotho, Libya, Malawi, Mozambique, Namibia, Russia (Kaliningrad), Rwanda, South Africa (most), South Sudan, Sudan, Zambia, Zimbabwe;
+Akrotiri and Dhekelia, Bulgaria, Cyprus, Egypt, Estonia, Finland, Greece, Israel, Latvia, Lebanon, Lithuania, Moldova, Palestine, Romania, Ukraine (most) without DST;
+Albania, Andorra, Austria, Belgium, Bosnia and Herzegovina, Croatia, Czech Republic, Denmark, France (metropolitan), Germany, Gibraltar, Hungary, Italy, Liechtenstein, Luxembourg, Malta, Monaco, Montenegro, Netherlands (European), North Macedonia, Norway, Poland, San Marino, Serbia, Slovakia, Slovenia, Spain (most), Sweden, Switzerland, Vatican City with DST</value>
+  </data>
+  <data name="timeZone_pos0300" xml:space="preserve">
+    <value>Bahrain, Belarus, Comoros, Djibouti, Eritrea, Ethiopia, French Southern and Antarctic Lands (Scattered Islands), Iraq, Jordan, Kenya, Kuwait, Madagascar, Mayotte, Qatar, Russia (most of European part), Saudi Arabia, Somalia, South Africa (Prince Edward Islands), Syria, Tanzania, Türkiye, Uganda, Ukraine (occupied territories), Yemen;
+Akrotiri and Dhekelia, Bulgaria, Cyprus, Egypt, Estonia, Finland, Greece, Israel, Latvia, Lebanon, Lithuania, Moldova, Palestine, Romania, Ukraine (most) with DST</value>
+  </data>
+  <data name="timeZone_pos0330" xml:space="preserve">
+    <value>Iran</value>
+  </data>
+  <data name="timeZone_pos0400" xml:space="preserve">
+    <value>Armenia, Azerbaijan, French Southern and Antarctic Lands (Crozet Islands), Georgia, Mauritius, Oman, Russia (Astrakhan, Samara, Saratov, Udmurtia, Ulyanovsk), Réunion, Seychelles, United Arab Emirates</value>
+  </data>
+  <data name="timeZone_pos0430" xml:space="preserve">
+    <value>Afghanistan</value>
+  </data>
+  <data name="timeZone_pos0500" xml:space="preserve">
+    <value>French Southern and Antarctic Lands (Kerguelen Islands, Saint Paul Island, Amsterdam Island), Heard Island and McDonald Islands, Kazakhstan, Maldives, Pakistan, Russia (Bashkortostan, Chelyabinsk, Khanty-Mansi, Kurgan, Orenburg, Perm, Sverdlovsk, Tyumen, Yamalia), Tajikistan, Turkmenistan, Uzbekistan</value>
+  </data>
+  <data name="timeZone_pos0530" xml:space="preserve">
+    <value>India, Sri Lanka</value>
+  </data>
+  <data name="timeZone_pos0545" xml:space="preserve">
+    <value>Nepal</value>
+  </data>
+  <data name="timeZone_pos0600" xml:space="preserve">
+    <value>Bangladesh, Bhutan, British Indian Ocean Territory, Kyrgyzstan, Russia (Omsk)</value>
+  </data>
+  <data name="timeZone_pos0630" xml:space="preserve">
+    <value>Cocos Islands, Myanmar</value>
+  </data>
+  <data name="timeZone_pos0700" xml:space="preserve">
+    <value>Cambodia, Christmas Island, Indonesia (Sumatra, Java, West Kalimantan, Central Kalimantan), Laos, Mongolia (Bayan-Ölgii, Khovd, Uvs), Russia (Altai Krai, Altai Republic, Kemerovo, Khakassia, Krasnoyarsk, Novosibirsk, Tomsk, Tuva), Thailand, Vietnam</value>
+  </data>
+  <data name="timeZone_pos0800" xml:space="preserve">
+    <value>Australia (Western Australia), Brunei, China, Indonesia (South Kalimantan, East Kalimantan, North Kalimantan, Sulawesi, Lesser Sunda Islands), Malaysia, Mongolia (most), Philippines, Russia (Buryatia, Irkutsk), Singapore</value>
+  </data>
+  <data name="timeZone_pos0845" xml:space="preserve">
+    <value>Australia (Eucla)</value>
+  </data>
+  <data name="timeZone_pos0900" xml:space="preserve">
+    <value>Indonesia (Maluku Islands, Western New Guinea), Japan, North Korea, Palau, Russia (Amur, Sakha (most), Zabaykalsky), South Korea, Timor-Leste</value>
+  </data>
+  <data name="timeZone_pos0930" xml:space="preserve">
+    <value>Australia (Northern Territory);
+Australia (South Australia, Yancowinna County) without DST</value>
+  </data>
+  <data name="timeZone_pos1000" xml:space="preserve">
+    <value>Australia (Queensland), Guam, Micronesia (Chuuk, Yap), Northern Mariana Islands, Papua New Guinea (most), Russia (Jewish, Khabarovsk, Primorsky, Sakha (central-east));
+Australia (Australian Capital Territory, Jervis Bay Territory, New South Wales (most), Tasmania, Victoria) without DST</value>
+  </data>
+  <data name="timeZone_pos1030" xml:space="preserve">
+    <value>Australia (Lord Howe Island) without DST;
+Australia (South Australia, Yancowinna County) with DST</value>
+  </data>
+  <data name="timeZone_pos1100" xml:space="preserve">
+    <value>Micronesia (Kosrae, Pohnpei), New Caledonia, Papua New Guinea (Bougainville), Russia (Magadan, Sakha (east), Sakhalin), Solomon Islands, Vanuatu;
+Norfolk Island without DST;
+Australia (Australian Capital Territory, Jervis Bay Territory, Lord Howe Island, New South Wales (most), Tasmania, Victoria) with DST</value>
+  </data>
+  <data name="timeZone_pos1200" xml:space="preserve">
+    <value>Fiji, Kiribati (Gilbert Islands), Marshall Islands, Nauru, Russia (Chukotka, Kamchatka), Tuvalu, Wake Island, Wallis and Futuna;
+New Zealand (most) without DST;
+Norfolk Island with DST</value>
+  </data>
+  <data name="timeZone_pos1245" xml:space="preserve">
+    <value>New Zealand (Chatham Islands) without DST</value>
+  </data>
+  <data name="timeZone_pos1300" xml:space="preserve">
+    <value>Kiribati (Phoenix Islands), Samoa, Tokelau, Tonga;
+New Zealand (most) with DST</value>
+  </data>
+  <data name="timeZone_pos1345" xml:space="preserve">
+    <value>New Zealand (Chatham Islands) with DST</value>
+  </data>
+  <data name="timeZone_pos1400" xml:space="preserve">
+    <value>Kiribati (Line Islands)</value>
+  </data>
+</root>

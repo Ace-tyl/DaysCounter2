@@ -2,9 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Json;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Avalonia.Controls;
@@ -96,12 +94,12 @@ namespace DaysCounter2
                 string timerText = "";
                 if (delta > 0)
                 {
-                    timerText = string.Format("{0}d {1}h {2}m {3}s later", delta / 86400, delta / 3600 % 24, delta / 60 % 60, delta % 60);
+                    timerText = string.Format(Lang.Resources.ui_timerLater, delta / 86400, delta / 3600 % 24, delta / 60 % 60, delta % 60);
                 }
                 else
                 {
                     long fdelta = -delta;
-                    timerText = string.Format("{0}d {1}h {2}m {3}s ago", fdelta / 86400, fdelta / 3600 % 24, fdelta / 60 % 60, fdelta % 60);
+                    timerText = string.Format(Lang.Resources.ui_timerAgo, fdelta / 86400, fdelta / 3600 % 24, fdelta / 60 % 60, fdelta % 60);
                 }
                 displayedEvents.Add(new DisplayedEvent
                 {
@@ -180,7 +178,7 @@ namespace DaysCounter2
             {
                 return;
             }
-            var msgbox = MessageBoxManager.GetMessageBoxStandard("Warning", "Do you really want to delete this event?\nThe operation is irrevocable!", MsBox.Avalonia.Enums.ButtonEnum.YesNo);
+            var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_delete_warn_title, Lang.Resources.ui_delete_warn, MsBox.Avalonia.Enums.ButtonEnum.YesNo);
             var result = await msgbox.ShowWindowDialogAsync(this);
             if (result != MsBox.Avalonia.Enums.ButtonResult.Yes)
             {

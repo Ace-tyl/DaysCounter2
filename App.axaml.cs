@@ -13,6 +13,7 @@ namespace DaysCounter2
 
         public override void OnFrameworkInitializationCompleted()
         {
+            //Lang.Resources.Culture = new System.Globalization.CultureInfo("zh-CN");
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 desktop.MainWindow = new MainWindow();
