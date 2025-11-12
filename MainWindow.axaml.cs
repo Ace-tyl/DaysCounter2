@@ -26,8 +26,8 @@ namespace DaysCounter2
     {
         string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DaysCounter2");
         string appFilePath;
-        Thread refreshThread;
-        bool windowClosed = false;
+        Task refreshThread;
+        CancellationTokenSource _cts = new CancellationTokenSource();
         List<Event> events = new List<Event>();
         List<DisplayedEvent> displayedEvents = new List<DisplayedEvent>();
         ObservableCollection<DisplayedEvent> Displayed { get; set; } = new ObservableCollection<DisplayedEvent>();
@@ -55,8 +55,7 @@ namespace DaysCounter2
                 catch { }
                 stream.Close();
             }
-            refreshThread = new Thread(new ThreadStart(RefreshTimer));
-            refreshThread.Start();
+            refreshThread = Task.Run(() => RefreshTimer(_cts.Token));
         }
 
         void SaveEvents()
@@ -67,10 +66,10 @@ namespace DaysCounter2
             stream.Close();
         }
 
-        public void RefreshTimer()
+        public void RefreshTimer(CancellationToken token)
         {
             DateTime? lastRefreshTime = null;
-            while (!windowClosed)
+            while (!token.IsCancellationRequested)
             {
                 DateTime now = DateTime.Now;
                 if (lastRefreshTime == null || now.Second != lastRefreshTime.Value.Second)
@@ -151,8 +150,9 @@ namespace DaysCounter2
 
         private void Window_Closed(object? sender, EventArgs e)
         {
-            windowClosed = true;
-            refreshThread.Join();
+            _cts.Cancel();
+            refreshThread.Wait();
+            _cts.Dispose();
         }
 
         private async void NewEventButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
