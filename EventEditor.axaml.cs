@@ -1,26 +1,45 @@
 using System;
+using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using DaysCounter2.Utils;
 
 namespace DaysCounter2
 {
     public partial class EventEditor : Window
     {
         public Event? savedEvent;
+        List<TimeZoneData> timeZoneData { get; set; } = TimeZoneManager.timeZoneData;
+
+        void SelectTimeZone(int timeZoneDeltaValue)
+        {
+            for (int i = 0; i < timeZoneData.Count; i++)
+            {
+                if (timeZoneData[i].delta == timeZoneDeltaValue)
+                {
+                    TimeZoneSelector.SelectedIndex = i;
+                    break;
+                }
+            }
+        }
 
         public EventEditor()
         {
             InitializeComponent();
+            TimeZoneSelector.ItemsSource = timeZoneData;
             DateTime now = DateTime.Now;
             YearValue.Value = now.Year;
             MonthValue.Value = now.Month;
             DayValue.Value = now.Day;
+            int timeZoneDeltaValue = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
+            SelectTimeZone(timeZoneDeltaValue);
         }
 
         public EventEditor(Event ev)
         {
             InitializeComponent();
+            TimeZoneSelector.ItemsSource = timeZoneData;
             EventNameValue.Text = ev.name;
             YearValue.Value = ev.dateTime.year;
             MonthValue.Value = ev.dateTime.month;
@@ -28,6 +47,9 @@ namespace DaysCounter2
             HourValue.Value = ev.dateTime.hour;
             MinuteValue.Value = ev.dateTime.minute;
             SecondValue.Value = ev.dateTime.second;
+            ev.dateTime.InitializeTimeZone();
+            if (ev.dateTime.timeZoneDelta == null) { return; } // Impossible
+            SelectTimeZone((int)ev.dateTime.timeZoneDelta);
             LoopCheck.IsChecked = (ev.loopType != LoopTypes.None);
             if (ev.loopType != LoopTypes.None)
             {
@@ -85,7 +107,16 @@ namespace DaysCounter2
             int hour = (int)HourValue.Value;
             int minute = (int)MinuteValue.Value;
             int second = (int)SecondValue.Value;
-            return new MyDateTime(year, month, day, hour, minute, second);
+            int timeZoneDelta;
+            if (TimeZoneSelector.SelectedItem != null)
+            {
+                timeZoneDelta = ((TimeZoneData)TimeZoneSelector.SelectedItem).delta;
+            }
+            else
+            {
+                timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
+            }
+            return new MyDateTime(year, month, day, hour, minute, second, timeZoneDelta);
         }
 
         void ModifySaveButton()

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DaysCounter2
+namespace DaysCounter2.Utils
 {
     public enum LoopTypes
     {

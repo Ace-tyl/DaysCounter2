@@ -13,7 +13,7 @@ Then, extract **all** files from the downloaded zip file to the **same** folder.
 
 ### Adding Events
 
-To add your first event, click the **New** button, and an event editor window appears. Input your event name and set your event datetime.
+To add your first event, click the **New** button, and an event editor window appears. Input your event name and set your event datetime. You can also set your event time zone if the event occurred / will occur in another time zone.
 
 If necessary, check the **Loop** checkbox and you can set a loop time to your event. When time passed an event with loop time set, the set loop time will be automatically added to event time. This can be used when you want to countdown to (including but not limited to):
 

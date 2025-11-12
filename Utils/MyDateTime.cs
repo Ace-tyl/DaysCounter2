@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DaysCounter2
+namespace DaysCounter2.Utils
 {
     public class MyDateTime
     {
         public int year, month, day, hour, minute, second;
+        public int? timeZoneDelta;
 
         public MyDateTime() { }
 
-        public MyDateTime(DateTime dateTime)
+        public MyDateTime(DateTime dateTime, TimeZoneInfo timeZone)
         {
             year = dateTime.Year;
             month = dateTime.Month;
@@ -20,9 +21,10 @@ namespace DaysCounter2
             hour = dateTime.Hour;
             minute = dateTime.Minute;
             second = dateTime.Second;
+            timeZoneDelta = (int)timeZone.BaseUtcOffset.TotalMinutes;
         }
 
-        public MyDateTime(int year, int month, int day, int hour, int minute, int second)
+        public MyDateTime(int year, int month, int day, int hour, int minute, int second, int? timeZoneDelta = null)
         {
             this.year = year;
             this.month = month;
@@ -30,12 +32,20 @@ namespace DaysCounter2
             this.hour = hour;
             this.minute = minute;
             this.second = second;
+            if (timeZoneDelta == null)
+            {
+                this.timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
+            }
+            else
+            {
+                this.timeZoneDelta = (int)timeZoneDelta;
+            }
         }
 
         public MyDateTime Clone()
         {
             // Used for deep copy
-            return new MyDateTime(year, month, day, hour, minute, second);
+            return new MyDateTime(year, month, day, hour, minute, second, timeZoneDelta);
         }
 
         public static bool IsLeapYear(int year)
@@ -46,7 +56,7 @@ namespace DaysCounter2
             }
             else
             {
-                return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+                return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
             }
         }
 
@@ -222,17 +232,33 @@ namespace DaysCounter2
             return JulianYearOffset(year) + GetDayOfYear(year, month, day);
         }
 
+        public void InitializeTimeZone()
+        {
+            if (timeZoneDelta == null)
+            {
+                timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
+            }
+        }
+
         public long GetJulianSecond()
         {
             if (!IsValidData())
             {
                 throw new IndexOutOfRangeException("Invalid datetime");
             }
-            return JulianDay(year, month, day) * 86400 + hour * 3600 + minute * 60 + second;
+            if (timeZoneDelta == null)
+            {
+                timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
+            }
+            return JulianDay(year, month, day) * 86400 + hour * 3600 + (minute - (int)timeZoneDelta) * 60 + second;
         }
 
         public bool EarlierThan(MyDateTime another)
         {
+            if (timeZoneDelta != another.timeZoneDelta)
+            {
+                return GetJulianSecond() < another.GetJulianSecond();
+            }
             if (year != another.year)
             {
                 return year < another.year;

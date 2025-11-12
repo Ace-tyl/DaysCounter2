@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Threading;
+using DaysCounter2.Utils;
 using MsBox.Avalonia;
 
 namespace DaysCounter2
@@ -87,7 +88,7 @@ namespace DaysCounter2
             {
                 CurrentTimeText.Text = (string)CurrentTimeText.DataContext + now.ToString("yyyy/MM/dd HH:mm:ss");
             }
-            MyDateTime myNow = new MyDateTime(now);
+            MyDateTime myNow = new MyDateTime(now, TimeZoneInfo.Local);
             long myNowJulian = myNow.GetJulianSecond();
             displayedEvents = new List<DisplayedEvent>();
             foreach (Event ev in events)
