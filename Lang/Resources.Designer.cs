@@ -61,6 +61,15 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Color.
+        /// </summary>
+        public static string color_select {
+            get {
+                return ResourceManager.GetString("color_select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Event Date:.
         /// </summary>
         public static string editor_date {
@@ -246,6 +255,42 @@ namespace DaysCounter2.Lang {
         public static string editor_year_bc {
             get {
                 return ResourceManager.GetString("editor_year_bc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Background Color.
+        /// </summary>
+        public static string settings_color {
+            get {
+                return ResourceManager.GetString("settings_color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distant.
+        /// </summary>
+        public static string settings_color_distant {
+            get {
+                return ResourceManager.GetString("settings_color_distant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Future.
+        /// </summary>
+        public static string settings_color_future {
+            get {
+                return ResourceManager.GetString("settings_color_future", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Past.
+        /// </summary>
+        public static string settings_color_past {
+            get {
+                return ResourceManager.GetString("settings_color_past", resourceCulture);
             }
         }
         

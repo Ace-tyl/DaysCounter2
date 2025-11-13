@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Threading;
 using Avalonia.Controls;
+using Avalonia.Media;
 using Avalonia.Threading;
 using DaysCounter2.Utils;
 using MsBox.Avalonia;
@@ -18,6 +19,7 @@ namespace DaysCounter2
         public string name { get; set; } = "";
         public long delta { get; set; }
         public string timerText { get; set; } = "";
+        public IBrush brush { get; set; } = new SolidColorBrush();
     }
 
     public partial class MainWindow : Window
@@ -116,12 +118,15 @@ namespace DaysCounter2
                     long fdelta = -delta;
                     timerText = string.Format(Lang.Resources.ui_timerAgo, fdelta / 86400, fdelta / 3600 % 24, fdelta / 60 % 60, fdelta % 60);
                 }
+                double days = Math.Abs(delta / 86400.0);
+                days = Math.Clamp(days, 1, 1000);
                 displayedEvents.Add(new DisplayedEvent
                 {
                     uuid = ev.uuid,
                     name = ev.name,
                     delta = delta,
-                    timerText = timerText
+                    timerText = timerText,
+                    brush = new SolidColorBrush(ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor, Math.Log(days, 1000)))
                 });
             }
             displayedEvents.Sort((a, b) =>

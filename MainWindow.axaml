@@ -13,7 +13,7 @@
             <TextBlock HorizontalAlignment="Center" FontSize="30">Days Counter 2 by SodiumCl10</TextBlock>
             <TextBlock HorizontalAlignment="Right" TextAlignment="Right" Text="{x:Static lang:Resources.ui_version}" FontSize="15" Foreground="Gray" PointerPressed="VersionBlock_PointerPressed" Cursor="Hand">
                 <LineBreak></LineBreak>
-                2.0.2.20251113
+                2.0.3.20251114
             </TextBlock>
         </Grid>
         <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontSize="20" x:Name="CurrentTimeText">This line displays current time</TextBlock>
@@ -24,12 +24,20 @@
             <Button Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsEnabled="False" x:Name="EditButton" Click="EditButton_Click" Content="{x:Static lang:Resources.ui_edit}"></Button>
             <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.ui_settings}" Click="SettingsButton_Click"></Button>
         </Grid>
-        <ListBox x:Name="TimerList" ItemsSource="{Binding Displayed}" SelectionChanged="TimerList_SelectionChanged">
+        <ListBox x:Name="TimerList" ItemsSource="{Binding Displayed}" SelectionChanged="TimerList_SelectionChanged" Padding="0">
+            <ListBox.Styles>
+                <Style Selector="ListBoxItem">
+                    <Setter Property="Padding" Value="0"></Setter>
+                    <Setter Property="Height" Value="40"></Setter>
+                </Style>
+            </ListBox.Styles>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="330,*" ColumnSpacing="10">
-                        <TextBlock Text="{Binding timerText}" Grid.Column="0" FontSize="18"></TextBlock>
-                        <TextBlock Text="{Binding name}" Grid.Column="1" FontSize="18"></TextBlock>
+                    <Grid Background="{Binding brush}">
+                        <Grid ColumnDefinitions="330,*" ColumnSpacing="10" Margin="10">
+                            <TextBlock Text="{Binding timerText}" Grid.Column="0" FontSize="18"></TextBlock>
+                            <TextBlock Text="{Binding name}" Grid.Column="1" FontSize="18"></TextBlock>
+                        </Grid>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

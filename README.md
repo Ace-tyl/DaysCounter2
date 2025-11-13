@@ -52,5 +52,6 @@ This project is based on [.NET 8](https://dotnet.microsoft.com/) and [Avalonia U
 Other NuGet packages used:
 
 * [MessageBox.Avalonia](https://github.com/CreateLab/MessageBox.Avalonia)
+* [AvaloniaColorPicker](https://github.com/arklumpus/AvaloniaColorPicker)
 
 The icon of the software is [Chisato Nishikigi (錦木 千束)](https://en.wikipedia.org/wiki/Chisato_Nishikigi) from [Lycoris Recoil](https://en.wikipedia.org/wiki/Lycoris_Recoil).

@@ -387,4 +387,19 @@ New Zealand (most) with DST</value>
   <data name="ui_search" xml:space="preserve">
     <value>Search...</value>
   </data>
+  <data name="settings_color" xml:space="preserve">
+    <value>Background Color</value>
+  </data>
+  <data name="settings_color_future" xml:space="preserve">
+    <value>Future</value>
+  </data>
+  <data name="settings_color_past" xml:space="preserve">
+    <value>Past</value>
+  </data>
+  <data name="settings_color_distant" xml:space="preserve">
+    <value>Distant</value>
+  </data>
+  <data name="color_select" xml:space="preserve">
+    <value>Select Color</value>
+  </data>
 </root>

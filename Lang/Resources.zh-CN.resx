@@ -388,4 +388,19 @@
   <data name="ui_search" xml:space="preserve">
     <value>搜索...</value>
   </data>
+  <data name="settings_color" xml:space="preserve">
+    <value>背景颜色</value>
+  </data>
+  <data name="settings_color_future" xml:space="preserve">
+    <value>未来</value>
+  </data>
+  <data name="settings_color_past" xml:space="preserve">
+    <value>过去</value>
+  </data>
+  <data name="settings_color_distant" xml:space="preserve">
+    <value>遥远</value>
+  </data>
+  <data name="color_select" xml:space="preserve">
+    <value>选择颜色</value>
+  </data>
 </root>
