@@ -26,7 +26,7 @@ namespace DaysCounter2.Utils
         public static List<LanguageData> languages { get; set; } = new List<LanguageData>
         {
             new LanguageData("English (United States)", ""),
-            new LanguageData("简体中文 (中国大陆)", "zh-CN")
+            new LanguageData("简体中文 (中国大陆)", "zh-CN"),
         };
 
         public static void SwitchLanguage(LanguageData language)

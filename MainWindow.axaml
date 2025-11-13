@@ -11,7 +11,7 @@
     <DockPanel Margin="10" VerticalSpacing="10">
         <Grid DockPanel.Dock="Top">
             <TextBlock HorizontalAlignment="Center" FontSize="30">Days Counter 2 by SodiumCl10</TextBlock>
-            <TextBlock HorizontalAlignment="Right" TextAlignment="Right" Text="{x:Static lang:Resources.ui_version}" FontSize="15" Foreground="Gray">
+            <TextBlock HorizontalAlignment="Right" TextAlignment="Right" Text="{x:Static lang:Resources.ui_version}" FontSize="15" Foreground="Gray" PointerPressed="VersionBlock_PointerPressed" Cursor="Hand">
                 <LineBreak></LineBreak>
                 2.0.2.20251113
             </TextBlock>

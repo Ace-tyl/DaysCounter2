@@ -1,4 +1,7 @@
 # Days Counter 2
+
+> It is a great honor to invite you to translate this software using Crowdin: https://crowdin.com/project/dayscounter2
+
 Welcome to use Days Counter 2 by SodiumCl10, aka. [Ace-tyl](https://github.com/Ace-tyl).
 
 This software is a days counter timer which can count the time between a past or upcoming event and the present, accurate to second.

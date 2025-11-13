@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Threading;
@@ -236,6 +237,11 @@ namespace DaysCounter2
         {
             refreshThread.Interrupt();
             refreshThread.Join();
+        }
+
+        private void VersionBlock_PointerPressed(object? sender, Avalonia.Input.PointerPressedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo() { FileName = "https://github.com/Ace-tyl/DaysCounter2", UseShellExecute = true });
         }
     }
 }
