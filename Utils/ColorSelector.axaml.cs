@@ -27,7 +27,19 @@ public partial class ColorSelector : Window
         p = Math.Clamp(p, 0, 1);
         double a1 = c1.A, r1 = c1.R, g1 = c1.G, b1 = c1.B;
         double a2 = c2.A, r2 = c2.R, g2 = c2.G, b2 = c2.B;
-        double rgb_sense = a2 > 0.001 * a1 ? Math.Pow(p, a1 / a2) : 0.0;
+        double rgb_sense;
+        if (a1 < 0.01)
+        {
+            rgb_sense = 1;
+        }
+        else if (a2 < 0.01)
+        {
+            rgb_sense = 0;
+        }
+        else
+        {
+            rgb_sense = Math.Pow(p, a1 / a2);
+        }
         double a3 = a1 + (a2 - a1) * p;
         double r3 = r1 + (r2 - r1) * rgb_sense;
         double g3 = g1 + (g2 - g1) * rgb_sense;
