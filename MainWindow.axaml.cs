@@ -22,8 +22,6 @@ namespace DaysCounter2
 
     public partial class MainWindow : Window
     {
-        string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DaysCounter2");
-        string appFilePath;
         Task refreshThread;
         CancellationTokenSource _cts = new CancellationTokenSource();
         List<Event> events = new List<Event>();
@@ -33,14 +31,9 @@ namespace DaysCounter2
         public MainWindow()
         {
             InitializeComponent();
-            appFilePath = Path.Combine(appDataPath, "days_counter_database.json");
-            if (!Directory.Exists(appDataPath))
+            if (File.Exists(App.appFilePath))
             {
-                Directory.CreateDirectory(appDataPath);
-            }
-            if (File.Exists(appFilePath))
-            {
-                FileStream stream = File.OpenRead(appFilePath);
+                FileStream stream = File.OpenRead(App.appFilePath);
                 try
                 {
                     DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<Event>));
@@ -58,9 +51,17 @@ namespace DaysCounter2
 
         void SaveEvents()
         {
-            FileStream stream = File.Open(appFilePath, FileMode.Create, FileAccess.Write);
+            FileStream stream = File.Open(App.appFilePath, FileMode.Create, FileAccess.Write);
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<Event>));
             ser.WriteObject(stream, events);
+            stream.Close();
+        }
+
+        void SaveSettings()
+        {
+            FileStream stream = File.Open(App.appSettingsPath, FileMode.Create, FileAccess.Write);
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(SettingsManager));
+            ser.WriteObject(stream, App.settings);
             stream.Close();
         }
 
@@ -133,14 +134,7 @@ namespace DaysCounter2
             {
                 string selectedUuid = "";
                 selectedUuid = ((DisplayedEvent)TimerList.SelectedItem).uuid;
-                for (int i = 0; i < displayedEvents.Count; i++)
-                {
-                    if (displayedEvents[i].uuid == selectedUuid)
-                    {
-                        selectedIndex = i;
-                        break;
-                    }
-                }
+                selectedIndex = displayedEvents.FindIndex(x => x.uuid == selectedUuid);
             }
             TimerList.ItemsSource = new ObservableCollection<DisplayedEvent>(displayedEvents);
             TimerList.SelectedIndex = selectedIndex;
@@ -220,6 +214,21 @@ namespace DaysCounter2
                         SaveEvents();
                     }
                     break;
+                }
+            }
+        }
+
+        private async void SettingsButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            SettingsWindow settingsWindow = new SettingsWindow();
+            await settingsWindow.ShowDialog(this);
+            if (settingsWindow.savedSettings)
+            {
+                SaveSettings();
+                if (settingsWindow.languageModified)
+                {
+                    var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_settings_language_title, Lang.Resources.ui_settings_language, MsBox.Avalonia.Enums.ButtonEnum.Ok);
+                    await msgbox.ShowWindowDialogAsync(this);
                 }
             }
         }

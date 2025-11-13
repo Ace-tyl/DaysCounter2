@@ -23,7 +23,7 @@ namespace DaysCounter2.Utils
 
     public class LanguageManager
     {
-        public static List<LanguageData> languages = new List<LanguageData>
+        public static List<LanguageData> languages { get; set; } = new List<LanguageData>
         {
             new LanguageData("English (United States)", ""),
             new LanguageData("简体中文 (中国大陆)", "zh-CN")

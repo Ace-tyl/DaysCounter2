@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:utils="using:DaysCounter2.Utils"
+        xmlns:lang="clr-namespace:DaysCounter2.Lang"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
+        x:Class="DaysCounter2.SettingsWindow"
+        Width="600" Height="300" MinWidth="600" MinHeight="300"
+        Title="{x:Static lang:Resources.ui_settings}">
+    <DockPanel>
+		<Button DockPanel.Dock="Bottom" Height="40" HorizontalAlignment="Stretch" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Content="{x:Static lang:Resources.settings_save}" Click="SaveButton_Click"></Button>
+        <Grid Margin="10" ColumnDefinitions="200,*" ColumnSpacing="10" RowDefinitions="40,*" RowSpacing="10">
+            <TextBlock Grid.Row="0" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_language}"></TextBlock>
+            <ComboBox Grid.Row="0" Grid.Column="1" x:DataType="utils:LanguageManager" ItemsSource="{Binding languages}" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="LanguageSelector">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding name}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+    </DockPanel>
+</Window>

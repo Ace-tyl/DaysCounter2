@@ -250,6 +250,24 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string settings_language {
+            get {
+                return ResourceManager.GetString("settings_language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Settings.
+        /// </summary>
+        public static string settings_save {
+            get {
+                return ResourceManager.GetString("settings_save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cape Verde;
         ///Portugal (Azores) without DST;
         ///Greenland (most) with DST.
@@ -718,6 +736,24 @@ namespace DaysCounter2.Lang {
         public static string ui_settings {
             get {
                 return ResourceManager.GetString("ui_settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The language modification will take effect after the program is restarted..
+        /// </summary>
+        public static string ui_settings_language {
+            get {
+                return ResourceManager.GetString("ui_settings_language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language Modified.
+        /// </summary>
+        public static string ui_settings_language_title {
+            get {
+                return ResourceManager.GetString("ui_settings_language_title", resourceCulture);
             }
         }
         

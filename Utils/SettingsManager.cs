@@ -8,5 +8,6 @@ namespace DaysCounter2.Utils
 {
     public class SettingsManager
     {
+        public string languageId = "";
     }
 }

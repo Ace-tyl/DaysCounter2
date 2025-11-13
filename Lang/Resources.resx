@@ -372,4 +372,16 @@ New Zealand (most) with DST</value>
   <data name="timeZone_pos1400" xml:space="preserve">
     <value>Kiribati (Line Islands)</value>
   </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="settings_save" xml:space="preserve">
+    <value>Save Settings</value>
+  </data>
+  <data name="ui_settings_language" xml:space="preserve">
+    <value>The language modification will take effect after the program is restarted.</value>
+  </data>
+  <data name="ui_settings_language_title" xml:space="preserve">
+    <value>Language Modified</value>
+  </data>
 </root>

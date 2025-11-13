@@ -373,4 +373,16 @@
   <data name="timeZone_pos1400" xml:space="preserve">
     <value>基里巴斯（莱恩群岛）</value>
   </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>语言 / Language</value>
+  </data>
+  <data name="settings_save" xml:space="preserve">
+    <value>保存设置</value>
+  </data>
+  <data name="ui_settings_language" xml:space="preserve">
+    <value>语言的修改将在重启程序后生效。</value>
+  </data>
+  <data name="ui_settings_language_title" xml:space="preserve">
+    <value>语言已修改</value>
+  </data>
 </root>

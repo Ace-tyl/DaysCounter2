@@ -14,14 +14,7 @@ namespace DaysCounter2
 
         void SelectTimeZone(int timeZoneDeltaValue)
         {
-            for (int i = 0; i < timeZoneData.Count; i++)
-            {
-                if (timeZoneData[i].delta == timeZoneDeltaValue)
-                {
-                    TimeZoneSelector.SelectedIndex = i;
-                    break;
-                }
-            }
+            TimeZoneSelector.SelectedIndex = timeZoneData.FindIndex(x => x.delta == timeZoneDeltaValue);
         }
 
         public EventEditor()
