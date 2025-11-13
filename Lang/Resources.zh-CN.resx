@@ -385,4 +385,7 @@
   <data name="ui_settings_language_title" xml:space="preserve">
     <value>语言已修改</value>
   </data>
+  <data name="ui_search" xml:space="preserve">
+    <value>搜索...</value>
+  </data>
 </root>

@@ -384,4 +384,7 @@ New Zealand (most) with DST</value>
   <data name="ui_settings_language_title" xml:space="preserve">
     <value>Language Modified</value>
   </data>
+  <data name="ui_search" xml:space="preserve">
+    <value>Search...</value>
+  </data>
 </root>

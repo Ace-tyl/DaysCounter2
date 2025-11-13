@@ -137,17 +137,13 @@ namespace DaysCounter2
             ModifyDayLimits();
             ModifyDayValue();
             ModifySaveButton();
-            if (YearText.DataContext == null)
-            {
-                return;
-            }
             if (YearValue.Value <= 0)
             {
-                YearText.Text = (string)YearText.DataContext + String.Format(Lang.Resources.editor_year_bc, 1 - YearValue.Value);
+                YearText.Text = Lang.Resources.editor_date_year + string.Format(Lang.Resources.editor_year_bc, 1 - YearValue.Value);
             }
             else
             {
-                YearText.Text = (string)YearText.DataContext;
+                YearText.Text = Lang.Resources.editor_date_year;
             }
         }
 

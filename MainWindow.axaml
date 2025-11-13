@@ -16,7 +16,8 @@
                 2.0.2.20251113
             </TextBlock>
         </Grid>
-        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontSize="20" DataContext="{x:Static lang:Resources.ui_currentTime}" x:Name="CurrentTimeText">This line displays current time</TextBlock>
+        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontSize="20" x:Name="CurrentTimeText">This line displays current time</TextBlock>
+        <TextBox DockPanel.Dock="Top" FontSize="18" x:Name="SearchBox" Watermark="{x:Static lang:Resources.ui_search}" TextChanged="SearchBox_TextChanged"></TextBox>
         <Grid DockPanel.Dock="Bottom" Height="40" ColumnSpacing="10" ColumnDefinitions="*,*,*,*">
             <Button Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="NewEventButton_Click" Content="{x:Static lang:Resources.ui_new}"></Button>
             <Button Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="Red" IsEnabled="False" x:Name="DeleteButton" Click="DeleteButton_Click" Content="{x:Static lang:Resources.ui_delete}"></Button>

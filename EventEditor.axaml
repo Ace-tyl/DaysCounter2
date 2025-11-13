@@ -13,7 +13,7 @@
           <TextBox Grid.Column="1" FontSize="18" VerticalContentAlignment="Center" x:Name="EventNameValue" TextChanged="EventNameValue_TextChanged" MaxLength="200"></TextBox>
       </Grid>
       <Grid DockPanel.Dock="Top" Height="75" RowDefinitions="*,40" ColumnDefinitions="115,150,150,150,*" ColumnSpacing="10" RowSpacing="10">
-          <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" DataContext="{x:Static lang:Resources.editor_date_year}" x:Name="YearText" Text="{x:Static lang:Resources.editor_date_year}"></TextBlock>
+          <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" x:Name="YearText" Text="{x:Static lang:Resources.editor_date_year}"></TextBlock>
           <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_date_month}"></TextBlock>
           <TextBlock Grid.Row="0" Grid.Column="3" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_date_day}"></TextBlock>
           <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="18" Text="{x:Static lang:Resources.editor_date}"></TextBlock>

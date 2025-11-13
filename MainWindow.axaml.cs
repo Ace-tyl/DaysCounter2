@@ -87,17 +87,24 @@ namespace DaysCounter2
             }
         }
 
+        public void RefreshWindow()
+        {
+            RefreshWindow(DateTime.Now);
+        }
+
         public void RefreshWindow(DateTime now)
         {
-            if (CurrentTimeText.DataContext != null)
-            {
-                CurrentTimeText.Text = (string)CurrentTimeText.DataContext + now.ToString("yyyy/MM/dd HH:mm:ss");
-            }
+            CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString("yyyy/MM/dd HH:mm:ss");
             MyDateTime myNow = new MyDateTime(now, TimeZoneInfo.Local);
             long myNowJulian = myNow.GetJulianSecond();
             displayedEvents = new List<DisplayedEvent>();
+            string searchText = SearchBox.Text ?? "";
             foreach (Event ev in events)
             {
+                if (!ev.name.ToLower().Contains(searchText.ToLower()))
+                {
+                    continue;
+                }
                 long delta = ev.GetDelta(myNow, myNowJulian);
                 string timerText = "";
                 if (delta > 0)
@@ -154,8 +161,7 @@ namespace DaysCounter2
             if (editor.savedEvent != null)
             {
                 events.Add(editor.savedEvent);
-                DateTime now = DateTime.Now;
-                RefreshWindow(now);
+                RefreshWindow();
                 SaveEvents();
             }
         }
@@ -187,8 +193,7 @@ namespace DaysCounter2
                     break;
                 }
             }
-            DateTime now = DateTime.Now;
-            RefreshWindow(now);
+            RefreshWindow();
             SaveEvents();
         }
 
@@ -242,6 +247,11 @@ namespace DaysCounter2
         private void VersionBlock_PointerPressed(object? sender, Avalonia.Input.PointerPressedEventArgs e)
         {
             Process.Start(new ProcessStartInfo() { FileName = "https://github.com/Ace-tyl/DaysCounter2", UseShellExecute = true });
+        }
+
+        private void SearchBox_TextChanged(object? sender, TextChangedEventArgs e)
+        {
+            RefreshWindow();
         }
     }
 }
