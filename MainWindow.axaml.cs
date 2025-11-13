@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Threading;
-using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Threading;
 using DaysCounter2.Utils;
@@ -22,8 +21,7 @@ namespace DaysCounter2
 
     public partial class MainWindow : Window
     {
-        Task refreshThread;
-        CancellationTokenSource _cts = new CancellationTokenSource();
+        Thread refreshThread;
         List<Event> events = new List<Event>();
         List<DisplayedEvent> displayedEvents = new List<DisplayedEvent>();
         ObservableCollection<DisplayedEvent> Displayed { get; set; } = new ObservableCollection<DisplayedEvent>();
@@ -46,7 +44,8 @@ namespace DaysCounter2
                 catch { }
                 stream.Close();
             }
-            refreshThread = Task.Run(() => RefreshTimer(_cts.Token));
+            refreshThread = new Thread(RefreshTimer);
+            refreshThread.Start();
         }
 
         void SaveEvents()
@@ -65,18 +64,25 @@ namespace DaysCounter2
             stream.Close();
         }
 
-        public void RefreshTimer(CancellationToken token)
+        public void RefreshTimer()
         {
             DateTime? lastRefreshTime = null;
-            while (!token.IsCancellationRequested)
+            try
             {
-                DateTime now = DateTime.Now;
-                if (lastRefreshTime == null || now.Second != lastRefreshTime.Value.Second)
+                while (true)
                 {
-                    lastRefreshTime = now;
-                    Dispatcher.UIThread.Invoke(() => RefreshWindow(now));
+                    DateTime now = DateTime.Now;
+                    if (lastRefreshTime == null || now.Second != lastRefreshTime.Value.Second)
+                    {
+                        lastRefreshTime = now;
+                        Dispatcher.UIThread.Invoke(() => RefreshWindow(now));
+                    }
+                    Thread.Sleep(1000 - now.Millisecond);
                 }
-                Thread.Sleep(1000 - now.Millisecond);
+            }
+            catch (ThreadInterruptedException)
+            {
+                return;
             }
         }
 
@@ -138,13 +144,6 @@ namespace DaysCounter2
             }
             TimerList.ItemsSource = new ObservableCollection<DisplayedEvent>(displayedEvents);
             TimerList.SelectedIndex = selectedIndex;
-        }
-
-        private void Window_Closed(object? sender, EventArgs e)
-        {
-            _cts.Cancel();
-            refreshThread.Wait();
-            _cts.Dispose();
         }
 
         private async void NewEventButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -231,6 +230,12 @@ namespace DaysCounter2
                     await msgbox.ShowWindowDialogAsync(this);
                 }
             }
+        }
+
+        private void Window_Closing(object? sender, WindowClosingEventArgs e)
+        {
+            refreshThread.Interrupt();
+            refreshThread.Join();
         }
     }
 }

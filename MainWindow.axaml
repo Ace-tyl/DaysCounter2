@@ -7,7 +7,7 @@
         x:DataType="local:MainWindow"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" MinHeight="300" MinWidth="700"
         x:Class="DaysCounter2.MainWindow"
-        Title="Days Counter 2 by SodiumCl10" Closed="Window_Closed">
+        Title="Days Counter 2 by SodiumCl10" Closing="Window_Closing">
     <DockPanel Margin="10" VerticalSpacing="10">
         <Grid DockPanel.Dock="Top">
             <TextBlock HorizontalAlignment="Center" FontSize="30">Days Counter 2 by SodiumCl10</TextBlock>
