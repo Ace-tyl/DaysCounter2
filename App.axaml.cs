@@ -30,7 +30,7 @@ namespace DaysCounter2
                 FileStream stream = File.OpenRead(appSettingsPath);
                 try
                 {
-                    DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(SettingsManager));
+                    DataContractJsonSerializer ser = new(typeof(SettingsManager));
                     var result = ser.ReadObject(stream);
                     if (result != null)
                     {

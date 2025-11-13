@@ -32,14 +32,7 @@ namespace DaysCounter2.Utils
             this.hour = hour;
             this.minute = minute;
             this.second = second;
-            if (timeZoneDelta == null)
-            {
-                this.timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
-            }
-            else
-            {
-                this.timeZoneDelta = (int)timeZoneDelta;
-            }
+            this.timeZoneDelta = (int)(timeZoneDelta ?? TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes);
         }
 
         public MyDateTime Clone()

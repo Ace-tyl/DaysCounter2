@@ -177,9 +177,11 @@ namespace DaysCounter2
         {
             MyDateTime? dateTime = GetInputDateTime();
             if (EventNameValue.Text == null || dateTime == null || LoopCheck.IsChecked == null) { return; }
-            savedEvent = new Event();
-            savedEvent.name = EventNameValue.Text;
-            savedEvent.dateTime = dateTime;
+            savedEvent = new Event
+            {
+                name = EventNameValue.Text,
+                dateTime = dateTime
+            };
             if (LoopCheck.IsChecked == true)
             {
                 savedEvent.loopType = (LoopTypes)LoopType.SelectedIndex;

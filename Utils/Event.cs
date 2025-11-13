@@ -20,15 +20,10 @@ namespace DaysCounter2.Utils
 
     public class Event
     {
-        public string uuid, name = "Unnamed";
+        public string uuid = Guid.NewGuid().ToString(), name = "Unnamed";
         public MyDateTime dateTime = new MyDateTime();
         public LoopTypes loopType = LoopTypes.None;
         public int loopValue = 1;
-
-        public Event()
-        {
-            uuid = Guid.NewGuid().ToString();
-        }
 
         public long GetDelta(MyDateTime now, long nowJulian)
         {

@@ -23,9 +23,9 @@ namespace DaysCounter2
     public partial class MainWindow : Window
     {
         Thread refreshThread;
-        List<Event> events = new List<Event>();
-        List<DisplayedEvent> displayedEvents = new List<DisplayedEvent>();
-        ObservableCollection<DisplayedEvent> Displayed { get; set; } = new ObservableCollection<DisplayedEvent>();
+        List<Event> events = [];
+        List<DisplayedEvent> displayedEvents = [];
+        ObservableCollection<DisplayedEvent> Displayed { get; set; } = [];
 
         public MainWindow()
         {
@@ -35,7 +35,7 @@ namespace DaysCounter2
                 FileStream stream = File.OpenRead(App.appFilePath);
                 try
                 {
-                    DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<Event>));
+                    DataContractJsonSerializer ser = new(typeof(List<Event>));
                     var result = ser.ReadObject(stream);
                     if (result != null)
                     {
@@ -52,7 +52,7 @@ namespace DaysCounter2
         void SaveEvents()
         {
             FileStream stream = File.Open(App.appFilePath, FileMode.Create, FileAccess.Write);
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<Event>));
+            DataContractJsonSerializer ser = new(typeof(List<Event>));
             ser.WriteObject(stream, events);
             stream.Close();
         }
@@ -60,7 +60,7 @@ namespace DaysCounter2
         void SaveSettings()
         {
             FileStream stream = File.Open(App.appSettingsPath, FileMode.Create, FileAccess.Write);
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(SettingsManager));
+            DataContractJsonSerializer ser = new(typeof(SettingsManager));
             ser.WriteObject(stream, App.settings);
             stream.Close();
         }
@@ -95,9 +95,9 @@ namespace DaysCounter2
         public void RefreshWindow(DateTime now)
         {
             CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString("yyyy/MM/dd HH:mm:ss");
-            MyDateTime myNow = new MyDateTime(now, TimeZoneInfo.Local);
+            MyDateTime myNow = new(now, TimeZoneInfo.Local);
             long myNowJulian = myNow.GetJulianSecond();
-            displayedEvents = new List<DisplayedEvent>();
+            displayedEvents = [];
             string searchText = SearchBox.Text ?? "";
             foreach (Event ev in events)
             {
@@ -156,7 +156,7 @@ namespace DaysCounter2
 
         private async void NewEventButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            EventEditor editor = new EventEditor();
+            EventEditor editor = new();
             await editor.ShowDialog(this);
             if (editor.savedEvent != null)
             {
@@ -208,7 +208,7 @@ namespace DaysCounter2
             {
                 if (ev.uuid == selectedUuid)
                 {
-                    EventEditor editor = new EventEditor(ev);
+                    EventEditor editor = new(ev);
                     await editor.ShowDialog(this);
                     if (editor.savedEvent != null)
                     {
@@ -225,7 +225,7 @@ namespace DaysCounter2
 
         private async void SettingsButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            SettingsWindow settingsWindow = new SettingsWindow();
+            SettingsWindow settingsWindow = new();
             await settingsWindow.ShowDialog(this);
             if (settingsWindow.savedSettings)
             {
