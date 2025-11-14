@@ -45,6 +45,25 @@ The event date can be set to a wide range, from 4713 BC to 9999 AD. The date is 
 
 When entering a year before the Common Era such as x BC, the number -(x - 1) is required to input. For example, Emperor Qin Shi Huang unified the six states in 221 BC, so the Year value should be set to -220 in order to add this event. A prompt will be displayed if you input a year before the Common Era (non-positive).
 
+### Customization
+
+To customize this application, click the **Settings** button. The following properties can be customized:
+
+* **Language**: Controls the display language of the software, default is English (United States). Supported languages:
+
+  * English (United States)
+  * Simplified Chinese (Chinese Mainland)
+
+* **Date Time Format**: Controls the format of date time shown as the current time, default is `yyyy/MM/dd HH:mm:ss`.
+
+* **Background Color**: Controls the background color of an event item. 3 configurable colors as follows:
+
+  * *Future*: The color of upcoming events, default is #66CCFF with opacity 160.
+  * *Past*: The color of events that have already passed, default is #EE0000 with opacity 160.
+  * *Distant*: The color of distant events, including distant future and distant past, default is transparent.
+
+  The color of an event will be interpolated between *Future/Past* and *Distant*, according to the timer.
+
 ## Credits
 
 This project is based on [.NET 8](https://dotnet.microsoft.com/) and [Avalonia UI](https://avaloniaui.net/), and is packaged by [Costura.Fody](https://github.com/Fody/Costura).
