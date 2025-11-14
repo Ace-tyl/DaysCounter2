@@ -34,9 +34,9 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="{Binding brush}">
-                        <Grid ColumnDefinitions="330,*" ColumnSpacing="10" Margin="10">
-                            <TextBlock Text="{Binding timerText}" Grid.Column="0" FontSize="18"></TextBlock>
-                            <TextBlock Text="{Binding name}" Grid.Column="1" FontSize="18"></TextBlock>
+                        <Grid ColumnDefinitions="330,*" ColumnSpacing="10" Margin="10,0,10,0">
+                            <TextBlock Text="{Binding timerText}" VerticalAlignment="Center" Grid.Column="0" FontSize="18"></TextBlock>
+                            <TextBlock Text="{Binding name}" VerticalAlignment="Center" Grid.Column="1" FontSize="18"></TextBlock>
                         </Grid>
                     </Grid>
                 </DataTemplate>

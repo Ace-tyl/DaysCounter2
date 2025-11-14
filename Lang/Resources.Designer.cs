@@ -295,6 +295,24 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date Time Format.
+        /// </summary>
+        public static string settings_dateTimeFormat {
+            get {
+                return ResourceManager.GetString("settings_dateTimeFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings.
+        /// </summary>
+        public static string settings_dateTimeFormat_helpUrl {
+            get {
+                return ResourceManager.GetString("settings_dateTimeFormat_helpUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string settings_language {

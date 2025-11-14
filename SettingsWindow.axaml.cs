@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
@@ -16,6 +18,8 @@ namespace DaysCounter2
         Color pastColor { get; set; }
         Color distantColor { get; set; }
 
+        IBrush? defaultBrush;
+
         public SettingsWindow()
         {
             InitializeComponent();
@@ -30,6 +34,8 @@ namespace DaysCounter2
             PickFutureColor.Background = new SolidColorBrush(futureColor);
             PickPastColor.Background = new SolidColorBrush(pastColor);
             PickDistantColor.Background = new SolidColorBrush(distantColor);
+            DateTimeFormatInput.Text = App.settings.dateTimeFormat;
+            defaultBrush = DateTimeFormatInput.Foreground;
         }
 
         private void SaveButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -47,6 +53,7 @@ namespace DaysCounter2
             App.settings.futureColor = futureColor;
             App.settings.pastColor = pastColor;
             App.settings.distantColor = distantColor;
+            App.settings.dateTimeFormat = DateTimeFormatInput.Text ?? "yyyy/MM/dd HH:mm:ss";
             Close();
         }
 
@@ -81,6 +88,38 @@ namespace DaysCounter2
                 pastColor = (Color)colorSelector.selectedColor;
                 PickPastColor.Background = new SolidColorBrush(pastColor);
             }
+        }
+
+        private void DateTimeFormatInput_TextChanged(object? sender, TextChangedEventArgs e)
+        {
+            bool formatFailed = false;
+            if (DateTimeFormatInput.Text == "")
+            {
+                formatFailed = true;
+            }
+            try
+            {
+                string _ = DateTime.Now.ToString(DateTimeFormatInput.Text);
+            }
+            catch (FormatException)
+            {
+                formatFailed = true;
+            }
+            if (formatFailed)
+            {
+                DateTimeFormatInput.Foreground = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                SaveButton.IsEnabled = false;
+            }
+            else
+            {
+                DateTimeFormatInput.Foreground = defaultBrush;
+                SaveButton.IsEnabled = true;
+            }
+        }
+
+        private void DateTimeFormatText_PointerPressed(object? sender, Avalonia.Input.PointerPressedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo() { FileName = Lang.Resources.settings_dateTimeFormat_helpUrl, UseShellExecute = true });
         }
     }
 }

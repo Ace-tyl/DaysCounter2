@@ -402,4 +402,10 @@ New Zealand (most) with DST</value>
   <data name="color_select" xml:space="preserve">
     <value>Select Color</value>
   </data>
+  <data name="settings_dateTimeFormat" xml:space="preserve">
+    <value>Date Time Format</value>
+  </data>
+  <data name="settings_dateTimeFormat_helpUrl" xml:space="preserve">
+    <value>https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
+  </data>
 </root>

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Threading;
@@ -28,6 +29,7 @@ namespace DaysCounter2
         List<Event> events = [];
         List<DisplayedEvent> displayedEvents = [];
         ObservableCollection<DisplayedEvent> Displayed { get; set; } = [];
+        string languageId;
 
         public MainWindow()
         {
@@ -49,6 +51,7 @@ namespace DaysCounter2
             }
             refreshThread = new Thread(RefreshTimer);
             refreshThread.Start();
+            languageId = App.settings.languageId;
         }
 
         void SaveEvents()
@@ -96,7 +99,15 @@ namespace DaysCounter2
 
         public void RefreshWindow(DateTime now)
         {
-            CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString("yyyy/MM/dd HH:mm:ss");
+            try
+            {
+                CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString(App.settings.dateTimeFormat, CultureInfo.CreateSpecificCulture(languageId));
+            }
+            catch (FormatException)
+            {
+                App.settings.dateTimeFormat = "yyyy/MM/dd HH:mm:ss";
+                CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString(App.settings.dateTimeFormat, CultureInfo.CreateSpecificCulture(languageId));
+            }
             MyDateTime myNow = new(now, TimeZoneInfo.Local);
             long myNowJulian = myNow.GetJulianSecond();
             displayedEvents = [];

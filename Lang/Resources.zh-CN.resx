@@ -403,4 +403,10 @@
   <data name="color_select" xml:space="preserve">
     <value>选择颜色</value>
   </data>
+  <data name="settings_dateTimeFormat" xml:space="preserve">
+    <value>日期时间格式</value>
+  </data>
+  <data name="settings_dateTimeFormat_helpUrl" xml:space="preserve">
+    <value>https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
+  </data>
 </root>

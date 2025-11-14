@@ -10,8 +10,8 @@
         Width="700" Height="300" MinWidth="700" MinHeight="300" x:DataType="local:SettingsWindow"
         Title="{x:Static lang:Resources.ui_settings}">
     <DockPanel>
-		<Button DockPanel.Dock="Bottom" Height="40" HorizontalAlignment="Stretch" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Content="{x:Static lang:Resources.settings_save}" Click="SaveButton_Click"></Button>
-        <Grid Margin="10" ColumnDefinitions="200,*" ColumnSpacing="10" RowDefinitions="40,40,*" RowSpacing="10">
+		<Button DockPanel.Dock="Bottom" Height="40" HorizontalAlignment="Stretch" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Content="{x:Static lang:Resources.settings_save}" x:Name="SaveButton" Click="SaveButton_Click"></Button>
+        <Grid Margin="10" ColumnDefinitions="200,*" ColumnSpacing="10" RowDefinitions="40,40,40,*" RowSpacing="10">
             <TextBlock Grid.Row="0" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_language}"></TextBlock>
             <ComboBox Grid.Row="0" Grid.Column="1" x:DataType="utils:LanguageManager" ItemsSource="{Binding languages}" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="LanguageSelector">
                 <ComboBox.ItemTemplate>
@@ -20,8 +20,10 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_color}"></TextBlock>
-            <Grid Grid.Row="1" Grid.Column="1" ColumnDefinitions="40,*,40,*,40,*" ColumnSpacing="10">
+            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_dateTimeFormat}" PointerPressed="DateTimeFormatText_PointerPressed" Cursor="Hand"></TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="1" FontSize="18" VerticalAlignment="Stretch" VerticalContentAlignment="Center" x:Name="DateTimeFormatInput" TextChanged="DateTimeFormatInput_TextChanged"></TextBox>
+            <TextBlock Grid.Row="2" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_color}"></TextBlock>
+            <Grid Grid.Row="2" Grid.Column="1" ColumnDefinitions="40,*,40,*,40,*" ColumnSpacing="10">
                 <Button Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="PickFutureColor" Click="PickFutureColor_Click"></Button>
                 <Button Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="PickPastColor" Click="PickPastColor_Click"></Button>
                 <Button Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="PickDistantColor" Click="PickDistantColor_Click"></Button>
