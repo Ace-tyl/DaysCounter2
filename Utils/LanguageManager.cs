@@ -21,6 +21,7 @@ namespace DaysCounter2.Utils
         [
             new("English (United States)", ""),
             new("简体中文 (中国大陆)", "zh-CN"),
+            new("日本語 (日本)", "ja"),
         ];
     }
 }

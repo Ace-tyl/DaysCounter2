@@ -53,6 +53,7 @@ To customize this application, click the **Settings** button. The following prop
 
   * English (United States)
   * Simplified Chinese (Chinese Mainland)
+  * Japanese (Japan)
 
 * **Date Time Format**: Controls the format of date time shown as the current time, default is `yyyy/MM/dd HH:mm:ss`.
 

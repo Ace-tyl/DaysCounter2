@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ui_currentTime" xml:space="preserve">
+    <value>現在の時間：</value>
+  </data>
+  <data name="ui_delete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="ui_edit" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="editor_date" xml:space="preserve">
+    <value>イベント日：</value>
+  </data>
+  <data name="editor_date_day" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="editor_date_month" xml:space="preserve">
+    <value>月</value>
+  </data>
+  <data name="editor_date_year" xml:space="preserve">
+    <value>年</value>
+  </data>
+  <data name="editor_name" xml:space="preserve">
+    <value>イベント名：</value>
+  </data>
+  <data name="editor_title" xml:space="preserve">
+    <value>イベントを編集</value>
+  </data>
+  <data name="ui_new" xml:space="preserve">
+    <value>新規作成</value>
+  </data>
+  <data name="ui_settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="ui_timerAgo" xml:space="preserve">
+    <value>{0} 日 {1} 時間 {2} 分 {3} 秒前</value>
+  </data>
+  <data name="ui_timerLater" xml:space="preserve">
+    <value>{0} 日 {1} 時間 {2} 分 {3} 秒後</value>
+  </data>
+  <data name="ui_version" xml:space="preserve">
+    <value>バージョン</value>
+  </data>
+  <data name="editor_year_bc" xml:space="preserve">
+    <value>（紀元前 {0:.}）</value>
+  </data>
+  <data name="editor_time" xml:space="preserve">
+    <value>イベント時間：</value>
+  </data>
+  <data name="editor_time_hour" xml:space="preserve">
+    <value>時</value>
+  </data>
+  <data name="editor_time_minute" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="editor_time_second" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="editor_time_timeZone" xml:space="preserve">
+    <value>時間帯</value>
+  </data>
+  <data name="editor_loop" xml:space="preserve">
+    <value>ループ</value>
+  </data>
+  <data name="editor_loop_warn" xml:space="preserve">
+    <value>ループは設定時間が経過した後にのみアクティブ化されます。</value>
+  </data>
+  <data name="editor_loop_second" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="editor_loop_minute" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="editor_loop_hour" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="editor_loop_day" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="editor_loop_month" xml:space="preserve">
+    <value>ヶ月</value>
+  </data>
+  <data name="editor_loop_year" xml:space="preserve">
+    <value>年</value>
+  </data>
+  <data name="editor_save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="ui_delete_warn" xml:space="preserve">
+    <value>本当にこのイベントを削除しますか？
+操作は取り消せません！</value>
+  </data>
+  <data name="timeZone_neg1200" xml:space="preserve">
+    <value>世界最遅のタイムゾーン（AoE）；
+ベッカー島、ハウラン島</value>
+  </data>
+  <data name="timeZone_neg1100" xml:space="preserve">
+    <value>米領サモア、ジャービス島、キンマン礁、ミッドウェー島、ニウエ、パルミラ環礁</value>
+  </data>
+  <data name="timeZone_neg1000" xml:space="preserve">
+    <value>クック諸島、フランス領ポリネシア（大部分）、ジョンストン環礁、アメリカ（ハワイ）；
+アメリカ（アンドレノフ諸島、フォー・マウンテン諸島、ニア諸島、ラット諸島）は夏時間を実施しない</value>
+  </data>
+  <data name="timeZone_neg0930" xml:space="preserve">
+    <value>フランス領ポリネシア（マルケサス諸島）</value>
+  </data>
+  <data name="timeZone_neg0900" xml:space="preserve">
+    <value>フランス領ポリネシア（ガンビール諸島）；
+アメリカ（アラスカ（大部分））は夏時間を実施しない；
+アメリカ（アンドレノフ諸島、フォー・マウンテン諸島、ニア諸島、ラット諸島）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_neg0800" xml:space="preserve">
+    <value>クリッパートン島、ピトケアン諸島；
+カナダ（ブリティッシュコロンビア州（大部分））、メキシコ（バハ・カリフォルニア州）、アメリカ（カリフォルニア州、アイダホ州（北部）、ネバダ州（大部分）、オレゴン州（大部分）、ワシントン州）は夏時間を実施しない；
+アメリカ（アラスカ州（大部分））は夏時間を実施</value>
+  </data>
+  <data name="timeZone_neg0700" xml:space="preserve">
+    <value>カナダ（ブリティッシュコロンビア州（北東部）、ユーコン準州）、メキシコ（バハ・カリフォルニア州、ナヤリット州（大部分）、シナロア州、ソノラ州）、アメリカ（アリゾナ州（大部分））；
+カナダ（アルバータ州、ブリティッシュコロンビア州（南東部）、ノースウェスト準州、ヌナブト準州（西部）、サスカチュワン州（ロイドミンスター地域））、メキシコ（チワワ州（北西部国境））、アメリカ（アリゾナ州（ナバホ族居留地）、コロラド州、アイダホ州（大部分）、 カンザス州（西部）、モンタナ州、ネブラスカ州（西部）、ニューメキシコ州、ネバダ州（北東部国境）、ノースダコタ州（南西部）、オレゴン州（東部）、サウスダコタ州（西部）、テキサス州（西部）、ユタ州、ワイオミング州）は夏時間を実施しない；
+カナダ（ブリティッシュコロンビア州（大部分））、メキシコ（バハ・カリフォルニア州）、アメリカ（カリフォルニア州、アイダホ州（北部）、ネバダ州（大部分）、オレゴン州（大部分）、ワシントン州）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_neg0600" xml:space="preserve">
+    <value>ベリーズ、カナダ（サスカチュワン州（大部分））、コスタリカ、エクアドル（ガラパゴス諸島）、エルサルバドル、グアテマラ、ホンジュラス、メキシコ（大部分）、ニカラグア；
+カナダ（マニトバ州、ヌナブト準州（中部）、オンタリオ州（西部））、チリ（イースター島）、メキシコ（北東部国境）、アメリカ（アラバマ州、アーカンソー州、フロリダ州（北西部）、イリノイ州、インディアナ州（北西部・南西部）、 アイオワ州、カンザス州（大部分）、ケンタッキー州（西部）、ルイジアナ州、ミシガン州（北西部国境）、ミネソタ州、ミシシッピ州、ミズーリ州、ネブラスカ州（大部分）、ノースダコタ州（大部分）、オクラホマ州、サウスダコタ州（大部分）、テネシー州（大部分）、 テキサス州（大部分）、ウィスコンシン州）は夏時間を実施しない；
+カナダ（アルバータ州、ブリティッシュコロンビア州（南東部）、ノースウェスト準州、ヌナブト準州（西部）、サスカチュワン州（ロイドミンスター地域））、メキシコ（チワワ州（北西部国境））、アメリカ（アリゾナ州（ナバホ族居留地）、コロラド州、アイダホ州 （大部分）、カンザス州（西部）、モンタナ州、ネブラスカ州（西部）、ニューメキシコ州、ネバダ州（北東部国境）、ノースダコタ州（南西部）、オレゴン州（東部）、サウスダコタ州（西部）、テキサス州（西部）、ユタ州、ワイオミング州）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_neg0500" xml:space="preserve">
+    <value>ブラジル（アクレ州、アマゾナス州（南西部））、カナダ（アティコカン、ミシキゴマン、サウスハンプトン島）、ケイマン諸島、コロンビア、エクアドル（大部分）、ジャマイカ、メキシコ（キンタナロー州）、ナバサ島、パナマ、ペルー；
+バハマ、カナダ（ヌナブト準州（東部）、オンタリオ州（大部分）、ケベック州（大部分））、キューバ、ハイチ、タークス・カイコス諸島、アメリカ（コネチカット州、デラウェア州、コロンビア特別区、フロリダ州（大部分）、 ジョージア州、インディアナ州（大部分）、ケンタッキー州（東部）、メイン州、メリーランド州、マサチューセッツ州、ミシガン州（大部分）、 ニューハンプシャー州、ニュージャージー州、ニューヨーク州、ノースカロライナ州、オハイオ州、ペンシルベニア州、ロードアイランド州、サウスカロライナ州、テネシー州（東部）、バーモント州、バージニア州、ウェストバージニア州）は夏時間を実施しない；
+カナダ（マニトバ州、ヌナブト準州（中部）、オンタリオ州（西部））、チリ（イースター島）、メキシコ（北東部国境）、アメリカ（アラバマ州、アーカンソー州、フロリダ州（北西部）、イリノイ州、インディアナ州（北西部・南西部）、 アイオワ州、カンザス州（大部分）、ケンタッキー州（西部）、ルイジアナ州、ミシガン州（北西部国境）、ミネソタ州、ミシシッピ州、ミズーリ州、ネブラスカ州（大部分）、ノースダコタ州（大部分）、オクラホマ州、サウスダコタ州（大部分）、 テネシー州（大部分）、テキサス州（大部分）、ウィスコンシン州）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_neg0400" xml:space="preserve">
+    <value>アンギラ、アンティグア・バーブーダ、アルバ、バルバドス、ボリビア、ブラジル（アマゾナス州（大部分）、マットグロッソ州、マットグロッソ・ド・スル州、ロンドニア州、ロライマ州）、 イギリス領ヴァージン諸島、カナダ（ケベック州（東部））、カリブオランダ、キュラソー島、ドミニカ、ドミニカ共和国、グレナダ、グアドループ島、 ガイアナ、マルティニーク島、モントセラト島、プエルトリコ、サン・バルテルミー島、セントキッツ・ネビス、セントルシア、セント・マーチン島、セントビンセント・グレナディーン諸島、セント・マーチン島、トリニダード・トバゴ、米領バージン諸島、ベネズエラ；
+バミューダ諸島、カナダ（ラブラドール州（大部分）、ニューブランズウィック州、ノバスコシア州、プリンスエドワード島）、チリ（大部分）、グリーンランド（ピトゥフィーク宇宙基地）は夏時間を実施しない；
+バハマ、カナダ（ヌナブト準州（東部）、オンタリオ州（大部分）、 ケベック州（大部分））、キューバ、ハイチ、タークス・カイコス諸島、アメリカ（コネチカット州、デラウェア州、コロンビア特別区、フロリダ州（大部分）、ジョージア州、インディアナ州（大部分）、ケンタッキー州（東部）、メイン州、 メリーランド州、マサチューセッツ州、ミシガン州（大部分）、ニューハンプシャー州、ニュージャージー州、ニューヨーク州、ノースカロライナ州、オハイオ州、ペンシルベニア州、ロードアイランド州、サウスカロライナ州、テネシー州（東部）、バーモント州、バージニア州、ウェストバージニア州）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_neg0330" xml:space="preserve">
+    <value>カナダ（ニューファンドランド、ラブラドール（南東部））は夏時間を実施しない</value>
+  </data>
+  <data name="timeZone_neg0300" xml:space="preserve">
+    <value>アルゼンチン、ブラジル（大部分）、チリ（アイゼン、マゼラン）、フォークランド諸島、フランス領ギアナ、パラグアイ、スリナム、ウルグアイ；
+サンピエール・ミクロン島は夏時間を実施しない；
+バミューダ諸島、カナダ（ラブラドール州（大部分）、ニューブランズウィック州、ノバスコシア州、プリンスエドワード島）、チリ（大部分）、グリーンランド（ピトゥフィーク宇宙基地）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_neg0230" xml:space="preserve">
+    <value>カナダ（ニューファンドランド、ラブラドール（南東部））は夏時間を実施</value>
+  </data>
+  <data name="timeZone_neg0200" xml:space="preserve">
+    <value>ブラジル（フェルナンド・ディノローニャ諸島）、サウスジョージア島およびサウスサンドウィッチ諸島；
+グリーンランド（大部分）は夏時間を実施しない；
+サンピエール・ミクロン諸島は夏時間を実施</value>
+  </data>
+  <data name="timeZone_neg0100" xml:space="preserve">
+    <value>カーボベルデ；
+ポルトガル（アゾレス諸島）は夏時間を実施しない；
+グリーンランド（大部分）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos0000" xml:space="preserve">
+    <value>ブルキナファソ、ガンビア、ガーナ、グリーンランド（東海岸国立公園）、ギニア、ギニアビサウ、アイスランド、コートジボワール、リベリア、マリ、モーリタニア、セントヘレナ、アセンション島およびトリスタン・ダ・クーニャ、セネガル、シエラレオネ、サントメ・プリンシペ、トーゴ；
+フェロー諸島、ガーンジー島、アイルランド、マン島、ジャージー島、ポルトガル（大部分）、スペイン（カナリア諸島）、イギリスは夏時間を実施しない；
+ポルトガル（アゾレス諸島）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos0048" xml:space="preserve">
+    <value>エリオリ王国は夏時間を実施しない</value>
+  </data>
+  <data name="timeZone_pos0100" xml:space="preserve">
+    <value>アルジェリア、アンゴラ、ベナン、カメルーン、中央アフリカ共和国、チャド、コンゴ、コンゴ民主共和国（赤道州、キンシャサ、中コンゴ州、カンゴ州、ケルー州、マイ＝ンドムベ州、モンガラ州、北ウバンギ・シャリ州、南ウバンギ・シャリ州、チュアパ州）、 赤道ギニア、ガボン、モロッコ、ニジェール、ナイジェリア、チュニジア；
+アルバニア、アンドラ、オーストリア、ベルギー、ボスニア・ヘルツェゴビナ、クロアチア、チェコ共和国、デンマーク、フランス（本土）、ドイツ、ジブラルタル、 ハンガリー、イタリア、リヒテンシュタイン、ルクセンブルク、マルタ、モナコ、モンテネグロ、オランダ（欧州標準時）、北マケドニア、ノルウェー、ポーランド、サンマリノ、セルビア、スロバキア、スロベニア、スペイン（大部分）、スウェーデン、スイス、バチカン市国は夏時間を実施しない；
+フェロー諸島、ガーンジー島、アイルランド、マン島、ジャージー島、ポルトガル（大部分）、スペイン（カナリア諸島）、イギリスは夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos0148" xml:space="preserve">
+    <value>エリオリ王国は夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos0200" xml:space="preserve">
+    <value>ボツワナ、ブルンジ、コンゴ民主共和国（大部分）、スワジランド、レソト、リビア、マラウイ、モザンビーク、ナミビア、ロシア（カリーニングラード）、ルワンダ、南アフリカ（大部分）、南スーダン、スーダン、ザンビア、ジンバブエ；
+アクロティリ・デケリア、ブルガリア、キプロス、エジプト、エストニア、フィンランド、ギリシャ、イスラエル、ラトビア、レバノン、リトアニア、モルドバ、パレスチナ、ルーマニア、ウクライナ（大部分の地域）は夏時間を実施しない；
+アルバニア、アンドラ、オーストリア、ベルギー、ボスニア・ヘルツェゴビナ、クロアチア、チェコ共和国、デンマーク、フランス（本土）、ドイツ、ジブラルタル、 ハンガリー、イタリア、リヒテンシュタイン、ルクセンブルク、マルタ、モナコ、モンテネグロ、オランダ（ヨーロッパ）、北マケドニア、ノルウェー、ポーランド、サンマリノ、セルビア、スロバキア、スロベニア、スペイン（大部分）、スウェーデン、スイス、バチカンは夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos0300" xml:space="preserve">
+    <value>バーレーン、ベラルーシ、コモロ、ジブチ、エリトリア、エチオピア、フランス領南極地域（分散島嶼）、イラク、ヨルダン、ケニア、クウェート、マダガスカル、マヨット島、カタール、ロシア（欧州大部分）、サウジアラビア、ソマリア、南アフリカ（プリンスエドワード諸島）、 シリア、タンザニア、トルコ、ウガンダ、ウクライナ（占領地域）、イエメン；
+アクロティリとデケリア、ブルガリア、キプロス、エジプト、エストニア、フィンランド、ギリシャ、イスラエル、ラトビア、レバノン、リトアニア、モルドバ、パレスチナ、ルーマニア、ウクライナ（大部分）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos0330" xml:space="preserve">
+    <value>イラン</value>
+  </data>
+  <data name="timeZone_pos0400" xml:space="preserve">
+    <value>アルメニア、アゼルバイジャン、フランス領南極地域（クロゼ諸島）、ジョージア、モーリシャス、オマーン、ロシア（アストラハン、サマラ、サラトフ、ウドムルト共和国、ウリヤノフスク）、レユニオン島、セーシェル、アラブ首長国連邦</value>
+  </data>
+  <data name="timeZone_pos0430" xml:space="preserve">
+    <value>アフガニスタン</value>
+  </data>
+  <data name="timeZone_pos0500" xml:space="preserve">
+    <value>フランス領南極地域（ケルゲラン諸島、サン・ポール島、アムステルダム島）、ヘド島・マクドナルド諸島、カザフスタン、モルディブ、パキスタン、ロシア（バシコルトスタン共和国、チェリャビンスク、ハンテ・マンシ、クルガン、オレンブルク、ペルミ、スヴェルドロフスク、チュメニ、ヤマル）、 タジキスタン、トルクメニスタン、ウズベキスタン</value>
+  </data>
+  <data name="timeZone_pos0530" xml:space="preserve">
+    <value>インド、スリランカ</value>
+  </data>
+  <data name="timeZone_pos0545" xml:space="preserve">
+    <value>ネパール</value>
+  </data>
+  <data name="timeZone_pos0600" xml:space="preserve">
+    <value>バングラデシュ、ブータン、イギリス領インド洋地域、キルギス、ロシア（オムスク）</value>
+  </data>
+  <data name="timeZone_pos0630" xml:space="preserve">
+    <value>ココス諸島、ミャンマー</value>
+  </data>
+  <data name="timeZone_pos0700" xml:space="preserve">
+    <value>カンボジア、クリスマス島、インドネシア（スマトラ、ジャワ、西カリマンタン、中カリマンタン）、 ラオス、モンゴル（バヤンウリゲ、コブド、ウブス）、ロシア（アルタイ地方、アルタイ共和国、クマーノヴォ、ハカス、クラスノヤルスク、ノヴォシビルスク、トムスク、トゥヴァ）、タイ、ベトナム</value>
+  </data>
+  <data name="timeZone_pos0800" xml:space="preserve">
+    <value>オーストラリア（西オーストラリア州）、ブルネイ、中国、インドネシア（南カリマンタン、東カリマンタン、北カリマンタン、スラウェシ、小スンダ諸島）、マレーシア、モンゴル（大部分）、フィリピン、ロシア（ブリヤート、イルクーツク）、シンガポール</value>
+  </data>
+  <data name="timeZone_pos0845" xml:space="preserve">
+    <value>オーストラリア（ユーカラ）</value>
+  </data>
+  <data name="timeZone_pos0900" xml:space="preserve">
+    <value>インドネシア（マルク諸島、西ニューギニア）、日本、朝鮮、パラオ、ロシア（アムール、サハ（大部分）、外ベガール）、韓国、東ティモール</value>
+  </data>
+  <data name="timeZone_pos0930" xml:space="preserve">
+    <value>オーストラリア（ノーザンテリトリー）；
+オーストラリア（南オーストラリア州、ヤンコウィナ郡）は夏時間を実施しない</value>
+  </data>
+  <data name="timeZone_pos1000" xml:space="preserve">
+    <value>オーストラリア（クイーンズランド州）、グアム、ミクロネシア（チューク、ヤップ）、北マリアナ諸島、パプアニューギニア（大部分）、ロシア（ユダヤ自治共和国、ハバロフスク地方、沿海地方、サハ共和国（中東部））；
+オーストラリア（オーストラリア首都特別地域、ジャビズ湾地域、ニューサウスウェールズ州（大部分）、タスマニア州、ビクトリア州）は夏時間を実施しない</value>
+  </data>
+  <data name="timeZone_pos1030" xml:space="preserve">
+    <value>オーストラリア（ロード・デ・ケズ島）は夏時間を実施しない；
+オーストラリア（南オーストラリア州、ヤンコウィナ郡）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos1100" xml:space="preserve">
+    <value>ミクロネシア（コスラエ、ポナペ）、ニューカレドニア、パプアニューギニア（ブガンビル）、ロシア（マガダン、サハ（東部）、サハリン島）、ソロモン諸島、バヌアツ；
+ノーフォーク島は夏時間を実施しない；
+オーストラリア（オーストラリア首都特別地域、ジャビズ湾地域、ロード・デ・クーカード島、ニューサウスウェールズ州（大部分）、タスマニア州、ビクトリア州）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos1200" xml:space="preserve">
+    <value>フィジー、キリバス（ギルバート諸島）、マーシャル諸島、ナウル、ロシア（チュクチ半島、カムチャツカ半島）、ツバル、ウェーク島、ヴァリズ・フォチュナ諸島；
+ニュージーランド（大部分）は夏時間を実施しない；
+ノーフォーク島は夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos1245" xml:space="preserve">
+    <value>ニュージーランド（チャタム諸島）は夏時間を実施しない</value>
+  </data>
+  <data name="timeZone_pos1300" xml:space="preserve">
+    <value>キリバス（フェニックス諸島）、サモア、トケラウ、トンガ；
+ニュージーランド（大部分）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos1345" xml:space="preserve">
+    <value>ニュージーランド（チャタム諸島）は夏時間を実施</value>
+  </data>
+  <data name="timeZone_pos1400" xml:space="preserve">
+    <value>キリバス（ライアン諸島）</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>言語 / Language</value>
+  </data>
+  <data name="settings_save" xml:space="preserve">
+    <value>設定を保存</value>
+  </data>
+  <data name="ui_settings_language" xml:space="preserve">
+    <value>プログラムの再起動後、言語の変更が有効になります。</value>
+  </data>
+  <data name="ui_settings_language_title" xml:space="preserve">
+    <value>言語の変更</value>
+  </data>
+  <data name="ui_search" xml:space="preserve">
+    <value>検索...</value>
+  </data>
+  <data name="settings_color" xml:space="preserve">
+    <value>背景色</value>
+  </data>
+  <data name="settings_color_future" xml:space="preserve">
+    <value>未来</value>
+  </data>
+  <data name="settings_color_past" xml:space="preserve">
+    <value>過去</value>
+  </data>
+  <data name="settings_color_distant" xml:space="preserve">
+    <value>遠い</value>
+  </data>
+  <data name="color_select" xml:space="preserve">
+    <value>色を選択</value>
+  </data>
+  <data name="settings_dateTimeFormat" xml:space="preserve">
+    <value>日付時刻フォーマット</value>
+  </data>
+  <data name="settings_dateTimeFormat_helpUrl" xml:space="preserve">
+    <value>https://learn.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
+  </data>
+</root>
