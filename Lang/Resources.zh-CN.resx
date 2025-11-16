@@ -409,4 +409,10 @@
   <data name="settings_dateTimeFormat_helpUrl" xml:space="preserve">
     <value>https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
   </data>
+  <data name="color_title" xml:space="preserve">
+    <value>颜色选择器</value>
+  </data>
+  <data name="settings_default" xml:space="preserve">
+    <value>默认值</value>
+  </data>
 </root>

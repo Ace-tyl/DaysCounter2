@@ -121,5 +121,25 @@ namespace DaysCounter2
         {
             Process.Start(new ProcessStartInfo() { FileName = Lang.Resources.settings_dateTimeFormat_helpUrl, UseShellExecute = true });
         }
+
+        private void LangDefault_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            LanguageSelector.SelectedIndex = 0;
+        }
+
+        private void TimeFormatDefault_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            DateTimeFormatInput.Text = "yyyy/MM/dd HH:mm:ss";
+        }
+
+        private void ColorDefault_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            futureColor = new Color(160, 102, 204, 255);
+            pastColor = new Color(160, 238, 0, 0);
+            distantColor = new Color(0, 0, 0, 0);
+            PickFutureColor.Background = new SolidColorBrush(futureColor);
+            PickPastColor.Background = new SolidColorBrush(pastColor);
+            PickDistantColor.Background = new SolidColorBrush(distantColor);
+        }
     }
 }

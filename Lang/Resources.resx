@@ -408,4 +408,10 @@ New Zealand (most) with DST</value>
   <data name="settings_dateTimeFormat_helpUrl" xml:space="preserve">
     <value>https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
   </data>
+  <data name="color_title" xml:space="preserve">
+    <value>Color Selector</value>
+  </data>
+  <data name="settings_default" xml:space="preserve">
+    <value>Default</value>
+  </data>
 </root>

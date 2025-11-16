@@ -70,6 +70,15 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Color Selector.
+        /// </summary>
+        public static string color_title {
+            get {
+                return ResourceManager.GetString("color_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Event Date:.
         /// </summary>
         public static string editor_date {
@@ -309,6 +318,15 @@ namespace DaysCounter2.Lang {
         public static string settings_dateTimeFormat_helpUrl {
             get {
                 return ResourceManager.GetString("settings_dateTimeFormat_helpUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        public static string settings_default {
+            get {
+                return ResourceManager.GetString("settings_default", resourceCulture);
             }
         }
         
