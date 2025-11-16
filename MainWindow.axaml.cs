@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Reflection;
 using System.Runtime.Serialization.Json;
 using System.Threading;
 using Avalonia.Controls;
@@ -52,6 +53,11 @@ namespace DaysCounter2
             refreshThread = new Thread(RefreshTimer);
             refreshThread.Start();
             languageId = App.settings.languageId;
+            var versionAttribute = (AssemblyFileVersionAttribute?)Assembly.GetExecutingAssembly().GetCustomAttribute(typeof(AssemblyFileVersionAttribute));
+            if (versionAttribute != null)
+            {
+                VersionText.Text += Lang.Resources.ui_version + "\n" + versionAttribute.Version;
+            }
         }
 
         void SaveEvents()
