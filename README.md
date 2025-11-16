@@ -6,6 +6,8 @@ Welcome to use Days Counter 2 by SodiumCl10, aka. [Ace-tyl](https://github.com/A
 
 This software is a days counter timer which can count the time between a past or upcoming event and the present, accurate to second.
 
+![Screenshot](assets/screenshot.jpg)
+
 ## Usage
 
 ### Installation
