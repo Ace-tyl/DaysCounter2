@@ -14,7 +14,9 @@ This software is a days counter timer which can count the time between a past or
 
 First, download the latest release from the [Releases](https://github.com/Ace-tyl/DaysCounter2/releases) page.
 
-Then, extract **all** files from the downloaded zip file to the **same** folder. Double-click the `DaysCounter2.exe` to run.
+For Windows users, extract **all** files from the downloaded zip file to the **same** folder. Double-click the `DaysCounter2.exe` to run.
+
+For Linux and macOS users, extract **all** files from the downloaded zip file to the **same** folder. Execute `chmod +x path/to/your/DaysCounter2` then double-click the `DaysCounter2` to run.
 
 ### Adding Events
 
