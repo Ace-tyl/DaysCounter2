@@ -427,6 +427,6 @@ New Zealand (most) with DST</value>
     <value>Visa inte</value>
   </data>
   <data name="ui_outOfRange" xml:space="preserve">
-    <value>Överstiger den tidsintervall som kan visas</value>
+    <value>Överstiger den tidsintervall som kan visa</value>
   </data>
 </root>
