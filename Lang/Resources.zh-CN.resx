@@ -415,4 +415,19 @@
   <data name="settings_default" xml:space="preserve">
     <value>默认值</value>
   </data>
+  <data name="settings_destination" xml:space="preserve">
+    <value>显示目标时间</value>
+  </data>
+  <data name="settings_destination_always" xml:space="preserve">
+    <value>总是</value>
+  </data>
+  <data name="settings_destination_future" xml:space="preserve">
+    <value>仅未来事件</value>
+  </data>
+  <data name="settings_destination_none" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="ui_outOfRange" xml:space="preserve">
+    <value>超出显示范围</value>
+  </data>
 </root>

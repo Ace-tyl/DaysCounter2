@@ -274,5 +274,10 @@ namespace DaysCounter2.Utils
             }
             return second < another.second;
         }
+
+        public DateTime ToDateTime()
+        {
+            return new DateTime(year, month, day, hour, minute, second);
+        }
     }
 }

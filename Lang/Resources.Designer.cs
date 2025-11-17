@@ -331,6 +331,42 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show Destination Time.
+        /// </summary>
+        public static string settings_destination {
+            get {
+                return ResourceManager.GetString("settings_destination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Always.
+        /// </summary>
+        public static string settings_destination_always {
+            get {
+                return ResourceManager.GetString("settings_destination_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Future Events Only.
+        /// </summary>
+        public static string settings_destination_future {
+            get {
+                return ResourceManager.GetString("settings_destination_future", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string settings_destination_none {
+            get {
+                return ResourceManager.GetString("settings_destination_none", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string settings_language {
@@ -808,6 +844,15 @@ namespace DaysCounter2.Lang {
         public static string ui_new {
             get {
                 return ResourceManager.GetString("ui_new", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beyond Display Range.
+        /// </summary>
+        public static string ui_outOfRange {
+            get {
+                return ResourceManager.GetString("ui_outOfRange", resourceCulture);
             }
         }
         

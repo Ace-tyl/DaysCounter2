@@ -21,6 +21,7 @@ namespace DaysCounter2
         public string name { get; set; } = "";
         public long delta { get; set; }
         public string timerText { get; set; } = "";
+        public string destinationText { get; set; } = "";
         public IBrush brush { get; set; } = new SolidColorBrush();
     }
 
@@ -126,7 +127,7 @@ namespace DaysCounter2
                 }
                 long delta = ev.GetDelta(myNow, myNowJulian);
                 string timerText = "";
-                if (delta > 0)
+                if (delta >= 0)
                 {
                     timerText = string.Format(Lang.Resources.ui_timerLater, delta / 86400, delta / 3600 % 24, delta / 60 % 60, delta % 60);
                 }
@@ -137,12 +138,26 @@ namespace DaysCounter2
                 }
                 double days = Math.Abs(delta / 86400.0);
                 days = Math.Clamp(days, 1, 1000);
+                string destinationText = "";
+                if (App.settings.destinationShowingMode != 2 && (App.settings.destinationShowingMode != 1 || delta >= 0))
+                {
+                    DateTime? dest = ev.GetDestinationDateTime(myNow, myNowJulian);
+                    if (dest == null)
+                    {
+                        destinationText = Lang.Resources.ui_outOfRange;
+                    }
+                    else
+                    {
+                        destinationText = dest.Value.ToString(App.settings.dateTimeFormat, CultureInfo.CreateSpecificCulture(languageId));
+                    }
+                }
                 displayedEvents.Add(new DisplayedEvent
                 {
                     uuid = ev.uuid,
                     name = ev.name,
                     delta = delta,
                     timerText = timerText,
+                    destinationText = destinationText,
                     brush = new SolidColorBrush(ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor, Math.Log(days, 1000)))
                 });
             }

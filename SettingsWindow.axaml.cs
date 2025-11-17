@@ -36,6 +36,7 @@ namespace DaysCounter2
             PickDistantColor.Background = new SolidColorBrush(distantColor);
             DateTimeFormatInput.Text = App.settings.dateTimeFormat;
             defaultBrush = DateTimeFormatInput.Foreground;
+            DestModeSelector.SelectedIndex = App.settings.destinationShowingMode;
         }
 
         private void SaveButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -54,6 +55,7 @@ namespace DaysCounter2
             App.settings.pastColor = pastColor;
             App.settings.distantColor = distantColor;
             App.settings.dateTimeFormat = DateTimeFormatInput.Text ?? "yyyy/MM/dd HH:mm:ss";
+            App.settings.destinationShowingMode = (byte)DestModeSelector.SelectedIndex;
             Close();
         }
 
@@ -140,6 +142,11 @@ namespace DaysCounter2
             PickFutureColor.Background = new SolidColorBrush(futureColor);
             PickPastColor.Background = new SolidColorBrush(pastColor);
             PickDistantColor.Background = new SolidColorBrush(distantColor);
+        }
+
+        private void DestModeDefault_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            DestModeSelector.SelectedIndex = 0;
         }
     }
 }

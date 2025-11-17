@@ -17,6 +17,8 @@ namespace DaysCounter2.Utils
 
         public string dateTimeFormat = "yyyy/MM/dd HH:mm:ss";
 
+        public byte destinationShowingMode = 0;
+
         public Color futureColor
         {
             get

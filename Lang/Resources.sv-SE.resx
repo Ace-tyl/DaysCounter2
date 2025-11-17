@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -118,101 +118,101 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ui_currentTime" xml:space="preserve">
-    <value>Current Time: </value>
+    <value>Aktuell tid: </value>
   </data>
   <data name="ui_delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Stryka</value>
   </data>
   <data name="ui_edit" xml:space="preserve">
-    <value>Edit</value>
+    <value>Redigera</value>
   </data>
   <data name="editor_date" xml:space="preserve">
-    <value>Event Date:</value>
+    <value>Datum:</value>
   </data>
   <data name="editor_date_day" xml:space="preserve">
-    <value>Day</value>
+    <value>Dag</value>
   </data>
   <data name="editor_date_month" xml:space="preserve">
-    <value>Month</value>
+    <value>Månad</value>
   </data>
   <data name="editor_date_year" xml:space="preserve">
-    <value>Year</value>
+    <value>År</value>
   </data>
   <data name="editor_name" xml:space="preserve">
-    <value>Event Name:</value>
+    <value>Namn:</value>
   </data>
   <data name="editor_title" xml:space="preserve">
-    <value>Edit Event</value>
+    <value>Rediger</value>
   </data>
   <data name="ui_new" xml:space="preserve">
-    <value>New</value>
+    <value>Ny</value>
   </data>
   <data name="ui_settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Inställningar</value>
   </data>
   <data name="ui_timerAgo" xml:space="preserve">
-    <value>{0}d {1}h {2}m {3}s ago</value>
+    <value>{0}d {1}t {2}m {3}s föräsedan</value>
   </data>
   <data name="ui_timerLater" xml:space="preserve">
-    <value>{0}d {1}h {2}m {3}s later</value>
+    <value>{0}d {1}t {2}m {3}s sedan</value>
   </data>
   <data name="ui_version" xml:space="preserve">
     <value>Version</value>
   </data>
   <data name="editor_year_bc" xml:space="preserve">
-    <value> ({0:.} BC)</value>
+    <value> (F.K. {0:.})</value>
   </data>
   <data name="editor_time" xml:space="preserve">
-    <value>Event Time:</value>
+    <value>Tid:</value>
   </data>
   <data name="editor_time_hour" xml:space="preserve">
-    <value>Hour</value>
+    <value>Timma</value>
   </data>
   <data name="editor_time_minute" xml:space="preserve">
-    <value>Minute</value>
+    <value>Minut</value>
   </data>
   <data name="editor_time_second" xml:space="preserve">
-    <value>Second</value>
+    <value>Sekund</value>
   </data>
   <data name="editor_time_timeZone" xml:space="preserve">
-    <value>Time Zone</value>
+    <value>Tidszon</value>
   </data>
   <data name="editor_loop" xml:space="preserve">
-    <value>Loop</value>
+    <value>Ögla</value>
   </data>
   <data name="editor_loop_warn" xml:space="preserve">
-    <value>Loop will be activated only after the set time has elapsed.</value>
+    <value>Ögla ska aktivera bara efter ställande tid.</value>
   </data>
   <data name="editor_loop_second" xml:space="preserve">
-    <value>Second(s)</value>
+    <value>Sekund(er)</value>
   </data>
   <data name="editor_loop_minute" xml:space="preserve">
-    <value>Minute(s)</value>
+    <value>Minut(er)</value>
   </data>
   <data name="editor_loop_hour" xml:space="preserve">
-    <value>Hour(s)</value>
+    <value>Timma(r)</value>
   </data>
   <data name="editor_loop_day" xml:space="preserve">
-    <value>Day(s)</value>
+    <value>Dag(ar)</value>
   </data>
   <data name="editor_loop_month" xml:space="preserve">
-    <value>Month(s)</value>
+    <value>Månad(er)</value>
   </data>
   <data name="editor_loop_year" xml:space="preserve">
-    <value>Year(s)</value>
+    <value>År</value>
   </data>
   <data name="editor_save" xml:space="preserve">
-    <value>Save</value>
+    <value>Spara</value>
   </data>
   <data name="ui_delete_warn_title" xml:space="preserve">
-    <value>Warning</value>
+    <value>Varning</value>
   </data>
   <data name="ui_delete_warn" xml:space="preserve">
-    <value>Do you really want to delete this event?
-The operation is irrevocable!</value>
+    <value>Är du säker att stryka det där evenemanget?
+Du kan inte ångra den operationen!</value>
   </data>
   <data name="timeZone_neg1200" xml:space="preserve">
-    <value>Anywhere on Earth (AoE);
+    <value>Var som helst på jorden (AoE);
 Baker Island, Howland Island</value>
   </data>
   <data name="timeZone_neg1100" xml:space="preserve">
@@ -373,60 +373,60 @@ New Zealand (most) with DST</value>
     <value>Kiribati (Line Islands)</value>
   </data>
   <data name="settings_language" xml:space="preserve">
-    <value>Language</value>
+    <value>Språk / Language</value>
   </data>
   <data name="settings_save" xml:space="preserve">
-    <value>Save Settings</value>
+    <value>Spara inställningar</value>
   </data>
   <data name="ui_settings_language" xml:space="preserve">
-    <value>The language modification will take effect after the program is restarted.</value>
+    <value>Språkändringen kommer att träda i kraft efter att programmet startats om.</value>
   </data>
   <data name="ui_settings_language_title" xml:space="preserve">
-    <value>Language Modified</value>
+    <value>Språk modifierat</value>
   </data>
   <data name="ui_search" xml:space="preserve">
-    <value>Search...</value>
+    <value>Sök...</value>
   </data>
   <data name="settings_color" xml:space="preserve">
-    <value>Background Color</value>
+    <value>Bakgrundsfärg</value>
   </data>
   <data name="settings_color_future" xml:space="preserve">
-    <value>Future</value>
+    <value>Framtid</value>
   </data>
   <data name="settings_color_past" xml:space="preserve">
-    <value>Past</value>
+    <value>Förbi</value>
   </data>
   <data name="settings_color_distant" xml:space="preserve">
-    <value>Distant</value>
+    <value>Avlägsen</value>
   </data>
   <data name="color_select" xml:space="preserve">
-    <value>Select Color</value>
+    <value>Välj färg</value>
   </data>
   <data name="settings_dateTimeFormat" xml:space="preserve">
-    <value>Date Time Format</value>
+    <value>Datum och tids format</value>
   </data>
   <data name="settings_dateTimeFormat_helpUrl" xml:space="preserve">
-    <value>https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
+    <value>https://learn.microsoft.com/sv-se/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
   </data>
   <data name="color_title" xml:space="preserve">
-    <value>Color Selector</value>
+    <value>Färgväljare</value>
   </data>
   <data name="settings_default" xml:space="preserve">
-    <value>Default</value>
+    <value>Förval</value>
   </data>
   <data name="settings_destination" xml:space="preserve">
-    <value>Show Destination Time</value>
+    <value>Visa målstid</value>
   </data>
   <data name="settings_destination_always" xml:space="preserve">
-    <value>Always</value>
+    <value>Alltid</value>
   </data>
   <data name="settings_destination_future" xml:space="preserve">
-    <value>Future Events Only</value>
+    <value>Bara framtid</value>
   </data>
   <data name="settings_destination_none" xml:space="preserve">
-    <value>None</value>
+    <value>Visa inte</value>
   </data>
   <data name="ui_outOfRange" xml:space="preserve">
-    <value>Beyond Display Range</value>
+    <value>Överstiger den tidsintervall som kan visas</value>
   </data>
 </root>

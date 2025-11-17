@@ -391,7 +391,7 @@
     <value>背景色</value>
   </data>
   <data name="settings_color_future" xml:space="preserve">
-    <value>未来</value>
+    <value>将来</value>
   </data>
   <data name="settings_color_past" xml:space="preserve">
     <value>過去</value>
@@ -413,5 +413,20 @@
   </data>
   <data name="settings_default" xml:space="preserve">
     <value>既定値</value>
+  </data>
+  <data name="settings_destination" xml:space="preserve">
+    <value>目標時間を表示</value>
+  </data>
+  <data name="settings_destination_always" xml:space="preserve">
+    <value>常に</value>
+  </data>
+  <data name="settings_destination_future" xml:space="preserve">
+    <value>将来のイベントのみ</value>
+  </data>
+  <data name="settings_destination_none" xml:space="preserve">
+    <value>無効</value>
+  </data>
+  <data name="ui_outOfRange" xml:space="preserve">
+    <value>表示範囲を超えています</value>
   </data>
 </root>

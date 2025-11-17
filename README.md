@@ -56,8 +56,11 @@ To customize this application, click the **Settings** button. The following prop
   * English (United States)
   * Simplified Chinese (Chinese Mainland)
   * Japanese (Japan)
+  * Swedish (Sweden)
 
-* **Date Time Format**: Controls the format of date time shown as the current time, default is `yyyy/MM/dd HH:mm:ss`.
+* **Date Time Format**: Controls the format of date time shown as the current time and destination time, default is `yyyy/MM/dd HH:mm:ss`.
+
+  * Date time earlier than Jan 1, 1600 0:00:00 UTC or later than Dec 31, 9999 0:00:00 UTC can't get displayed and will shown as Beyond Display Range, since the incompatibility of our Date Time module with the system Date Time module of C#.
 
 * **Background Color**: Controls the background color of an event item. 3 configurable colors as follows:
 
