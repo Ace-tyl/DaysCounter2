@@ -10,6 +10,7 @@
     <Platforms>AnyCPU;x64;ARM64</Platforms>
     <FileVersion>2.0.5.20251117</FileVersion>
     <AssemblyVersion></AssemblyVersion>
+	<GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.3.8" />
