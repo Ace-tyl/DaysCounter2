@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media;
+using Avalonia.Styling;
 using DaysCounter2.Utils;
+using HarfBuzzSharp;
 
 namespace DaysCounter2
 {
@@ -39,6 +43,18 @@ namespace DaysCounter2
                 }
                 catch { }
                 stream.Close();
+            }
+            if (settings.windowFont != "")
+            {
+                try
+                {
+                    Setter setter = new Setter(Window.FontFamilyProperty, FontFamily.Parse(settings.windowFont));
+                    Styles.Add(new Style(x => x.OfType<Window>())
+                    {
+                        Setters = { setter }
+                    });
+                }
+                catch { }
             }
         }
 

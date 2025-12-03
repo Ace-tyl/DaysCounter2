@@ -367,6 +367,24 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Display Font.
+        /// </summary>
+        public static string settings_font {
+            get {
+                return ResourceManager.GetString("settings_font", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default Font.
+        /// </summary>
+        public static string settings_font_default {
+            get {
+                return ResourceManager.GetString("settings_font_default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string settings_language {
@@ -871,6 +889,24 @@ namespace DaysCounter2.Lang {
         public static string ui_settings {
             get {
                 return ResourceManager.GetString("ui_settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The font modification will take effect after the program is restarted..
+        /// </summary>
+        public static string ui_settings_font {
+            get {
+                return ResourceManager.GetString("ui_settings_font", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Modified.
+        /// </summary>
+        public static string ui_settings_font_title {
+            get {
+                return ResourceManager.GetString("ui_settings_font_title", resourceCulture);
             }
         }
         

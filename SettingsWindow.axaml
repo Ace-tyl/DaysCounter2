@@ -7,11 +7,11 @@
         xmlns:local="using:DaysCounter2"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
         x:Class="DaysCounter2.SettingsWindow"
-        Width="800" Height="300" MinWidth="800" MinHeight="300" x:DataType="local:SettingsWindow"
+        Width="800" Height="350" MinWidth="800" MinHeight="350" x:DataType="local:SettingsWindow"
         Title="{x:Static lang:Resources.ui_settings}">
     <DockPanel>
 		<Button DockPanel.Dock="Bottom" Height="40" HorizontalAlignment="Stretch" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Content="{x:Static lang:Resources.settings_save}" x:Name="SaveButton" Click="SaveButton_Click"></Button>
-        <Grid Margin="10" ColumnDefinitions="200,*,100" ColumnSpacing="10" RowDefinitions="40,40,40,40,*" RowSpacing="10">
+        <Grid Margin="10" ColumnDefinitions="200,*,100" ColumnSpacing="10" RowDefinitions="40,40,40,40,40,*" RowSpacing="10">
             <TextBlock Grid.Row="0" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_language}"></TextBlock>
             <ComboBox Grid.Row="0" Grid.Column="1" x:DataType="utils:LanguageManager" ItemsSource="{Binding languages}" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="LanguageSelector">
                 <ComboBox.ItemTemplate>
@@ -41,6 +41,11 @@
                 <ComboBoxItem Content="{x:Static lang:Resources.settings_destination_none}"></ComboBoxItem>
             </ComboBox>
             <Button Grid.Row="3" Grid.Column="2" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="DestModeDefault_Click"></Button>
+            <TextBlock Grid.Row="4" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_font}"></TextBlock>
+            <ComboBox Grid.Row="4" Grid.Column="1" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="FontSelector" SelectedIndex="0">
+                <ComboBoxItem Content="{x:Static lang:Resources.settings_font_default}"></ComboBoxItem>
+            </ComboBox>
+            <Button Grid.Row="4" Grid.Column="2" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="FontDefault_Click"></Button>
         </Grid>
     </DockPanel>
 </Window>

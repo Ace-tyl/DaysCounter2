@@ -429,4 +429,16 @@ New Zealand (most) with DST</value>
   <data name="ui_outOfRange" xml:space="preserve">
     <value>Beyond Display Range</value>
   </data>
+  <data name="settings_font" xml:space="preserve">
+    <value>Display Font</value>
+  </data>
+  <data name="settings_font_default" xml:space="preserve">
+    <value>Default Font</value>
+  </data>
+  <data name="ui_settings_font" xml:space="preserve">
+    <value>The font modification will take effect after the program is restarted.</value>
+  </data>
+  <data name="ui_settings_font_title" xml:space="preserve">
+    <value>Font Modified</value>
+  </data>
 </root>

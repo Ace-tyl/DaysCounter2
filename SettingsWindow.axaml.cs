@@ -5,6 +5,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using Avalonia.Platform;
+using Avalonia.Styling;
 using DaysCounter2.Utils;
 
 namespace DaysCounter2
@@ -13,10 +15,13 @@ namespace DaysCounter2
     {
         public bool savedSettings = false;
         public bool languageModified = false;
+        public bool fontModified = false;
 
         Color futureColor { get; set; }
         Color pastColor { get; set; }
         Color distantColor { get; set; }
+
+        string fontName = "";
 
         IBrush? defaultBrush;
 
@@ -37,6 +42,22 @@ namespace DaysCounter2
             DateTimeFormatInput.Text = App.settings.dateTimeFormat;
             defaultBrush = DateTimeFormatInput.Foreground;
             DestModeSelector.SelectedIndex = App.settings.destinationShowingMode;
+            var systemFonts = FontManager.Current.SystemFonts;
+            int index = 0;
+            foreach (var font in systemFonts)
+            {
+                var name = font.Name;
+                if (name == App.settings.windowFont)
+                {
+                    index = FontSelector.Items.Count;
+                }
+                FontSelector.Items.Add(new ComboBoxItem()
+                {
+                    Content = name,
+                    FontFamily = font
+                });
+            }
+            FontSelector.SelectedIndex = index;
         }
 
         private void SaveButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -56,6 +77,22 @@ namespace DaysCounter2
             App.settings.distantColor = distantColor;
             App.settings.dateTimeFormat = DateTimeFormatInput.Text ?? "yyyy/MM/dd HH:mm:ss";
             App.settings.destinationShowingMode = (byte)DestModeSelector.SelectedIndex;
+            string oldFamilyName = App.settings.windowFont;
+            if (FontSelector.SelectedItem != null)
+            {
+                if (FontSelector.SelectedIndex > 0)
+                {
+                    App.settings.windowFont = ((ComboBoxItem)FontSelector.SelectedItem).FontFamily.Name;
+                }
+                else
+                {
+                    App.settings.windowFont = "";
+                }
+                if (oldFamilyName != App.settings.windowFont)
+                {
+                    fontModified = true;
+                }
+            }
             Close();
         }
 
@@ -147,6 +184,11 @@ namespace DaysCounter2
         private void DestModeDefault_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             DestModeSelector.SelectedIndex = 0;
+        }
+
+        private void FontDefault_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            FontSelector.SelectedIndex = 0;
         }
     }
 }

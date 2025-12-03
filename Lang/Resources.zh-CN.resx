@@ -196,7 +196,7 @@
     <value>天</value>
   </data>
   <data name="editor_loop_month" xml:space="preserve">
-    <value>月</value>
+    <value>个月</value>
   </data>
   <data name="editor_loop_year" xml:space="preserve">
     <value>年</value>
@@ -429,5 +429,17 @@
   </data>
   <data name="ui_outOfRange" xml:space="preserve">
     <value>超出显示范围</value>
+  </data>
+  <data name="settings_font" xml:space="preserve">
+    <value>显示字体</value>
+  </data>
+  <data name="settings_font_default" xml:space="preserve">
+    <value>默认字体</value>
+  </data>
+  <data name="ui_settings_font" xml:space="preserve">
+    <value>字体的修改将在重启程序后生效。</value>
+  </data>
+  <data name="ui_settings_font_title" xml:space="preserve">
+    <value>字体已修改</value>
   </data>
 </root>

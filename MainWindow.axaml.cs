@@ -272,6 +272,11 @@ namespace DaysCounter2
                     var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_settings_language_title, Lang.Resources.ui_settings_language, MsBox.Avalonia.Enums.ButtonEnum.Ok);
                     await msgbox.ShowWindowDialogAsync(this);
                 }
+                if (settingsWindow.fontModified)
+                {
+                    var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_settings_font_title, Lang.Resources.ui_settings_font, MsBox.Avalonia.Enums.ButtonEnum.Ok);
+                    await msgbox.ShowWindowDialogAsync(this);
+                }
             }
         }
 

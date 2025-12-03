@@ -19,6 +19,8 @@ namespace DaysCounter2.Utils
 
         public byte destinationShowingMode = 0;
 
+        public string windowFont = "";
+
         public Color futureColor
         {
             get
