@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 using DaysCounter2.Utils;
 
 namespace DaysCounter2

@@ -1,12 +1,7 @@
 using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using Avalonia.Platform;
-using Avalonia.Styling;
 using DaysCounter2.Utils;
 
 namespace DaysCounter2

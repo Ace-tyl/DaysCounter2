@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using Avalonia;
@@ -9,7 +8,6 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.Styling;
 using DaysCounter2.Utils;
-using HarfBuzzSharp;
 
 namespace DaysCounter2
 {
