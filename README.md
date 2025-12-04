@@ -59,6 +59,7 @@ To customize this application, click the **Settings** button. The following prop
   * Simplified Chinese (Chinese Mainland)
   * Japanese (Japan)
   * Swedish (Sweden)
+  * Traditional Chinese (Chinese Taiwan)
 
 * **Date Time Format**: Controls the format of date time shown as the current time and destination time, default is `yyyy/MM/dd HH:mm:ss`.
 

@@ -18,6 +18,7 @@ namespace DaysCounter2.Utils
             new("简体中文 (中国大陆)", "zh-CN", FlowDirection.LeftToRight),
             new("日本語 (日本)", "ja", FlowDirection.LeftToRight),
             new("Svenska (Sverige)", "sv-SE", FlowDirection.LeftToRight),
+            new("繁體中文 (中國台灣)", "zh-TW", FlowDirection.LeftToRight)
         ];
     }
 }
