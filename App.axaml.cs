@@ -54,6 +54,12 @@ namespace DaysCounter2
                 }
                 catch { }
             }
+            LanguageData data = LanguageManager.languages.Find((language) => language.id == settings.languageId) ?? LanguageManager.languages[0];
+            Setter flowSetter = new Setter(Window.FlowDirectionProperty, data.flowDirection);
+            Styles.Add(new Style(x => x.OfType<Window>())
+            {
+                Setters = { flowSetter }
+            });
         }
 
         public override void OnFrameworkInitializationCompleted()
