@@ -212,165 +212,165 @@
 Du kan inte ångra den operationen!</value>
   </data>
   <data name="timeZone_neg1200" xml:space="preserve">
-    <value>Var som helst på jorden (AoE);
-Baker Island, Howland Island</value>
+    <value>Anywhere on Earth (AoE);
+Bakerön, Howlandön</value>
   </data>
   <data name="timeZone_neg1100" xml:space="preserve">
-    <value>American Samoa, Jarvis Island, Kingman Reef, Midway Atoll, Niue, Palmyra Atoll</value>
+    <value>Amerikanska Samoa, Jarvisön, Kingman Reef, Midwayatollen, Niue, Palmyraatollen</value>
   </data>
   <data name="timeZone_neg1000" xml:space="preserve">
-    <value>Cook Islands, French Polynesia (most), Johnston Atoll, United States (Hawaii);
-United States (Andreanof Islands, Islands of Four Mountains, Near Islands, Rat Islands) without DST</value>
+    <value>Cooköarna, Franska Polynesien (större delen), Johnstonatollen, USA (Hawaii);
+USA (Andreanoföarna, Islands of Four Mountains, Nearöarna, Råttöarna) utan sommartid</value>
   </data>
   <data name="timeZone_neg0930" xml:space="preserve">
-    <value>French Polynesia (Marquesas Islands)</value>
+    <value>Franska Polynesien (Marquesasöarna)</value>
   </data>
   <data name="timeZone_neg0900" xml:space="preserve">
-    <value>French Polynesia (Gambier Islands);
-United States (Alaska (most)) without DST;
-United States (Andreanof Islands, Islands of Four Mountains, Near Islands, Rat Islands) with DST</value>
+    <value>Franska Polynesien (Gambieröarna);
+USA (Alaska (större delen)) utan sommartid;
+USA (Andreanoföarna, Islands of Four Mountains, Nearöarna, Råttöarna) med sommartid</value>
   </data>
   <data name="timeZone_neg0800" xml:space="preserve">
-    <value>Clipperton Island, Pitcairn Islands;
-Canada (British Columbia (most)), Mexico (Baja California), United States (California, Idaho (north), Nevada (most), Oregon (most), Washington) without DST;
-United States (Alaska (most)) with DST</value>
+    <value>Clippertonön, Pitcairnöarna;
+Kanada (British Columbia (större delen)), Mexiko (Baja California), USA (Kalifornien, Idaho (norra), Nevada (större delen), Oregon (större delen), Washington) utan sommartid;
+USA (Alaska (större delen)) med sommartid</value>
   </data>
   <data name="timeZone_neg0700" xml:space="preserve">
-    <value>Canada (British Columbia (northeast), Yukon), Mexico (Baja California Sur, Nayarit (most), Sinaloa, Sonora), United States (Arizona (most));
-Canada (Alberta, British Columbia (southeast), Northwest Territories, Nunavut (west), Saskatchewan (Lloydminster area)), Mexico (Chihuahua (northwest border)), United States (Arizona (Navajo Nation), Colorado, Idaho (most), Kansas (west), Montana, Nebraska (west), New Mexico, Nevada (northeast border), North Dakota (southwest), Oregon (east), South Dakota (west), Texas (west), Utah, Wyoming) without DST;
-Canada (British Columbia (most)), Mexico (Baja California), United States (California, Idaho (north), Nevada (most), Oregon (most), Washington) with DST</value>
+    <value>Kanada (British Columbia (nordost), Yukon), Mexiko (Baja California Sur, Nayarit (större delen), Sinaloa, Sonora), USA (Arizona (större delen));
+Kanada (Alberta, British Columbia (sydost), Northwest Territories, Nunavut (västra), Saskatchewan (Lloydminsterområdet)), Mexiko (Chihuahua (nordvästra gränsen)), USA (Arizona (Navajo Nation), Colorado, Idaho (större delen), Kansas (västra), Montana, Nebraska (västra), New Mexico, Nevada (nordöstra gränsen), North Dakota (sydväst), Oregon (östra), South Dakota (västra), Texas (västra), Utah, Wyoming) utan sommartid;
+Kanada (British Columbia (större delen)), Mexiko (Baja California), USA (Kalifornien, Idaho (norra), Nevada (större delen), Oregon (större delen), Washington) med sommartid</value>
   </data>
   <data name="timeZone_neg0600" xml:space="preserve">
-    <value>Belize, Canada (Saskatchewan (most)), Costa Rica, Ecuador (Galápagos), El Salvador, Guatemala, Honduras, Mexico (most), Nicaragua;
-Canada (Manitoba, Nunavut (central), Ontario (west)), Chile (Easter Island), Mexico (northeast border), United States (Alabama, Arkansas, Florida (northwest), Illinois, Indiana (northwest, southwest), Iowa, Kansas (most), Kentucky (west), Louisiana, Michigan (northwest border), Minnesota, Mississippi, Missouri, Nebraska (most), North Dakota (most), Oklahoma, South Dakota (most), Tennessee (most), Texas (most), Wisconsin) without DST;
-Canada (Alberta, British Columbia (southeast), Northwest Territories, Nunavut (west), Saskatchewan (Lloydminster area)), Mexico (Chihuahua (northwest border)), United States (Arizona (Navajo Nation), Colorado, Idaho (most), Kansas (west), Montana, Nebraska (west), New Mexico, Nevada (northeast border), North Dakota (southwest), Oregon (east), South Dakota (west), Texas (west), Utah, Wyoming) with DST</value>
+    <value>Belize, Kanada (Saskatchewan (större delen)), Costa Rica, Ecuador (Galápagos), El Salvador, Guatemala, Honduras, Mexiko (större delen), Nicaragua;
+Kanada (Manitoba, Nunavut (centrala), Ontario (västra)), Chile (Påskön), Mexiko (nordöstra gränsen), USA (Alabama, Arkansas, Florida (nordvästra), Illinois, Indiana (nordväst, sydväst), Iowa, Kansas (större delen), Kentucky (västra), Louisiana, Michigan (nordvästra gränsen), Minnesota, Mississippi, Missouri, Nebraska (större delen), North Dakota (större delen), Oklahoma, South Dakota (större delen), Tennessee (större delen), Texas (större delen), Wisconsin) utan sommartid;
+Kanada (Alberta, British Columbia (sydost), Northwest Territories, Nunavut (västra), Saskatchewan (Lloydminsterområdet)), Mexiko (Chihuahua (nordvästra gränsen)), USA (Arizona (Navajo Nation), Colorado, Idaho (större delen), Kansas (västra), Montana, Nebraska (västra), New Mexico, Nevada (nordöstra gränsen), North Dakota (sydväst), Oregon (östra), South Dakota (västra), Texas (västra), Utah, Wyoming) med sommartid</value>
   </data>
   <data name="timeZone_neg0500" xml:space="preserve">
-    <value>Brazil (Acre, Amazonas (southwest)), Canada (Atikokan, Mishkeegogamang, Southampton Island), Cayman Islands, Colombia, Ecuador (most), Jamaica, Mexico (Quintana Roo), Navassa Island, Panama, Peru;
-Bahamas, Canada (Nunavut (east), Ontario (most), Quebec (most)), Cuba, Haiti, Turks and Caicos Islands, United States (Connecticut, Delaware, District of Columbia, Florida (most), Georgia, Indiana (most), Kentucky (east), Maine, Maryland, Massachusetts, Michigan (most), New Hampshire, New Jersey, New York, North Carolina, Ohio, Pennsylvania, Rhode Island, South Carolina, Tennessee (east), Vermont, Virginia, West Virginia) without DST;
-Canada (Manitoba, Nunavut (central), Ontario (west)), Chile (Easter Island), Mexico (northeast border), United States (Alabama, Arkansas, Florida (northwest), Illinois, Indiana (northwest, southwest), Iowa, Kansas (most), Kentucky (west), Louisiana, Michigan (northwest border), Minnesota, Mississippi, Missouri, Nebraska (most), North Dakota (most), Oklahoma, South Dakota (most), Tennessee (most), Texas (most), Wisconsin) with DST</value>
+    <value>Brasilien (Acre, Amazonas (sydvästra)), Kanada (Atikokan, Mishkeegogamang, Southampton Island), Caymanöarna, Colombia, Ecuador (större delen), Jamaica, Mexiko (Quintana Roo), Navassaön, Panama, Peru;
+Bahamas, Kanada (Nunavut (östra), Ontario (större delen), Québec (större delen)), Kuba, Haiti, Turks- och Caicosöarna, USA (Connecticut, Delaware, District of Columbia, Florida (större delen), Georgia, Indiana (större delen), Kentucky (östra), Maine, Maryland, Massachusetts, Michigan (större delen), New Hampshire, New Jersey, New York, North Carolina, Ohio, Pennsylvania, Rhode Island, South Carolina, Tennessee (östra), Vermont, Virginia, West Virginia) utan sommartid;
+Kanada (Manitoba, Nunavut (centrala), Ontario (västra)), Chile (Påskön), Mexiko (nordöstra gränsen), USA (Alabama, Arkansas, Florida (nordvästra), Illinois, Indiana (nordväst, sydväst), Iowa, Kansas (större delen), Kentucky (västra), Louisiana, Michigan (nordvästra gränsen), Minnesota, Mississippi, Missouri, Nebraska (större delen), North Dakota (större delen), Oklahoma, South Dakota (större delen), Tennessee (större delen), Texas (större delen), Wisconsin) med sommartid</value>
   </data>
   <data name="timeZone_neg0400" xml:space="preserve">
-    <value>Anguilla, Antigua and Barbuda, Aruba, Barbados, Bolivia, Brazil (Amazonas (most), Mato Grosso, Mato Grosso do Sul, Rondônia, Roraima), British Virgin Islands, Canada (Quebec (east)), Caribbean Netherlands, Curaçao, Dominica, Dominican Republic, Grenada, Guadeloupe, Guyana, Martinique, Montserrat, Puerto Rico, Saint Barthélemy, Saint Kitts and Nevis, Saint Lucia, Saint Martin, Saint Vincent and the Grenadines, Sint Maarten, Trinidad and Tobago, U.S. Virgin Islands, Venezuela;
-Bermuda, Canada (Labrador (most), New Brunswick, Nova Scotia, Prince Edward Island), Chile (most), Greenland (Pituffik Space Base) without DST;
-Bahamas, Canada (Nunavut (east), Ontario (most), Quebec (most)), Cuba, Haiti, Turks and Caicos Islands, United States (Connecticut, Delaware, District of Columbia, Florida (most), Georgia, Indiana (most), Kentucky (east), Maine, Maryland, Massachusetts, Michigan (most), New Hampshire, New Jersey, New York, North Carolina, Ohio, Pennsylvania, Rhode Island, South Carolina, Tennessee (east), Vermont, Virginia, West Virginia) with DST</value>
+    <value>Anguilla, Antigua och Barbuda, Aruba, Barbados, Bolivia, Brasilien (Amazonas (större delen), Mato Grosso, Mato Grosso do Sul, Rondônia, Roraima), Brittiska Jungfruöarna, Kanada (Québec (östra)), Karibiska Nederländerna, Curaçao, Dominica, Dominikanska republiken, Grenada, Guadeloupe, Guyana, Martinique, Montserrat, Puerto Rico, Saint-Barthélemy, Saint Kitts och Nevis, Saint Lucia, Saint Martin, Saint Vincent och Grenadinerna, Sint Maarten, Trinidad och Tobago, Amerikanska Jungfruöarna, Venezuela;
+Bermuda, Kanada (Labrador (större delen), New Brunswick, Nova Scotia, Prince Edward Island), Chile (större delen), Grönland (Pituffik Space Base) utan sommartid;
+Bahamas, Kanada (Nunavut (östra), Ontario (större delen), Québec (större delen)), Kuba, Haiti, Turks- och Caicosöarna, USA (Connecticut, Delaware, District of Columbia, Florida (större delen), Georgia, Indiana (större delen), Kentucky (östra), Maine, Maryland, Massachusetts, Michigan (större delen), New Hampshire, New Jersey, New York, North Carolina, Ohio, Pennsylvania, Rhode Island, South Carolina, Tennessee (östra), Vermont, Virginia, West Virginia) med sommartid</value>
   </data>
   <data name="timeZone_neg0330" xml:space="preserve">
-    <value>Canada (Newfoundland, Labrador (southeast)) without DST</value>
+    <value>Kanada (Newfoundland, Labrador (sydost)) utan sommartid</value>
   </data>
   <data name="timeZone_neg0300" xml:space="preserve">
-    <value>Argentina, Brazil (most), Chile (Aysén, Magallanes), Falkland Islands, French Guiana, Paraguay, Suriname, Uruguay;
-Saint Pierre and Miquelon without DST;
-Bermuda, Canada (Labrador (most), New Brunswick, Nova Scotia, Prince Edward Island), Chile (most), Greenland (Pituffik Space Base) with DST</value>
+    <value>Argentina, Brasilien (större delen), Chile (Aysén, Magallanes), Falklandsöarna, Franska Guyana, Paraguay, Surinam, Uruguay;
+Saint-Pierre och Miquelon utan sommartid;
+Bermuda, Kanada (Labrador (större delen), New Brunswick, Nova Scotia, Prince Edward Island), Chile (större delen), Grönland (Pituffik Space Base) med sommartid</value>
   </data>
   <data name="timeZone_neg0230" xml:space="preserve">
-    <value>Canada (Newfoundland, Labrador (southeast)) with DST</value>
+    <value>Kanada (Newfoundland, Labrador (sydost)) med sommartid</value>
   </data>
   <data name="timeZone_neg0200" xml:space="preserve">
-    <value>Brazil (Fernando de Noronha), South Georgia and the South Sandwich Islands;
-Greenland (most) without DST;
-Saint Pierre and Miquelon with DST</value>
+    <value>Brasilien (Fernando de Noronha), South Georgia och South Sandwichöarna;
+Grönland (större delen) utan sommartid;
+Saint-Pierre och Miquelon med sommartid</value>
   </data>
   <data name="timeZone_neg0100" xml:space="preserve">
-    <value>Cape Verde;
-Portugal (Azores) without DST;
-Greenland (most) with DST</value>
+    <value>Kap Verde;
+Portugal (Azorerna) utan sommartid;
+Grönland (större delen) med sommartid</value>
   </data>
   <data name="timeZone_pos0000" xml:space="preserve">
-    <value>Burkina Faso, Gambia, Ghana, Greenland (National Park (east coast)), Guinea, Guinea-Bissau, Iceland, Ivory Coast, Liberia, Mali, Mauritania, Saint Helena, Ascension and Tristan da Cunha, Senegal, Sierra Leone, São Tomé and Príncipe, Togo;
-Faroe Islands, Guernsey, Ireland, Isle of Man, Jersey, Portugal (most), Spain (Canary Islands), United Kingdom without DST;
-Portugal (Azores) with DST</value>
+    <value>Burkina Faso, Gambia, Ghana, Grönland (Nationalparken (ostkusten)), Guinea, Guinea-Bissau, Island, Elfenbenskusten, Liberia, Mali, Mauretanien, Sankta Helena, Ascension och Tristan da Cunha, Senegal, Sierra Leone, São Tomé och Príncipe, Togo;
+Färöarna, Guernsey, Irland, Isle of Man, Jersey, Portugal (större delen), Spanien (Kanarieöarna), Storbritannien utan sommartid;
+Portugal (Azorerna) med sommartid</value>
   </data>
   <data name="timeZone_pos0048" xml:space="preserve">
-    <value>Kindom of Elleore without DST</value>
+    <value>Kungariket Elleore utan sommartid</value>
   </data>
   <data name="timeZone_pos0100" xml:space="preserve">
-    <value>Algeria, Angola, Benin, Cameroon, Central African Republic, Chad, Congo, DR Congo (Équateur, Kinshasa, Kongo Central, Kwango, Kwilu, Mai-Ndombe, Mongala, Nord-Ubangi, Sud-Ubangi, Tshuapa), Equatorial Guinea, Gabon, Morocco, Niger, Nigeria, Tunisia;
-Albania, Andorra, Austria, Belgium, Bosnia and Herzegovina, Croatia, Czech Republic, Denmark, France (metropolitan), Germany, Gibraltar, Hungary, Italy, Liechtenstein, Luxembourg, Malta, Monaco, Montenegro, Netherlands (European), North Macedonia, Norway, Poland, San Marino, Serbia, Slovakia, Slovenia, Spain (most), Sweden, Switzerland, Vatican City without DST;
-Faroe Islands, Guernsey, Ireland, Isle of Man, Jersey, Portugal (most), Spain (Canary Islands), United Kingdom with DST</value>
+    <value>Algeriet, Angola, Benin, Kamerun, Centralafrikanska republiken, Tchad, Kongo, DR Kongo (Équateur, Kinshasa, Kongo Central, Kwango, Kwilu, Mai-Ndombe, Mongala, Nord-Ubangi, Sud-Ubangi, Tshuapa), Ekvatorialguinea, Gabon, Marocko, Niger, Nigeria, Tunisien;
+Albanien, Andorra, Österrike, Belgien, Bosnien och Hercegovina, Kroatien, Tjeckien, Danmark, Frankrike (metropolitan), Tyskland, Gibraltar, Ungern, Italien, Liechtenstein, Luxemburg, Malta, Monaco, Montenegro, Nederländerna (europeiska), Nordmakedonien, Norge, Polen, San Marino, Serbien, Slovakien, Slovenien, Spanien (större delen), Sverige, Schweiz, Vatikanstaten utan sommartid;
+Färöarna, Guernsey, Irland, Isle of Man, Jersey, Portugal (större delen), Spanien (Kanarieöarna), Storbritannien med sommartid</value>
   </data>
   <data name="timeZone_pos0148" xml:space="preserve">
-    <value>Kindom of Elleore with DST</value>
+    <value>Kungariket Elleore med sommartid</value>
   </data>
   <data name="timeZone_pos0200" xml:space="preserve">
-    <value>Botswana, Burundi, DR Congo (most), Eswatini, Lesotho, Libya, Malawi, Mozambique, Namibia, Russia (Kaliningrad), Rwanda, South Africa (most), South Sudan, Sudan, Zambia, Zimbabwe;
-Akrotiri and Dhekelia, Bulgaria, Cyprus, Egypt, Estonia, Finland, Greece, Israel, Latvia, Lebanon, Lithuania, Moldova, Palestine, Romania, Ukraine (most) without DST;
-Albania, Andorra, Austria, Belgium, Bosnia and Herzegovina, Croatia, Czech Republic, Denmark, France (metropolitan), Germany, Gibraltar, Hungary, Italy, Liechtenstein, Luxembourg, Malta, Monaco, Montenegro, Netherlands (European), North Macedonia, Norway, Poland, San Marino, Serbia, Slovakia, Slovenia, Spain (most), Sweden, Switzerland, Vatican City with DST</value>
+    <value>Botswana, Burundi, DR Kongo (större delen), Eswatini, Lesotho, Libyen, Malawi, Moçambique, Namibia, Ryssland (Kaliningrad), Rwanda, Sydafrika (större delen), Sydsudan, Sudan, Zambia, Zimbabwe;
+Akrotiri och Dhekelia, Bulgarien, Cypern, Egypten, Estland, Finland, Grekland, Israel, Lettland, Libanon, Litauen, Moldavien, Palestina, Rumänien, Ukraina (större delen) utan sommartid;
+Albanien, Andorra, Österrike, Belgien, Bosnien och Hercegovina, Kroatien, Tjeckien, Danmark, Frankrike (metropolitan), Tyskland, Gibraltar, Ungern, Italien, Liechtenstein, Luxemburg, Malta, Monaco, Montenegro, Nederländerna (europeiska), Nordmakedonien, Norge, Polen, San Marino, Serbien, Slovakien, Slovenien, Spanien (större delen), Sverige, Schweiz, Vatikanstaten med sommartid</value>
   </data>
   <data name="timeZone_pos0300" xml:space="preserve">
-    <value>Bahrain, Belarus, Comoros, Djibouti, Eritrea, Ethiopia, French Southern and Antarctic Lands (Scattered Islands), Iraq, Jordan, Kenya, Kuwait, Madagascar, Mayotte, Qatar, Russia (most of European part), Saudi Arabia, Somalia, South Africa (Prince Edward Islands), Syria, Tanzania, Türkiye, Uganda, Ukraine (occupied territories), Yemen;
-Akrotiri and Dhekelia, Bulgaria, Cyprus, Egypt, Estonia, Finland, Greece, Israel, Latvia, Lebanon, Lithuania, Moldova, Palestine, Romania, Ukraine (most) with DST</value>
+    <value>Bahrain, Belarus, Komorerna, Djibouti, Eritrea, Etiopien, Franska södra territorierna (Spridda öarna), Irak, Jordanien, Kenya, Kuwait, Madagaskar, Mayotte, Qatar, Ryssland (större delen av den europeiska delen), Saudiarabien, Somalia, Sydafrika (Prince Edward Islands), Syrien, Tanzania, Turkiet, Uganda, Ukraina (ockuperade områden), Jemen;
+Akrotiri och Dhekelia, Bulgarien, Cypern, Egypten, Estland, Finland, Grekland, Israel, Lettland, Libanon, Litauen, Moldavien, Palestina, Rumänien, Ukraina (större delen) med sommartid</value>
   </data>
   <data name="timeZone_pos0330" xml:space="preserve">
     <value>Iran</value>
   </data>
   <data name="timeZone_pos0400" xml:space="preserve">
-    <value>Armenia, Azerbaijan, French Southern and Antarctic Lands (Crozet Islands), Georgia, Mauritius, Oman, Russia (Astrakhan, Samara, Saratov, Udmurtia, Ulyanovsk), Réunion, Seychelles, United Arab Emirates</value>
+    <value>Armenien, Azerbajdzjan, Franska södra territorierna (Crozetöarna), Georgien, Mauritius, Oman, Ryssland (Astrachan, Samara, Saratov, Udmurtien, Uljanovsk), Réunion, Seychellerna, Förenade Arabemiraten</value>
   </data>
   <data name="timeZone_pos0430" xml:space="preserve">
     <value>Afghanistan</value>
   </data>
   <data name="timeZone_pos0500" xml:space="preserve">
-    <value>French Southern and Antarctic Lands (Kerguelen Islands, Saint Paul Island, Amsterdam Island), Heard Island and McDonald Islands, Kazakhstan, Maldives, Pakistan, Russia (Bashkortostan, Chelyabinsk, Khanty-Mansi, Kurgan, Orenburg, Perm, Sverdlovsk, Tyumen, Yamalia), Tajikistan, Turkmenistan, Uzbekistan</value>
+    <value>Franska södra territorierna (Kerguelenöarna, Saint Paul Island, Amsterdam Island), Heard- och McDonaldöarna, Kazakstan, Maldiverna, Pakistan, Ryssland (Basjkirien, Tjeljabinsk, Chanty-Mansijsk, Kurgan, Orenburg, Perm, Sverdlovsk, Tiumen, Jamalien), Tadzjikistan, Turkmenistan, Uzbekistan</value>
   </data>
   <data name="timeZone_pos0530" xml:space="preserve">
-    <value>India, Sri Lanka</value>
+    <value>Indien, Sri Lanka</value>
   </data>
   <data name="timeZone_pos0545" xml:space="preserve">
     <value>Nepal</value>
   </data>
   <data name="timeZone_pos0600" xml:space="preserve">
-    <value>Bangladesh, Bhutan, British Indian Ocean Territory, Kyrgyzstan, Russia (Omsk)</value>
+    <value>Bangladesh, Bhutan, Brittiska Indiska oceanterritoriet, Kirgizistan, Ryssland (Omsk)</value>
   </data>
   <data name="timeZone_pos0630" xml:space="preserve">
-    <value>Cocos Islands, Myanmar</value>
+    <value>Cocosöarna, Myanmar</value>
   </data>
   <data name="timeZone_pos0700" xml:space="preserve">
-    <value>Cambodia, Christmas Island, Indonesia (Sumatra, Java, West Kalimantan, Central Kalimantan), Laos, Mongolia (Bayan-Ölgii, Khovd, Uvs), Russia (Altai Krai, Altai Republic, Kemerovo, Khakassia, Krasnoyarsk, Novosibirsk, Tomsk, Tuva), Thailand, Vietnam</value>
+    <value>Kambodja, Julön, Indonesien (Sumatra, Java, Västra Kalimantan, Centrala Kalimantan), Laos, Mongoliet (Bayan-Ölgii, Khovd, Uvs), Ryssland (Altaj kraj, Altajrepubliken, Kemerovo, Chakassien, Krasnojarsk, Novosibirsk, Tomsk, Tuva), Thailand, Vietnam</value>
   </data>
   <data name="timeZone_pos0800" xml:space="preserve">
-    <value>Australia (Western Australia), Brunei, China, Indonesia (South Kalimantan, East Kalimantan, North Kalimantan, Sulawesi, Lesser Sunda Islands), Malaysia, Mongolia (most), Philippines, Russia (Buryatia, Irkutsk), Singapore</value>
+    <value>Australien (Västaustralien), Brunei, Kina, Indonesien (Södra Kalimantan, Östra Kalimantan, Norra Kalimantan, Sulawesi, Små Sundaöarna), Malaysia, Mongoliet (större delen), Filippinerna, Ryssland (Burjatien, Irkutsk), Singapore</value>
   </data>
   <data name="timeZone_pos0845" xml:space="preserve">
-    <value>Australia (Eucla)</value>
+    <value>Australien (Eucla)</value>
   </data>
   <data name="timeZone_pos0900" xml:space="preserve">
-    <value>Indonesia (Maluku Islands, Western New Guinea), Japan, North Korea, Palau, Russia (Amur, Sakha (most), Zabaykalsky), South Korea, Timor-Leste</value>
+    <value>Indonesien (Moluckerna, Västra Nya Guinea), Japan, Nordkorea, Palau, Ryssland (Amur, Sacha (större delen), Zabajkalsk), Sydkorea, Östtimor</value>
   </data>
   <data name="timeZone_pos0930" xml:space="preserve">
-    <value>Australia (Northern Territory);
-Australia (South Australia, Yancowinna County) without DST</value>
+    <value>Australien (Northern Territory);
+Australien (South Australia, Yancowinna County) utan sommartid</value>
   </data>
   <data name="timeZone_pos1000" xml:space="preserve">
-    <value>Australia (Queensland), Guam, Micronesia (Chuuk, Yap), Northern Mariana Islands, Papua New Guinea (most), Russia (Jewish, Khabarovsk, Primorsky, Sakha (central-east));
-Australia (Australian Capital Territory, Jervis Bay Territory, New South Wales (most), Tasmania, Victoria) without DST</value>
+    <value>Australien (Queensland), Guam, Mikronesien (Chuuk, Yap), Nordmarianerna, Papua Nya Guinea (större delen), Ryssland (Judiska autonoma oblastet, Chabarovsk, Primorje, Sacha (centrala–östra));
+Australien (Australian Capital Territory, Jervis Bay Territory, New South Wales (större delen), Tasmanien, Victoria) utan sommartid</value>
   </data>
   <data name="timeZone_pos1030" xml:space="preserve">
-    <value>Australia (Lord Howe Island) without DST;
-Australia (South Australia, Yancowinna County) with DST</value>
+    <value>Australien (Lord Howe Island) utan sommartid;
+Australien (South Australia, Yancowinna County) med sommartid</value>
   </data>
   <data name="timeZone_pos1100" xml:space="preserve">
-    <value>Micronesia (Kosrae, Pohnpei), New Caledonia, Papua New Guinea (Bougainville), Russia (Magadan, Sakha (east), Sakhalin), Solomon Islands, Vanuatu;
-Norfolk Island without DST;
-Australia (Australian Capital Territory, Jervis Bay Territory, Lord Howe Island, New South Wales (most), Tasmania, Victoria) with DST</value>
+    <value>Mikronesien (Kosrae, Pohnpei), Nya Kaledonien, Papua Nya Guinea (Bougainville), Ryssland (Magadan, Sacha (östra), Sachalin), Salomonöarna, Vanuatu;
+Norfolkön utan sommartid;
+Australien (Australian Capital Territory, Jervis Bay Territory, Lord Howe Island, New South Wales (större delen), Tasmanien, Victoria) med sommartid</value>
   </data>
   <data name="timeZone_pos1200" xml:space="preserve">
-    <value>Fiji, Kiribati (Gilbert Islands), Marshall Islands, Nauru, Russia (Chukotka, Kamchatka), Tuvalu, Wake Island, Wallis and Futuna;
-New Zealand (most) without DST;
-Norfolk Island with DST</value>
+    <value>Fiji, Kiribati (Gilbertöarna), Marshallöarna, Nauru, Ryssland (Tjuktjien, Kamtjatka), Tuvalu, Wakeön, Wallis och Futuna;
+Nya Zeeland (större delen) utan sommartid;
+Norfolkön med sommartid</value>
   </data>
   <data name="timeZone_pos1245" xml:space="preserve">
-    <value>New Zealand (Chatham Islands) without DST</value>
+    <value>Nya Zeeland (Chathamöarna) utan sommartid</value>
   </data>
   <data name="timeZone_pos1300" xml:space="preserve">
-    <value>Kiribati (Phoenix Islands), Samoa, Tokelau, Tonga;
-New Zealand (most) with DST</value>
+    <value>Kiribati (Phoenixöarna), Samoa, Tokelau, Tonga;
+Nya Zeeland (större delen) med sommartid</value>
   </data>
   <data name="timeZone_pos1345" xml:space="preserve">
-    <value>New Zealand (Chatham Islands) with DST</value>
+    <value>Nya Zeeland (Chathamöarna) med sommartid</value>
   </data>
   <data name="timeZone_pos1400" xml:space="preserve">
-    <value>Kiribati (Line Islands)</value>
+    <value>Kiribati (Lineöarna)</value>
   </data>
   <data name="settings_language" xml:space="preserve">
     <value>Språk / Language</value>
