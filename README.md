@@ -58,6 +58,7 @@ To customize this application, click the **Settings** button. The following prop
   * English (United States)
   * Simplified Chinese (Chinese Mainland)
   * Japanese (Japan)
+  * Korean (Republic of Korea)
   * Swedish (Sweden)
   * Traditional Chinese (Chinese Taiwan)
 

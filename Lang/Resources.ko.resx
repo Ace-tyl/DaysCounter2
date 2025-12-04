@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ui_currentTime" xml:space="preserve">
+    <value>현재 시간: </value>
+  </data>
+  <data name="ui_delete" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="ui_edit" xml:space="preserve">
+    <value>수정</value>
+  </data>
+  <data name="editor_date" xml:space="preserve">
+    <value>이벤트 날짜:</value>
+  </data>
+  <data name="editor_date_day" xml:space="preserve">
+    <value>일</value>
+  </data>
+  <data name="editor_date_month" xml:space="preserve">
+    <value>월</value>
+  </data>
+  <data name="editor_date_year" xml:space="preserve">
+    <value>년</value>
+  </data>
+  <data name="editor_name" xml:space="preserve">
+    <value>이벤트 이름:</value>
+  </data>
+  <data name="editor_title" xml:space="preserve">
+    <value>이벤트 수정</value>
+  </data>
+  <data name="ui_new" xml:space="preserve">
+    <value>신규</value>
+  </data>
+  <data name="ui_settings" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="ui_timerAgo" xml:space="preserve">
+    <value>{0}일 {1}시간 {2}분 {3}초 전</value>
+  </data>
+  <data name="ui_timerLater" xml:space="preserve">
+    <value>{0}일 {1}시간 {2}분 {3}초 후</value>
+  </data>
+  <data name="ui_version" xml:space="preserve">
+    <value>버전</value>
+  </data>
+  <data name="editor_year_bc" xml:space="preserve">
+    <value> (기원전 {0:.})</value>
+  </data>
+  <data name="editor_time" xml:space="preserve">
+    <value>이벤트 시간:</value>
+  </data>
+  <data name="editor_time_hour" xml:space="preserve">
+    <value>시</value>
+  </data>
+  <data name="editor_time_minute" xml:space="preserve">
+    <value>분</value>
+  </data>
+  <data name="editor_time_second" xml:space="preserve">
+    <value>초</value>
+  </data>
+  <data name="editor_time_timeZone" xml:space="preserve">
+    <value>시간대</value>
+  </data>
+  <data name="editor_loop" xml:space="preserve">
+    <value>루프</value>
+  </data>
+  <data name="editor_loop_warn" xml:space="preserve">
+    <value>루프는 설정된 시간이 경과한 후에만 활성화됩니다.</value>
+  </data>
+  <data name="editor_loop_second" xml:space="preserve">
+    <value>초</value>
+  </data>
+  <data name="editor_loop_minute" xml:space="preserve">
+    <value>분</value>
+  </data>
+  <data name="editor_loop_hour" xml:space="preserve">
+    <value>시간</value>
+  </data>
+  <data name="editor_loop_day" xml:space="preserve">
+    <value>일</value>
+  </data>
+  <data name="editor_loop_month" xml:space="preserve">
+    <value>개월</value>
+  </data>
+  <data name="editor_loop_year" xml:space="preserve">
+    <value>년</value>
+  </data>
+  <data name="editor_save" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>주의</value>
+  </data>
+  <data name="ui_delete_warn" xml:space="preserve">
+    <value>이 이벤트를 삭제하시겠습니까?
+이 작업은 취소할 수 없습니다!</value>
+  </data>
+  <data name="timeZone_neg1200" xml:space="preserve">
+    <value>지구상의 어느 곳(AoE);
+베이커 섬, 하울랜드 섬</value>
+  </data>
+  <data name="timeZone_neg1100" xml:space="preserve">
+    <value>아메리칸 사모아, 자비스 섬, 킹먼 리프, 미드웨이 환초, 니우에, 팔미라 환초</value>
+  </data>
+  <data name="timeZone_neg1000" xml:space="preserve">
+    <value>쿡 제도, 프랑스령 폴리네시아(대부분), 존스턴 환초, 미국(하와이);
+미국(안드레아노프 제도, 포 마운틴 제도, 니어 제도, 랫 제도) — DST 없음</value>
+  </data>
+  <data name="timeZone_neg0930" xml:space="preserve">
+    <value>프랑스령 폴리네시아(마르키즈 제도)</value>
+  </data>
+  <data name="timeZone_neg0900" xml:space="preserve">
+    <value>프랑스령 폴리네시아(감비에르 제도);
+미국(알래스카 대부분) — DST 없음;
+미국(안드레아노프 제도, 포 마운틴 제도, 니어 제도, 랫 제도) — DST 적용</value>
+  </data>
+  <data name="timeZone_neg0800" xml:space="preserve">
+    <value>클리퍼턴 섬, 핏케언 제도;
+캐나다(브리티시컬럼비아 대부분), 멕시코(바하칼리포르니아), 미국(캘리포니아, 아이다호 북부, 네바다 대부분, 오리건 대부분, 워싱턴) — DST 없음;
+미국(알래스카 대부분) — DST 적용</value>
+  </data>
+  <data name="timeZone_neg0700" xml:space="preserve">
+    <value>캐나다(브리티시컬럼비아 북동부, 유콘), 멕시코(바하칼리포르니아 수르, 나야리트 대부분, 시날로아, 소노라), 미국(애리조나 대부분);
+캐나다(앨버타, 브리티시컬럼비아 남동부, 노스웨스트 준주, 누나부트 서부, 서스캐처원 로이드민스터 지역), 멕시코(치와와 북서 국경), 미국(애리조나 나바호 네이션, 콜로라도, 아이다호 대부분, 캔자스 서부, 몬태나, 네브래스카 서부, 뉴멕시코, 네바다 북동, 노스다코타 남서부, 오리건 동부, 사우스다코타 서부, 텍사스 서부, 유타, 와이오밍) — DST 없음;
+캐나다(브리티시컬럼비아 대부분), 멕시코(바하칼리포르니아), 미국(캘리포니아, 아이다호 북부, 네바다 대부분, 오리건 대부분, 워싱턴) — DST 적용</value>
+  </data>
+  <data name="timeZone_neg0600" xml:space="preserve">
+    <value>벨리즈, 캐나다(서스캐처원 대부분), 코스타리카, 에콰도르(갈라파고스), 엘살바도르, 과테말라, 온두라스, 멕시코 대부분, 니카라과;
+캐나다(매니토바, 누나부트 중부, 온타리오 서부), 칠레(이스터 섬), 멕시코(북동 국경), 미국(앨라배마, 아칸소, 플로리다 북서부, 일리노이, 인디애나 북서·남서부, 아이오와, 캔자스 대부분, 켄터키 서부, 루이지애나, 미시간 북서부, 미네소타, 미시시피, 미주리, 네브래스카 대부분, 노스다코타 대부분, 오클라호마, 사우스다코타 대부분, 테네시 대부분, 텍사스 대부분, 위스콘신) — DST 없음;
+캐나다(앨버타, 브리티시컬럼비아 남동부, 노스웨스트 준주, 누나부트 서부, 서스캐처원 로이드민스터 지역), 멕시코(치와와 북서 국경), 미국(애리조나 나바호 네이션, 콜로라도, 아이다호 대부분, 캔자스 서부, 몬태나, 네브래스카 서부, 뉴멕시코, 네바다 북동, 노스다코타 남서부, 오리건 동부, 사우스다코타 서부, 텍사스 서부, 유타, 와이오밍) — DST 적용</value>
+  </data>
+  <data name="timeZone_neg0500" xml:space="preserve">
+    <value>브라질(아크리, 아마조나스 남서부), 캐나다(아티코칸, 미슈키고가망, 사우샘프턴 섬), 케이맨 제도, 콜롬비아, 에콰도르 대부분, 자메이카, 멕시코(킨타나로오), 나바사 섬, 파나마, 페루;
+바하마, 캐나다(누나부트 동부, 온타리오 대부분, 퀘벡 대부분), 쿠바, 아이티, 터크스 케이코스 제도, 미국(코네티컷, 델라웨어, 워싱턴 D.C., 플로리다 대부분, 조지아, 인디애나 대부분, 켄터키 동부, 메인, 메릴랜드, 매사추세츠, 미시간 대부분, 뉴햄프셔, 뉴저지, 뉴욕, 노스캐롤라이나, 오하이오, 펜실베이니아, 로드아일랜드, 사우스캐롤라이나, 테네시 동부, 버몬트, 버지니아, 웨스트버지니아) — DST 없음;
+캐나다(매니토바, 누나부트 중부, 온타리오 서부), 칠레(이스터 섬), 멕시코(북동 국경), 미국(앨라배마, 아칸소, 플로리다 북서부, 일리노이, 인디애나 북서·남서부, 아이오와, 캔자스 대부분, 켄터키 서부, 루이지애나, 미시간 북서부, 미네소타, 미시시피, 미주리, 네브래스카 대부분, 노스다코타 대부분, 오클라호마, 사우스다코타 대부분, 테네시 대부분, 텍사스 대부분, 위스콘신) — DST 적용</value>
+  </data>
+  <data name="timeZone_neg0400" xml:space="preserve">
+    <value>앵귈라, 앤티가바부다, 아루바, 바베이도스, 볼리비아, 브라질(아마조나스 대부분, 마투그로수, 마투그로수두술, 론도니아, 호라이마), 영국령 버진아일랜드, 캐나다(퀘벡 동부), 카리브 네덜란드, 큐라소, 도미니카, 도미니카 공화국, 그레나다, 과들루프, 가이아나, 마르티니크, 몬트세랫, 푸에르토리코, 생바르텔레미, 세인트키츠네비스, 세인트루시아, 생마르탱, 세인트빈센트그레나딘, 신트마르턴, 트리니다드토바고, 미국령 버진아일랜드, 베네수엘라;
+버뮤다, 캐나다(래브라도 대부분, 뉴브런즈윅, 노바스코샤, 프린스에드워드아일랜드), 칠레 대부분, 그린란드(피투픽 우주기지) — DST 없음;
+바하마, 캐나다(누나부트 동부, 온타리오 대부분, 퀘벡 대부분), 쿠바, 아이티, 터크스 케이코스 제도, 미국(코네티컷, 델라웨어, 워싱턴 D.C., 플로리다 대부분, 조지아, 인디애나 대부분, 켄터키 동부, 메인, 메릴랜드, 매사추세츠, 미시간 대부분, 뉴햄프셔, 뉴저지, 뉴욕, 노스캐롤라이나, 오하이오, 펜실베이니아, 로드아일랜드, 사우스캐롤라이나, 테네시 동부, 버몬트, 버지니아, 웨스트버지니아) — DST 적용</value>
+  </data>
+  <data name="timeZone_neg0330" xml:space="preserve">
+    <value>캐나다(뉴펀들랜드, 래브라도 남동부) — DST 없음</value>
+  </data>
+  <data name="timeZone_neg0300" xml:space="preserve">
+    <value>아르헨티나, 브라질 대부분, 칠레(아이센, 마가야네스), 포클랜드 제도, 프랑스령 기아나, 파라과이, 수리남, 우루과이;
+생피에르미클롱 — DST 없음;
+버뮤다, 캐나다(래브라도 대부분, 뉴브런즈윅, 노바스코샤, 프린스에드워드아일랜드), 칠레 대부분, 그린란드(피투픽 우주기지) — DST 적용</value>
+  </data>
+  <data name="timeZone_neg0230" xml:space="preserve">
+    <value>캐나다(뉴펀들랜드, 래브라도 남동부) — DST 적용</value>
+  </data>
+  <data name="timeZone_neg0200" xml:space="preserve">
+    <value>브라질(페르난두누로냐), 사우스조지아·사우스샌드위치 제도;
+그린란드 대부분 — DST 없음;
+생피에르미클롱 — DST 적용</value>
+  </data>
+  <data name="timeZone_neg0100" xml:space="preserve">
+    <value>카보베르데;
+포르투갈(아조레스) — DST 없음;
+그린란드 대부분 — DST 적용</value>
+  </data>
+  <data name="timeZone_pos0000" xml:space="preserve">
+    <value>부르키나파소, 감비아, 가나, 그린란드(국가공원 동해안), 기니, 기니비사우, 아이슬란드, 코트디부아르, 라이베리아, 말리, 모리타니, 세인트헬레나·어센션·트리스탄다쿠냐, 세네갈, 시에라리온, 상투메프린시페, 토고;
+페로 제도, 건지, 아일랜드, 맨섬, 저지, 포르투갈 대부분, 스페인(카나리아 제도), 영국 — DST 없음;
+포르투갈(아조레스) — DST 적용</value>
+  </data>
+  <data name="timeZone_pos0048" xml:space="preserve">
+    <value>엘레오레 왕국 — DST 없음</value>
+  </data>
+  <data name="timeZone_pos0100" xml:space="preserve">
+    <value>알제리, 앙골라, 베냉, 카메룬, 중앙아프리카공화국, 차드, 콩고, DR 콩고(에쿼퇴르, 킨샤사, 콩고센트럴, 콴고, 퀼루, 마이-은돔베, 몽갈라, 노르드우방기, 수드우방기, 추아파), 적도기니, 가봉, 모로코, 니제르, 나이지리아, 튀니스;
+알바니아, 안도라, 오스트리아, 벨기에, 보스니아헤르체고비나, 크로아티아, 체코, 덴마크, 프랑스 본토, 독일, 지브롤터, 헝가리, 이탈리아, 리히텐슈타인, 룩셈부르크, 몰타, 모나코, 몬테네그로, 네덜란드(유럽), 북마케도니아, 노르웨이, 폴란드, 산마리노, 세르비아, 슬로바키아, 슬로베니아, 스페인 대부분, 스웨덴, 스위스, 바티칸 — DST 없음;
+페로 제도, 건지, 아일랜드, 맨섬, 저지, 포르투갈 대부분, 스페인(카나리아 제도), 영국 — DST 적용</value>
+  </data>
+  <data name="timeZone_pos0148" xml:space="preserve">
+    <value>엘레오레 왕국 — DST 적용</value>
+  </data>
+  <data name="timeZone_pos0200" xml:space="preserve">
+    <value>보츠와나, 부룬디, DR 콩고 대부분, 에스와티니, 레소토, 리비아, 말라위, 모잠비크, 나미비아, 러시아(칼리닌그라드), 르완다, 남아프리카 대부분, 남수단, 수단, 잠비아, 짐바브웨;
+아크로티리·데켈리아, 불가리아, 키프로스, 이집트, 에스토니아, 핀란드, 그리스, 이스라엘, 라트비아, 레바논, 리투아니아, 몰도바, 팔레스타인, 루마니아, 우크라이나 대부분 — DST 없음;
+알바니아, 안도라, 오스트리아, 벨기에, 보스니아헤르체고비나, 크로아티아, 체코, 덴마크, 프랑스 본토, 독일, 지브롤터, 헝가리, 이탈리아, 리히텐슈타인, 룩셈부르크, 몰타, 모나코, 몬테네그로, 네덜란드(유럽), 북마케도니아, 노르웨이, 폴란드, 산마리노, 세르비아, 슬로바키아, 슬로베니아, 스페인 대부분, 스웨덴, 스위스, 바티칸 — DST 적용</value>
+  </data>
+  <data name="timeZone_pos0300" xml:space="preserve">
+    <value>바레인, 벨라루스, 코모로, 지부티, 에리트레아, 에티오피아, 프랑스령 남부·남극(산재 섬), 이라크, 요르단, 케냐, 쿠웨이트, 마다가스카르, 마요트, 카타르, 러시아(유럽 대부분), 사우디아라비아, 소말리아, 남아프리카(프린스에드워드 제도), 시리아, 탄자니아, 튀르키예, 우간다, 우크라이나(점령 지역), 예멘;
+아크로티리·데켈리아, 불가리아, 키프로스, 이집트, 에스토니아, 핀란드, 그리스, 이스라엘, 라트비아, 레바논, 리투아니아, 몰도바, 팔레스타인, 루마니아, 우크라이나 대부분 — DST 적용</value>
+  </data>
+  <data name="timeZone_pos0330" xml:space="preserve">
+    <value>이란</value>
+  </data>
+  <data name="timeZone_pos0400" xml:space="preserve">
+    <value>아르메니아, 아제르바이잔, 프랑스령 남부·남극(크로제 제도), 조지아, 모리셔스, 오만, 러시아(아스트라한, 사마라, 사라토프, 우드무르트, 울리야놉스크), 레위니옹, 세이셸, 아랍에미리트</value>
+  </data>
+  <data name="timeZone_pos0430" xml:space="preserve">
+    <value>아프가니스탄</value>
+  </data>
+  <data name="timeZone_pos0500" xml:space="preserve">
+    <value>프랑스령 남부·남극(케르겔렌, 세인트폴, 암스테르담 섬), 허드·맥도널드 제도, 카자흐스탄, 몰디브, 파키스탄, 러시아(바시코르토스탄, 첼랴빈스크, 한티-만시, 쿠르간, 오렌부르크, 페름, 스베르들롭스크, 튜멘, 야말), 타지키스탄, 투르크메니스탄, 우즈베키스탄</value>
+  </data>
+  <data name="timeZone_pos0530" xml:space="preserve">
+    <value>인도, 스리랑카</value>
+  </data>
+  <data name="timeZone_pos0545" xml:space="preserve">
+    <value>네팔</value>
+  </data>
+  <data name="timeZone_pos0600" xml:space="preserve">
+    <value>방글라데시, 부탄, 영국령 인도양 지역, 키르기스스탄, 러시아(옴스크)</value>
+  </data>
+  <data name="timeZone_pos0630" xml:space="preserve">
+    <value>코코스 제도, 미얀마</value>
+  </data>
+  <data name="timeZone_pos0700" xml:space="preserve">
+    <value>캄보디아, 크리스마스섬, 인도네시아(수마트라, 자바, 서·중부 칼리만탄), 라오스, 몽골(바얀올기, 홉드, 옵스), 러시아(알타이 변경주, 알타이 공화국, 케메로보, 하카시아, 크라스노야르스크, 노보시비르스크, 톰스크, 투바), 태국, 베트남</value>
+  </data>
+  <data name="timeZone_pos0800" xml:space="preserve">
+    <value>호주(웨스턴오스트레일리아), 브루나이, 중국, 인도네시아(남·동·북 칼리만탄, 술라웨시, 소순다 제도), 말레이시아, 몽골 대부분, 필리핀, 러시아(부랴티아, 이르쿠츠크), 싱가포르</value>
+  </data>
+  <data name="timeZone_pos0845" xml:space="preserve">
+    <value>호주(유클라)</value>
+  </data>
+  <data name="timeZone_pos0900" xml:space="preserve">
+    <value>인도네시아(말루쿠 제도, 서뉴기니), 일본, 북한, 팔라우, 러시아(아무르, 사하 대부분, 자바이칼), 한국, 동티모르</value>
+  </data>
+  <data name="timeZone_pos0930" xml:space="preserve">
+    <value>호주(노던테리토리);
+호주(남오스트레일리아, 얀코위나 군) — DST 없음</value>
+  </data>
+  <data name="timeZone_pos1000" xml:space="preserve">
+    <value>호주(퀸즐랜드), 괌, 마이크로네시아(추크, 얍), 북마리아나 제도, 파푸아뉴기니 대부분, 러시아(유대인자치주, 하바롭스크, 프리모르스키, 사하 중동부);
+호주(ACT, 제비스 베이, 뉴사우스웨일스 대부분, 태즈메이니아, 빅토리아) — DST 없음</value>
+  </data>
+  <data name="timeZone_pos1030" xml:space="preserve">
+    <value>호주(로드하우 섬) — DST 없음;
+호주(남오스트레일리아, 얀코위나 군) — DST 적용</value>
+  </data>
+  <data name="timeZone_pos1100" xml:space="preserve">
+    <value>마이크로네시아(코스라에, 폰페이), 뉴칼레도니아, 파푸아뉴기니(부건빌), 러시아(마가단, 사하 동부, 사할린), 솔로몬 제도, 바누아투;
+노퍽 섬 — DST 없음;
+호주(ACT, 제비스 베이, 로드하우 섬, 뉴사우스웨일스 대부분, 태즈메이니아, 빅토리아) — DST 적용</value>
+  </data>
+  <data name="timeZone_pos1200" xml:space="preserve">
+    <value>피지, 키리바시(길버트 제도), 마셜 제도, 나우루, 러시아(추코트카, 캄차카), 투발루, 웨이크섬, 월리스‧푸투나;
+뉴질랜드 대부분 — DST 없음;
+노퍽 섬 — DST 적용</value>
+  </data>
+  <data name="timeZone_pos1245" xml:space="preserve">
+    <value>뉴질랜드(채텀 제도) — DST 없음</value>
+  </data>
+  <data name="timeZone_pos1300" xml:space="preserve">
+    <value>키리바시(피닉스 제도), 사모아, 토켈라우, 통가;
+뉴질랜드 대부분 — DST 적용</value>
+  </data>
+  <data name="timeZone_pos1345" xml:space="preserve">
+    <value>뉴질랜드(채텀 제도) — DST 적용</value>
+  </data>
+  <data name="timeZone_pos1400" xml:space="preserve">
+    <value>키리바시(라인 제도)</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>언어 / Language</value>
+  </data>
+  <data name="settings_save" xml:space="preserve">
+    <value>설정 저장</value>
+  </data>
+  <data name="ui_settings_language" xml:space="preserve">
+    <value>언어 변경은 프로그램을 재시작한 후에 적용됩니다.</value>
+  </data>
+  <data name="ui_settings_language_title" xml:space="preserve">
+    <value>언어 수정됨</value>
+  </data>
+  <data name="ui_search" xml:space="preserve">
+    <value>검색...</value>
+  </data>
+  <data name="settings_color" xml:space="preserve">
+    <value>배경 색상</value>
+  </data>
+  <data name="settings_color_future" xml:space="preserve">
+    <value>미래</value>
+  </data>
+  <data name="settings_color_past" xml:space="preserve">
+    <value>과거</value>
+  </data>
+  <data name="settings_color_distant" xml:space="preserve">
+    <value>먼</value>
+  </data>
+  <data name="color_select" xml:space="preserve">
+    <value>색상 선택</value>
+  </data>
+  <data name="settings_dateTimeFormat" xml:space="preserve">
+    <value>날짜 시간 형식</value>
+  </data>
+  <data name="settings_dateTimeFormat_helpUrl" xml:space="preserve">
+    <value>https://learn.microsoft.com/ko-kr/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
+  </data>
+  <data name="color_title" xml:space="preserve">
+    <value>색 선택</value>
+  </data>
+  <data name="settings_default" xml:space="preserve">
+    <value>기본값</value>
+  </data>
+  <data name="settings_destination" xml:space="preserve">
+    <value>목표 시간 표시</value>
+  </data>
+  <data name="settings_destination_always" xml:space="preserve">
+    <value>항상</value>
+  </data>
+  <data name="settings_destination_future" xml:space="preserve">
+    <value>미래의 이벤트만</value>
+  </data>
+  <data name="settings_destination_none" xml:space="preserve">
+    <value>표시되지 않음</value>
+  </data>
+  <data name="ui_outOfRange" xml:space="preserve">
+    <value>표시 범위를 벗어났습니다</value>
+  </data>
+  <data name="settings_font" xml:space="preserve">
+    <value>표시 글꼴</value>
+  </data>
+  <data name="settings_font_default" xml:space="preserve">
+    <value>기본 글꼴</value>
+  </data>
+  <data name="ui_settings_font" xml:space="preserve">
+    <value>글꼴 변경은 프로그램을 재시작한 후에 적용됩니다.</value>
+  </data>
+  <data name="ui_settings_font_title" xml:space="preserve">
+    <value>글꼴 수정됨</value>
+  </data>
+</root>
