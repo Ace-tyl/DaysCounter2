@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization.Json;
+using System.Text.RegularExpressions;
 using System.Threading;
 using Avalonia.Controls;
 using Avalonia.Controls.Documents;
@@ -123,23 +124,40 @@ namespace DaysCounter2
             string searchText = SearchBox.Text ?? "";
             foreach (Event ev in events)
             {
-                if (!ev.name.ToLower().Contains(searchText.ToLower()))
+                // Try match search text
+                int matchPos, matchLength;
+                matchPos = ev.name.ToLower().IndexOf(searchText.ToLower());
+                matchLength = searchText.Length;
+                if (matchPos == -1)
+                {
+                    try
+                    {
+                        Match match = Regex.Match(ev.name.ToLower(), searchText.ToLower());
+                        if (match.Success)
+                        {
+                            matchPos = match.Index;
+                            matchLength = match.Length;
+                        }
+                    }
+                    catch { }
+                }
+                if (matchPos == -1)
                 {
                     continue;
                 }
+                // Construct name display runs
                 InlineCollection runs = [];
                 if (searchText != "")
                 {
-                    int matchPos = ev.name.ToLower().IndexOf(searchText.ToLower());
-                    int searchTextLength = searchText.Length;
                     runs.Add(new Run(ev.name.Substring(0, matchPos)));
-                    runs.Add(new Run { Text = ev.name.Substring(matchPos, searchTextLength), TextDecorations = TextDecorations.Underline });
-                    runs.Add(new Run(ev.name.Substring(matchPos + searchTextLength)));
+                    runs.Add(new Run { Text = ev.name.Substring(matchPos, matchLength), TextDecorations = TextDecorations.Underline });
+                    runs.Add(new Run(ev.name.Substring(matchPos + matchLength)));
                 }
                 else
                 {
                     runs.Add(new Run(ev.name));
                 }
+                // Construct timer string
                 long delta = ev.GetDelta(myNow, myNowJulian);
                 string timerText = "";
                 if (delta >= 0)
@@ -153,6 +171,7 @@ namespace DaysCounter2
                 }
                 double days = Math.Abs(delta / 86400.0);
                 days = Math.Clamp(days, 1, 1000);
+                // Construct destination text
                 string destinationText = "";
                 if (App.settings.destinationShowingMode != 2 && (App.settings.destinationShowingMode != 1 || delta >= 0))
                 {
@@ -166,6 +185,7 @@ namespace DaysCounter2
                         destinationText = dest.Value.ToString(App.settings.dateTimeFormat, CultureInfo.CreateSpecificCulture(languageId));
                     }
                 }
+                // Add displayed event
                 displayedEvents.Add(new DisplayedEvent
                 {
                     uuid = ev.uuid,

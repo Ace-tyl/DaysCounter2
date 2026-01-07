@@ -49,6 +49,12 @@ The event date can be set to a wide range, from 4713 BC to 9999 AD. The date is 
 
 When entering a year before the Common Era such as x BC, the number -(x - 1) is required to input. For example, Emperor Qin Shi Huang unified the six states in 221 BC, so the Year value should be set to -220 in order to add this event. A prompt will be displayed if you input a year before the Common Era (non-positive).
 
+### Searching for Events
+
+To search some events you have added to events list, you can type your searching string in the search box and all events containing this string will be displayed.
+
+Furthermore, you can also use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) in the search box to make a more customized search. For example, you can type `^\d` in the search box to search for events with name beginning with a digit.
+
 ### Customization
 
 To customize this application, click the **Settings** button. The following properties can be customized:
