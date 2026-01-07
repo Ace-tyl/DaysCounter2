@@ -109,14 +109,16 @@ namespace DaysCounter2
 
         public void RefreshWindow(DateTime now)
         {
+            CultureInfo culture = CultureInfo.CreateSpecificCulture(languageId);
+            culture.DateTimeFormat.Calendar = new GregorianCalendar();
             try
             {
-                CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString(App.settings.dateTimeFormat, CultureInfo.CreateSpecificCulture(languageId));
+                CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString(App.settings.dateTimeFormat, culture);
             }
             catch (FormatException)
             {
                 App.settings.dateTimeFormat = "yyyy/MM/dd HH:mm:ss";
-                CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString(App.settings.dateTimeFormat, CultureInfo.CreateSpecificCulture(languageId));
+                CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString(App.settings.dateTimeFormat, culture);
             }
             MyDateTime myNow = new(now, TimeZoneInfo.Local);
             long myNowJulian = myNow.GetJulianSecond();
@@ -182,7 +184,14 @@ namespace DaysCounter2
                     }
                     else
                     {
-                        destinationText = dest.Value.ToString(App.settings.dateTimeFormat, CultureInfo.CreateSpecificCulture(languageId));
+                        try
+                        {
+                            destinationText = dest.Value.ToString(App.settings.dateTimeFormat, culture);
+                        }
+                        catch
+                        {
+                            destinationText = Lang.Resources.ui_outOfRange;
+                        }
                     }
                 }
                 // Add displayed event

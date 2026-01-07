@@ -16,6 +16,7 @@ namespace DaysCounter2.Utils
         [
             new("English (United States)", "", FlowDirection.LeftToRight),
             new("简体中文 (中国大陆)", "zh-CN", FlowDirection.LeftToRight),
+            new("العربية (المملكة العربية السعودية)", "ar", FlowDirection.RightToLeft),
             new("日本語 (日本)", "ja", FlowDirection.LeftToRight),
             new("한국어 (대한민국)", "ko", FlowDirection.LeftToRight),
             new("Svenska (Sverige)", "sv-SE", FlowDirection.LeftToRight),

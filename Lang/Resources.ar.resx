@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ui_currentTime" xml:space="preserve">
+    <value>الوقت الحالي: </value>
+  </data>
+  <data name="ui_delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="ui_edit" xml:space="preserve">
+    <value>تحرير</value>
+  </data>
+  <data name="editor_date" xml:space="preserve">
+    <value>تاريخ الحدث:</value>
+  </data>
+  <data name="editor_date_day" xml:space="preserve">
+    <value>يوم</value>
+  </data>
+  <data name="editor_date_month" xml:space="preserve">
+    <value>شهر</value>
+  </data>
+  <data name="editor_date_year" xml:space="preserve">
+    <value>سنة</value>
+  </data>
+  <data name="editor_name" xml:space="preserve">
+    <value>اسم الحدث:</value>
+  </data>
+  <data name="editor_title" xml:space="preserve">
+    <value>تحرير الحدث</value>
+  </data>
+  <data name="ui_new" xml:space="preserve">
+    <value>جديد</value>
+  </data>
+  <data name="ui_settings" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="ui_timerAgo" xml:space="preserve">
+    <value>منذ {0} يوم {1} ساعة {2} دقيقة {3} ثانية</value>
+  </data>
+  <data name="ui_timerLater" xml:space="preserve">
+    <value>بعد {0} يوم {1} ساعة {2} دقيقة {3} ثانية</value>
+  </data>
+  <data name="ui_version" xml:space="preserve">
+    <value>الإصدار</value>
+  </data>
+  <data name="editor_year_bc" xml:space="preserve">
+    <value>(قبل الميلاد {0:.})</value>
+  </data>
+  <data name="editor_time" xml:space="preserve">
+    <value>وقت الحدث:</value>
+  </data>
+  <data name="editor_time_hour" xml:space="preserve">
+    <value>ساعة</value>
+  </data>
+  <data name="editor_time_minute" xml:space="preserve">
+    <value>دقيقة</value>
+  </data>
+  <data name="editor_time_second" xml:space="preserve">
+    <value>ثانية</value>
+  </data>
+  <data name="editor_time_timeZone" xml:space="preserve">
+    <value>المنطقة الزمنية</value>
+  </data>
+  <data name="editor_loop" xml:space="preserve">
+    <value>تكرار</value>
+  </data>
+  <data name="editor_loop_warn" xml:space="preserve">
+    <value>سيتم تنشيط التكرار فقط بعد انقضاء الوقت المحدد.</value>
+  </data>
+  <data name="editor_loop_second" xml:space="preserve">
+    <value>ثانية</value>
+  </data>
+  <data name="editor_loop_minute" xml:space="preserve">
+    <value>دقيقة</value>
+  </data>
+  <data name="editor_loop_hour" xml:space="preserve">
+    <value>ساعة</value>
+  </data>
+  <data name="editor_loop_day" xml:space="preserve">
+    <value>يوم</value>
+  </data>
+  <data name="editor_loop_month" xml:space="preserve">
+    <value>شهر</value>
+  </data>
+  <data name="editor_loop_year" xml:space="preserve">
+    <value>سنة</value>
+  </data>
+  <data name="editor_save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>تحذير</value>
+  </data>
+  <data name="ui_delete_warn" xml:space="preserve">
+    <value>هل تريد حقًا حذف هذا الحدث؟
+لا يمكن التراجع عن هذه العملية!</value>
+  </data>
+  <data name="timeZone_neg1200" xml:space="preserve">
+    <value>آخر منطقة زمنية في العالم (AoE)؛
+جزيرة بيكر، جزيرة هاولاند</value>
+  </data>
+  <data name="timeZone_neg1100" xml:space="preserve">
+    <value>ساموا الأمريكية، جزيرة جارفيس، شعب كينغمان، جزيرة ميدواي، نييوي، جزيرة بالميرا المرجانية</value>
+  </data>
+  <data name="timeZone_neg1000" xml:space="preserve">
+    <value>جزر كوك، بولينيزيا الفرنسية (معظمها)، جزيرة جونستون المرجانية، الولايات المتحدة (هاواي)؛
+الولايات المتحدة (جزر أندريانوف، جبال الأربعة، الجزر القريبة، جزر رات) بدون توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0930" xml:space="preserve">
+    <value>بولينيزيا الفرنسية (جزر ماركيساس)</value>
+  </data>
+  <data name="timeZone_neg0900" xml:space="preserve">
+    <value>بولينيزيا الفرنسية (جزر غامبير)؛
+الولايات المتحدة (ألاسكا (معظمها)) بدون توقيت صيفي؛
+الولايات المتحدة (جزر أندريانوف، جبال الأربعة، الجزر القريبة، جزر رات) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0800" xml:space="preserve">
+    <value>جزيرة كليبرتون، جزر بيتكيرن؛
+كندا (كولومبيا البريطانية (معظمها))، المكسيك (باخا كاليفورنيا)، الولايات المتحدة (كاليفورنيا، أيداهو (شمال)، نيفادا (معظمها)، أوريغون (معظمها)، واشنطن) بدون توقيت صيفي؛
+الولايات المتحدة (ألاسكا (معظمها)) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0700" xml:space="preserve">
+    <value>كندا (كولومبيا البريطانية (شمال شرق)، يوكون)، المكسيك (باخا كاليفورنيا سور، ناياريت (معظمها)، سينالوا، سونورا)، الولايات المتحدة (أريزونا (معظمها))؛
+كندا (ألبرتا، كولومبيا البريطانية (جنوب شرق)، الأقاليم الشمالية الغربية، نونافوت (غرب)، ساسكاتشوان (منطقة لويدمينيستر))، المكسيك (تشيواوا (الحدود الشمالية الغربية))، الولايات المتحدة (أريزونا (أمة نافاجو)، كولورادو، أيداهو (معظمها)، كانساس (غرب)، مونتانا، نبراسكا (غرب)، نيومكسيكو، نيفادا (الحدود الشمالية الشرقية)، داكوتا الشمالية (جنوب غرب)، أوريغون (شرق)، داكوتا الجنوبية (غرب)، تكساس (غرب)، يوتا، وايومنغ) بدون توقيت صيفي؛
+كندا (كولومبيا البريطانية (معظمها))، المكسيك (باخا كاليفورنيا)، الولايات المتحدة (كاليفورنيا، أيداهو (شمال)، نيفادا (معظمها)، أوريغون (معظمها)، واشنطن) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0600" xml:space="preserve">
+    <value>بليز، كندا (ساسكاتشوان (معظمها))، كوستاريكا، الإكوادور (غالاباغوس)، السلفادور، غواتيمالا، هندوراس، المكسيك (معظمها)، نيكاراغوا؛
+كندا (مانيتوبا، نونافوت (وسط)، أونتاريو (غرب))، تشيلي (جزيرة الفصح)، المكسيك (الحدود الشمالية الشرقية)، الولايات المتحدة (ألاباما، أركنساس، فلوريدا (شمال غرب)، إلينوي، إنديانا (شمال غرب، جنوب غرب)، آيوا، كانساس (معظمها)، كنتاكي (غرب)، لويزيانا، ميشيغان (الحدود الشمالية الغربية)، مينيسوتا، ميسيسيبي، ميسوري، نبراسكا (معظمها)، داكوتا الشمالية (معظمها)، أوكلاهوما، داكوتا الجنوبية (معظمها)، تينيسي (معظمها)، تكساس (معظمها)، ويسكونسن) بدون توقيت صيفي؛
+كندا (ألبرتا، كولومبيا البريطانية (جنوب شرق)، الأقاليم الشمالية الغربية، نونافوت (غرب)، ساسكاتشوان (منطقة لويدمينيستر))، المكسيك (تشيواوا (الحدود الشمالية الغربية))، الولايات المتحدة (أريزونا (أمة نافاجو)، كولورادو، أيداهو (معظمها)، كانساس (غرب)، مونتانا، نبراسكا (غرب)، نيومكسيكو، نيفادا (الحدود الشمالية الشرقية)، داكوتا الشمالية (جنوب غرب)، أوريغون (شرق)، داكوتا الجنوبية (غرب)، تكساس (غرب)، يوتا، وايومنغ) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0500" xml:space="preserve">
+    <value>البرازيل (آكري، أمازوناس (جنوب غرب))، كندا (أتيكوكان، ميشكيجوغامانغ، جزيرة ساوثهامبتون)، جزر كايمان، كولومبيا، الإكوادور (معظمها)، جامايكا، المكسيك (كينتانا رو)، جزيرة نافاسا، بنما، بيرو؛
+جزر البهاما، كندا (نونافوت (شرق)، أونتاريو (معظمها)، كيبيك (معظمها))، كوبا، هايتي، جزر توركس وكايكوس، الولايات المتحدة (كونيتيكت، ديلاوير، مقاطعة كولومبيا، فلوريدا (معظمها)، جورجيا، إنديانا (معظمها)، كنتاكي (شرق)، مين، ماريلاند، ماساتشوستس، ميشيغان (معظمها)، نيو هامبشاير، نيو جيرسي، نيويورك، كارولاينا الشمالية، أوهايو، بنسلفانيا، رود آيلاند، كارولاينا الجنوبية، تينيسي (شرق)، فيرمونت، فرجينيا، فرجينيا الغربية) بدون توقيت صيفي؛
+كندا (مانيتوبا، نونافوت (وسط)، أونتاريو (غرب))، تشيلي (جزيرة الفصح)، المكسيك (الحدود الشمالية الشرقية)، الولايات المتحدة (ألاباما، أركنساس، فلوريدا (شمال غرب)، إلينوي، إنديانا (شمال غرب، جنوب غرب)، آيوا، كانساس (معظمها)، كنتاكي (غرب)، لويزيانا، ميشيغان (الحدود الشمالية الغربية)، مينيسوتا، ميسيسيبي، ميسوري، نبراسكا (معظمها)، داكوتا الشمالية (معظمها)، أوكلاهوما، داكوتا الجنوبية (معظمها)، تينيسي (معظمها)، تكساس (معظمها)، ويسكونسن) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0400" xml:space="preserve">
+    <value>أنغويلا، أنتيغوا وباربودا، أروبا، بربادوس، بوليفيا، البرازيل (أمازوناس (معظمها)، ماتو جروسو، ماتو جروسو دو سول، روندونيا، رورايما)، جزر العذراء البريطانية، كندا (كيبيك (شرق))، جزر الكاريبي الهولندية، كوراساو، دومينيكا، جمهورية الدومينيكان، غرينادا، غوادلوب، غيانا، مارتينيك، مونتسرات، بورتوريكو، سان بارتيلمي، سانت كيتس ونيفيس، سانت لوسيا، سانت مارتن، سانت فينسنت والغرينادين، سانت مارتن، ترينيداد وتوباغو، جزر العذراء الأمريكية، فنزويلا؛
+برمودا، كندا (لابرادور (معظمها))، نيو برونزويك، نوفا سكوشا، جزيرة الأمير إدوارد)، تشيلي (معظمها)، جرينلاند (قاعدة بيتوفيك الفضائية) بدون توقيت صيفي؛
+جزر البهاما، كندا (نونافوت (شرق)، أونتاريو (معظمها)، كيبيك (معظمها))، كوبا، هايتي، جزر توركس وكايكوس، الولايات المتحدة (كونيتيكت، ديلاوير، مقاطعة كولومبيا، فلوريدا (معظمها)، جورجيا، إنديانا (معظمها)، كنتاكي (شرق)، مين، ماريلاند، ماساتشوستس، ميشيغان (معظمها)، نيو هامبشاير، نيو جيرسي، نيويورك، كارولاينا الشمالية، أوهايو، بنسلفانيا، رود آيلاند، كارولاينا الجنوبية، تينيسي (شرق)، فيرمونت، فرجينيا، فرجينيا الغربية) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0330" xml:space="preserve">
+    <value>كندا (نيوفاوندلاند، لابرادور (جنوب شرق)) بدون توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0300" xml:space="preserve">
+    <value>الأرجنتين، البرازيل (معظمها)، تشيلي (آيسين، ماجلان)، جزر فوكلاند، غويانا الفرنسية، باراغواي، سورينام، أوروغواي؛
+سان بيير وميكلون بدون توقيت صيفي؛
+برمودا، كندا (لابرادور (معظمها))، نيو برونزويك، نوفا سكوشا، جزيرة الأمير إدوارد)، تشيلي (معظمها)، جرينلاند (قاعدة بيتوفيك الفضائية) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0230" xml:space="preserve">
+    <value>كندا (نيوفاوندلاند، لابرادور (جنوب شرق)) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0200" xml:space="preserve">
+    <value>البرازيل (أرخبيل فرناندو دي نورونها)، جورجيا الجنوبية وجزر ساندويتش الجنوبية؛
+جرينلاند (معظمها) بدون توقيت صيفي؛
+سان بيير وميكلون مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_neg0100" xml:space="preserve">
+    <value>الرأس الأخضر؛
+البرتغال (جزر الأزور) بدون توقيت صيفي؛
+جرينلاند (معظمها) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos0000" xml:space="preserve">
+    <value>بوركينا فاسو، غامبيا، غانا، جرينلاند (المتنزه الوطني (الساحل الشرقي))، غينيا، غينيا بيساو، آيسلندا، ساحل العاج، ليبيريا، مالي، موريتانيا، سانت هيلينا، أسنشن وتريستان دا كونا، السنغال، سيراليون، ساو تومي وبرينسيب، توغو؛
+جزر فارو، غيرنزي، أيرلندا، جزيرة مان، جيرزي، البرتغال (معظمها)، إسبانيا (جزر الكناري)، المملكة المتحدة بدون توقيت صيفي؛
+البرتغال (جزر الأزور) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos0048" xml:space="preserve">
+    <value>مملكة إلليور بدون توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos0100" xml:space="preserve">
+    <value>الجزائر، أنغولا، بنين، الكاميرون، جمهورية أفريقيا الوسطى، تشاد، الكونغو، جمهورية الكونغو الديمقراطية (إكواتور، كينشاسا، كونغو الوسطى، كوانغو، كويلو، ماي-ندومبي، مونغالا، شمال أوبانغي، جنوب أوبانغي، تشوابا)، غينيا الاستوائية، الغابون، المغرب، النيجر، نيجيريا، تونس؛
+ألبانيا، أندورا، النمسا، بلجيكا، البوسنة والهرسك، كرواتيا، جمهورية التشيك، الدنمارك، فرنسا (العاصمة)، ألمانيا، جبل طارق، المجر، إيطاليا، ليختنشتاين، لوكسمبورغ، مالطا، موناكو، الجبل الأسود، هولندا (أوروبا)، مقدونيا الشمالية، النرويج، بولندا، سان مارينو، صربيا، سلوفاكيا، سلوفينيا، إسبانيا (معظمها)، السويد، سويسرا، مدينة الفاتيكان بدون توقيت صيفي؛
+جزر فارو، غيرنزي، أيرلندا، جزيرة مان، جيرزي، البرتغال (معظمها)، إسبانيا (جزر الكناري)، المملكة المتحدة مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos0148" xml:space="preserve">
+    <value>مملكة إلليور مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos0200" xml:space="preserve">
+    <value>بوتسوانا، بوروندي، جمهورية الكونغو الديمقراطية (معظمها)، إسواتيني، ليسوتو، ليبيا، ملاوي، موزمبيق، ناميبيا، روسيا (كالينينغراد)، رواندا، جنوب أفريقيا (معظمها)، جنوب السودان، السودان، زامبيا، زيمبابوي؛
+أكروتيري ودكليا، بلغاريا، قبرص، مصر، إستونيا، فنلندا، اليونان، إسرائيل، لاتفيا، لبنان، ليتوانيا، مولدوفا، فلسطين، رومانيا، أوكرانيا (معظمها) بدون توقيت صيفي؛
+ألبانيا، أندورا، النمسا، بلجيكا، البوسنة والهرسك، كرواتيا، جمهورية التشيك، الدنمارك، فرنسا (العاصمة)، ألمانيا، جبل طارق، المجر، إيطاليا، ليختنشتاين، لوكسمبورغ، مالطا، موناكو، الجبل الأسود، هولندا (أوروبا)، مقدونيا الشمالية، النرويج، بولندا، سان مارينو، صربيا، سلوفاكيا، سلوفينيا، إسبانيا (معظمها)، السويد، سويسرا، مدينة الفاتيكان مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos0300" xml:space="preserve">
+    <value>البحرين، بيلاروس، جزر القمر، جيبوتي، إريتريا، إثيوبيا، الأراضي الفرنسية الجنوبية والأنتارتيكية (الجزر المتناثرة)، العراق، الأردن، كينيا، الكويت، مدغشقر، مايوت، قطر، روسيا (معظم الجزء الأوروبي)، السعودية، الصومال، جنوب أفريقيا (جزر الأمير إدوارد)، سوريا، تنزانيا، تركيا، أوغندا، أوكرانيا (الأراضي المحتلة)، اليمن؛
+أكروتيري ودكليا، بلغاريا، قبرص، مصر، إستونيا، فنلندا، اليونان، إسرائيل، لاتفيا، لبنان، ليتوانيا، مولدوفا، فلسطين، رومانيا، أوكرانيا (معظمها) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos0330" xml:space="preserve">
+    <value>إيران</value>
+  </data>
+  <data name="timeZone_pos0400" xml:space="preserve">
+    <value>أرمينيا، أذربيجان، الأراضي الفرنسية الجنوبية والأنتارتيكية (جزر كروزيه)، جورجيا، موريشيوس، عمان، روسيا (أستراخان، سامارا، ساراتوف، أودمورتيا، أوليانوفسك)، ريونيون، سيشل، الإمارات العربية المتحدة</value>
+  </data>
+  <data name="timeZone_pos0430" xml:space="preserve">
+    <value>أفغانستان</value>
+  </data>
+  <data name="timeZone_pos0500" xml:space="preserve">
+    <value>الأراضي الفرنسية الجنوبية والأنتارتيكية (جزر كيرغولين، جزيرة سان بول، جزيرة أمستردام)، جزيرة هيرد وجزر ماكدونالد، كازاخستان، جزر المالديف، باكستان، روسيا (باشكورستان، تشيليابينسك، خانتي-مانسي، كورغان، أورينبورغ، بيرم، سفيردلوفسك، تيومين، ياماليا)، طاجيكستان، تركمانستان، أوزبكستان</value>
+  </data>
+  <data name="timeZone_pos0530" xml:space="preserve">
+    <value>الهند، سريلانكا</value>
+  </data>
+  <data name="timeZone_pos0545" xml:space="preserve">
+    <value>نيبال</value>
+  </data>
+  <data name="timeZone_pos0600" xml:space="preserve">
+    <value>بنغلاديش، بوتان، الإقليم البريطاني في المحيط الهندي، قيرغيزستان، روسيا (أومسك)</value>
+  </data>
+  <data name="timeZone_pos0630" xml:space="preserve">
+    <value>جزر كوكوس، ميانمار</value>
+  </data>
+  <data name="timeZone_pos0700" xml:space="preserve">
+    <value>كمبوديا، جزيرة كريسماس، إندونيسيا (سومطرة، جاوة، كاليمانتان الغربية، كاليمانتان الوسطى)، لاوس، منغوليا (بايان-أولجي، خوفد، أوس)، روسيا (إقليم ألتاي، جمهورية ألتاي، كيميروفو، خاكاسيا، كراسنويارسك، نوفوسيبيرسك، تومسك، توفا)، تايلاند، فيتنام</value>
+  </data>
+  <data name="timeZone_pos0800" xml:space="preserve">
+    <value>أستراليا (أستراليا الغربية)، بروناي، الصين، إندونيسيا (كاليمانتان الجنوبية، كاليمانتان الشرقية، كاليمانتان الشمالية، سولاويزي، جزر سوندا الصغرى)، ماليزيا، منغوليا (معظمها)، الفلبين، روسيا (بورياتيا، إركوتسك)، سنغافورة</value>
+  </data>
+  <data name="timeZone_pos0845" xml:space="preserve">
+    <value>أستراليا (يوكلا)</value>
+  </data>
+  <data name="timeZone_pos0900" xml:space="preserve">
+    <value>إندونيسيا (جزر الملوك، غينيا الجديدة الغربية)، اليابان، كوريا الشمالية، بالاو، روسيا (أمور، ساخا (معظمها)، زابايكالسكي)، كوريا الجنوبية، تيمور الشرقية</value>
+  </data>
+  <data name="timeZone_pos0930" xml:space="preserve">
+    <value>أستراليا (الإقليم الشمالي)؛
+أستراليا (جنوب أستراليا، مقاطعة يانكوينا) بدون توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos1000" xml:space="preserve">
+    <value>أستراليا (كوينزلاند)، غوام، ميكرونيسيا (تشوك، ياب)، جزر ماريانا الشمالية، بابوا غينيا الجديدة (معظمها)، روسيا (المنطقة اليهودية، خاباروفسك، بريمورسكي، ساخا (وسط شرق))؛
+أستراليا (إقليم العاصمة الأسترالية، إقليم خليج جيرفيس، نيوساوث ويلز (معظمها)، تاسمانيا، فيكتوريا) بدون توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos1030" xml:space="preserve">
+    <value>أستراليا (جزيرة لورد هاو) بدون توقيت صيفي؛
+أستراليا (جنوب أستراليا، مقاطعة يانكوينا) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos1100" xml:space="preserve">
+    <value>ميكرونيسيا (كوسراي، بونبي)، كاليدونيا الجديدة، بابوا غينيا الجديدة (بوغانفيل)، روسيا (ماغادان، ساخا (شرق)، سخالين)، جزر سليمان، فانواتو؛
+جزيرة نورفولك بدون توقيت صيفي؛
+أستراليا (إقليم العاصمة الأسترالية، إقليم خليج جيرفيس، جزيرة لورد هاو، نيوساوث ويلز (معظمها)، تاسمانيا، فيكتوريا) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos1200" xml:space="preserve">
+    <value>فيجي، كيريباتي (جزر جيلبرت)، جزر مارشال، ناورو، روسيا (تشوكوتكا، كامتشاتكا)، توفالو، جزيرة ويك، واليس وفوتونا؛
+نيوزيلندا (معظمها) بدون توقيت صيفي؛
+جزيرة نورفولك مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos1245" xml:space="preserve">
+    <value>نيوزيلندا (جزر تشاتام) بدون توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos1300" xml:space="preserve">
+    <value>كيريباتي (جزر فينيكس)، ساموا، توكيلاو، تونغا؛
+نيوزيلندا (معظمها) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos1345" xml:space="preserve">
+    <value>نيوزيلندا (جزر تشاتام) مع توقيت صيفي</value>
+  </data>
+  <data name="timeZone_pos1400" xml:space="preserve">
+    <value>كيريباتي (جزر لاين)</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>اللغة / Language</value>
+  </data>
+  <data name="settings_save" xml:space="preserve">
+    <value>حفظ الإعدادات</value>
+  </data>
+  <data name="ui_settings_language" xml:space="preserve">
+    <value>سيصبح تعديل اللغة فعالاً بعد إعادة تشغيل البرنامج.</value>
+  </data>
+  <data name="ui_settings_language_title" xml:space="preserve">
+    <value>تم تعديل اللغة</value>
+  </data>
+  <data name="ui_search" xml:space="preserve">
+    <value>بحث...</value>
+  </data>
+  <data name="settings_color" xml:space="preserve">
+    <value>لون الخلفية</value>
+  </data>
+  <data name="settings_color_future" xml:space="preserve">
+    <value>مستقبل</value>
+  </data>
+  <data name="settings_color_past" xml:space="preserve">
+    <value>ماضي</value>
+  </data>
+  <data name="settings_color_distant" xml:space="preserve">
+    <value>بعيد</value>
+  </data>
+  <data name="color_select" xml:space="preserve">
+    <value>اختر اللون</value>
+  </data>
+  <data name="settings_dateTimeFormat" xml:space="preserve">
+    <value>تنسيق التاريخ والوقت</value>
+  </data>
+  <data name="settings_dateTimeFormat_helpUrl" xml:space="preserve">
+    <value>https://learn.microsoft.com/ar-sa/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
+  </data>
+  <data name="color_title" xml:space="preserve">
+    <value>محدد اللون</value>
+  </data>
+  <data name="settings_default" xml:space="preserve">
+    <value>الافتراضي</value>
+  </data>
+  <data name="settings_destination" xml:space="preserve">
+    <value>عرض وقت الوجهة</value>
+  </data>
+  <data name="settings_destination_always" xml:space="preserve">
+    <value>دائماً</value>
+  </data>
+  <data name="settings_destination_future" xml:space="preserve">
+    <value>الأحداث المستقبلية فقط</value>
+  </data>
+  <data name="settings_destination_none" xml:space="preserve">
+    <value>معطل</value>
+  </data>
+  <data name="ui_outOfRange" xml:space="preserve">
+    <value>خارج نطاق العرض</value>
+  </data>
+  <data name="settings_font" xml:space="preserve">
+    <value>خط العرض</value>
+  </data>
+  <data name="settings_font_default" xml:space="preserve">
+    <value>الخط الافتراضي</value>
+  </data>
+  <data name="ui_settings_font" xml:space="preserve">
+    <value>سيصبح تعديل الخط فعالاً بعد إعادة تشغيل البرنامج.</value>
+  </data>
+  <data name="ui_settings_font_title" xml:space="preserve">
+    <value>تم تعديل الخط</value>
+  </data>
+</root>
