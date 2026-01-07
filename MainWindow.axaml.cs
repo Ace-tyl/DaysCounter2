@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Runtime.Serialization.Json;
 using System.Threading;
 using Avalonia.Controls;
+using Avalonia.Controls.Documents;
 using Avalonia.Media;
 using Avalonia.Threading;
 using DaysCounter2.Utils;
@@ -23,6 +24,7 @@ namespace DaysCounter2
         public string timerText { get; set; } = "";
         public string destinationText { get; set; } = "";
         public IBrush brush { get; set; } = new SolidColorBrush();
+        public InlineCollection nameInlines { get; set; } = [];
     }
 
     public partial class MainWindow : Window
@@ -125,6 +127,19 @@ namespace DaysCounter2
                 {
                     continue;
                 }
+                InlineCollection runs = [];
+                if (searchText != "")
+                {
+                    int matchPos = ev.name.ToLower().IndexOf(searchText.ToLower());
+                    int searchTextLength = searchText.Length;
+                    runs.Add(new Run(ev.name.Substring(0, matchPos)));
+                    runs.Add(new Run { Text = ev.name.Substring(matchPos, searchTextLength), TextDecorations = TextDecorations.Underline });
+                    runs.Add(new Run(ev.name.Substring(matchPos + searchTextLength)));
+                }
+                else
+                {
+                    runs.Add(new Run(ev.name));
+                }
                 long delta = ev.GetDelta(myNow, myNowJulian);
                 string timerText = "";
                 if (delta >= 0)
@@ -158,7 +173,8 @@ namespace DaysCounter2
                     delta = delta,
                     timerText = timerText,
                     destinationText = destinationText,
-                    brush = new SolidColorBrush(ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor, Math.Log(days, 1000)))
+                    brush = new SolidColorBrush(ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor, Math.Log(days, 1000))),
+                    nameInlines = runs
                 });
             }
             displayedEvents.Sort((a, b) =>

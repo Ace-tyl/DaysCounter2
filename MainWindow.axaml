@@ -34,7 +34,7 @@
                         <Grid ColumnDefinitions="330,*" ColumnSpacing="10" Margin="10,0,10,0">
                             <TextBlock Text="{Binding timerText}" VerticalAlignment="Center" Grid.Column="0" FontSize="18"></TextBlock>
                             <TextBlock Text="{Binding destinationText}" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="1" FontSize="18" Foreground="Gray"></TextBlock>
-                            <TextBlock Text="{Binding name}" VerticalAlignment="Center" Grid.Column="1" FontSize="18"></TextBlock>
+                            <TextBlock Inlines="{Binding nameInlines}" VerticalAlignment="Center" Grid.Column="1" FontSize="18"></TextBlock>
                         </Grid>
                     </Grid>
                 </DataTemplate>
