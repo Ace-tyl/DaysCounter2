@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ui_currentTime" xml:space="preserve">
+    <value>Текущее время: </value>
+  </data>
+  <data name="ui_delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ui_edit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="editor_date" xml:space="preserve">
+    <value>Дата события:</value>
+  </data>
+  <data name="editor_date_day" xml:space="preserve">
+    <value>День</value>
+  </data>
+  <data name="editor_date_month" xml:space="preserve">
+    <value>Месяц</value>
+  </data>
+  <data name="editor_date_year" xml:space="preserve">
+    <value>Год</value>
+  </data>
+  <data name="editor_name" xml:space="preserve">
+    <value>Название события:</value>
+  </data>
+  <data name="editor_title" xml:space="preserve">
+    <value>Редактировать событие</value>
+  </data>
+  <data name="ui_new" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="ui_settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="ui_timerAgo" xml:space="preserve">
+    <value>{0} д {1} ч {2} м {3} с назад</value>
+  </data>
+  <data name="ui_timerLater" xml:space="preserve">
+    <value>{0} д {1} ч {2} м {3} с позже</value>
+  </data>
+  <data name="ui_version" xml:space="preserve">
+    <value>Версия</value>
+  </data>
+  <data name="editor_year_bc" xml:space="preserve">
+    <value> ({0:.} до н.э.)</value>
+  </data>
+  <data name="editor_time" xml:space="preserve">
+    <value>Время события:</value>
+  </data>
+  <data name="editor_time_hour" xml:space="preserve">
+    <value>Час</value>
+  </data>
+  <data name="editor_time_minute" xml:space="preserve">
+    <value>Минута</value>
+  </data>
+  <data name="editor_time_second" xml:space="preserve">
+    <value>Секунда</value>
+  </data>
+  <data name="editor_time_timeZone" xml:space="preserve">
+    <value>Часовой пояс</value>
+  </data>
+  <data name="editor_loop" xml:space="preserve">
+    <value>Повтор</value>
+  </data>
+  <data name="editor_loop_warn" xml:space="preserve">
+    <value>Повтор будет активирован только после истечения установленного времени.</value>
+  </data>
+  <data name="editor_loop_second" xml:space="preserve">
+    <value>Секунда(ы)</value>
+  </data>
+  <data name="editor_loop_minute" xml:space="preserve">
+    <value>Минута(ы)</value>
+  </data>
+  <data name="editor_loop_hour" xml:space="preserve">
+    <value>Час(ы)</value>
+  </data>
+  <data name="editor_loop_day" xml:space="preserve">
+    <value>День(дни)</value>
+  </data>
+  <data name="editor_loop_month" xml:space="preserve">
+    <value>Месяц(ы)</value>
+  </data>
+  <data name="editor_loop_year" xml:space="preserve">
+    <value>Год(ы)</value>
+  </data>
+  <data name="editor_save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="ui_delete_warn" xml:space="preserve">
+    <value>Вы действительно хотите удалить это событие?
+Действие необратимо!</value>
+  </data>
+  <data name="timeZone_neg1200" xml:space="preserve">
+    <value>Любая точка на Земле (AoE);
+Остров Бейкер, остров Хауленд</value>
+  </data>
+  <data name="timeZone_neg1100" xml:space="preserve">
+    <value>Американское Самоа, остров Джарвис, риф Кингмен, атолл Мидуэй, Ниуэ, атолл Пальмира</value>
+  </data>
+  <data name="timeZone_neg1000" xml:space="preserve">
+    <value>Острова Кука, Французская Полинезия (большая часть), атолл Джонстон, США (Гавайи);
+США (Андреяновские острова, острова Четырёх Сопок, Ближние острова, Крысьи острова) без летнего времени</value>
+  </data>
+  <data name="timeZone_neg0930" xml:space="preserve">
+    <value>Французская Полинезия (Маркизские острова)</value>
+  </data>
+  <data name="timeZone_neg0900" xml:space="preserve">
+    <value>Французская Полинезия (острова Гамбье);
+США (Аляска (большая часть)) без летнего времени;
+США (Андреяновские острова, острова Четырёх Сопок, Ближние острова, Крысьи острова) с летним временем</value>
+  </data>
+  <data name="timeZone_neg0800" xml:space="preserve">
+    <value>Остров Клиппертон, острова Питкэрн;
+Канада (Британская Колумбия (большая часть)), Мексика (Нижняя Калифорния), США (Калифорния, Айдахо (север), Невада (большая часть), Орегон (большая часть), Вашингтон) без летнего времени;
+США (Аляска (большая часть)) с летним временем</value>
+  </data>
+  <data name="timeZone_neg0700" xml:space="preserve">
+    <value>Канада (Британская Колумбия (северо-восток), Юкон), Мексика (Южная Нижняя Калифорния, Наярит (большая часть), Синалоа, Сонора), США (Аризона (большая часть));
+Канада (Альберта, Британская Колумбия (юго-восток), Северо-Западные территории, Нунавут (запад), Саскачеван (район Ллойдминстера)), Мексика (Чиуауа (северо-западная граница)), США (Аризона (резервация Навахо), Колорадо, Айдахо (большая часть), Канзас (запад), Монтана, Небраска (запад), Нью-Мексико, Невада (северо-восточная граница), Северная Дакота (юго-запад), Орегон (восток), Южная Дакота (запад), Техас (запад), Юта, Вайоминг) без летнего времени;
+Канада (Британская Колумбия (большая часть)), Мексика (Нижняя Калифорния), США (Калифорния, Айдахо (север), Невада (большая часть), Орегон (большая часть), Вашингтон) с летним временем</value>
+  </data>
+  <data name="timeZone_neg0600" xml:space="preserve">
+    <value>Белиз, Канада (Саскачеван (большая часть)), Коста-Рика, Эквадор (Галапагосские острова), Сальвадор, Гватемала, Гондурас, Мексика (большая часть), Никарагуа;
+Канада (Манитоба, Нунавут (центральный), Онтарио (запад)), Чили (остров Пасхи), Мексика (северо-восточная граница), США (Алабама, Арканзас, Флорида (северо-запад), Иллинойс, Индиана (северо-запад, юго-запад), Айова, Канзас (большая часть), Кентукки (запад), Луизиана, Мичиган (северо-западная граница), Миннесота, Миссисипи, Миссури, Небраска (большая часть), Северная Дакота (большая часть), Оклахома, Южная Дакота (большая часть), Теннесси (большая часть), Техас (большая часть), Висконсин) без летнего времени;
+Канада (Альберта, Британская Колумбия (юго-восток), Северо-Западные территории, Нунавут (запад), Саскачеван (район Ллойдминстера)), Мексика (Чиуауа (северо-западная граница)), США (Аризона (резервация Навахо), Колорадо, Айдахо (большая часть), Канзас (запад), Монтана, Небраска (запад), Нью-Мексико, Невада (северо-восточная граница), Северная Дакота (юго-запад), Орегон (восток), Южная Дакота (запад), Техас (запад), Юта, Вайоминг) с летним временем</value>
+  </data>
+  <data name="timeZone_neg0500" xml:space="preserve">
+    <value>Бразилия (Акри, Амазонас (юго-запад)), Канада (Атикокан, Мишкигогаманг, остров Саутгемптон), Каймановы острова, Колумбия, Эквадор (большая часть), Ямайка, Мексика (Кинтана-Роо), остров Навасса, Панама, Перу;
+Багамы, Канада (Нунавут (восток), Онтарио (большая часть), Квебек (большая часть)), Куба, Гаити, острова Тёркс и Кайкос, США (Коннектикут, Делавэр, округ Колумбия, Флорида (большая часть), Джорджия, Индиана (большая часть), Кентукки (восток), Мэн, Мэриленд, Массачусетс, Мичиган (большая часть), Нью-Гэмпшир, Нью-Джерси, Нью-Йорк, Северная Каролина, Огайо, Пенсильвания, Род-Айленд, Южная Каролина, Теннесси (восток), Вермонт, Вирджиния, Западная Вирджиния) без летнего времени;
+Канада (Манитоба, Нунавут (центральный), Онтарио (запад)), Чили (остров Пасхи), Мексика (северо-восточная граница), США (Алабама, Арканзас, Флорида (северо-запад), Иллинойс, Индиана (северо-запад, юго-запад), Айова, Канзас (большая часть), Кентукки (запад), Луизиана, Мичиган (северо-западная граница), Миннесота, Миссисипи, Миссури, Небраска (большая часть), Северная Дакота (большая часть), Оклахома, Южная Дакота (большая часть), Теннесси (большая часть), Техас (большая часть), Висконсин) с летним временем</value>
+  </data>
+  <data name="timeZone_neg0400" xml:space="preserve">
+    <value>Ангилья, Антигуа и Барбуда, Аруба, Барбадос, Боливия, Бразилия (Амазонас (большая часть), Мату-Гросу, Мату-Гросу-ду-Сул, Рондония, Рорайма), Британские Виргинские острова, Канада (Квебек (восток)), Карибские Нидерланды, Кюрасао, Доминика, Доминиканская Республика, Гренада, Гваделупа, Гайана, Мартиника, Монтсеррат, Пуэрто-Рико, Сен-Бартелеми, Сент-Китс и Невис, Сент-Люсия, Синт-Мартен, Сент-Винсент и Гренадины, Сен-Мартен, Тринидад и Тобаго, Американские Виргинские острова, Венесуэла;
+Бермуды, Канада (Лабрадор (большая часть), Нью-Брансуик, Новая Шотландия, остров Принца Эдуарда), Чили (большая часть), Гренландия (Космодром Питюффик) без летнего времени;
+Багамы, Канада (Нунавут (восток), Онтарио (большая часть), Квебек (большая часть)), Куба, Гаити, острова Тёркс и Кайкос, США (Коннектикут, Делавэр, округ Колумбия, Флорида (большая часть), Джорджия, Индиана (большая часть), Кентукки (восток), Мэн, Мэриленд, Массачусетс, Мичиган (большая часть), Нью-Гэмпшир, Нью-Джерси, Нью-Йорк, Северная Каролина, Огайо, Пенсильвания, Род-Айленд, Южная Каролина, Теннесси (восток), Вермонт, Вирджиния, Западная Вирджиния) с летним временем</value>
+  </data>
+  <data name="timeZone_neg0330" xml:space="preserve">
+    <value>Канада (Ньюфаундленд, Лабрадор (юго-восток)) без летнего времени</value>
+  </data>
+  <data name="timeZone_neg0300" xml:space="preserve">
+    <value>Аргентина, Бразилия (большая часть), Чили (Айсен, Магальянес), Фолклендские острова, Французская Гвиана, Парагвай, Суринам, Уругвай;
+Сен-Пьер и Микелон без летнего времени;
+Бермуды, Канада (Лабрадор (большая часть), Нью-Брансуик, Новая Шотландия, остров Принца Эдуарда), Чили (большая часть), Гренландия (Космодром Питюффик) с летним временем</value>
+  </data>
+  <data name="timeZone_neg0230" xml:space="preserve">
+    <value>Канада (Ньюфаундленд, Лабрадор (юго-восток)) с летним временем</value>
+  </data>
+  <data name="timeZone_neg0200" xml:space="preserve">
+    <value>Бразилия (архипелаг Фернанду-ди-Норонья), Южная Георгия и Южные Сандвичевы острова;
+Гренландия (большая часть) без летнего времени;
+Сен-Пьер и Микелон с летним временем</value>
+  </data>
+  <data name="timeZone_neg0100" xml:space="preserve">
+    <value>Кабо-Верде;
+Португалия (Азорские острова) без летнего времени;
+Гренландия (большая часть) с летним временем</value>
+  </data>
+  <data name="timeZone_pos0000" xml:space="preserve">
+    <value>Буркина-Фасо, Гамбия, Гана, Гренландия (Национальный парк (восточное побережье)), Гвинея, Гвинея-Бисау, Исландия, Кот-д'Ивуар, Либерия, Мали, Мавритания, Остров Святой Елены, Вознесения и Тристан-да-Кунья, Сенегал, Сьерра-Леоне, Сан-Томе и Принсипи, Того;
+Фарерские острова, Гернси, Ирландия, Остров Мэн, Джерси, Португалия (большая часть), Испания (Канарские острова), Великобритания без летнего времени;
+Португалия (Азорские острова) с летним временем</value>
+  </data>
+  <data name="timeZone_pos0048" xml:space="preserve">
+    <value>Королевство Эллеоре без летнего времени</value>
+  </data>
+  <data name="timeZone_pos0100" xml:space="preserve">
+    <value>Алжир, Ангола, Бенин, Камерун, Центральноафриканская Республика, Чад, Конго, ДР Конго (Экватор, Киншаса, Центральное Конго, Кванго, Квилу, Май-Ндомбе, Монгала, Северный Убанги, Южный Убанги, Чуапа), Экваториальная Гвинея, Габон, Марокко, Нигер, Нигерия, Тунис;
+Албания, Андорра, Австрия, Бельгия, Босния и Герцеговина, Хорватия, Чехия, Дания, Франция (метрополия), Германия, Гибралтар, Венгрия, Италия, Лихтенштейн, Люксембург, Мальта, Монако, Черногория, Нидерланды (Европейское время), Северная Македония, Норвегия, Польша, Сан-Марино, Сербия, Словакия, Словения, Испания (большая часть), Швеция, Швейцария, Ватикан без летнего времени;
+Фарерские острова, Гернси, Ирландия, Остров Мэн, Джерси, Португалия (большая часть), Испания (Канарские острова), Великобритания с летним временем</value>
+  </data>
+  <data name="timeZone_pos0148" xml:space="preserve">
+    <value>Королевство Эллеоре с летним временем</value>
+  </data>
+  <data name="timeZone_pos0200" xml:space="preserve">
+    <value>Ботсвана, Бурунди, ДР Конго (большая часть), Эсватини, Лесото, Ливия, Малави, Мозамбик, Намибия, Россия (Калининград), Руанда, ЮАР (большая часть), Южный Судан, Судан, Замбия, Зимбабве;
+Акротири и Декелия, Болгария, Кипр, Египет, Эстония, Финляндия, Греция, Израиль, Латвия, Ливан, Литва, Молдова, Палестина, Румыния, Украина (большая часть) без летнего времени;
+Албания, Андорра, Австрия, Бельгия, Босния и Герцеговина, Хорватия, Чехия, Дания, Франция (метрополия), Германия, Гибралтар, Венгрия, Италия, Лихтенштейн, Люксембург, Мальта, Монако, Черногория, Нидерланды (Европейское время), Северная Македония, Норвегия, Польша, Сан-Марино, Сербия, Словакия, Словения, Испания (большая часть), Швеция, Швейцария, Ватикан с летним временем</value>
+  </data>
+  <data name="timeZone_pos0300" xml:space="preserve">
+    <value>Бахрейн, Беларусь, Коморы, Джибути, Эритрея, Эфиопия, Французские Южные и Антарктические территории (Разрозненные острова), Ирак, Иордания, Кения, Кувейт, Мадагаскар, Майотта, Катар, Россия (большая часть европейской части), Саудовская Аравия, Сомали, ЮАР (Острова Принс-Эдуард), Сирия, Танзания, Турция, Уганда, Украина (оккупированные территории), Йемен;
+Акротири и Декелия, Болгария, Кипр, Египет, Эстония, Финляндия, Греция, Израиль, Латвия, Ливан, Литва, Молдова, Палестина, Румыния, Украина (большая часть) с летним временем</value>
+  </data>
+  <data name="timeZone_pos0330" xml:space="preserve">
+    <value>Иран</value>
+  </data>
+  <data name="timeZone_pos0400" xml:space="preserve">
+    <value>Армения, Азербайджан, Французские Южные и Антарктические территории (Острова Крозе), Грузия, Маврикий, Оман, Россия (Астрахань, Самара, Саратов, Удмуртия, Ульяновск), Реюньон, Сейшелы, Объединённые Арабские Эмираты</value>
+  </data>
+  <data name="timeZone_pos0430" xml:space="preserve">
+    <value>Афганистан</value>
+  </data>
+  <data name="timeZone_pos0500" xml:space="preserve">
+    <value>Французские Южные и Антарктические территории (Острова Кергелен, остров Сен-Поль, остров Амстердам), Остров Херд и острова Макдональд, Казахстан, Мальдивы, Пакистан, Россия (Башкортостан, Челябинск, Ханты-Мансийск, Курган, Оренбург, Пермь, Свердловск, Тюмень, Ямало-Ненецкий автономный округ), Таджикистан, Туркменистан, Узбекистан</value>
+  </data>
+  <data name="timeZone_pos0530" xml:space="preserve">
+    <value>Индия, Шри-Ланка</value>
+  </data>
+  <data name="timeZone_pos0545" xml:space="preserve">
+    <value>Непал</value>
+  </data>
+  <data name="timeZone_pos0600" xml:space="preserve">
+    <value>Бангладеш, Бутан, Британская территория в Индийском океане, Кыргызстан, Россия (Омск)</value>
+  </data>
+  <data name="timeZone_pos0630" xml:space="preserve">
+    <value>Кокосовые острова, Мьянма</value>
+  </data>
+  <data name="timeZone_pos0700" xml:space="preserve">
+    <value>Камбоджа, Остров Рождества, Индонезия (Суматра, Ява, Западный Калимантан, Центральный Калимантан), Лаос, Монголия (Баян-Улгий, Ховд, Увс), Россия (Алтайский край, Республика Алтай, Кемерово, Хакасия, Красноярск, Новосибирск, Томск, Тыва), Таиланд, Вьетнам</value>
+  </data>
+  <data name="timeZone_pos0800" xml:space="preserve">
+    <value>Австралия (Западная Австралия), Бруней, Китай, Индонезия (Южный Калимантан, Восточный Калимантан, Северный Калимантан, Сулавеси, Малые Зондские острова), Малайзия, Монголия (большая часть), Филиппины, Россия (Бурятия, Иркутск), Сингапур</value>
+  </data>
+  <data name="timeZone_pos0845" xml:space="preserve">
+    <value>Австралия (Эвкла)</value>
+  </data>
+  <data name="timeZone_pos0900" xml:space="preserve">
+    <value>Индонезия (Молуккские острова, Западная Новая Гвинея), Япония, Северная Корея, Палау, Россия (Амурская область, Саха (большая часть), Забайкальский край), Южная Корея, Восточный Тимор</value>
+  </data>
+  <data name="timeZone_pos0930" xml:space="preserve">
+    <value>Австралия (Северная территория);
+Австралия (Южная Австралия, графство Янковайна) без летнего времени</value>
+  </data>
+  <data name="timeZone_pos1000" xml:space="preserve">
+    <value>Австралия (Квинсленд), Гуам, Микронезия (Чуук, Яп), Северные Марианские острова, Папуа — Новая Гвинея (большая часть), Россия (Еврейская автономная область, Хабаровский край, Приморский край, Саха (центрально-восточная часть));
+Австралия (Австралийская столичная территория, Территория Джервис-Бей, Новый Южный Уэльс (большая часть), Тасмания, Виктория) без летнего времени</value>
+  </data>
+  <data name="timeZone_pos1030" xml:space="preserve">
+    <value>Австралия (Остров Лорд-Хау) без летнего времени;
+Австралия (Южная Австралия, графство Янковайна) с летним временем</value>
+  </data>
+  <data name="timeZone_pos1100" xml:space="preserve">
+    <value>Микронезия (Косраэ, Понпеи), Новая Каледония, Папуа — Новая Гвинея (Бугенвиль), Россия (Магадан, Саха (восточная часть), Сахалин), Соломоновы Острова, Вануату;
+Остров Норфолк без летнего времени;
+Австралия (Австралийская столичная территория, Территория Джервис-Бей, Остров Лорд-Хау, Новый Южный Уэльс (большая часть), Тасмания, Виктория) с летним временем</value>
+  </data>
+  <data name="timeZone_pos1200" xml:space="preserve">
+    <value>Фиджи, Кирибати (острова Гилберта), Маршалловы Острова, Науру, Россия (Чукотка, Камчатка), Тувалу, Остров Уэйк, Уоллис и Футуна;
+Новая Зеландия (большая часть) без летнего времени;
+Остров Норфолк с летним временем</value>
+  </data>
+  <data name="timeZone_pos1245" xml:space="preserve">
+    <value>Новая Зеландия (Острова Чатем) без летнего времени</value>
+  </data>
+  <data name="timeZone_pos1300" xml:space="preserve">
+    <value>Кирибати (острова Феникс), Самоа, Токелау, Тонга;
+Новая Зеландия (большая часть) с летним временем</value>
+  </data>
+  <data name="timeZone_pos1345" xml:space="preserve">
+    <value>Новая Зеландия (Острова Чатем) с летним временем</value>
+  </data>
+  <data name="timeZone_pos1400" xml:space="preserve">
+    <value>Кирибати (острова Лайн)</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>Язык / Language</value>
+  </data>
+  <data name="settings_save" xml:space="preserve">
+    <value>Сохранить настройки</value>
+  </data>
+  <data name="ui_settings_language" xml:space="preserve">
+    <value>Изменение языка вступит в силу после перезапуска программы.</value>
+  </data>
+  <data name="ui_settings_language_title" xml:space="preserve">
+    <value>Язык изменён</value>
+  </data>
+  <data name="ui_search" xml:space="preserve">
+    <value>Поиск...</value>
+  </data>
+  <data name="settings_color" xml:space="preserve">
+    <value>Цвет фона</value>
+  </data>
+  <data name="settings_color_future" xml:space="preserve">
+    <value>Будущее</value>
+  </data>
+  <data name="settings_color_past" xml:space="preserve">
+    <value>Прошлое</value>
+  </data>
+  <data name="settings_color_distant" xml:space="preserve">
+    <value>Отдалённое</value>
+  </data>
+  <data name="color_select" xml:space="preserve">
+    <value>Выбрать цвет</value>
+  </data>
+  <data name="settings_dateTimeFormat" xml:space="preserve">
+    <value>Формат даты и времени</value>
+  </data>
+  <data name="settings_dateTimeFormat_helpUrl" xml:space="preserve">
+    <value>https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
+  </data>
+  <data name="color_title" xml:space="preserve">
+    <value>Выбор цвета</value>
+  </data>
+  <data name="settings_default" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="settings_destination" xml:space="preserve">
+    <value>Показывать целевое время</value>
+  </data>
+  <data name="settings_destination_always" xml:space="preserve">
+    <value>Всегда</value>
+  </data>
+  <data name="settings_destination_future" xml:space="preserve">
+    <value>Только будущие события</value>
+  </data>
+  <data name="settings_destination_none" xml:space="preserve">
+    <value>Отключить</value>
+  </data>
+  <data name="ui_outOfRange" xml:space="preserve">
+    <value>Вне диапазона отображения</value>
+  </data>
+  <data name="settings_font" xml:space="preserve">
+    <value>Шрифт отображения</value>
+  </data>
+  <data name="settings_font_default" xml:space="preserve">
+    <value>Шрифт по умолчанию</value>
+  </data>
+  <data name="ui_settings_font" xml:space="preserve">
+    <value>Изменение шрифта вступит в силу после перезапуска программы.</value>
+  </data>
+  <data name="ui_settings_font_title" xml:space="preserve">
+    <value>Шрифт изменён</value>
+  </data>
+</root>
