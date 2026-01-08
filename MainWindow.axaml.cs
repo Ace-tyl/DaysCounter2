@@ -134,7 +134,7 @@ namespace DaysCounter2
                 {
                     try
                     {
-                        Match match = Regex.Match(ev.name.ToLower(), searchText.ToLower());
+                        Match match = Regex.Match(ev.name, searchText, RegexOptions.IgnoreCase);
                         if (match.Success)
                         {
                             matchPos = match.Index;

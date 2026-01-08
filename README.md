@@ -63,6 +63,7 @@ To customize this application, click the **Settings** button. The following prop
 
   * English (United States)
   * Simplified Chinese (Chinese Mainland)
+  * Arabic (Saudi Arabia)
   * Japanese (Japan)
   * Korean (Republic of Korea)
   * Swedish (Sweden)

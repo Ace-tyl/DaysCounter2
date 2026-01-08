@@ -17,7 +17,7 @@
             <ComboBox Grid.Row="0" Grid.Column="1" x:DataType="utils:LanguageManager" ItemsSource="{Binding languages}" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="LanguageSelector">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding name}"></TextBlock>
+                        <TextBlock Text="{Binding name}" FlowDirection="{Binding flowDirection}"></TextBlock>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
