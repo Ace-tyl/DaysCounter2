@@ -31,106 +31,106 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             {
                 double u = y / 100;
                 dt = 10583.6 - 1014.41 * u
-                    + 33.78311 * Math.Pow(u, 2)
-                    - 5.952053 * Math.Pow(u, 3)
-                    - 0.1798452 * Math.Pow(u, 4)
-                    + 0.022174192 * Math.Pow(u, 5)
-                    + 0.0090316521 * Math.Pow(u, 6);
+                    + 33.78311 * u * u
+                    - 5.952053 * u * u * u
+                    - 0.1798452 * u * u * u * u
+                    + 0.022174192 * u * u * u * u * u
+                    + 0.0090316521 * u * u * u * u * u * u;
             }
             else if (year < 1600)
             {
                 double u = (y - 1000) / 100;
                 dt = 1574.2 - 556.01 * u
-                    + 71.23472 * Math.Pow(u, 2)
-                    + 0.319781 * Math.Pow(u, 3)
-                    - 0.8503463 * Math.Pow(u, 4)
-                    - 0.005050998 * Math.Pow(u, 5)
-                    + 0.0083572073 * Math.Pow(u, 6);
+                    + 71.23472 * u * u
+                    + 0.319781 * u * u * u
+                    - 0.8503463 * u * u * u * u
+                    - 0.005050998 * u * u * u * u * u
+                    + 0.0083572073 * u * u * u * u * u * u;
             }
             else if (year < 1700)
             {
                 double t = y - 1600;
                 dt = 120 - 0.9808 * t
-                    - 0.01532 * Math.Pow(t, 2)
-                    + Math.Pow(t, 3) / 7129;
+                    - 0.01532 * t * t
+                    + t * t * t / 7129;
             }
             else if (year < 1800)
             {
                 double t = y - 1700;
                 dt = 8.83 + 0.1603 * t
-                    - 0.0059285 * Math.Pow(t, 2)
-                    + 0.00013336 * Math.Pow(t, 3)
-                    - Math.Pow(t, 4) / 1174000;
+                    - 0.0059285 * t * t
+                    + 0.00013336 * t * t * t
+                    - t * t * t * t / 1174000;
             }
             else if (year < 1860)
             {
                 double t = y - 1800;
                 dt = 13.72 - 0.332447 * t
-                    + 0.0068612 * Math.Pow(t, 2)
-                    + 0.0041116 * Math.Pow(t, 3)
-                    - 0.00037436 * Math.Pow(t, 4)
-                    + 0.0000121272 * Math.Pow(t, 5)
-                    - 0.0000001699 * Math.Pow(t, 6)
-                    + 0.000000000875 * Math.Pow(t, 7);
+                    + 0.0068612 * t * t
+                    + 0.0041116 * t * t * t
+                    - 0.00037436 * t * t * t * t
+                    + 0.0000121272 * t * t * t * t * t
+                    - 0.0000001699 * t * t * t * t * t * t
+                    + 0.000000000875 * t * t * t * t * t * t * t;
             }
             else if (year < 1900)
             {
                 double t = y - 1860;
                 dt = 7.62 + 0.5737 * t
-                    - 0.251754 * Math.Pow(t, 2)
-                    + 0.01680668 * Math.Pow(t, 3)
-                    - 0.0004473624 * Math.Pow(t, 4)
-                    + Math.Pow(t, 5) / 233174;
+                    - 0.251754 * t * t
+                    + 0.01680668 * t * t * t
+                    - 0.0004473624 * t * t * t * t
+                    + t * t * t * t * t / 233174;
             }
             else if (year < 1920)
             {
                 double t = y - 1900;
                 dt = -2.79 + 1.494119 * t
-                    - 0.0598939 * Math.Pow(t, 2)
-                    + 0.0061966 * Math.Pow(t, 3)
-                    - 0.000197 * Math.Pow(t, 4);
+                    - 0.0598939 * t * t
+                    + 0.0061966 * t * t * t
+                    - 0.000197 * t * t * t * t;
             }
             else if (year < 1941)
             {
                 double t = y - 1920;
                 dt = 21.2 + 0.84493 * t
-                    - 0.0761 * Math.Pow(t, 2)
-                    + 0.0020936 * Math.Pow(t, 3);
+                    - 0.0761 * t * t
+                    + 0.0020936 * t * t * t;
             }
             else if (year < 1961)
             {
                 double t = y - 1950;
                 dt = 29.07 + 0.407 * t
-                    - Math.Pow(t, 2) / 233
-                    + Math.Pow(t, 3) / 2547;
+                    - t * t / 233
+                    + t * t * t / 2547;
             }
             else if (year < 1986)
             {
                 double t = y - 1975;
                 dt = 45.45 + 1.067 * t
-                    - Math.Pow(t, 2) / 260
-                    - Math.Pow(t, 3) / 718;
+                    - t * t / 260
+                    - t * t * t / 718;
             }
             else if (year < 2005)
             {
                 double t = y - 2000;
                 dt = 63.86
                     + 0.3345 * t
-                    - 0.060374 * Math.Pow(t, 2)
-                    + 0.0017275 * Math.Pow(t, 3)
-                    + 0.000651814 * Math.Pow(t, 4)
-                    + 0.00002373599 * Math.Pow(t, 5);
+                    - 0.060374 * t * t
+                    + 0.0017275 * t * t * t
+                    + 0.000651814 * t * t * t * t
+                    + 0.00002373599 * t * t * t * t * t;
             }
             else if (year < 2050)
             {
                 double t = y - 2000;
                 dt = 62.92 + 0.32217 * t
-                    + 0.005589 * Math.Pow(t, 2);
+                    + 0.005589 * t * t;
             }
             else if (year < 2150)
             {
                 double u = (y - 1820) / 100;
-                dt = -20 + 32 * Math.Pow(u, 2)
+                dt = -20 + 32 * u * u
                     - 0.5628 * (2150 - y);
             }
             else
@@ -190,12 +190,12 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             if (year >= 1000 && year <= 3000)
             {
                 double m = (year - 2000) / 1000.0;
-                return 2451623.80984 + 365242.37404 * m + 0.05169 * Math.Pow(m, 2) - 0.00411 * Math.Pow(m, 3) - 0.00057 * Math.Pow(m, 4);
+                return 2451623.80984 + 365242.37404 * m + 0.05169 * m * m - 0.00411 * m * m * m - 0.00057 * m * m * m * m;
             }
             else
             {
                 double m = year / 1000.0;
-                return 1721139.29189 + 365242.1374 * m + 0.06134 * Math.Pow(m, 2) + 0.00111 * Math.Pow(m, 3) - 0.00071 * Math.Pow(m, 4);
+                return 1721139.29189 + 365242.1374 * m + 0.06134 * m * m + 0.00111 * m * m * m - 0.00071 * m * m * m * m;
             }
         }
 
@@ -219,17 +219,17 @@ namespace DaysCounter2.Utils.ChineseLunisolar
 
             double T = Julian.JulianThousandYear(ve);
             double e = 0.0167086342 - 0.0004203654 * T
-                - 0.0000126734 * Math.Pow(T, 2)
-                + 0.0000001444 * Math.Pow(T, 3)
-                - 0.0000000002 * Math.Pow(T, 4)
-                + 0.0000000003 * Math.Pow(T, 5);
+                - 0.0000126734 * T * T
+                + 0.0000001444 * T * T * T
+                - 0.0000000002 * T * T * T * T
+                + 0.0000000003 * T * T * T * T * T;
 
             double TT = year / 1000.0;
             // The angle between the vernal equinox and the perihelion (degree)
             double d = 111.25586939 - 17.0119934518333 * TT
-                - 0.044091890166673 * Math.Pow(TT, 2)
-                - 4.37356166661345E-04 * Math.Pow(TT, 3)
-                + 8.16716666602386E-06 * Math.Pow(TT, 4);
+                - 0.044091890166673 * TT * TT
+                - 4.37356166661345E-04 * TT * TT * TT
+                + 8.16716666602386E-06 * TT * TT * TT * TT;
             double rvp = Mathematics.Deg2Rad(d);
 
             double[] peri = new double[26];
@@ -276,9 +276,9 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             double nme = BNM + MSM * k;
 
             double t = Julian.JulianCentury(nme);
-            double t2 = Math.Pow(t, 2);
-            double t3 = Math.Pow(t, 3);
-            double t4 = Math.Pow(t, 4);
+            double t2 = t * t;
+            double t3 = t * t * t;
+            double t4 = t * t * t * t;
 
             // mean time of phase
             double mnm = nme + 0.0001337 * t2 - 0.00000015 * t3 + 0.00000000073 * t4;
@@ -301,16 +301,16 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             apt1 += 0.17241 * e* Math.Sin((Math.PI / 180) * m);
             apt1 += 0.01608 * Math.Sin((Math.PI / 180) * 2 * ms);
             apt1 += 0.01039 * Math.Sin((Math.PI / 180) * 2 * f);
-            apt1 += 0.00739 * e* Math.Sin((Math.PI / 180) *(ms - m));
-            apt1 -= 0.00514 * e* Math.Sin((Math.PI / 180) *(ms + m));
-            apt1 += 0.00208 * e * e* Math.Sin((Math.PI / 180) *(2 * m));
+            apt1 += 0.00739 * e* Math.Sin((Math.PI / 180) * (ms - m));
+            apt1 -= 0.00514 * e* Math.Sin((Math.PI / 180) * (ms + m));
+            apt1 += 0.00208 * e * e* Math.Sin((Math.PI / 180) * (2 * m));
             apt1 -= 0.00111 * Math.Sin((Math.PI / 180) * (ms - 2 * f));
             apt1 -= 0.00057 * Math.Sin((Math.PI / 180) * (ms + 2 * f));
-            apt1 += 0.00056 * e* Math.Sin((Math.PI / 180) *(2 * ms + m));
+            apt1 += 0.00056 * e* Math.Sin((Math.PI / 180) * (2 * ms + m));
             apt1 -= 0.00042 * Math.Sin((Math.PI / 180) * 3 * ms);
-            apt1 += 0.00042 * e* Math.Sin((Math.PI / 180) *(m + 2 * f));
-            apt1 += 0.00038 * e* Math.Sin((Math.PI / 180) *(m - 2 * f));
-            apt1 -= 0.00024 * e* Math.Sin((Math.PI / 180) *(2 * ms - m));
+            apt1 += 0.00042 * e* Math.Sin((Math.PI / 180) * (m + 2 * f));
+            apt1 += 0.00038 * e* Math.Sin((Math.PI / 180) * (m - 2 * f));
+            apt1 -= 0.00024 * e* Math.Sin((Math.PI / 180) * (2 * ms - m));
             apt1 -= 0.00017 * Math.Sin((Math.PI / 180) * omega);
             apt1 -= 0.00007 * Math.Sin((Math.PI / 180) * (ms + 2 * m));
             apt1 += 0.00004 * Math.Sin((Math.PI / 180) * (2 * ms - 2 * f));
@@ -347,7 +347,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             double nme = BNM + k * MSM;
             double t = Julian.JulianCentury(nme);
 
-            return nme + 0.0001337 * Math.Pow(t, 2) - 0.00000015 * Math.Pow(t, 3) + 0.00000000073 * Math.Pow(t, 4);
+            return nme + 0.0001337 * t * t - 0.00000015 * t * t * t + 0.00000000073 * t * t * t * t;
         }
 
         // Reference lunar month number
