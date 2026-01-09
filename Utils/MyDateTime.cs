@@ -239,7 +239,12 @@ namespace DaysCounter2.Utils
             {
                 timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
             }
-            return JulianDay(year, month, day) * 86400 + hour * 3600 + (minute - (int)timeZoneDelta) * 60 + second;
+            return JulianDay(year, month, day) * 86400 + (hour - 12) * 3600 + (minute - (int)timeZoneDelta) * 60 + second;
+        }
+
+        public double GetJulianDay()
+        {
+            return GetJulianSecond() / 86400.0;
         }
 
         public bool EarlierThan(MyDateTime another)
