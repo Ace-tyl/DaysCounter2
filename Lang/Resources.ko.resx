@@ -441,4 +441,8 @@
   <data name="ui_settings_font_title" xml:space="preserve">
     <value>글꼴 수정됨</value>
   </data>
+  <data name="ui_delete_warn_multi" xml:space="preserve">
+    <value>이 {0}개의 이벤트를 정말로 삭제하시겠습니까?
+이 작업은 취소할 수 없습니다!</value>
+  </data>
 </root>

@@ -441,4 +441,8 @@ New Zealand (most) with DST</value>
   <data name="ui_settings_font_title" xml:space="preserve">
     <value>Font Modified</value>
   </data>
+  <data name="ui_delete_warn_multi" xml:space="preserve">
+    <value>Do you really want to delete these {0} events?
+The operation is irrevocable!</value>
+  </data>
 </root>

@@ -839,6 +839,16 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you really want to delete these {0} events?
+        ///The operation is irrevocable!.
+        /// </summary>
+        public static string ui_delete_warn_multi {
+            get {
+                return ResourceManager.GetString("ui_delete_warn_multi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Warning.
         /// </summary>
         public static string ui_delete_warn_title {

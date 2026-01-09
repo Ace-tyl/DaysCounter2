@@ -21,7 +21,7 @@
             <Button Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsEnabled="False" x:Name="EditButton" Click="EditButton_Click" Content="{x:Static lang:Resources.ui_edit}"></Button>
             <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.ui_settings}" Click="SettingsButton_Click"></Button>
         </Grid>
-        <ListBox x:Name="TimerList" ItemsSource="{Binding Displayed}" SelectionChanged="TimerList_SelectionChanged" Padding="0">
+        <ListBox x:Name="TimerList" ItemsSource="{Binding Displayed}" SelectionChanged="TimerList_SelectionChanged" Padding="0" SelectionMode="Multiple">
             <ListBox.Styles>
                 <Style Selector="ListBoxItem">
                     <Setter Property="Padding" Value="0"></Setter>

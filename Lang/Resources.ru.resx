@@ -441,4 +441,8 @@
   <data name="ui_settings_font_title" xml:space="preserve">
     <value>Шрифт изменён</value>
   </data>
+  <data name="ui_delete_warn_multi" xml:space="preserve">
+    <value>Вы действительно хотите удалить эти {0} событий?
+Действие необратимо!</value>
+  </data>
 </root>

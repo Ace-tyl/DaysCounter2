@@ -120,6 +120,12 @@ namespace DaysCounter2
                 App.settings.dateTimeFormat = "yyyy/MM/dd HH:mm:ss";
                 CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString(App.settings.dateTimeFormat, culture);
             }
+
+            if (TimerList.SelectedItems != null && TimerList.SelectedItems.Count > 1)
+            {
+                return;
+            }
+
             MyDateTime myNow = new(now, TimeZoneInfo.Local);
             long myNowJulian = myNow.GetJulianSecond();
             displayedEvents = [];
@@ -243,6 +249,7 @@ namespace DaysCounter2
             if (editor.savedEvent != null)
             {
                 events.Add(editor.savedEvent);
+                TimerList.SelectedIndex = -1;
                 RefreshWindow();
                 SaveEvents();
             }
@@ -251,30 +258,36 @@ namespace DaysCounter2
         private void TimerList_SelectionChanged(object? sender, SelectionChangedEventArgs e)
         {
             DeleteButton.IsEnabled = (TimerList.SelectedIndex != -1);
-            EditButton.IsEnabled = (TimerList.SelectedIndex != -1);
+            EditButton.IsEnabled = TimerList.SelectedItems == null ? false : (TimerList.SelectedItems.Count == 1);
         }
 
         private async void DeleteButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            if (TimerList.SelectedItem == null)
+            if (TimerList.SelectedItems == null)
             {
                 return;
             }
-            var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_delete_warn_title, Lang.Resources.ui_delete_warn, MsBox.Avalonia.Enums.ButtonEnum.YesNo);
+            int selectedItemsCount = TimerList.SelectedItems.Count;
+            var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_delete_warn_title, selectedItemsCount == 1 ? Lang.Resources.ui_delete_warn : string.Format(Lang.Resources.ui_delete_warn_multi, selectedItemsCount), MsBox.Avalonia.Enums.ButtonEnum.YesNo);
             var result = await msgbox.ShowWindowDialogAsync(this);
             if (result != MsBox.Avalonia.Enums.ButtonResult.Yes)
             {
                 return;
             }
-            string selectedUuid = ((DisplayedEvent)TimerList.SelectedItem).uuid;
-            foreach (Event ev in events)
+            HashSet<string> selectedUuids = [];
+            foreach (var item in TimerList.SelectedItems)
             {
-                if (ev.uuid == selectedUuid)
+                selectedUuids.Add(((DisplayedEvent)item).uuid);
+            }
+            for (int i = 0; i < events.Count; i++)
+            {
+                if (selectedUuids.Contains(events[i].uuid))
                 {
-                    events.Remove(ev);
-                    break;
+                    events.Remove(events[i]);
+                    i--;
                 }
             }
+            TimerList.SelectedIndex = -1;
             RefreshWindow();
             SaveEvents();
         }

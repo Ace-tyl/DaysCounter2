@@ -209,8 +209,7 @@
   </data>
   <data name="ui_delete_warn" xml:space="preserve">
     <value>你確定要刪除這個事件嗎？
-該操作不可撤回！
-如果確定，請點選 Yes，否則點選 No。</value>
+該操作不可撤回！</value>
   </data>
   <data name="timeZone_neg1200" xml:space="preserve">
     <value>全球最晚時區（AoE）；
@@ -441,5 +440,9 @@
   </data>
   <data name="ui_settings_font_title" xml:space="preserve">
     <value>字體已修改</value>
+  </data>
+  <data name="ui_delete_warn_multi" xml:space="preserve">
+    <value>你確定要刪除這 {0} 個事件嗎？
+該操作不可撤回！</value>
   </data>
 </root>
