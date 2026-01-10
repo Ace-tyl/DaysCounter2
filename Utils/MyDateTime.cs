@@ -20,7 +20,7 @@ namespace DaysCounter2.Utils
             timeZoneDelta = (int)timeZone.BaseUtcOffset.TotalMinutes;
         }
 
-        public MyDateTime(int year, int month, int day, int hour, int minute, int second, int? timeZoneDelta = null)
+        public MyDateTime(int year, int month, int day, int hour = 0, int minute = 0, int second = 0, int? timeZoneDelta = null)
         {
             this.year = year;
             this.month = month;
@@ -277,7 +277,7 @@ namespace DaysCounter2.Utils
             {
                 day += 10;
             }
-            return new Tuple<int, int>(month, day);
+            return new(month, day);
         }
 
         // Convert from Julian Day to Date Time
