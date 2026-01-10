@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ui_currentTime" xml:space="preserve">
+    <value>當前時間：</value>
+  </data>
+  <data name="ui_delete" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="ui_edit" xml:space="preserve">
+    <value>編輯</value>
+  </data>
+  <data name="editor_date" xml:space="preserve">
+    <value>事件日期：</value>
+  </data>
+  <data name="editor_date_day" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="editor_date_month" xml:space="preserve">
+    <value>月</value>
+  </data>
+  <data name="editor_date_year" xml:space="preserve">
+    <value>年</value>
+  </data>
+  <data name="editor_name" xml:space="preserve">
+    <value>事件名稱：</value>
+  </data>
+  <data name="editor_title" xml:space="preserve">
+    <value>編輯事件</value>
+  </data>
+  <data name="ui_new" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="ui_settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="ui_timerAgo" xml:space="preserve">
+    <value>{0} 日 {1} 個鐘 {2} 分 {3} 秒前</value>
+  </data>
+  <data name="ui_timerLater" xml:space="preserve">
+    <value>{0} 日 {1} 個鐘 {2} 分 {3} 秒後</value>
+  </data>
+  <data name="ui_version" xml:space="preserve">
+    <value>版本</value>
+  </data>
+  <data name="editor_year_bc" xml:space="preserve">
+    <value>（公元前 {0:.}）</value>
+  </data>
+  <data name="editor_time" xml:space="preserve">
+    <value>事件時間：</value>
+  </data>
+  <data name="editor_time_hour" xml:space="preserve">
+    <value>時</value>
+  </data>
+  <data name="editor_time_minute" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="editor_time_second" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="editor_time_timeZone" xml:space="preserve">
+    <value>時區</value>
+  </data>
+  <data name="editor_loop" xml:space="preserve">
+    <value>循環</value>
+  </data>
+  <data name="editor_loop_warn" xml:space="preserve">
+    <value>只有過咗設定時間之後先會啟動循環。</value>
+  </data>
+  <data name="editor_loop_second" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="editor_loop_minute" xml:space="preserve">
+    <value>分鐘</value>
+  </data>
+  <data name="editor_loop_hour" xml:space="preserve">
+    <value>鐘頭</value>
+  </data>
+  <data name="editor_loop_day" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="editor_loop_month" xml:space="preserve">
+    <value>個月</value>
+  </data>
+  <data name="editor_loop_year" xml:space="preserve">
+    <value>年</value>
+  </data>
+  <data name="editor_save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="ui_delete_warn" xml:space="preserve">
+    <value>你真係想刪除呢個事件？
+呢個操作係無法撤銷嘅！</value>
+  </data>
+  <data name="timeZone_neg1200" xml:space="preserve">
+    <value>全球任何地方（AoE）；
+貝克島、豪蘭島</value>
+  </data>
+  <data name="timeZone_neg1100" xml:space="preserve">
+    <value>美屬薩摩亞、賈維斯島、金曼礁、中途島、紐埃、帕爾米拉環礁</value>
+  </data>
+  <data name="timeZone_neg1000" xml:space="preserve">
+    <value>庫克群島、法屬波利尼西亞（大部分）、約翰斯頓環礁、美國（夏威夷）；
+美國（安德烈亞諾夫群島、四山群島、近島群、拉特群島）不設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0930" xml:space="preserve">
+    <value>法屬波利尼西亞（馬克薩斯群島）</value>
+  </data>
+  <data name="timeZone_neg0900" xml:space="preserve">
+    <value>法屬波利尼西亞（甘比爾群島）；
+美國（阿拉斯加（大部分））不設夏令時間；
+美國（安德烈亞諾夫群島、四山群島、近島群、拉特群島）設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0800" xml:space="preserve">
+    <value>克利珀頓島、皮特凱恩群島；
+加拿大（不列顛哥倫比亞省（大部分））、墨西哥（下加利福尼亞州）、美國（加州、愛達荷州（北部）、內華達州（大部分）、俄勒岡州（大部分）、華盛頓州）不設夏令時間；
+美國（阿拉斯加（大部分））設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0700" xml:space="preserve">
+    <value>加拿大（不列顛哥倫比亞省（東北部）、育空）、墨西哥（南下加利福尼亞州、納亞里特州（大部分）、錫那羅亞州、索諾拉州）、美國（亞利桑那州（大部分））；
+加拿大（阿爾伯塔省、不列顛哥倫比亞省（東南部）、西北地區、努納武特（西部）、薩斯喀徹溫省（勞埃德明斯特地區））、墨西哥（奇瓦瓦州（西北邊境））、美國（亞利桑那州（納瓦霍族地區）、科羅拉多州、愛達荷州（大部分）、堪薩斯州（西部）、蒙大拿州、內布拉斯加州（西部）、新墨西哥州、內華達州（東北邊境）、北達科他州（西南部）、俄勒岡州（東部）、南達科他州（西部）、德州（西部）、猶他州、懷俄明州）不設夏令時間；
+加拿大（不列顛哥倫比亞省（大部分））、墨西哥（下加利福尼亞州）、美國（加州、愛達荷州（北部）、內華達州（大部分）、俄勒岡州（大部分）、華盛頓州）設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0600" xml:space="preserve">
+    <value>伯利茲、加拿大（薩斯喀徹溫省（大部分））、哥斯達黎加、厄瓜多爾（加拉帕戈斯群島）、薩爾瓦多、危地馬拉、洪都拉斯、墨西哥（大部分）、尼加拉瓜；
+加拿大（馬尼托巴省、努納武特（中部）、安大略省（西部））、智利（復活節島）、墨西哥（東北邊境）、美國（阿拉巴馬州、阿肯色州、佛羅里達州（西北部）、伊利諾伊州、印第安納州（西北部、西南部）、愛荷華州、堪薩斯州（大部分）、肯塔基州（西部）、路易斯安那州、密歇根州（西北邊境）、明尼蘇達州、密西西比州、密蘇里州、內布拉斯加州（大部分）、北達科他州（大部分）、奧克拉荷馬州、南達科他州（大部分）、田納西州（大部分）、德州（大部分）、威斯康辛州）不設夏令時間；
+加拿大（阿爾伯塔省、不列顛哥倫比亞省（東南部）、西北地區、努納武特（西部）、薩斯喀徹溫省（勞埃德明斯特地區））、墨西哥（奇瓦瓦州（西北邊境））、美國（亞利桑那州（納瓦霍族地區）、科羅拉多州、愛達荷州（大部分）、堪薩斯州（西部）、蒙大拿州、內布拉斯加州（西部）、新墨西哥州、內華達州（東北邊境）、北達科他州（西南部）、俄勒岡州（東部）、南達科他州（西部）、德州（西部）、猶他州、懷俄明州）設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0500" xml:space="preserve">
+    <value>巴西（阿克里州、亞馬遜州（西南部））、加拿大（阿提科坎、米希基戈加曼、南安普敦島）、開曼群島、哥倫比亞、厄瓜多爾（大部分）、牙買加、墨西哥（金塔納羅奧州）、納瓦薩島、巴拿馬、秘魯；
+巴哈馬、加拿大（努納武特（東部）、安大略省（大部分）、魁北克省（大部分））、古巴、海地、特克斯和凱科斯群島、美國（康涅狄格州、特拉華州、哥倫比亞特區、佛羅里達州（大部分）、佐治亞州、印第安納州（大部分）、肯塔基州（東部）、緬因州、馬里蘭州、麻省、密歇根州（大部分）、新罕布什爾州、新澤西州、紐約州、北卡羅來納州、俄亥俄州、賓夕法尼亞州、羅德島州、南卡羅來納州、田納西州（東部）、佛蒙特州、維珍尼亞州、西維珍尼亞州）不設夏令時間；
+加拿大（馬尼托巴省、努納武特（中部）、安大略省（西部））、智利（復活節島）、墨西哥（東北邊境）、美國（阿拉巴馬州、阿肯色州、佛羅里達州（西北部）、伊利諾伊州、印第安納州（西北部、西南部）、愛荷華州、堪薩斯州（大部分）、肯塔基州（西部）、路易斯安那州、密歇根州（西北邊境）、明尼蘇達州、密西西比州、密蘇里州、內布拉斯加州（大部分）、北達科他州（大部分）、奧克拉荷馬州、南達科他州（大部分）、田納西州（大部分）、德州（大部分）、威斯康辛州）設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0400" xml:space="preserve">
+    <value>安圭拉、安提瓜和巴布達、阿魯巴、巴巴多斯、玻利維亞、巴西（亞馬遜州（大部分）、馬托格羅索州、南馬托格羅索州、朗多尼亞州、羅賴馬州）、英屬維京群島、加拿大（魁北克省（東部））、加勒比荷蘭、庫拉索、多米尼克、多米尼加共和國、格林納達、瓜德羅普、圭亞那、馬提尼克、蒙特塞拉特、波多黎各、聖巴泰勒米、聖基茨和尼維斯、聖盧西亞、聖馬丁、聖文森特和格林納丁斯、荷屬聖馬丁、千里達和多巴哥、美屬維京群島、委內瑞拉；
+百慕達、加拿大（拉布拉多（大部分）、新不倫瑞克省、新斯科舍省、愛德華王子島）、智利（大部分）、格陵蘭（皮圖菲克太空基地）不設夏令時間；
+巴哈馬、加拿大（努納武特（東部）、安大略省（大部分）、魁北克省（大部分））、古巴、海地、特克斯和凱科斯群島、美國（康涅狄格州、特拉華州、哥倫比亞特區、佛羅里達州（大部分）、佐治亞州、印第安納州（大部分）、肯塔基州（東部）、緬因州、馬里蘭州、麻省、密歇根州（大部分）、新罕布什爾州、新澤西州、紐約州、北卡羅來納州、俄亥俄州、賓夕法尼亞州、羅德島州、南卡羅來納州、田納西州（東部）、佛蒙特州、維珍尼亞州、西維珍尼亞州）設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0330" xml:space="preserve">
+    <value>加拿大（紐芬蘭、拉布拉多（東南部））不設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0300" xml:space="preserve">
+    <value>阿根廷、巴西（大部分）、智利（艾森、麥哲倫）、福克蘭群島、法屬圭亞那、巴拉圭、蘇里南、烏拉圭；
+聖皮埃爾和密克隆群島不設夏令時間；
+百慕達、加拿大（拉布拉多（大部分）、新不倫瑞克省、新斯科舍省、愛德華王子島）、智利（大部分）、格陵蘭（皮圖菲克太空基地）設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0230" xml:space="preserve">
+    <value>加拿大（紐芬蘭、拉布拉多（東南部））設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0200" xml:space="preserve">
+    <value>巴西（費爾南多·迪諾羅尼亞）、南佐治亞島及南桑威奇群島；
+格陵蘭（大部分）不設夏令時間；
+聖皮埃爾和密克隆群島設夏令時間</value>
+  </data>
+  <data name="timeZone_neg0100" xml:space="preserve">
+    <value>佛得角；
+葡萄牙（亞速爾群島）不設夏令時間；
+格陵蘭（大部分）設夏令時間</value>
+  </data>
+  <data name="timeZone_pos0000" xml:space="preserve">
+    <value>布基納法索、岡比亞、加納、格陵蘭（國家公園（東岸））、幾內亞、幾內亞比紹、冰島、科特迪瓦、利比里亞、馬里、毛里塔尼亞、聖赫勒拿、阿森松島及特里斯坦-達庫尼亞、塞內加爾、塞拉利昂、聖多美和普林西比、多哥；
+法羅群島、根西、愛爾蘭、曼島、澤西、葡萄牙（大部分）、西班牙（加那利群島）、英國不設夏令時間；
+葡萄牙（亞速爾群島）設夏令時間</value>
+  </data>
+  <data name="timeZone_pos0048" xml:space="preserve">
+    <value>埃勒歐雷王國不設夏令時間</value>
+  </data>
+  <data name="timeZone_pos0100" xml:space="preserve">
+    <value>阿爾及利亞、安哥拉、貝寧、喀麥隆、中非共和國、乍得、剛果、剛果民主共和國（赤道省、金沙薩、剛果中央省、寬戈省、奎盧省、邁恩東貝省、蒙加拉省、北烏班吉省、南烏班吉省、楚阿帕省）、赤道幾內亞、加蓬、摩洛哥、尼日爾、尼日利亞、突尼西亞；
+阿爾巴尼亞、安道爾、奧地利、比利時、波斯尼亞和黑塞哥維那、克羅地亞、捷克、丹麥、法國（本土）、德國、直布羅陀、匈牙利、意大利、列支敦士登、盧森堡、馬耳他、摩納哥、黑山、荷蘭（歐洲部分）、北馬其頓、挪威、波蘭、聖馬力諾、塞爾維亞、斯洛伐克、斯洛文尼亞、西班牙（大部分）、瑞典、瑞士、梵蒂岡城不設夏令時間；
+法羅群島、根西、愛爾蘭、曼島、澤西、葡萄牙（大部分）、西班牙（加那利群島）、英國設夏令時間</value>
+  </data>
+  <data name="timeZone_pos0148" xml:space="preserve">
+    <value>埃勒歐雷王國設夏令時間</value>
+  </data>
+  <data name="timeZone_pos0200" xml:space="preserve">
+    <value>博茨瓦納、布隆迪、剛果民主共和國（大部分）、斯威士蘭、萊索托、利比亞、馬拉維、莫桑比克、納米比亞、俄羅斯（加里寧格勒）、盧旺達、南非（大部分）、南蘇丹、蘇丹、贊比亞、津巴布韋；
+阿克羅蒂里與德凱利亞、保加利亞、塞浦路斯、埃及、愛沙尼亞、芬蘭、希臘、以色列、拉脫維亞、黎巴嫩、立陶宛、摩爾多瓦、巴勒斯坦、羅馬尼亞、烏克蘭（大部分）不設夏令時間；
+阿爾巴尼亞、安道爾、奧地利、比利時、波斯尼亞和黑塞哥維那、克羅地亞、捷克、丹麥、法國（本土）、德國、直布羅陀、匈牙利、意大利、列支敦士登、盧森堡、馬耳他、摩納哥、黑山、荷蘭（歐洲部分）、北馬其頓、挪威、波蘭、聖馬力諾、塞爾維亞、斯洛伐克、斯洛文尼亞、西班牙（大部分）、瑞典、瑞士、梵蒂岡城設夏令時間</value>
+  </data>
+  <data name="timeZone_pos0300" xml:space="preserve">
+    <value>巴林、白俄羅斯、科摩羅、吉布提、厄立特里亞、埃塞俄比亞、法屬南部和南極領地（離島）、伊拉克、約旦、肯尼亞、科威特、馬達加斯加、馬約特、卡塔爾、俄羅斯（歐洲部分大部分）、沙特阿拉伯、索馬里、南非（愛德華王子群島）、敘利亞、坦桑尼亞、土耳其、烏干達、烏克蘭（被佔領地區）、也門；
+阿克羅蒂里與德凱利亞、保加利亞、塞浦路斯、埃及、愛沙尼亞、芬蘭、希臘、以色列、拉脫維亞、黎巴嫩、立陶宛、摩爾多瓦、巴勒斯坦、羅馬尼亞、烏克蘭（大部分）設夏令時間</value>
+  </data>
+  <data name="timeZone_pos0330" xml:space="preserve">
+    <value>伊朗</value>
+  </data>
+  <data name="timeZone_pos0400" xml:space="preserve">
+    <value>亞美尼亞、阿塞拜疆、法屬南部和南極領地（克羅澤群島）、格魯吉亞、毛里求斯、阿曼、俄羅斯（阿斯特拉罕、薩馬拉、薩拉托夫、烏德穆爾特、烏里揚諾夫斯克）、留尼旺、塞舌爾、阿聯酋</value>
+  </data>
+  <data name="timeZone_pos0430" xml:space="preserve">
+    <value>阿富汗</value>
+  </data>
+  <data name="timeZone_pos0500" xml:space="preserve">
+    <value>法屬南部和南極領地（凱爾蓋朗群島、聖保羅島、阿姆斯特丹島）、赫德島和麥克唐納群島、哈薩克斯坦、馬爾代夫、巴基斯坦、俄羅斯（巴什科爾托斯坦、車里雅賓斯克、漢特-曼西、庫爾干、奧倫堡、彼爾姆、斯維爾德洛夫斯克、秋明、亞馬爾）、塔吉克斯坦、土庫曼斯坦、烏茲別克斯坦</value>
+  </data>
+  <data name="timeZone_pos0530" xml:space="preserve">
+    <value>印度、斯里蘭卡</value>
+  </data>
+  <data name="timeZone_pos0545" xml:space="preserve">
+    <value>尼泊爾</value>
+  </data>
+  <data name="timeZone_pos0600" xml:space="preserve">
+    <value>孟加拉國、不丹、英屬印度洋領地、吉爾吉斯斯坦、俄羅斯（鄂木斯克）</value>
+  </data>
+  <data name="timeZone_pos0630" xml:space="preserve">
+    <value>科科斯群島、緬甸</value>
+  </data>
+  <data name="timeZone_pos0700" xml:space="preserve">
+    <value>柬埔寨、聖誕島、印尼（蘇門答臘、爪哇、西加里曼丹、中加里曼丹）、老撾、蒙古（巴彥烏列蓋、科布多、烏布蘇）、俄羅斯（阿爾泰邊疆區、阿爾泰共和國、克麥羅沃、哈卡斯、克拉斯諾亞爾斯克、新西伯利亞、托木斯克、圖瓦）、泰國、越南</value>
+  </data>
+  <data name="timeZone_pos0800" xml:space="preserve">
+    <value>澳洲（西澳）、文萊、中國、印尼（南加里曼丹、東加里曼丹、北加里曼丹、蘇拉威西、小巽他群島）、馬來西亞、蒙古（大部分）、菲律賓、俄羅斯（布里亞特、伊爾庫茨克）、新加坡</value>
+  </data>
+  <data name="timeZone_pos0845" xml:space="preserve">
+    <value>澳洲（尤克拉）</value>
+  </data>
+  <data name="timeZone_pos0900" xml:space="preserve">
+    <value>印尼（馬魯古群島、西新幾內亞）、日本、北韓、帕勞、俄羅斯（阿穆爾、薩哈（大部分）、外貝加爾）、南韓、東帝汶</value>
+  </data>
+  <data name="timeZone_pos0930" xml:space="preserve">
+    <value>澳洲（北領地）；
+澳洲（南澳、揚科溫納縣）不設夏令時間</value>
+  </data>
+  <data name="timeZone_pos1000" xml:space="preserve">
+    <value>澳洲（昆士蘭）、關島、密克羅尼西亞（楚克、雅浦）、北馬里亞納群島、巴布亞新幾內亞（大部分）、俄羅斯（猶太自治州、哈巴羅夫斯克、濱海邊疆區、薩哈（中東部））；
+澳洲（首都領地、傑維斯灣領地、新南威爾士州（大部分）、塔斯曼尼亞、維多利亞州）不設夏令時間</value>
+  </data>
+  <data name="timeZone_pos1030" xml:space="preserve">
+    <value>澳洲（豪勳爵島）不設夏令時間；
+澳洲（南澳、揚科溫納縣）設夏令時間</value>
+  </data>
+  <data name="timeZone_pos1100" xml:space="preserve">
+    <value>密克羅尼西亞（科斯雷、波納佩）、新喀里多尼亞、巴布亞新幾內亞（布干維爾）、俄羅斯（馬加丹、薩哈（東部）、薩哈林）、所羅門群島、瓦努阿圖；
+諾福克島不設夏令時間；
+澳洲（首都領地、傑維斯灣領地、豪勳爵島、新南威爾士州（大部分）、塔斯曼尼亞、維多利亞州）設夏令時間</value>
+  </data>
+  <data name="timeZone_pos1200" xml:space="preserve">
+    <value>斐濟、基里巴斯（吉爾伯特群島）、馬紹爾群島、瑙魯、俄羅斯（楚科奇、堪察加）、圖瓦盧、威克島、瓦利斯和富圖納；
+新西蘭（大部分）不設夏令時間；
+諾福克島設夏令時間</value>
+  </data>
+  <data name="timeZone_pos1245" xml:space="preserve">
+    <value>新西蘭（查塔姆群島）不設夏令時間</value>
+  </data>
+  <data name="timeZone_pos1300" xml:space="preserve">
+    <value>基里巴斯（鳳凰群島）、薩摩亞、托克勞、湯加；
+新西蘭（大部分）設夏令時間</value>
+  </data>
+  <data name="timeZone_pos1345" xml:space="preserve">
+    <value>新西蘭（查塔姆群島）設夏令時間</value>
+  </data>
+  <data name="timeZone_pos1400" xml:space="preserve">
+    <value>基里巴斯（萊恩群島）</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>語言 / Language</value>
+  </data>
+  <data name="settings_save" xml:space="preserve">
+    <value>保存設定</value>
+  </data>
+  <data name="ui_settings_language" xml:space="preserve">
+    <value>語言修改會喺程式重新啟動之後生效。</value>
+  </data>
+  <data name="ui_settings_language_title" xml:space="preserve">
+    <value>語言修改咗</value>
+  </data>
+  <data name="ui_search" xml:space="preserve">
+    <value>搜尋...</value>
+  </data>
+  <data name="settings_color" xml:space="preserve">
+    <value>背景顏色</value>
+  </data>
+  <data name="settings_color_future" xml:space="preserve">
+    <value>未來</value>
+  </data>
+  <data name="settings_color_past" xml:space="preserve">
+    <value>過往</value>
+  </data>
+  <data name="settings_color_distant" xml:space="preserve">
+    <value>遙遠</value>
+  </data>
+  <data name="color_select" xml:space="preserve">
+    <value>選取顏色</value>
+  </data>
+  <data name="settings_dateTimeFormat" xml:space="preserve">
+    <value>日期時間格式</value>
+  </data>
+  <data name="settings_dateTimeFormat_helpUrl" xml:space="preserve">
+    <value>https://learn.microsoft.com/zh-hk/dotnet/standard/base-types/custom-date-and-time-format-strings</value>
+  </data>
+  <data name="color_title" xml:space="preserve">
+    <value>顏色選擇器</value>
+  </data>
+  <data name="settings_default" xml:space="preserve">
+    <value>預設</value>
+  </data>
+  <data name="settings_destination" xml:space="preserve">
+    <value>顯示目標時間</value>
+  </data>
+  <data name="settings_destination_always" xml:space="preserve">
+    <value>一律</value>
+  </data>
+  <data name="settings_destination_future" xml:space="preserve">
+    <value>僅未來事件</value>
+  </data>
+  <data name="settings_destination_none" xml:space="preserve">
+    <value>唔顯示</value>
+  </data>
+  <data name="ui_outOfRange" xml:space="preserve">
+    <value>超出顯示範圍</value>
+  </data>
+  <data name="settings_font" xml:space="preserve">
+    <value>顯示字體</value>
+  </data>
+  <data name="settings_font_default" xml:space="preserve">
+    <value>預設字體</value>
+  </data>
+  <data name="ui_settings_font" xml:space="preserve">
+    <value>字體修改會喺程式重新啟動之後生效。</value>
+  </data>
+  <data name="ui_settings_font_title" xml:space="preserve">
+    <value>字體修改咗</value>
+  </data>
+  <data name="ui_delete_warn_multi" xml:space="preserve">
+    <value>你係咪真係想刪除呢 {0} 個事件？
+呢個操作係無法撤銷嘅！</value>
+  </data>
+  <data name="editor_calendar" xml:space="preserve">
+    <value>日曆</value>
+  </data>
+  <data name="editor_calendar_gregorian" xml:space="preserve">
+    <value>公曆</value>
+  </data>
+  <data name="editor_calendar_lunisolar" xml:space="preserve">
+    <value>中國農曆</value>
+  </data>
+  <data name="editor_month_leap" xml:space="preserve">
+    <value>（閏 {0} 月）</value>
+  </data>
+</root>

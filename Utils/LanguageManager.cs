@@ -21,6 +21,7 @@ namespace DaysCounter2.Utils
             new("한국어 (대한민국)", "ko", FlowDirection.LeftToRight),
             new("Русский (Россия)", "ru", FlowDirection.LeftToRight),
             new("Svenska (Sverige)", "sv-SE", FlowDirection.LeftToRight),
+            new("繁體中文 (香港特別行政區)", "zh-HK", FlowDirection.LeftToRight),
             new("繁體中文 (中國台灣)", "zh-TW", FlowDirection.LeftToRight)
         ];
     }
