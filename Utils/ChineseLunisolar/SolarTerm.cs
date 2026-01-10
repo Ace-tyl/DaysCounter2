@@ -25,8 +25,8 @@ namespace DaysCounter2.Utils.ChineseLunisolar
                 mstCache.Add(year, mst);
             }
 
-            double[] jieqi = new double[mst.Length]; // Length is 26
-            for (int i = 0; i < 26; i++)
+            double[] jieqi = new double[mst.Length]; // Length is 28
+            for (int i = 0; i < 28; i++)
             {
                 if (i < start || i > end)
                 {

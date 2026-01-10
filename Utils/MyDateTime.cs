@@ -71,9 +71,9 @@ namespace DaysCounter2.Utils
 
         public bool IsValidData()
         {
-            if (year < -4712)
+            if (year < -4716)
             {
-                // This function starts at 4713 BC
+                // This function starts at 4717 BC
                 return false;
             }
             if (month < 1 || month > 12)
@@ -111,10 +111,10 @@ namespace DaysCounter2.Utils
 
         public void AdjustData()
         {
-            if (year < -4712)
+            if (year < -4716)
             {
-                // This function starts at 4713 BC
-                year = -4712;
+                // This function starts at 4717 BC
+                year = -4716;
             }
             if (month < 1 || month > 12)
             {
@@ -193,9 +193,9 @@ namespace DaysCounter2.Utils
             if (year <= 1582)
             {
                 int daysPer4Year = 1461;
-                int absoluteYear = year + 4712;
-                int baseDays = daysPer4Year * (int)(absoluteYear / 4);
-                int remainYear = year % 4;
+                int absoluteYear = year + 4716;
+                int baseDays = daysPer4Year * (absoluteYear / 4 - 1);
+                int remainYear = absoluteYear % 4;
                 if (remainYear == 0)
                 {
                     return baseDays;
@@ -287,7 +287,7 @@ namespace DaysCounter2.Utils
             int Z = (int)Math.Floor(jdn);
             double F = jdn - Z;
 
-            int left = Z / 366 - 4712, right = Z / 365 - 4710, offset = 0;
+            int left = Z / 366 - 4714, right = Z / 365 - 4710, offset = 0;
             while (right - left > 1)
             {
                 int mid = (left + right) / 2;

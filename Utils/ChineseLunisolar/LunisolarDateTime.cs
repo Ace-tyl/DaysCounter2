@@ -30,7 +30,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
         // Zhongqi since previous Winter Solstice
         static Dictionary<int, double[]> zhongqiCache = [];
 
-        // Get 16 zhongqis from Winter Solstice
+        // Get 17 zhongqis from Winter Solstice
         static double[] ZhongqiSinceWinterSolstice(int year)
         {
             if (zhongqiCache.ContainsKey(year))
@@ -38,7 +38,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
                 return zhongqiCache[year];
             }
 
-            double[] zhongqi = new double[16];
+            double[] zhongqi = new double[17];
             var lastYearSt = SolarTerm.LastYearSolarTerms(year);
 
             // 3 items: Winter Solstice, Great Cold, Rain Water
@@ -50,7 +50,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             var st = SolarTerm.AdjustedSolarTerms(year);
 
             // 13 items
-            for (int i = 0; i < 26; i += 2)
+            for (int i = 0; i < 28; i += 2)
             {
                 zhongqi[i / 2 + 3] = st[i] + ChineseTimeOffset;
             }
@@ -59,15 +59,15 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             return zhongqi;
         }
 
-        // Get 16 new moon points from previous 11th month
+        // Get 17 new moon points from previous 11th month
         static double[] NewMoonPointsSinceMonth11(int year, double winterSolstice)
         {
-            double[] newMoonPoints = new double[20];
+            double[] newMoonPoints = new double[21];
             double november = new MyDateTime(year - 1, 11, 1).GetJulianDay(); // Previous November
             int kn = Astronomy.ReferenceLunarMonthNumber(november); // Index of new moon point before previous November
 
-            // Get 20 new moon points
-            for (int i = 0; i < 20; i++)
+            // Get 21 new moon points
+            for (int i = 0; i < 21; i++)
             {
                 int k = kn + i;
                 newMoonPoints[i] = Astronomy.TrueNewMoon(k) + ChineseTimeOffset;
@@ -75,7 +75,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             }
 
             int begin = 0;
-            for (int i = 0; i < 19; i++)
+            for (int i = 0; i < 20; i++)
             {
                 if (Math.Floor(newMoonPoints[i] + 0.5) > Math.Floor(winterSolstice + 0.5))
                 {
@@ -85,8 +85,8 @@ namespace DaysCounter2.Utils.ChineseLunisolar
                 }
             }
 
-            double[] result = new double[16];
-            for (int i = 0; i < 16; i++)
+            double[] result = new double[17];
+            for (int i = 0; i < 17; i++)
             {
                 result[i] = newMoonPoints[begin - 1 + i];
             }
@@ -99,7 +99,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
         static int LeapMonthPos(int[] monthCodes)
         {
             int leap = 0;
-            for (int i = 1; i <= 14; i++)
+            for (int i = 1; i <= 15; i++)
             {
                 if (monthCodes[i] > 100)
                 {
@@ -111,12 +111,12 @@ namespace DaysCounter2.Utils.ChineseLunisolar
         }
 
         // Lunar Month Information
-        // Item1: 16 Zhongqis from previous Winter Solstice
-        // Item2: 16 New Moon Points from previous 11th month
+        // Item1: 17 Zhongqis from previous Winter Solstice
+        // Item2: 17 New Moon Points from previous 11th month
         // Item3: Moon codes, larger than 100 indecates leap month
         static Tuple<double[], double[], int[]> LunarMonthInfo(int year)
         {
-            int[] monthCodes = new int[16];
+            int[] monthCodes = new int[17];
             double[] zhongqis = ZhongqiSinceWinterSolstice(year);
             double[] newMoons = NewMoonPointsSinceMonth11(year, zhongqis[0]);
 
@@ -194,7 +194,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             }
 
             int nmonth = month + 2;
-            if (nmonth > leap)
+            if (leap != 0 && nmonth > leap)
             {
                 nmonth++;
             }
@@ -207,7 +207,16 @@ namespace DaysCounter2.Utils.ChineseLunisolar
 
         public bool IsValidData(double[]? _newMoons = null, int? _leap = null)
         {
-            // TODO: implement after range determination
+            if (year < -4713 || (year == -4713 && month < 10) || (year == -4713 && month == 10 && day < 22))
+            {
+                // -4712/1/1 is -4713/10/22 in lunisolar calendar
+                return false;
+            }
+            if (year > 9999 || (year == 9999 && month == 12 && day > 3))
+            {
+                // 9999/12/31 is 9999/12/3 in lunisolar calendar
+                return false;
+            }
             try
             {
                 if (day < 1 || day > GetDayCountOfMonth(year, month, _newMoons, _leap))
@@ -253,11 +262,6 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             }
 
             int nmonth = month + 2;
-            int[] daysPerMonth = new int[15];
-            for (int i = 0; i < 15; i++)
-            {
-                daysPerMonth[i] = (int)(Math.Floor(newMoons[i + 1] + 0.5) - Math.Floor(newMoons[i] + 0.5));
-            }
 
             double jd = 0;
             if (month > 100)

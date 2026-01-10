@@ -206,7 +206,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
         }
 
         // 24 solar terms of specific year
-        // To cover a whole year, 2 more solar terms are fetched
+        // To cover a whole year, 4 more solar terms are fetched
         public static double[] MeanSolarTerms(int year)
         {
             // Vernal Equinox jd
@@ -232,8 +232,8 @@ namespace DaysCounter2.Utils.ChineseLunisolar
                 + 8.16716666602386E-06 * TT * TT * TT * TT;
             double rvp = Mathematics.Deg2Rad(d);
 
-            double[] peri = new double[26];
-            for (int i = 0; i < 26; i++)
+            double[] peri = new double[28];
+            for (int i = 0; i < 28; i++)
             {
                 int flag = 0;
                 double th = ath * i + rvp;
@@ -262,8 +262,8 @@ namespace DaysCounter2.Utils.ChineseLunisolar
                 peri[i] = f;
             }
 
-            double[] mst = new double[26];
-            for (int i = 0; i < 26; i++)
+            double[] mst = new double[28];
+            for (int i = 0; i < 28; i++)
             {
                 mst[i] = ve + peri[i] - peri[0];
             }
