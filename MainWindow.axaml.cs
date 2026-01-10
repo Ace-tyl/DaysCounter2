@@ -258,7 +258,7 @@ namespace DaysCounter2
         private void TimerList_SelectionChanged(object? sender, SelectionChangedEventArgs e)
         {
             DeleteButton.IsEnabled = (TimerList.SelectedIndex != -1);
-            EditButton.IsEnabled = TimerList.SelectedItems == null ? false : (TimerList.SelectedItems.Count == 1);
+            EditButton.IsEnabled = TimerList.SelectedItems == null ? false : (TimerList.SelectedIndex != -1 && TimerList.SelectedItems.Count == 1);
         }
 
         private async void DeleteButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

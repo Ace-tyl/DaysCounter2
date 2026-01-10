@@ -34,13 +34,13 @@ After editing, click the **Save** button to save your edit. If you want to disca
 
 To edit an event, select the event and click the **Edit** button. The event editor window appears with the event information filled in, and you can start edit this event as described in *Adding Events*.
 
-To delete an event, select the event and click the **Delete** button. This step is irrevocable, so be cautious!
+To delete an event, select the event and click the **Delete** button. You can also select multiple events. This step is irrevocable, so be cautious! Note that when you select multiple (at least 2) events, the timer refreshing will be paused until you deselect them or delete them.
 
 The operation to events list (adding, editing, deleting) is saved at once, so the events can be automatically loaded the next time you start this program.
 
 ### Event Date
 
-The event date can be set to a wide range, from 4713 BC to 9999 AD. The date is subject to the current Gregorian calendar, which was revised by Pope Gregory XIII in 1582 based on the existing Julian calendar. Specifically, the date is calculated as the following rules:
+The event date can be set to a wide range, from 4713 BC to 9999 AD. The date is subject to the current Gregorian calendar by default, which was revised by Pope Gregory XIII in 1582 based on the existing Julian calendar. Specifically, the date is calculated as the following rules:
 
 * After Oct 15, 1582 (inclusive): The Gregorian calendar is applied, with 31 days in January, 28 or 29 days in February, 31 days in March, 30 days in April, 31 days in May, 30 days in June, 31 days in July, 31 days in August, 30 days in September, 31 days in October, 30 days in November, and 31 days in December. Among them, February has 29 days in leap years and 28 days in common years. A year is considered a leap year if it is a multiple of 400, or if it is a multiple of 4 but not a multiple of 100.
 * From Oct 5, 1582 to Oct 14, 1582 (inclusive): These dates do not exist and have been omitted. After Oct 4 of that year, the date becomes Oct 15.
@@ -48,6 +48,8 @@ The event date can be set to a wide range, from 4713 BC to 9999 AD. The date is 
 * Although the Julian calendar was only implemented in 45 BC and underwent several adjustments in its early stages, today humans are accustomed to using the final rules of the Julian calendar to deduce all dates before Oct 4, 1582. Note that the year 0 AD does not exist; that is, the year following 1 BC is 1 AD. Therefore, years such as 1 BC, 5 BC, 9 BC, 13 BC, and so on should be considered leap years.
 
 When entering a year before the Common Era such as x BC, the number -(x - 1) is required to input. For example, Emperor Qin Shi Huang unified the six states in 221 BC, so the Year value should be set to -220 in order to add this event. A prompt will be displayed if you input a year before the Common Era (non-positive).
+
+In addition, the Chinese Lunisolar calendar is also supported to determine the event date. The implementation of Chinese Lunisolar calendar referred to [liujiawm/php-calendar](https://github.com/liujiawm/php-calendar), which uses astronomical calculation methods to estimate the calendar instead of lookup table, so that the supported date range is as wide as using the Gregorian calendar. To input a date with leap month (闰月 in Chinese), input 0 as month (no matter what leap month it is this month). Note that the calculation method only guarantees accuracy between year -999 (1000 BC) to 3000. For years outside this range, the calendar can still be used but we cannot guarantee complete accuracy.
 
 ### Searching for Events
 
