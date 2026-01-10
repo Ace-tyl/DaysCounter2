@@ -353,7 +353,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
         // Reference lunar month number
         public static int ReferenceLunarMonthNumber(double jd)
         {
-            return Convert.ToInt32(Math.Floor((jd - BNM) / MSM));
+            return (int)Math.Floor((jd - BNM) / MSM);
         }
     }
 }

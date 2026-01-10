@@ -188,13 +188,13 @@ namespace DaysCounter2.Utils
         /*
          * Get the julian day of the first day of the specific year
          */
-        static long JulianYearOffset(int year)
+        static int JulianYearOffset(int year)
         {
             if (year <= 1582)
             {
                 int daysPer4Year = 1461;
                 int absoluteYear = year + 4712;
-                long baseDays = daysPer4Year * (long)(absoluteYear / 4);
+                int baseDays = daysPer4Year * (int)(absoluteYear / 4);
                 int remainYear = year % 4;
                 if (remainYear == 0)
                 {
@@ -207,16 +207,16 @@ namespace DaysCounter2.Utils
             }
             else
             {
-                long offsetYear1583 = 2299239;
+                int offsetYear1583 = 2299239;
                 int yearCount = year - 1583;
                 int year4Count = (year - 1) / 4 - 395;
                 int year100Count = (year - 1) / 100 - 15;
                 int year400Count = (year - 1) / 400 - 3;
-                return offsetYear1583 + yearCount * 365L + year4Count - year100Count + year400Count;
+                return offsetYear1583 + yearCount * 365 + year4Count - year100Count + year400Count;
             }
         }
 
-        static long JulianDay(int year, int month, int day)
+        static int JulianDay(int year, int month, int day)
         {
             return JulianYearOffset(year) + GetDayOfYear(year, month, day);
         }
@@ -239,12 +239,75 @@ namespace DaysCounter2.Utils
             {
                 timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
             }
-            return JulianDay(year, month, day) * 86400 + (hour - 12) * 3600 + (minute - (int)timeZoneDelta) * 60 + second;
+            return JulianDay(year, month, day) * 86400L + (hour - 12) * 3600 + (minute - (int)timeZoneDelta) * 60 + second;
         }
 
         public double GetJulianDay()
         {
             return GetJulianSecond() / 86400.0;
+        }
+
+        static Tuple<int, int> MonthDayFromOffset(int year, int offset)
+        {
+            int[] monthDay = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            if (IsLeapYear(year))
+            {
+                monthDay[2]++;
+            }
+            if (year == 1582)
+            {
+                monthDay[10] -= 10;
+            }
+            int month = -1, day = offset;
+            for (int i = 1; i <= 12; i++)
+            {
+                if (day < monthDay[i])
+                {
+                    month = i;
+                    break;
+                }
+                day -= monthDay[i];
+            }
+            if (month < 0 || day < 0)
+            {
+                throw new IndexOutOfRangeException("Invalid day offset");
+            }
+            day++;
+            if (year == 1582 && month == 10 && day > 4)
+            {
+                day += 10;
+            }
+            return new Tuple<int, int>(month, day);
+        }
+
+        // Convert from Julian Day to Date Time
+        public static MyDateTime FromJulianDay(double jd, int timeZoneDelta = 0)
+        {
+            double jdn = jd + 0.5 + timeZoneDelta / 1440.0;
+            int Z = (int)Math.Floor(jdn);
+            double F = jdn - Z;
+
+            int left = Z / 366 - 4712, right = Z / 365 - 4710, offset = 0;
+            while (right - left > 1)
+            {
+                int mid = (left + right) / 2;
+                int temp_offset = Z - JulianYearOffset(mid);
+                if (temp_offset >= 0)
+                {
+                    left = mid;
+                    offset = temp_offset;
+                }
+                else
+                {
+                    right = mid;
+                }
+            }
+            int year = left;
+            var monthDay = MonthDayFromOffset(year, offset);
+            int month = monthDay.Item1, day = monthDay.Item2;
+
+            int secondOfDay = (int)Math.Floor(F * 86400);
+            return new MyDateTime(year, month, day, secondOfDay / 3600, secondOfDay % 3600 / 60, secondOfDay % 60, timeZoneDelta);
         }
 
         public bool EarlierThan(MyDateTime another)
