@@ -445,4 +445,16 @@
     <value>هل تريد حقاً حذف أحداث {0} هذه؟
 لا يمكن التراجع عن هذه العملية!</value>
   </data>
+  <data name="editor_calendar" xml:space="preserve">
+    <value>التقويم</value>
+  </data>
+  <data name="editor_calendar_gregorian" xml:space="preserve">
+    <value>التقويم الميلادي</value>
+  </data>
+  <data name="editor_calendar_lunisolar" xml:space="preserve">
+    <value>التقويم القمري الصيني</value>
+  </data>
+  <data name="editor_month_leap" xml:space="preserve">
+    <value> (شهر إضافي {0})</value>
+  </data>
 </root>

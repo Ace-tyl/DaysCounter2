@@ -445,4 +445,16 @@ Nya Zeeland (större delen) med sommartid</value>
     <value>Är du säker att stryka dessa {0} evenemangen?
 Du kan inte ångra den operationen!</value>
   </data>
+  <data name="editor_calendar" xml:space="preserve">
+    <value>Kalender</value>
+  </data>
+  <data name="editor_calendar_gregorian" xml:space="preserve">
+    <value>Gregorianska</value>
+  </data>
+  <data name="editor_calendar_lunisolar" xml:space="preserve">
+    <value>Kinesiska solkalendern</value>
+  </data>
+  <data name="editor_month_leap" xml:space="preserve">
+    <value> (extra {0} månad)</value>
+  </data>
 </root>

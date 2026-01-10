@@ -1,4 +1,5 @@
 ﻿using System;
+using DaysCounter2.Utils.ChineseLunisolar;
 
 namespace DaysCounter2.Utils
 {
@@ -19,6 +20,7 @@ namespace DaysCounter2.Utils
         public MyDateTime dateTime = new MyDateTime();
         public LoopTypes loopType = LoopTypes.None;
         public int loopValue = 1;
+        public int calendar = 0;
 
         long GetLoopDestJulian(MyDateTime now, long nowJulian)
         {
@@ -26,26 +28,92 @@ namespace DaysCounter2.Utils
             long destJulian;
             if (loopType == LoopTypes.Years)
             {
-                int loopsCount = (now.year - dateTime.year + loopValue - 1) / loopValue;
-                destDateTime.year += loopsCount * loopValue;
-                if (destDateTime.EarlierThan(now))
+                if (calendar == 1)
                 {
-                    destDateTime.year += loopValue;
+                    LunisolarDateTime lunar = LunisolarDateTime.FromGregorian(destDateTime, destDateTime.GetJulianDay());
+                    LunisolarDateTime nowLunar = LunisolarDateTime.FromGregorian(now, nowJulian / 86400.0);
+                    int loopsCount = (nowLunar.year - lunar.year + loopValue - 1) / loopValue;
+                    int destYear = lunar.year + loopsCount * loopValue;
+                    int destMonth = lunar.month;
+                    int destDay = lunar.day;
+                    if (destMonth > 100)
+                    {
+                        if (LunisolarDateTime.GetLeapMonth(destYear) != destMonth - 100)
+                        {
+                            destMonth -= 100;
+                        }
+                    }
+                    int dayCountOfMonth = LunisolarDateTime.GetDayCountOfMonth(destYear, destMonth);
+                    if (destDay > dayCountOfMonth)
+                    {
+                        destDay = dayCountOfMonth;
+                    }
+                    LunisolarDateTime destLunar = new LunisolarDateTime(destYear, destMonth, destDay, lunar.hour, lunar.minute, lunar.second, lunar.timeZoneDelta);
+                    if (destLunar.EarlierThan(nowLunar))
+                    {
+                        destYear = lunar.year + loopsCount * loopValue + loopValue;
+                        destMonth = lunar.month;
+                        destDay = lunar.day;
+                        if (destMonth > 100)
+                        {
+                            if (LunisolarDateTime.GetLeapMonth(destYear) != destMonth - 100)
+                            {
+                                destMonth -= 100;
+                            }
+                        }
+                        dayCountOfMonth = LunisolarDateTime.GetDayCountOfMonth(destYear, destMonth);
+                        if (destDay > dayCountOfMonth)
+                        {
+                            destDay = dayCountOfMonth;
+                        }
+                        destLunar = new LunisolarDateTime(destYear, destMonth, destDay, lunar.hour, lunar.minute, lunar.second, lunar.timeZoneDelta);
+                    }
+                    destDateTime = MyDateTime.FromJulianDay(destLunar.GetJulianDay(), lunar.timeZoneDelta);
+                }
+                else
+                {
+                    int loopsCount = (now.year - dateTime.year + loopValue - 1) / loopValue;
+                    destDateTime.year += loopsCount * loopValue;
+                    if (destDateTime.EarlierThan(now))
+                    {
+                        destDateTime.year += loopValue;
+                    }
                 }
             }
             else if (loopType == LoopTypes.Months)
             {
-                int dateTimeMonths = dateTime.year * 12 + dateTime.month - 1;
-                int nowMonths = now.year * 12 + now.month - 1;
-                int loopsCount = (nowMonths - dateTimeMonths + loopValue - 1) / loopValue;
-                int destDateTimeMonths = dateTimeMonths + loopsCount * loopValue;
-                destDateTime.year = destDateTimeMonths / 12;
-                destDateTime.month = destDateTimeMonths % 12 + 1;
-                if (destDateTime.EarlierThan(now))
+                if (calendar == 1)
                 {
-                    destDateTimeMonths += 1;
+                    int count = 0;
+                    LunisolarDateTime destLunar = LunisolarDateTime.FromGregorian(destDateTime, destDateTime.GetJulianDay());
+                    int day = destLunar.day;
+                    LunisolarDateTime nowLunar = LunisolarDateTime.FromGregorian(now, nowJulian / 86400.0);
+                    while (count % loopValue != 0 || destLunar.EarlierThan(nowLunar))
+                    {
+                        count++;
+                        var nextMonthResult = LunisolarDateTime.NextMonth(destLunar.year, destLunar.month);
+                        int year = nextMonthResult.Item1, month = nextMonthResult.Item2;
+                        int nday = Math.Min(day, LunisolarDateTime.GetDayCountOfMonth(year, month));
+                        destLunar.year = year;
+                        destLunar.month = month;
+                        destLunar.day = nday;
+                    }
+                    destDateTime = MyDateTime.FromJulianDay(destLunar.GetJulianDay(), destLunar.timeZoneDelta);
+                }
+                else
+                {
+                    int dateTimeMonths = dateTime.year * 12 + dateTime.month - 1;
+                    int nowMonths = now.year * 12 + now.month - 1;
+                    int loopsCount = (nowMonths - dateTimeMonths + loopValue - 1) / loopValue;
+                    int destDateTimeMonths = dateTimeMonths + loopsCount * loopValue;
                     destDateTime.year = destDateTimeMonths / 12;
                     destDateTime.month = destDateTimeMonths % 12 + 1;
+                    if (destDateTime.EarlierThan(now))
+                    {
+                        destDateTimeMonths += 1;
+                        destDateTime.year = destDateTimeMonths / 12;
+                        destDateTime.month = destDateTimeMonths % 12 + 1;
+                    }
                 }
             }
             destDateTime.AdjustData();
@@ -87,8 +155,8 @@ namespace DaysCounter2.Utils
             }
         }
 
-        public static long displayRangeStart = 199190707200L; // 1600/1/1 0:00 UTC
-        public static long displayRangeEnd = 464269017600L; // 9999/12/31 0:00 UTC
+        public static long displayRangeStart = 199190664000L; // 1600/1/1 0:00 UTC
+        public static long displayRangeEnd = 464268974400L; // 9999/12/31 0:00 UTC
 
         public long GetDelta(MyDateTime now, long nowJulian)
         {

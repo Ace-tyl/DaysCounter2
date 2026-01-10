@@ -12,14 +12,19 @@
           <TextBlock Grid.Column="0" VerticalAlignment="Center" FontSize="18" Text="{x:Static lang:Resources.editor_name}"></TextBlock>
           <TextBox Grid.Column="1" FontSize="18" VerticalContentAlignment="Center" x:Name="EventNameValue" TextChanged="EventNameValue_TextChanged" MaxLength="200"></TextBox>
       </Grid>
-      <Grid DockPanel.Dock="Top" Height="75" RowDefinitions="*,40" ColumnDefinitions="115,150,150,150,*" ColumnSpacing="10" RowSpacing="10">
+      <Grid DockPanel.Dock="Top" Height="75" RowDefinitions="*,40" ColumnDefinitions="115,150,150,150,150,*" ColumnSpacing="10" RowSpacing="10">
           <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" x:Name="YearText" Text="{x:Static lang:Resources.editor_date_year}"></TextBlock>
-          <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_date_month}"></TextBlock>
+          <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom" x:Name="MonthText" Text="{x:Static lang:Resources.editor_date_month}"></TextBlock>
           <TextBlock Grid.Row="0" Grid.Column="3" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_date_day}"></TextBlock>
+          <TextBlock Grid.Row="0" Grid.Column="4" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_calendar}"></TextBlock>
           <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="18" Text="{x:Static lang:Resources.editor_date}"></TextBlock>
           <NumericUpDown Grid.Row="1" Grid.Column="1" Minimum="-4712" Maximum="9999" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="YearValue" ValueChanged="YearValue_ValueChanged"></NumericUpDown>
           <NumericUpDown Grid.Row="1" Grid.Column="2" Minimum="1" Maximum="12" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="MonthValue" ValueChanged="MonthValue_ValueChanged"></NumericUpDown>
           <NumericUpDown Grid.Row="1" Grid.Column="3" Minimum="1" Maximum="31" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="DayValue" ValueChanged="DayValue_ValueChanged"></NumericUpDown>
+          <ComboBox Grid.Row="1" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="18" x:Name="CalendarSelector" SelectedIndex="0" SelectionChanged="CalendarSelector_SelectionChanged">
+              <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_gregorian}"></ComboBoxItem>
+              <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_lunisolar}"></ComboBoxItem>
+          </ComboBox>
       </Grid>
       <Grid DockPanel.Dock="Top" Height="75" RowDefinitions="*,40" ColumnDefinitions="115,150,150,150,150,*" ColumnSpacing="10" RowSpacing="10">
           <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Text="{x:Static lang:Resources.editor_time_hour}"></TextBlock>
@@ -44,7 +49,7 @@
       <Grid DockPanel.Dock="Top" Height="75" RowDefinitions="*,40" ColumnDefinitions="115,150,150,*" ColumnSpacing="10" RowSpacing="10">
           <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="500" x:Name="LoopWarn" IsVisible="False" Text="{x:Static lang:Resources.editor_loop_warn}"></TextBlock>
           <CheckBox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="18" x:Name="LoopCheck" IsCheckedChanged="LoopCheck_IsCheckedChanged" Content="{x:Static lang:Resources.editor_loop}"></CheckBox>
-          <NumericUpDown Grid.Row="1" Grid.Column="1" Value="1" Minimum="1" Maximum="999999" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="LoopValue" IsVisible="False"></NumericUpDown>
+          <NumericUpDown Grid.Row="1" Grid.Column="1" Value="1" Minimum="1" Maximum="9999" FormatString="0" FontSize="18" VerticalContentAlignment="Center" x:Name="LoopValue" IsVisible="False"></NumericUpDown>
           <ComboBox Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" x:Name="LoopType" SelectedIndex="5" IsVisible="False">
               <ComboBoxItem Content="{x:Static lang:Resources.editor_loop_second}"></ComboBoxItem>
               <ComboBoxItem Content="{x:Static lang:Resources.editor_loop_minute}"></ComboBoxItem>

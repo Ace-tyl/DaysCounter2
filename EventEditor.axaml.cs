@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Avalonia.Controls;
 using DaysCounter2.Utils;
+using DaysCounter2.Utils.ChineseLunisolar;
 
 namespace DaysCounter2
 {
@@ -32,12 +34,26 @@ namespace DaysCounter2
             InitializeComponent();
             TimeZoneSelector.ItemsSource = timeZoneData;
             EventNameValue.Text = ev.name;
-            YearValue.Value = ev.dateTime.year;
-            MonthValue.Value = ev.dateTime.month;
-            DayValue.Value = ev.dateTime.day;
-            HourValue.Value = ev.dateTime.hour;
-            MinuteValue.Value = ev.dateTime.minute;
-            SecondValue.Value = ev.dateTime.second;
+            CalendarSelector.SelectedIndex = ev.calendar;
+            if (ev.calendar == 1)
+            {
+                LunisolarDateTime lunar = LunisolarDateTime.FromGregorian(ev.dateTime, ev.dateTime.GetJulianDay());
+                YearValue.Value = lunar.year;
+                MonthValue.Value = lunar.month;
+                DayValue.Value = lunar.day;
+                HourValue.Value = lunar.hour;
+                MinuteValue.Value = lunar.minute;
+                SecondValue.Value = lunar.second;
+            }
+            else
+            {
+                YearValue.Value = ev.dateTime.year;
+                MonthValue.Value = ev.dateTime.month;
+                DayValue.Value = ev.dateTime.day;
+                HourValue.Value = ev.dateTime.hour;
+                MinuteValue.Value = ev.dateTime.minute;
+                SecondValue.Value = ev.dateTime.second;
+            }
             ev.dateTime.InitializeTimeZone();
             if (ev.dateTime.timeZoneDelta == null) { return; } // Impossible
             SelectTimeZone((int)ev.dateTime.timeZoneDelta);
@@ -57,7 +73,30 @@ namespace DaysCounter2
             }
             int year = (int)YearValue.Value;
             int month = (int)MonthValue.Value;
-            DayValue.Maximum = MyDateTime.GetDayCountOfMonth(year, month);
+            if (CalendarSelector.SelectedIndex == 1)
+            {
+                if (year == -4713 && month == 10)
+                {
+                    DayValue.Minimum = 22;
+                }
+                else
+                {
+                    DayValue.Minimum = 1;
+                }
+                if (year == 9999 && month == 12)
+                {
+                    DayValue.Maximum = 3;
+                }
+                else
+                {
+                    DayValue.Maximum = LunisolarDateTime.GetDayCountOfMonth(year, month);
+                }
+            }
+            else
+            {
+                DayValue.Minimum = 1;
+                DayValue.Maximum = MyDateTime.GetDayCountOfMonth(year, month);
+            }
         }
 
         void ModifyDayValue()
@@ -66,6 +105,10 @@ namespace DaysCounter2
             {
                 DayValue.Value = DayValue.Maximum;
             }
+            if (DayValue.Value < DayValue.Minimum)
+            {
+                DayValue.Value = DayValue.Minimum;
+            }
             if (YearValue.Value == null || MonthValue.Value == null)
             {
                 return;
@@ -73,7 +116,7 @@ namespace DaysCounter2
             // To address October 1582
             int year = (int)YearValue.Value;
             int month = (int)MonthValue.Value;
-            if (year == 1582 && month == 10)
+            if (CalendarSelector.SelectedIndex == 0 && year == 1582 && month == 10)
             {
                 if (DayValue.Value >= 5 && DayValue.Value < 14)
                 {
@@ -83,6 +126,74 @@ namespace DaysCounter2
                 {
                     DayValue.Value = 4;
                 }
+            }
+        }
+
+        void ModifyMonthLimits()
+        {
+            if (YearValue.Value == null)
+            {
+                return;
+            }
+            int year = (int)YearValue.Value;
+            if (CalendarSelector.SelectedIndex == 1)
+            {
+                if (year == -4713)
+                {
+                    MonthValue.Minimum = 10;
+                }
+                else if (LunisolarDateTime.GetLeapMonth(year) != 0)
+                {
+                    MonthValue.Minimum = 0;
+                }
+                else
+                {
+                    MonthValue.Minimum = 1;
+                }
+                MonthValue.Maximum = 12;
+            }
+            else
+            {
+                MonthValue.Minimum = 1;
+                MonthValue.Maximum = 12;
+            }
+        }
+
+        void ModifyMonthValue()
+        {
+            if (MonthValue.Value < MonthValue.Minimum)
+            {
+                MonthValue.Value = MonthValue.Minimum;
+            }
+            if (MonthValue.Value > MonthValue.Maximum)
+            {
+                MonthValue.Value = MonthValue.Maximum;
+            }
+        }
+
+        void ModifyYearLimits()
+        {
+            if (CalendarSelector.SelectedIndex == 1)
+            {
+                YearValue.Minimum = -4713;
+                YearValue.Maximum = 9999;
+            }
+            else
+            {
+                YearValue.Minimum = -4712;
+                YearValue.Maximum = 9999;
+            }
+        }
+
+        void ModifyYearValue()
+        {
+            if (YearValue.Value < YearValue.Minimum)
+            {
+                YearValue.Value = YearValue.Minimum;
+            }
+            if (YearValue.Value > YearValue.Maximum)
+            {
+                YearValue.Value = YearValue.Maximum;
             }
         }
 
@@ -107,7 +218,15 @@ namespace DaysCounter2
             {
                 timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
             }
-            return new MyDateTime(year, month, day, hour, minute, second, timeZoneDelta);
+            if (CalendarSelector.SelectedIndex == 1)
+            {
+                double JulianDay = new LunisolarDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
+                return MyDateTime.FromJulianDay(JulianDay, timeZoneDelta);
+            }
+            else
+            {
+                return new MyDateTime(year, month, day, hour, minute, second, timeZoneDelta);
+            }
         }
 
         void ModifySaveButton()
@@ -132,6 +251,8 @@ namespace DaysCounter2
             {
                 return;
             }
+            ModifyMonthLimits();
+            ModifyMonthValue();
             ModifyDayLimits();
             ModifyDayValue();
             ModifySaveButton();
@@ -150,6 +271,16 @@ namespace DaysCounter2
             ModifyDayLimits();
             ModifyDayValue();
             ModifySaveButton();
+            if (CalendarSelector.SelectedIndex == 1 && MonthValue.Value == 0 && YearValue.Value != null)
+            {
+                int year = (int)YearValue.Value;
+                int leap = LunisolarDateTime.GetLeapMonth(year);
+                MonthText.Text = Lang.Resources.editor_date_month + string.Format(Lang.Resources.editor_month_leap, leap);
+            }
+            else
+            {
+                MonthText.Text = Lang.Resources.editor_date_month;
+            }
         }
 
         private void DayValue_ValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)
@@ -178,7 +309,8 @@ namespace DaysCounter2
             savedEvent = new Event
             {
                 name = EventNameValue.Text,
-                dateTime = dateTime
+                dateTime = dateTime,
+                calendar = CalendarSelector.SelectedIndex
             };
             if (LoopCheck.IsChecked == true)
             {
@@ -186,6 +318,79 @@ namespace DaysCounter2
                 savedEvent.loopValue = LoopValue.Value == null ? 1 : (int)LoopValue.Value;
             }
             Close();
+        }
+
+        int lastSelectedIndex = 0;
+
+        private void CalendarSelector_SelectionChanged(object? sender, SelectionChangedEventArgs e)
+        {
+            if (YearValue == null || MonthValue == null || DayValue == null || HourValue == null || MinuteValue == null || SecondValue == null)
+            {
+                return;
+            }
+            if (YearValue.Value == null || MonthValue.Value == null || DayValue.Value == null || HourValue.Value == null || MinuteValue.Value == null || SecondValue.Value == null)
+            {
+                return;
+            }
+            int year = (int)YearValue.Value;
+            int month = (int)MonthValue.Value;
+            int day = (int)DayValue.Value;
+            int hour = (int)HourValue.Value;
+            int minute = (int)MinuteValue.Value;
+            int second = (int)SecondValue.Value;
+            int timeZoneDelta;
+            if (TimeZoneSelector.SelectedItem != null)
+            {
+                timeZoneDelta = ((TimeZoneData)TimeZoneSelector.SelectedItem).delta;
+            }
+            else
+            {
+                timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
+            }
+            double julian;
+            MyDateTime gregorian;
+            if (lastSelectedIndex == 0)
+            {
+                gregorian = new MyDateTime(year, month, day, hour, minute, second, timeZoneDelta);
+                julian = gregorian.GetJulianDay();
+            }
+            else if (lastSelectedIndex == 1)
+            {
+                julian = new LunisolarDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
+                gregorian = MyDateTime.FromJulianDay(julian, timeZoneDelta);
+            }
+            else
+            {
+                gregorian = new MyDateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                julian = gregorian.GetJulianDay();
+            }
+            ModifyYearLimits();
+            ModifyYearValue();
+            ModifyMonthLimits();
+            ModifyMonthValue();
+            ModifyDayLimits();
+            ModifyDayValue();
+            int newSelectedIndex = CalendarSelector.SelectedIndex;
+            if (newSelectedIndex == 0)
+            {
+                YearValue.Value = gregorian.year;
+                MonthValue.Value = gregorian.month;
+                DayValue.Value = gregorian.day;
+                HourValue.Value = gregorian.hour;
+                MinuteValue.Value = gregorian.minute;
+                SecondValue.Value = gregorian.second;
+            }
+            else if (newSelectedIndex == 1)
+            {
+                LunisolarDateTime lunar = LunisolarDateTime.FromGregorian(gregorian, julian);
+                YearValue.Value = lunar.year;
+                MonthValue.Value = lunar.month > 100 ? 0 : lunar.month;
+                DayValue.Value = lunar.day;
+                HourValue.Value = lunar.hour;
+                MinuteValue.Value = lunar.minute;
+                SecondValue.Value = lunar.second;
+            }
+            lastSelectedIndex = newSelectedIndex;
         }
     }
 }

@@ -445,4 +445,16 @@
     <value>Вы действительно хотите удалить эти {0} событий?
 Действие необратимо!</value>
   </data>
+  <data name="editor_calendar" xml:space="preserve">
+    <value>Календарь</value>
+  </data>
+  <data name="editor_calendar_gregorian" xml:space="preserve">
+    <value>Григорианский</value>
+  </data>
+  <data name="editor_calendar_lunisolar" xml:space="preserve">
+    <value>Китайский лунный</value>
+  </data>
+  <data name="editor_month_leap" xml:space="preserve">
+    <value> (високосный {0})</value>
+  </data>
 </root>

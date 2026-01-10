@@ -445,4 +445,16 @@
     <value>你确定要删除这 {0} 个事件吗？
 该操作不可撤回！</value>
   </data>
+  <data name="editor_calendar" xml:space="preserve">
+    <value>日历</value>
+  </data>
+  <data name="editor_calendar_gregorian" xml:space="preserve">
+    <value>公历</value>
+  </data>
+  <data name="editor_calendar_lunisolar" xml:space="preserve">
+    <value>中国农历</value>
+  </data>
+  <data name="editor_month_leap" xml:space="preserve">
+    <value>（闰 {0} 月）</value>
+  </data>
 </root>

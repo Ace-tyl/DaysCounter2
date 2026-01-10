@@ -445,4 +445,16 @@
     <value>これらのイベント {0} 件を本当に削除しますか？
 操作は取り消せません！</value>
   </data>
+  <data name="editor_calendar" xml:space="preserve">
+    <value>カレンダー</value>
+  </data>
+  <data name="editor_calendar_gregorian" xml:space="preserve">
+    <value>西暦</value>
+  </data>
+  <data name="editor_calendar_lunisolar" xml:space="preserve">
+    <value>中国の旧暦</value>
+  </data>
+  <data name="editor_month_leap" xml:space="preserve">
+    <value>（閏 {0} 月）</value>
+  </data>
 </root>

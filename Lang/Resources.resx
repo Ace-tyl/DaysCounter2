@@ -445,4 +445,16 @@ New Zealand (most) with DST</value>
     <value>Do you really want to delete these {0} events?
 The operation is irrevocable!</value>
   </data>
+  <data name="editor_calendar" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="editor_calendar_gregorian" xml:space="preserve">
+    <value>Gregorian</value>
+  </data>
+  <data name="editor_calendar_lunisolar" xml:space="preserve">
+    <value>Chinese Lunisolar</value>
+  </data>
+  <data name="editor_month_leap" xml:space="preserve">
+    <value> (Leap {0})</value>
+  </data>
 </root>

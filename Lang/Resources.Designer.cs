@@ -79,6 +79,33 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Calendar.
+        /// </summary>
+        public static string editor_calendar {
+            get {
+                return ResourceManager.GetString("editor_calendar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gregorian.
+        /// </summary>
+        public static string editor_calendar_gregorian {
+            get {
+                return ResourceManager.GetString("editor_calendar_gregorian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chinese Lunisolar.
+        /// </summary>
+        public static string editor_calendar_lunisolar {
+            get {
+                return ResourceManager.GetString("editor_calendar_lunisolar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Event Date:.
         /// </summary>
         public static string editor_date {
@@ -183,6 +210,15 @@ namespace DaysCounter2.Lang {
         public static string editor_loop_year {
             get {
                 return ResourceManager.GetString("editor_loop_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  (Leap {0}).
+        /// </summary>
+        public static string editor_month_leap {
+            get {
+                return ResourceManager.GetString("editor_month_leap", resourceCulture);
             }
         }
         

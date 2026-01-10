@@ -445,4 +445,16 @@
     <value>이 {0}개의 이벤트를 정말로 삭제하시겠습니까?
 이 작업은 취소할 수 없습니다!</value>
   </data>
+  <data name="editor_calendar" xml:space="preserve">
+    <value>캘린더</value>
+  </data>
+  <data name="editor_calendar_gregorian" xml:space="preserve">
+    <value>양력</value>
+  </data>
+  <data name="editor_calendar_lunisolar" xml:space="preserve">
+    <value>중국 음력</value>
+  </data>
+  <data name="editor_month_leap" xml:space="preserve">
+    <value> (윤{0}월)</value>
+  </data>
 </root>
