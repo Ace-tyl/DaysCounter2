@@ -241,7 +241,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
             {
                 nmonth -= 100;
             }
-            return (int)(Math.Floor(newMoons[nmonth + 1] + 0.5) - Math.Floor(newMoons[nmonth] + 0.5));
+            return (int)(Math.Floor(newMoons[nmonth] + 0.5) - Math.Floor(newMoons[nmonth - 1] + 0.5));
         }
 
         public bool IsValidData(double[]? _newMoons = null, int? _leap = null)
