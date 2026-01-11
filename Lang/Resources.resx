@@ -457,4 +457,10 @@ The operation is irrevocable!</value>
   <data name="editor_month_leap" xml:space="preserve">
     <value> (Leap {0})</value>
   </data>
+  <data name="editor_calendar_alhijri" xml:space="preserve">
+    <value>Al-Hijri</value>
+  </data>
+  <data name="editor_year_bh" xml:space="preserve">
+    <value> ({0:.} BH)</value>
+  </data>
 </root>

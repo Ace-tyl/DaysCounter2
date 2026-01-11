@@ -88,6 +88,15 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Al-Hijri.
+        /// </summary>
+        public static string editor_calendar_alhijri {
+            get {
+                return ResourceManager.GetString("editor_calendar_alhijri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gregorian.
         /// </summary>
         public static string editor_calendar_gregorian {
@@ -300,6 +309,15 @@ namespace DaysCounter2.Lang {
         public static string editor_year_bc {
             get {
                 return ResourceManager.GetString("editor_year_bc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  ({0:.} BH).
+        /// </summary>
+        public static string editor_year_bh {
+            get {
+                return ResourceManager.GetString("editor_year_bh", resourceCulture);
             }
         }
         

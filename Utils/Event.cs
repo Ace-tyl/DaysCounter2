@@ -1,4 +1,5 @@
 ﻿using System;
+using DaysCounter2.Utils.AlHijri;
 using DaysCounter2.Utils.ChineseLunisolar;
 
 namespace DaysCounter2.Utils
@@ -25,6 +26,10 @@ namespace DaysCounter2.Utils
         long GetLoopDestJulian(MyDateTime now, long nowJulian)
         {
             MyDateTime destDateTime = dateTime.Clone();
+            destDateTime.InitializeTimeZone();
+            now.InitializeTimeZone();
+            if (destDateTime.timeZoneDelta == null) { return -1; } // Impossible
+            if (now.timeZoneDelta == null) { return -1; } // Impossible
             long destJulian;
             if (loopType == LoopTypes.Years)
             {
@@ -70,13 +75,38 @@ namespace DaysCounter2.Utils
                     }
                     destDateTime = MyDateTime.FromJulianDay(destLunar.GetJulianDay(), lunar.timeZoneDelta);
                 }
+                else if (calendar == 2)
+                {
+                    AlHijriDateTime alHijri = AlHijriDateTime.FromJulianDay(destDateTime.GetJulianDay(), (int)destDateTime.timeZoneDelta);
+                    AlHijriDateTime nowAlHijri = AlHijriDateTime.FromJulianDay(nowJulian / 86400.0, (int)now.timeZoneDelta);
+                    int loopsCount = (nowAlHijri.year - alHijri.year + loopValue - 1) / loopValue;
+                    AlHijriDateTime alHijri2 = alHijri.Clone();
+                    alHijri2.year += loopsCount * loopValue;
+                    alHijri2.AdjustData();
+                    if (alHijri2.EarlierThan(nowAlHijri))
+                    {
+                        alHijri.year += alHijri2.year + loopValue;
+                        alHijri.AdjustData();
+                    }
+                    else
+                    {
+                        alHijri = alHijri2;
+                    }
+                    destDateTime = MyDateTime.FromJulianDay(alHijri.GetJulianDay(), alHijri.timeZoneDelta);
+                }
                 else
                 {
                     int loopsCount = (now.year - dateTime.year + loopValue - 1) / loopValue;
-                    destDateTime.year += loopsCount * loopValue;
-                    if (destDateTime.EarlierThan(now))
+                    MyDateTime destDateTime2 = destDateTime.Clone();
+                    destDateTime2.year += loopsCount * loopValue;
+                    destDateTime2.AdjustData();
+                    if (destDateTime2.EarlierThan(now))
                     {
-                        destDateTime.year += loopValue;
+                        destDateTime.year = destDateTime2.year + loopValue;
+                    }
+                    else
+                    {
+                        destDateTime = destDateTime2;
                     }
                 }
             }
@@ -100,19 +130,51 @@ namespace DaysCounter2.Utils
                     }
                     destDateTime = MyDateTime.FromJulianDay(destLunar.GetJulianDay(), destLunar.timeZoneDelta);
                 }
+                else if (calendar == 2)
+                {
+                    AlHijriDateTime alHijri = AlHijriDateTime.FromJulianDay(destDateTime.GetJulianDay(), (int)destDateTime.timeZoneDelta);
+                    AlHijriDateTime nowAlHijri = AlHijriDateTime.FromJulianDay(nowJulian / 86400.0, (int)now.timeZoneDelta);
+                    int dateTimeMonths = alHijri.year * 12 + alHijri.month - 1;
+                    int nowMonths = nowAlHijri.year * 12 + nowAlHijri.month - 1;
+                    int loopsCount = (nowMonths - dateTimeMonths + loopValue - 1) / loopValue;
+                    int destDateTimeMonths = dateTimeMonths + loopsCount * loopValue;
+                    AlHijriDateTime alHijri2 = alHijri.Clone();
+                    alHijri2.year = destDateTimeMonths / 12;
+                    alHijri2.month = destDateTimeMonths % 12 + 1;
+                    alHijri2.AdjustData();
+                    if (alHijri2.EarlierThan(nowAlHijri))
+                    {
+                        destDateTimeMonths += 1;
+                        alHijri.year = destDateTimeMonths / 12;
+                        alHijri.month = destDateTimeMonths % 12 + 1;
+                        alHijri.AdjustData();
+                    }
+                    else
+                    {
+                        alHijri = alHijri2;
+                    }
+                    destDateTime = MyDateTime.FromJulianDay(alHijri.GetJulianDay(), alHijri.timeZoneDelta);
+                }
                 else
                 {
                     int dateTimeMonths = dateTime.year * 12 + dateTime.month - 1;
                     int nowMonths = now.year * 12 + now.month - 1;
                     int loopsCount = (nowMonths - dateTimeMonths + loopValue - 1) / loopValue;
                     int destDateTimeMonths = dateTimeMonths + loopsCount * loopValue;
-                    destDateTime.year = destDateTimeMonths / 12;
-                    destDateTime.month = destDateTimeMonths % 12 + 1;
+                    MyDateTime destDateTime2 = destDateTime.Clone();
+                    destDateTime2.year = destDateTimeMonths / 12;
+                    destDateTime2.month = destDateTimeMonths % 12 + 1;
+                    destDateTime2.AdjustData();
                     if (destDateTime.EarlierThan(now))
                     {
                         destDateTimeMonths += 1;
                         destDateTime.year = destDateTimeMonths / 12;
                         destDateTime.month = destDateTimeMonths % 12 + 1;
+                        destDateTime.AdjustData();
+                    }
+                    else
+                    {
+                        destDateTime = destDateTime2;
                     }
                 }
             }

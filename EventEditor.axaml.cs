@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using Avalonia.Controls;
 using DaysCounter2.Utils;
+using DaysCounter2.Utils.AlHijri;
 using DaysCounter2.Utils.ChineseLunisolar;
 
 namespace DaysCounter2
@@ -35,6 +36,8 @@ namespace DaysCounter2
             TimeZoneSelector.ItemsSource = timeZoneData;
             EventNameValue.Text = ev.name;
             CalendarSelector.SelectedIndex = ev.calendar;
+            ev.dateTime.InitializeTimeZone();
+            if (ev.dateTime.timeZoneDelta == null) { return; } // Impossible
             if (ev.calendar == 1)
             {
                 LunisolarDateTime lunar = LunisolarDateTime.FromGregorian(ev.dateTime, ev.dateTime.GetJulianDay());
@@ -45,6 +48,16 @@ namespace DaysCounter2
                 MinuteValue.Value = lunar.minute;
                 SecondValue.Value = lunar.second;
             }
+            else if (ev.calendar == 2)
+            {
+                AlHijriDateTime alHijri = AlHijriDateTime.FromJulianDay(ev.dateTime.GetJulianDay(), (int)ev.dateTime.timeZoneDelta);
+                YearValue.Value = alHijri.year;
+                MonthValue.Value = alHijri.month;
+                DayValue.Value = alHijri.day;
+                HourValue.Value = alHijri.hour;
+                MinuteValue.Value = alHijri.minute;
+                SecondValue.Value = alHijri.second;
+            }
             else
             {
                 YearValue.Value = ev.dateTime.year;
@@ -54,8 +67,6 @@ namespace DaysCounter2
                 MinuteValue.Value = ev.dateTime.minute;
                 SecondValue.Value = ev.dateTime.second;
             }
-            ev.dateTime.InitializeTimeZone();
-            if (ev.dateTime.timeZoneDelta == null) { return; } // Impossible
             SelectTimeZone((int)ev.dateTime.timeZoneDelta);
             LoopCheck.IsChecked = (ev.loopType != LoopTypes.None);
             if (ev.loopType != LoopTypes.None)
@@ -90,6 +101,25 @@ namespace DaysCounter2
                 else
                 {
                     DayValue.Maximum = LunisolarDateTime.GetDayCountOfMonth(year, month);
+                }
+            }
+            else if (CalendarSelector.SelectedIndex == 2)
+            {
+                if (year == -5498 && month == 8)
+                {
+                    DayValue.Minimum = 16;
+                }
+                else
+                {
+                    DayValue.Minimum = 1;
+                }
+                if (year == 9666 && month == 4)
+                {
+                    DayValue.Maximum = 2;
+                }
+                else
+                {
+                    DayValue.Maximum = AlHijriDateTime.GetDayCountOfMonth(year, month);
                 }
             }
             else
@@ -152,6 +182,26 @@ namespace DaysCounter2
                 }
                 MonthValue.Maximum = 12;
             }
+            else if (CalendarSelector.SelectedIndex == 2)
+            {
+                if (year == -5498)
+                {
+                    MonthValue.Minimum = 8;
+                }
+                else
+                {
+                    MonthValue.Minimum = 1;
+
+                }
+                if (year == 9666)
+                {
+                    MonthValue.Maximum = 4;
+                }
+                else
+                {
+                    MonthValue.Maximum = 12;
+                }
+            }
             else
             {
                 MonthValue.Minimum = 1;
@@ -177,6 +227,11 @@ namespace DaysCounter2
             {
                 YearValue.Minimum = -4713;
                 YearValue.Maximum = 9999;
+            }
+            else if (CalendarSelector.SelectedIndex == 2)
+            {
+                YearValue.Minimum = -5498;
+                YearValue.Maximum = 9666;
             }
             else
             {
@@ -223,6 +278,11 @@ namespace DaysCounter2
                 double JulianDay = new LunisolarDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
                 return MyDateTime.FromJulianDay(JulianDay, timeZoneDelta);
             }
+            else if (CalendarSelector.SelectedIndex == 2)
+            {
+                double JulianDay = new AlHijriDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
+                return MyDateTime.FromJulianDay(JulianDay, timeZoneDelta);
+            }
             else
             {
                 return new MyDateTime(year, month, day, hour, minute, second, timeZoneDelta);
@@ -258,7 +318,14 @@ namespace DaysCounter2
             ModifySaveButton();
             if (YearValue.Value <= 0)
             {
-                YearText.Text = Lang.Resources.editor_date_year + string.Format(Lang.Resources.editor_year_bc, 1 - YearValue.Value);
+                if (CalendarSelector.SelectedIndex == 2)
+                {
+                    YearText.Text = Lang.Resources.editor_date_year + string.Format(Lang.Resources.editor_year_bh, 1 - YearValue.Value);
+                }
+                else
+                {
+                    YearText.Text = Lang.Resources.editor_date_year + string.Format(Lang.Resources.editor_year_bc, 1 - YearValue.Value);
+                }
             }
             else
             {
@@ -359,6 +426,11 @@ namespace DaysCounter2
                 julian = new LunisolarDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
                 gregorian = MyDateTime.FromJulianDay(julian, timeZoneDelta);
             }
+            else if (lastSelectedIndex == 2)
+            {
+                julian = new AlHijriDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
+                gregorian = MyDateTime.FromJulianDay(julian, timeZoneDelta);
+            }
             else
             {
                 gregorian = new MyDateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
@@ -389,6 +461,16 @@ namespace DaysCounter2
                 HourValue.Value = lunar.hour;
                 MinuteValue.Value = lunar.minute;
                 SecondValue.Value = lunar.second;
+            }
+            else if (newSelectedIndex == 2)
+            {
+                AlHijriDateTime alHijri = AlHijriDateTime.FromJulianDay(julian, timeZoneDelta);
+                YearValue.Value = alHijri.year;
+                MonthValue.Value = alHijri.month;
+                DayValue.Value = alHijri.day;
+                HourValue.Value = alHijri.hour;
+                MinuteValue.Value = alHijri.minute;
+                SecondValue.Value = alHijri.second;
             }
             lastSelectedIndex = newSelectedIndex;
         }

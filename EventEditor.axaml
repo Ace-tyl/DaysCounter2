@@ -24,6 +24,7 @@
           <ComboBox Grid.Row="1" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="18" x:Name="CalendarSelector" SelectedIndex="0" SelectionChanged="CalendarSelector_SelectionChanged">
               <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_gregorian}"></ComboBoxItem>
               <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_lunisolar}"></ComboBoxItem>
+              <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_alhijri}"></ComboBoxItem>
           </ComboBox>
       </Grid>
       <Grid DockPanel.Dock="Top" Height="75" RowDefinitions="*,40" ColumnDefinitions="115,150,150,150,150,*" ColumnSpacing="10" RowSpacing="10">

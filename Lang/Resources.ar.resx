@@ -457,4 +457,10 @@
   <data name="editor_month_leap" xml:space="preserve">
     <value> (شهر إضافي {0})</value>
   </data>
+  <data name="editor_calendar_alhijri" xml:space="preserve">
+    <value>الهجري</value>
+  </data>
+  <data name="editor_year_bh" xml:space="preserve">
+    <value> (قبل الهجرة {0:.})</value>
+  </data>
 </root>

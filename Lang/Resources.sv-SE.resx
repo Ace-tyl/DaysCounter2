@@ -457,4 +457,10 @@ Du kan inte ångra den operationen!</value>
   <data name="editor_month_leap" xml:space="preserve">
     <value> (extra {0} månad)</value>
   </data>
+  <data name="editor_calendar_alhijri" xml:space="preserve">
+    <value>Al-hijri</value>
+  </data>
+  <data name="editor_year_bh" xml:space="preserve">
+    <value> (F.H. {0:.})</value>
+  </data>
 </root>
