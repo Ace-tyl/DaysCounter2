@@ -70,6 +70,7 @@ To customize this application, click the **Settings** button. The following prop
   * Korean (Republic of Korea)
   * Russian (Russia)
   * Swedish (Sweden)
+  * Traditional Chinese (Hong Kong SAR)
   * Traditional Chinese (Chinese Taiwan)
 
 * **Date Time Format**: Controls the format of date time shown as the current time and destination time, default is `yyyy/MM/dd HH:mm:ss`.
