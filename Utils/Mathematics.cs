@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DaysCounter2.Utils.ChineseLunisolar
+namespace DaysCounter2.Utils
 {
     internal class Mathematics
     {

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DaysCounter2.Utils.ChineseLunisolar;
 
-namespace DaysCounter2.Utils.ChineseLunisolar
+namespace DaysCounter2.Utils
 {
     internal class Astronomy
     {
@@ -249,7 +250,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
                 }
 
                 double f1 = 2 * Math.Atan(Math.Sqrt((1 - e) / (1 + e)) * Math.Tan(th / 2));
-                double f2 = (e * Math.Sqrt(1 - e * e) * Math.Sin(th)) / (1 + e * Math.Cos(th));
+                double f2 = e * Math.Sqrt(1 - e * e) * Math.Sin(th) / (1 + e * Math.Cos(th));
                 double f = (f1 - f2) * ty / 2 / Math.PI;
                 if (flag == 1)
                 {
@@ -297,46 +298,46 @@ namespace DaysCounter2.Utils.ChineseLunisolar
 
             double e = 1 - 0.002516 * t - 0.0000074 * t2;
 
-            double apt1 = -0.4072 * Math.Sin((Math.PI / 180) * ms);
-            apt1 += 0.17241 * e* Math.Sin((Math.PI / 180) * m);
-            apt1 += 0.01608 * Math.Sin((Math.PI / 180) * 2 * ms);
-            apt1 += 0.01039 * Math.Sin((Math.PI / 180) * 2 * f);
-            apt1 += 0.00739 * e* Math.Sin((Math.PI / 180) * (ms - m));
-            apt1 -= 0.00514 * e* Math.Sin((Math.PI / 180) * (ms + m));
-            apt1 += 0.00208 * e * e* Math.Sin((Math.PI / 180) * (2 * m));
-            apt1 -= 0.00111 * Math.Sin((Math.PI / 180) * (ms - 2 * f));
-            apt1 -= 0.00057 * Math.Sin((Math.PI / 180) * (ms + 2 * f));
-            apt1 += 0.00056 * e* Math.Sin((Math.PI / 180) * (2 * ms + m));
-            apt1 -= 0.00042 * Math.Sin((Math.PI / 180) * 3 * ms);
-            apt1 += 0.00042 * e* Math.Sin((Math.PI / 180) * (m + 2 * f));
-            apt1 += 0.00038 * e* Math.Sin((Math.PI / 180) * (m - 2 * f));
-            apt1 -= 0.00024 * e* Math.Sin((Math.PI / 180) * (2 * ms - m));
-            apt1 -= 0.00017 * Math.Sin((Math.PI / 180) * omega);
-            apt1 -= 0.00007 * Math.Sin((Math.PI / 180) * (ms + 2 * m));
-            apt1 += 0.00004 * Math.Sin((Math.PI / 180) * (2 * ms - 2 * f));
-            apt1 += 0.00004 * Math.Sin((Math.PI / 180) * (3 * m));
-            apt1 += 0.00003 * Math.Sin((Math.PI / 180) * (ms + m - 2 * f));
-            apt1 += 0.00003 * Math.Sin((Math.PI / 180) * (2 * ms + 2 * f));
-            apt1 -= 0.00003 * Math.Sin((Math.PI / 180) * (ms + m + 2 * f));
-            apt1 += 0.00003 * Math.Sin((Math.PI / 180) * (ms - m + 2 * f));
-            apt1 -= 0.00002 * Math.Sin((Math.PI / 180) * (ms - m - 2 * f));
-            apt1 -= 0.00002 * Math.Sin((Math.PI / 180) * (3 * ms + m));
-            apt1 += 0.00002 * Math.Sin((Math.PI / 180) * (4 * ms));
+            double apt1 = -0.4072 * Math.Sin(Math.PI / 180 * ms);
+            apt1 += 0.17241 * e* Math.Sin(Math.PI / 180 * m);
+            apt1 += 0.01608 * Math.Sin(Math.PI / 180 * 2 * ms);
+            apt1 += 0.01039 * Math.Sin(Math.PI / 180 * 2 * f);
+            apt1 += 0.00739 * e* Math.Sin(Math.PI / 180 * (ms - m));
+            apt1 -= 0.00514 * e* Math.Sin(Math.PI / 180 * (ms + m));
+            apt1 += 0.00208 * e * e* Math.Sin(Math.PI / 180 * (2 * m));
+            apt1 -= 0.00111 * Math.Sin(Math.PI / 180 * (ms - 2 * f));
+            apt1 -= 0.00057 * Math.Sin(Math.PI / 180 * (ms + 2 * f));
+            apt1 += 0.00056 * e* Math.Sin(Math.PI / 180 * (2 * ms + m));
+            apt1 -= 0.00042 * Math.Sin(Math.PI / 180 * 3 * ms);
+            apt1 += 0.00042 * e* Math.Sin(Math.PI / 180 * (m + 2 * f));
+            apt1 += 0.00038 * e* Math.Sin(Math.PI / 180 * (m - 2 * f));
+            apt1 -= 0.00024 * e* Math.Sin(Math.PI / 180 * (2 * ms - m));
+            apt1 -= 0.00017 * Math.Sin(Math.PI / 180 * omega);
+            apt1 -= 0.00007 * Math.Sin(Math.PI / 180 * (ms + 2 * m));
+            apt1 += 0.00004 * Math.Sin(Math.PI / 180 * (2 * ms - 2 * f));
+            apt1 += 0.00004 * Math.Sin(Math.PI / 180 * (3 * m));
+            apt1 += 0.00003 * Math.Sin(Math.PI / 180 * (ms + m - 2 * f));
+            apt1 += 0.00003 * Math.Sin(Math.PI / 180 * (2 * ms + 2 * f));
+            apt1 -= 0.00003 * Math.Sin(Math.PI / 180 * (ms + m + 2 * f));
+            apt1 += 0.00003 * Math.Sin(Math.PI / 180 * (ms - m + 2 * f));
+            apt1 -= 0.00002 * Math.Sin(Math.PI / 180 * (ms - m - 2 * f));
+            apt1 -= 0.00002 * Math.Sin(Math.PI / 180 * (3 * ms + m));
+            apt1 += 0.00002 * Math.Sin(Math.PI / 180 * (4 * ms));
 
-            double apt2 = 0.000325 * Math.Sin((Math.PI / 180) * (299.77 + 0.107408 * k - 0.009173 * t2));
-            apt2 += 0.000165 * Math.Sin((Math.PI / 180) * (251.88 + 0.016321 * k));
-            apt2 += 0.000164 * Math.Sin((Math.PI / 180) * (251.83 + 26.651886 * k));
-            apt2 += 0.000126 * Math.Sin((Math.PI / 180) * (349.42 + 36.412478 * k));
-            apt2 += 0.00011 * Math.Sin((Math.PI / 180) * (84.66 + 18.206239 * k));
-            apt2 += 0.000062 * Math.Sin((Math.PI / 180) * (141.74 + 53.303771 * k));
-            apt2 += 0.00006 * Math.Sin((Math.PI / 180) * (207.14 + 2.453732 * k));
-            apt2 += 0.000056 * Math.Sin((Math.PI / 180) * (154.84 + 7.30686 * k));
-            apt2 += 0.000047 * Math.Sin((Math.PI / 180) * (34.52 + 27.261239 * k));
-            apt2 += 0.000042 * Math.Sin((Math.PI / 180) * (207.19 + 0.121824 * k));
-            apt2 += 0.00004 * Math.Sin((Math.PI / 180) * (291.34 + 1.844379 * k));
-            apt2 += 0.000037 * Math.Sin((Math.PI / 180) * (161.72 + 24.198154 * k));
-            apt2 += 0.000035 * Math.Sin((Math.PI / 180) * (239.56 + 25.513099 * k));
-            apt2 += 0.000023 * Math.Sin((Math.PI / 180) * (331.55 + 3.592518 * k));
+            double apt2 = 0.000325 * Math.Sin(Math.PI / 180 * (299.77 + 0.107408 * k - 0.009173 * t2));
+            apt2 += 0.000165 * Math.Sin(Math.PI / 180 * (251.88 + 0.016321 * k));
+            apt2 += 0.000164 * Math.Sin(Math.PI / 180 * (251.83 + 26.651886 * k));
+            apt2 += 0.000126 * Math.Sin(Math.PI / 180 * (349.42 + 36.412478 * k));
+            apt2 += 0.00011 * Math.Sin(Math.PI / 180 * (84.66 + 18.206239 * k));
+            apt2 += 0.000062 * Math.Sin(Math.PI / 180 * (141.74 + 53.303771 * k));
+            apt2 += 0.00006 * Math.Sin(Math.PI / 180 * (207.14 + 2.453732 * k));
+            apt2 += 0.000056 * Math.Sin(Math.PI / 180 * (154.84 + 7.30686 * k));
+            apt2 += 0.000047 * Math.Sin(Math.PI / 180 * (34.52 + 27.261239 * k));
+            apt2 += 0.000042 * Math.Sin(Math.PI / 180 * (207.19 + 0.121824 * k));
+            apt2 += 0.00004 * Math.Sin(Math.PI / 180 * (291.34 + 1.844379 * k));
+            apt2 += 0.000037 * Math.Sin(Math.PI / 180 * (161.72 + 24.198154 * k));
+            apt2 += 0.000035 * Math.Sin(Math.PI / 180 * (239.56 + 25.513099 * k));
+            apt2 += 0.000023 * Math.Sin(Math.PI / 180 * (331.55 + 3.592518 * k));
 
             return mnm + apt1 + apt2;
         }
