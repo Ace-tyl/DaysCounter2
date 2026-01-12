@@ -29,7 +29,7 @@ namespace DaysCounter2.Utils.AlHijri
 
         public static bool IsLeapYear(int year)
         {
-            const int leapData = 0x29292524; // leap year data in binary
+            const int leapData = 0x252524A4; // leap year data in binary
             int y30 = (year + 30000) % 30; // in order to prevent negative result
             return (leapData & (1 << y30)) != 0;
         }
@@ -130,13 +130,13 @@ namespace DaysCounter2.Utils.AlHijri
         }
 
         const int cycleDays = 10631; // Per 30 years
-        const int julianOffset = -178114; // Julian day of -6000/1/1 (1 Muharram 6001 BH)
+        const int julianOffset = -178115; // Julian day of -6000/1/1 (1 Muharram 6001 BH)
 
         static int JulianYearOffset(int year)
         {
-            int[] cycleOffset = [0, 354, 708, 1063, 1417, 1771, 2126, 2480, 2834, 3189,
-                3543, 3898, 4252, 4606, 4961, 5315, 5669, 6024, 6378, 6732,
-                7087, 7441, 7796, 8150, 8504, 8859, 9213, 9567, 9922, 10276];
+            int[] cycleOffset = [0, 354, 708, 1063, 1417, 1771, 2126, 2480, 2835, 3189,
+                3543, 3898, 4252, 4606, 4961, 5315, 5669, 6024, 6378, 6733,
+                7087, 7441, 7796, 8150, 8504, 8859, 9213, 9568, 9922, 10276];
             int yearOffset = year + 6000;
             return julianOffset + cycleDays * (yearOffset / 30) + cycleOffset[yearOffset % 30];
         }

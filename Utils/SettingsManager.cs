@@ -10,7 +10,8 @@ namespace DaysCounter2.Utils
         public byte pastColor_a = 160, pastColor_r = 238, pastColor_g = 0, pastColor_b = 0;
         public byte distantColor_a = 0, distantColor_r = 0, distantColor_g = 0, distantColor_b = 0;
 
-        public string dateTimeFormat = "yyyy/MM/dd HH:mm:ss";
+        public string dateTimeFormat = "yyyy-MM-dd HH:mm:ss";
+        public int dateTimeCalendar = 0;
 
         public byte destinationShowingMode = 0;
 

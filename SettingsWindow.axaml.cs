@@ -35,6 +35,7 @@ namespace DaysCounter2
             PickPastColor.Background = new SolidColorBrush(pastColor);
             PickDistantColor.Background = new SolidColorBrush(distantColor);
             DateTimeFormatInput.Text = App.settings.dateTimeFormat;
+            DateTimeCalendarSelector.SelectedIndex = App.settings.dateTimeCalendar;
             defaultBrush = DateTimeFormatInput.Foreground;
             DestModeSelector.SelectedIndex = App.settings.destinationShowingMode;
             var systemFonts = FontManager.Current.SystemFonts;
@@ -70,7 +71,8 @@ namespace DaysCounter2
             App.settings.futureColor = futureColor;
             App.settings.pastColor = pastColor;
             App.settings.distantColor = distantColor;
-            App.settings.dateTimeFormat = DateTimeFormatInput.Text ?? "yyyy/MM/dd HH:mm:ss";
+            App.settings.dateTimeFormat = DateTimeFormatInput.Text ?? "yyyy-MM-dd HH:mm:ss";
+            App.settings.dateTimeCalendar = DateTimeCalendarSelector.SelectedIndex;
             App.settings.destinationShowingMode = (byte)DestModeSelector.SelectedIndex;
             string oldFamilyName = App.settings.windowFont;
             if (FontSelector.SelectedItem != null)
@@ -163,7 +165,8 @@ namespace DaysCounter2
 
         private void TimeFormatDefault_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            DateTimeFormatInput.Text = "yyyy/MM/dd HH:mm:ss";
+            DateTimeFormatInput.Text = "yyyy-MM-dd HH:mm:ss";
+            DateTimeCalendarSelector.SelectedIndex = 0;
         }
 
         private void ColorDefault_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

@@ -44,7 +44,13 @@
             
             <!-- Date Time Format -->
             <TextBlock Grid.Row="3" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_dateTimeFormat}" PointerPressed="DateTimeFormatText_PointerPressed" Cursor="Hand" TextDecorations="Underline"></TextBlock>
-            <TextBox Grid.Row="3" Grid.Column="1" FontSize="18" VerticalAlignment="Stretch" VerticalContentAlignment="Center" x:Name="DateTimeFormatInput" TextChanged="DateTimeFormatInput_TextChanged"></TextBox>
+            <DockPanel Grid.Row="3" Grid.Column="1" HorizontalSpacing="10">
+                <ComboBox DockPanel.Dock="Right" FontSize="18" VerticalAlignment="Stretch" Width="150" VerticalContentAlignment="Center" x:Name="DateTimeCalendarSelector" SelectedIndex="0">
+                    <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_gregorian}"></ComboBoxItem>
+                    <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_alhijri}"></ComboBoxItem>
+                </ComboBox>
+                <TextBox FontSize="18" VerticalAlignment="Stretch" VerticalContentAlignment="Center" x:Name="DateTimeFormatInput" TextChanged="DateTimeFormatInput_TextChanged"></TextBox>
+            </DockPanel>
             <Button Grid.Row="3" Grid.Column="2" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="TimeFormatDefault_Click"></Button>
             
             <!-- Show Destination Time -->

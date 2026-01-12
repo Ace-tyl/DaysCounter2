@@ -35,7 +35,7 @@ namespace DaysCounter2
             InitializeComponent();
             TimeZoneSelector.ItemsSource = timeZoneData;
             EventNameValue.Text = ev.name;
-            CalendarSelector.SelectedIndex = ev.calendar;
+            CalendarSelector.SelectedIndex = lastSelectedIndex = ev.calendar;
             ev.dateTime.InitializeTimeZone();
             if (ev.dateTime.timeZoneDelta == null) { return; } // Impossible
             if (ev.calendar == 1)

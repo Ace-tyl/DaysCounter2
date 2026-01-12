@@ -49,7 +49,11 @@ The event date can be set to a wide range, from 4713 BC to 9999 AD. The date is 
 
 When entering a year before the Common Era such as x BC, the number -(x - 1) is required to input. For example, Emperor Qin Shi Huang unified the six states in 221 BC, so the Year value should be set to -220 in order to add this event. A prompt will be displayed if you input a year before the Common Era (non-positive).
 
-In addition, the Chinese Lunisolar calendar and the Al-Hijri calendar (Islamic calendar) are also supported to determine the event date. The implementation of Chinese Lunisolar calendar referred to [liujiawm/php-calendar](https://github.com/liujiawm/php-calendar), which uses astronomical calculation methods to estimate the calendar instead of lookup table, so that the supported date range is as wide as using the Gregorian calendar. To input a date with leap month (闰月 in Chinese), input 0 as month (no matter what leap month it is this month). Note that the calculation method only guarantees accuracy between year -999 (1000 BC) to 3000. For years outside this range, the calendar can still be used but we cannot guarantee complete accuracy.
+In addition, the Chinese Lunisolar calendar and the Al-Hijri calendar (Islamic calendar) are also supported to determine the event date.
+
+The implementation of Chinese Lunisolar calendar referred to [liujiawm/php-calendar](https://github.com/liujiawm/php-calendar), which uses astronomical calculation methods to estimate the calendar instead of lookup table, so that the supported date range is as wide as using the Gregorian calendar. To input a date with leap month (闰月 in Chinese), input 0 as month (no matter what leap month it is this month). Note that the calculation method only guarantees accuracy between year -999 (1000 BC) to 3000. For years outside this range, the calendar can still be used but we cannot guarantee complete accuracy.
+
+The Al-Hijri calendar is using 30-year cycle tabular, and may be a 1-day discrepancy with the Umm-al-Qura calendar used by Saudi Arabia.
 
 ### Searching for Events
 
@@ -73,7 +77,7 @@ To customize this application, click the **Settings** button. The following prop
   * Traditional Chinese (Hong Kong SAR)
   * Traditional Chinese (Chinese Taiwan)
 
-* **Date Time Format**: Controls the format of date time shown as the current time and destination time, default is `yyyy/MM/dd HH:mm:ss`.
+* **Date Time Format**: Controls the format of date time shown as the current time and destination time, default is `yyyy-MM-dd HH:mm:ss`.
 
   * Date time earlier than Jan 1, 1600 0:00:00 UTC or later than Dec 31, 9999 0:00:00 UTC can't get displayed and will shown as Beyond Display Range, since the incompatibility of our Date Time module with the system Date Time module of C#.
 

@@ -13,6 +13,7 @@ using Avalonia.Controls.Documents;
 using Avalonia.Media;
 using Avalonia.Threading;
 using DaysCounter2.Utils;
+using DaysCounter2.Utils.AlHijri;
 using MsBox.Avalonia;
 
 namespace DaysCounter2
@@ -35,6 +36,8 @@ namespace DaysCounter2
         List<DisplayedEvent> displayedEvents = [];
         ObservableCollection<DisplayedEvent> Displayed { get; set; } = [];
         string languageId;
+        CultureInfo culture;
+        static CultureInfo ArabicCulture = CultureInfo.CreateSpecificCulture("ar-SA");
 
         public MainWindow()
         {
@@ -57,6 +60,7 @@ namespace DaysCounter2
             refreshThread = new Thread(RefreshTimer);
             refreshThread.Start();
             languageId = App.settings.languageId;
+            culture = CultureInfo.CreateSpecificCulture(languageId);
             var versionAttribute = (AssemblyFileVersionAttribute?)Assembly.GetExecutingAssembly().GetCustomAttribute(typeof(AssemblyFileVersionAttribute));
             if (versionAttribute != null)
             {
@@ -107,19 +111,40 @@ namespace DaysCounter2
             RefreshWindow(DateTime.Now);
         }
 
-        public void RefreshWindow(DateTime now)
+        string DateTimeString(DateTime dateTime)
         {
-            CultureInfo culture = CultureInfo.CreateSpecificCulture(languageId);
-            culture.DateTimeFormat.Calendar = new GregorianCalendar();
+            CultureInfo usedCulture = culture;
+            switch (App.settings.dateTimeCalendar)
+            {
+                case 0:
+                    // Gregorian Calendar
+                    usedCulture.DateTimeFormat.Calendar = new GregorianCalendar();
+                    break;
+                case 1:
+                    // AlHijri Calendar
+                    usedCulture = ArabicCulture; // Use Arabic culture
+                    usedCulture.DateTimeFormat.Calendar = new HijriCalendar();
+                    break;
+            }
+            
             try
             {
-                CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString(App.settings.dateTimeFormat, culture);
+                return dateTime.ToString(App.settings.dateTimeFormat, usedCulture);
             }
             catch (FormatException)
             {
-                App.settings.dateTimeFormat = "yyyy/MM/dd HH:mm:ss";
-                CurrentTimeText.Text = Lang.Resources.ui_currentTime + now.ToString(App.settings.dateTimeFormat, culture);
+                App.settings.dateTimeFormat = "yyyy-MM-dd HH:mm:ss";
+                return dateTime.ToString(App.settings.dateTimeFormat, usedCulture);
             }
+            catch (Exception)
+            {
+                return Lang.Resources.ui_outOfRange;
+            }
+        }
+
+        public void RefreshWindow(DateTime now)
+        {
+            CurrentTimeText.Text = Lang.Resources.ui_currentTime + DateTimeString(now);
 
             if (TimerList.SelectedItems != null && TimerList.SelectedItems.Count > 1)
             {
@@ -190,14 +215,7 @@ namespace DaysCounter2
                     }
                     else
                     {
-                        try
-                        {
-                            destinationText = dest.Value.ToString(App.settings.dateTimeFormat, culture);
-                        }
-                        catch
-                        {
-                            destinationText = Lang.Resources.ui_outOfRange;
-                        }
+                        destinationText = DateTimeString(dest.Value);
                     }
                 }
                 // Add displayed event

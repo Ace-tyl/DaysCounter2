@@ -449,10 +449,10 @@
     <value>التقويم</value>
   </data>
   <data name="editor_calendar_gregorian" xml:space="preserve">
-    <value>التقويم الميلادي</value>
+    <value>الميلادي</value>
   </data>
   <data name="editor_calendar_lunisolar" xml:space="preserve">
-    <value>التقويم القمري الصيني</value>
+    <value>القمري الصيني</value>
   </data>
   <data name="editor_month_leap" xml:space="preserve">
     <value> (شهر إضافي {0})</value>
