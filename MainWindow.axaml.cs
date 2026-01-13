@@ -223,15 +223,33 @@ namespace DaysCounter2
                 SolidColorBrush brush;
                 if (App.settings.backgroundGradientMode == (byte)BackgroundGradientModes.Logarithm)
                 {
-                    brush = new SolidColorBrush(
-                        ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor,
-                        Math.Log(days / App.settings.backgroundGradientLow, App.settings.backgroundGradientHigh / App.settings.backgroundGradientLow)));
+                    if (App.settings.backgroundGradientLow == App.settings.backgroundGradientHigh)
+                    {
+                        brush = new SolidColorBrush(days < App.settings.backgroundGradientLow
+                            ? (delta > 0 ? App.settings.futureColor : App.settings.pastColor)
+                            : App.settings.distantColor);
+                    }
+                    else
+                    {
+                        brush = new SolidColorBrush(
+                            ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor,
+                            Math.Log(days / App.settings.backgroundGradientLow, App.settings.backgroundGradientHigh / App.settings.backgroundGradientLow)));
+                    }
                 }
                 else if (App.settings.backgroundGradientMode == (byte)BackgroundGradientModes.Linear)
                 {
-                    brush = new SolidColorBrush(
-                        ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor,
-                        (days - App.settings.backgroundGradientLow) / (App.settings.backgroundGradientHigh - App.settings.backgroundGradientLow)));
+                    if (App.settings.backgroundGradientLow == App.settings.backgroundGradientHigh)
+                    {
+                        brush = new SolidColorBrush(days < App.settings.backgroundGradientLow
+                            ? (delta > 0 ? App.settings.futureColor : App.settings.pastColor)
+                            : App.settings.distantColor);
+                    }
+                    else
+                    {
+                        brush = new SolidColorBrush(
+                            ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor,
+                            (days - App.settings.backgroundGradientLow) / (App.settings.backgroundGradientHigh - App.settings.backgroundGradientLow)));
+                    }
                 }
                 else
                 {
