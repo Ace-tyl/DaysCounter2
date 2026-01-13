@@ -439,6 +439,51 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Background Gradient.
+        /// </summary>
+        public static string settings_gradient {
+            get {
+                return ResourceManager.GetString("settings_gradient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disabled.
+        /// </summary>
+        public static string settings_gradient_disabled {
+            get {
+                return ResourceManager.GetString("settings_gradient_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Linear.
+        /// </summary>
+        public static string settings_gradient_linear {
+            get {
+                return ResourceManager.GetString("settings_gradient_linear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logarithm.
+        /// </summary>
+        public static string settings_gradient_logarithm {
+            get {
+                return ResourceManager.GetString("settings_gradient_logarithm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Range (Days).
+        /// </summary>
+        public static string settings_gradient_range {
+            get {
+                return ResourceManager.GetString("settings_gradient_range", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string settings_language {

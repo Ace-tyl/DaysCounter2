@@ -5,14 +5,21 @@ namespace DaysCounter2.Utils
     public enum DisplayCalendarTypes
     {
         Gregorian = 0,
-        AlHijri = 1
+        AlHijri = 1,
     }
 
     public enum DestinationShowingModes
     {
         Always = 0,
         FutureOnly = 1,
-        None = 2
+        None = 2,
+    }
+
+    public enum BackgroundGradientModes
+    {
+        Disabled = 0,
+        Logarithm = 1,
+        Linear = 2,
     }
 
     public class SettingsManager
@@ -22,6 +29,9 @@ namespace DaysCounter2.Utils
         public byte futureColor_a = 160, futureColor_r = 102, futureColor_g = 204, futureColor_b = 255;
         public byte pastColor_a = 160, pastColor_r = 238, pastColor_g = 0, pastColor_b = 0;
         public byte distantColor_a = 0, distantColor_r = 0, distantColor_g = 0, distantColor_b = 0;
+
+        public byte backgroundGradientMode = (byte)BackgroundGradientModes.Logarithm;
+        public double backgroundGradientLow = 1.0, backgroundGradientHigh = 1000.0;
 
         public string dateTimeFormat = "yyyy-MM-dd HH:mm:ss";
         public byte dateTimeCalendar = (byte)DisplayCalendarTypes.Gregorian;

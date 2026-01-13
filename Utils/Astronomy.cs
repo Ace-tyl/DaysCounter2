@@ -299,19 +299,19 @@ namespace DaysCounter2.Utils
             double e = 1 - 0.002516 * t - 0.0000074 * t2;
 
             double apt1 = -0.4072 * Math.Sin(Math.PI / 180 * ms);
-            apt1 += 0.17241 * e* Math.Sin(Math.PI / 180 * m);
+            apt1 += 0.17241 * e * Math.Sin(Math.PI / 180 * m);
             apt1 += 0.01608 * Math.Sin(Math.PI / 180 * 2 * ms);
             apt1 += 0.01039 * Math.Sin(Math.PI / 180 * 2 * f);
-            apt1 += 0.00739 * e* Math.Sin(Math.PI / 180 * (ms - m));
-            apt1 -= 0.00514 * e* Math.Sin(Math.PI / 180 * (ms + m));
-            apt1 += 0.00208 * e * e* Math.Sin(Math.PI / 180 * (2 * m));
+            apt1 += 0.00739 * e * Math.Sin(Math.PI / 180 * (ms - m));
+            apt1 -= 0.00514 * e * Math.Sin(Math.PI / 180 * (ms + m));
+            apt1 += 0.00208 * e * e * Math.Sin(Math.PI / 180 * (2 * m));
             apt1 -= 0.00111 * Math.Sin(Math.PI / 180 * (ms - 2 * f));
             apt1 -= 0.00057 * Math.Sin(Math.PI / 180 * (ms + 2 * f));
-            apt1 += 0.00056 * e* Math.Sin(Math.PI / 180 * (2 * ms + m));
+            apt1 += 0.00056 * e * Math.Sin(Math.PI / 180 * (2 * ms + m));
             apt1 -= 0.00042 * Math.Sin(Math.PI / 180 * 3 * ms);
-            apt1 += 0.00042 * e* Math.Sin(Math.PI / 180 * (m + 2 * f));
-            apt1 += 0.00038 * e* Math.Sin(Math.PI / 180 * (m - 2 * f));
-            apt1 -= 0.00024 * e* Math.Sin(Math.PI / 180 * (2 * ms - m));
+            apt1 += 0.00042 * e * Math.Sin(Math.PI / 180 * (m + 2 * f));
+            apt1 += 0.00038 * e * Math.Sin(Math.PI / 180 * (m - 2 * f));
+            apt1 -= 0.00024 * e * Math.Sin(Math.PI / 180 * (2 * ms - m));
             apt1 -= 0.00017 * Math.Sin(Math.PI / 180 * omega);
             apt1 -= 0.00007 * Math.Sin(Math.PI / 180 * (ms + 2 * m));
             apt1 += 0.00004 * Math.Sin(Math.PI / 180 * (2 * ms - 2 * f));

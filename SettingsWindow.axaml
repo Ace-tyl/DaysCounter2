@@ -7,60 +7,76 @@
         xmlns:local="using:DaysCounter2"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
         x:Class="DaysCounter2.SettingsWindow"
-        Width="800" Height="350" MinWidth="800" MinHeight="350" x:DataType="local:SettingsWindow"
+        Width="1000" Height="400" MinWidth="1000" MinHeight="400" x:DataType="local:SettingsWindow" FontSize="18"
         Title="{x:Static lang:Resources.ui_settings}">
     <DockPanel>
-		<Button DockPanel.Dock="Bottom" Height="40" HorizontalAlignment="Stretch" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Content="{x:Static lang:Resources.settings_save}" x:Name="SaveButton" Click="SaveButton_Click"></Button>
-        <Grid Margin="10" ColumnDefinitions="200,*,100" ColumnSpacing="10" RowDefinitions="40,40,40,40,40,*" RowSpacing="10">
+		<Button DockPanel.Dock="Bottom" Height="40" HorizontalAlignment="Stretch" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_save}" x:Name="SaveButton" Click="SaveButton_Click"></Button>
+        <Grid Margin="10" ColumnDefinitions="200,*,100" ColumnSpacing="10" RowDefinitions="40,40,40,40,40,40,*" RowSpacing="10">
             <!-- Language -->
-            <TextBlock Grid.Row="0" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_language}"></TextBlock>
-            <ComboBox Grid.Row="0" Grid.Column="1" x:DataType="utils:LanguageManager" ItemsSource="{Binding languages}" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="LanguageSelector">
+            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_language}"></TextBlock>
+            <ComboBox Grid.Row="0" Grid.Column="1" x:DataType="utils:LanguageManager" ItemsSource="{Binding languages}" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="LanguageSelector">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding name}" FlowDirection="{Binding flowDirection}"></TextBlock>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <Button Grid.Row="0" Grid.Column="2" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="LangDefault_Click"></Button>
+            <Button Grid.Row="0" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="LangDefault_Click"></Button>
             
             <!-- Display Font -->
-            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_font}"></TextBlock>
-            <ComboBox Grid.Row="1" Grid.Column="1" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="FontSelector" SelectedIndex="0">
+            <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_font}"></TextBlock>
+            <ComboBox Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="FontSelector" SelectedIndex="0">
                 <ComboBoxItem Content="{x:Static lang:Resources.settings_font_default}"></ComboBoxItem>
             </ComboBox>
-            <Button Grid.Row="1" Grid.Column="2" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="FontDefault_Click"></Button>
+            <Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="FontDefault_Click"></Button>
             
             <!-- Background Color -->
-            <TextBlock Grid.Row="2" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_color}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_color}"></TextBlock>
             <Grid Grid.Row="2" Grid.Column="1" ColumnDefinitions="40,*,40,*,40,*" ColumnSpacing="10">
                 <Button Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="PickFutureColor" Click="PickFutureColor_Click"></Button>
                 <Button Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="PickPastColor" Click="PickPastColor_Click"></Button>
                 <Button Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="PickDistantColor" Click="PickDistantColor_Click"></Button>
-                <TextBlock Grid.Column="1" VerticalAlignment="Center" FontSize="18" Text="{x:Static lang:Resources.settings_color_future}"></TextBlock>
-                <TextBlock Grid.Column="3" VerticalAlignment="Center" FontSize="18" Text="{x:Static lang:Resources.settings_color_past}"></TextBlock>
-                <TextBlock Grid.Column="5" VerticalAlignment="Center" FontSize="18" Text="{x:Static lang:Resources.settings_color_distant}"></TextBlock>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_color_future}"></TextBlock>
+                <TextBlock Grid.Column="3" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_color_past}"></TextBlock>
+                <TextBlock Grid.Column="5" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_color_distant}" x:Name="PickDistantColorText"></TextBlock>
             </Grid>
-            <Button Grid.Row="2" Grid.Column="2" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="ColorDefault_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="ColorDefault_Click"></Button>
             
-            <!-- Date Time Format -->
-            <TextBlock Grid.Row="3" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_dateTimeFormat}" PointerPressed="DateTimeFormatText_PointerPressed" Cursor="Hand" TextDecorations="Underline"></TextBlock>
+            <!-- Background Gradient -->
+            <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_gradient}"></TextBlock>
             <DockPanel Grid.Row="3" Grid.Column="1" HorizontalSpacing="10">
-                <ComboBox DockPanel.Dock="Right" FontSize="18" VerticalAlignment="Stretch" Width="150" VerticalContentAlignment="Center" x:Name="DateTimeCalendarSelector" SelectedIndex="0">
+                <ComboBox DockPanel.Dock="Left" Width="150" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="BackgroundGradientSelector" SelectedIndex="1" SelectionChanged="BackgroundGradientSelector_SelectionChanged">
+                    <ComboBoxItem Content="{x:Static lang:Resources.settings_gradient_disabled}"></ComboBoxItem>
+                    <ComboBoxItem Content="{x:Static lang:Resources.settings_gradient_logarithm}"></ComboBoxItem>
+                    <ComboBoxItem Content="{x:Static lang:Resources.settings_gradient_linear}"></ComboBoxItem>
+                </ComboBox>
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="BackgroundGradientParameterGrid" ColumnDefinitions="150,*,*" ColumnSpacing="10">
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_gradient_range}" TextAlignment="End"></TextBlock>
+                    <NumericUpDown Grid.Column="1" Minimum="0.1" Maximum="10000000" Increment="0.1" FormatString="0.0" Value="1.0" x:Name="BackgroundGradientLow" VerticalContentAlignment="Center" ValueChanged="BackgroundGradientLow_ValueChanged"></NumericUpDown>
+                    <NumericUpDown Grid.Column="2" Minimum="0.1" Maximum="10000000" Increment="0.1" FormatString="0.0" Value="1000.0" x:Name="BackgroundGradientHigh" VerticalContentAlignment="Center" ValueChanged="BackgroundGradientHigh_ValueChanged"></NumericUpDown>
+                </Grid>
+            </DockPanel>
+            <Button Grid.Row="3" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="GradientDefault_Click"></Button>
+
+            <!-- Date Time Format -->
+            <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_dateTimeFormat}" PointerPressed="DateTimeFormatText_PointerPressed" Cursor="Hand" TextDecorations="Underline"></TextBlock>
+            <DockPanel Grid.Row="4" Grid.Column="1" HorizontalSpacing="10">
+                <ComboBox DockPanel.Dock="Right" VerticalAlignment="Stretch" Width="150" VerticalContentAlignment="Center" x:Name="DateTimeCalendarSelector" SelectedIndex="0">
                     <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_gregorian}"></ComboBoxItem>
                     <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_alhijri}"></ComboBoxItem>
                 </ComboBox>
-                <TextBox FontSize="18" VerticalAlignment="Stretch" VerticalContentAlignment="Center" x:Name="DateTimeFormatInput" TextChanged="DateTimeFormatInput_TextChanged"></TextBox>
+                <TextBox VerticalAlignment="Stretch" VerticalContentAlignment="Center" x:Name="DateTimeFormatInput" TextChanged="DateTimeFormatInput_TextChanged"></TextBox>
             </DockPanel>
-            <Button Grid.Row="3" Grid.Column="2" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="TimeFormatDefault_Click"></Button>
+            <Button Grid.Row="4" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="TimeFormatDefault_Click"></Button>
             
             <!-- Show Destination Time -->
-            <TextBlock Grid.Row="4" Grid.Column="0" FontSize="18" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_destination}"></TextBlock>
-            <ComboBox Grid.Row="4" Grid.Column="1" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="DestModeSelector" SelectedIndex="0">
+            <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static lang:Resources.settings_destination}"></TextBlock>
+            <ComboBox Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="DestModeSelector" SelectedIndex="0">
                 <ComboBoxItem Content="{x:Static lang:Resources.settings_destination_always}"></ComboBoxItem>
                 <ComboBoxItem Content="{x:Static lang:Resources.settings_destination_future}"></ComboBoxItem>
                 <ComboBoxItem Content="{x:Static lang:Resources.settings_destination_none}"></ComboBoxItem>
             </ComboBox>
-            <Button Grid.Row="4" Grid.Column="2" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="DestModeDefault_Click"></Button>
+            <Button Grid.Row="5" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.settings_default}" Click="DestModeDefault_Click"></Button>
         </Grid>
     </DockPanel>
 </Window>

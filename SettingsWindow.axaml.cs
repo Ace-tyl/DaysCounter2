@@ -34,6 +34,9 @@ namespace DaysCounter2
             PickFutureColor.Background = new SolidColorBrush(futureColor);
             PickPastColor.Background = new SolidColorBrush(pastColor);
             PickDistantColor.Background = new SolidColorBrush(distantColor);
+            BackgroundGradientSelector.SelectedIndex = App.settings.backgroundGradientMode;
+            BackgroundGradientLow.Value = (decimal)App.settings.backgroundGradientLow;
+            BackgroundGradientHigh.Value = (decimal)App.settings.backgroundGradientHigh;
             DateTimeFormatInput.Text = App.settings.dateTimeFormat;
             DateTimeCalendarSelector.SelectedIndex = App.settings.dateTimeCalendar;
             defaultBrush = DateTimeFormatInput.Foreground;
@@ -71,6 +74,9 @@ namespace DaysCounter2
             App.settings.futureColor = futureColor;
             App.settings.pastColor = pastColor;
             App.settings.distantColor = distantColor;
+            App.settings.backgroundGradientMode = (byte)BackgroundGradientSelector.SelectedIndex;
+            App.settings.backgroundGradientLow = (double)(BackgroundGradientLow.Value ?? (decimal)1.0);
+            App.settings.backgroundGradientHigh = (double)(BackgroundGradientHigh.Value ?? (decimal)1000.0);
             App.settings.dateTimeFormat = DateTimeFormatInput.Text ?? "yyyy-MM-dd HH:mm:ss";
             App.settings.dateTimeCalendar = (byte)DateTimeCalendarSelector.SelectedIndex;
             App.settings.destinationShowingMode = (byte)DestModeSelector.SelectedIndex;
@@ -187,6 +193,62 @@ namespace DaysCounter2
         private void FontDefault_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             FontSelector.SelectedIndex = 0;
+        }
+
+        private void GradientDefault_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            BackgroundGradientSelector.SelectedIndex = (int)BackgroundGradientModes.Logarithm;
+            BackgroundGradientLow.Value = (decimal)1.0;
+            BackgroundGradientHigh.Value = (decimal)1000.0;
+        }
+
+        private void BackgroundGradientLow_ValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)
+        {
+            if (BackgroundGradientLow.Value > BackgroundGradientHigh.Value)
+            {
+                BackgroundGradientHigh.Value = BackgroundGradientLow.Value;
+            }
+        }
+
+        private void BackgroundGradientHigh_ValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)
+        {
+            if (BackgroundGradientLow.Value > BackgroundGradientHigh.Value)
+            {
+                BackgroundGradientLow.Value = BackgroundGradientHigh.Value;
+            }
+        }
+
+        private void BackgroundGradientSelector_SelectionChanged(object? sender, SelectionChangedEventArgs e)
+        {
+            if (BackgroundGradientSelector == null)
+            {
+                return;
+            }
+            if (BackgroundGradientSelector.SelectedIndex == (int)BackgroundGradientModes.Disabled)
+            {
+                BackgroundGradientParameterGrid.IsVisible = false;
+                PickDistantColorText.IsVisible = false;
+                PickDistantColor.IsVisible = false;
+            }
+            else
+            {
+                BackgroundGradientParameterGrid.IsVisible = true;
+                PickDistantColorText.IsVisible = true;
+                PickDistantColor.IsVisible = true;
+
+                if (BackgroundGradientSelector.SelectedIndex == (int)BackgroundGradientModes.Logarithm)
+                {
+                    BackgroundGradientLow.Minimum = BackgroundGradientLow.Increment;
+                    if (BackgroundGradientLow.Value < BackgroundGradientLow.Increment)
+                    {
+                        BackgroundGradientLow.Value = BackgroundGradientLow.Increment;
+                    }
+                }
+                else if (BackgroundGradientSelector.SelectedIndex == (int)BackgroundGradientModes.Linear)
+                {
+                    BackgroundGradientLow.Minimum = 0;
+                }
+            }
         }
     }
 }

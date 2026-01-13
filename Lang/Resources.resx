@@ -463,4 +463,19 @@ The operation is irrevocable!</value>
   <data name="editor_year_bh" xml:space="preserve">
     <value> ({0:.} BH)</value>
   </data>
+  <data name="settings_gradient" xml:space="preserve">
+    <value>Background Gradient</value>
+  </data>
+  <data name="settings_gradient_logarithm" xml:space="preserve">
+    <value>Logarithm</value>
+  </data>
+  <data name="settings_gradient_linear" xml:space="preserve">
+    <value>Linear</value>
+  </data>
+  <data name="settings_gradient_disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="settings_gradient_range" xml:space="preserve">
+    <value>Range (Days)</value>
+  </data>
 </root>

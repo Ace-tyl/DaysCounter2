@@ -463,4 +463,19 @@
   <data name="editor_year_bh" xml:space="preserve">
     <value> ({0:.} BH)</value>
   </data>
+  <data name="settings_gradient" xml:space="preserve">
+    <value>배경색 그라데이션</value>
+  </data>
+  <data name="settings_gradient_logarithm" xml:space="preserve">
+    <value>로그</value>
+  </data>
+  <data name="settings_gradient_linear" xml:space="preserve">
+    <value>선형</value>
+  </data>
+  <data name="settings_gradient_disabled" xml:space="preserve">
+    <value>비활성화</value>
+  </data>
+  <data name="settings_gradient_range" xml:space="preserve">
+    <value>범위 (일)</value>
+  </data>
 </root>

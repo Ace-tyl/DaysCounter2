@@ -89,6 +89,12 @@ To customize this application, click the **Settings** button. The following prop
 
   The color of an event will be interpolated between *Future/Past* and *Distant*, according to the timer.
   
+* **Background Gradient**: Controls how the color of an event interpolated between *Future/Past* and *Distant*:
+
+  * Disabled: No interpolation is used. The color of an event is either *Future* or *Past*.
+  * Logarithm: Using logarithmic functions for interpolation.
+  * Linear: Using linear interpolation.
+
 * **Show Destination Time**: Controls whether the program shows the destination time of an event on the main window, or only shows the destination time of future events. Default is to always show.
 
 * **Display Font**: Controls the display font of program, which means you can use your own font instead of the default font of Avalonia.

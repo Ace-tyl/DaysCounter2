@@ -463,4 +463,19 @@
   <data name="editor_year_bh" xml:space="preserve">
     <value> (قبل الهجرة {0:.})</value>
   </data>
+  <data name="settings_gradient" xml:space="preserve">
+    <value>لون متدرج الخلفية</value>
+  </data>
+  <data name="settings_gradient_logarithm" xml:space="preserve">
+    <value>لوغاريثم</value>
+  </data>
+  <data name="settings_gradient_linear" xml:space="preserve">
+    <value>خطي</value>
+  </data>
+  <data name="settings_gradient_disabled" xml:space="preserve">
+    <value>معطَّل</value>
+  </data>
+  <data name="settings_gradient_range" xml:space="preserve">
+    <value>نطاق (يوم)</value>
+  </data>
 </root>

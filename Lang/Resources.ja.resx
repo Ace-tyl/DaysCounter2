@@ -463,4 +463,19 @@
   <data name="editor_year_bh" xml:space="preserve">
     <value>（聖遷前 {0:.}）</value>
   </data>
+  <data name="settings_gradient" xml:space="preserve">
+    <value>背景グラデーション</value>
+  </data>
+  <data name="settings_gradient_logarithm" xml:space="preserve">
+    <value>対数</value>
+  </data>
+  <data name="settings_gradient_linear" xml:space="preserve">
+    <value>リニア</value>
+  </data>
+  <data name="settings_gradient_disabled" xml:space="preserve">
+    <value>無効</value>
+  </data>
+  <data name="settings_gradient_range" xml:space="preserve">
+    <value>範囲（日）</value>
+  </data>
 </root>

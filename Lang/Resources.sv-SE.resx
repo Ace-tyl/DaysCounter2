@@ -463,4 +463,19 @@ Du kan inte ångra den operationen!</value>
   <data name="editor_year_bh" xml:space="preserve">
     <value> (F.H. {0:.})</value>
   </data>
+  <data name="settings_gradient" xml:space="preserve">
+    <value>Bakgrundsgradient</value>
+  </data>
+  <data name="settings_gradient_logarithm" xml:space="preserve">
+    <value>Logaritm</value>
+  </data>
+  <data name="settings_gradient_linear" xml:space="preserve">
+    <value>Linjär</value>
+  </data>
+  <data name="settings_gradient_disabled" xml:space="preserve">
+    <value>Inaktiverad</value>
+  </data>
+  <data name="settings_gradient_range" xml:space="preserve">
+    <value>Räckvidd (dagar)</value>
+  </data>
 </root>

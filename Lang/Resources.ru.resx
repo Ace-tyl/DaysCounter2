@@ -463,4 +463,19 @@
   <data name="editor_year_bh" xml:space="preserve">
     <value> ({0:.} до хиджры)</value>
   </data>
+  <data name="settings_gradient" xml:space="preserve">
+    <value>Фоновый градиент</value>
+  </data>
+  <data name="settings_gradient_logarithm" xml:space="preserve">
+    <value>Логарифм</value>
+  </data>
+  <data name="settings_gradient_linear" xml:space="preserve">
+    <value>Линейный</value>
+  </data>
+  <data name="settings_gradient_disabled" xml:space="preserve">
+    <value>Отключено</value>
+  </data>
+  <data name="settings_gradient_range" xml:space="preserve">
+    <value>Диапазон (Дней)</value>
+  </data>
 </root>
