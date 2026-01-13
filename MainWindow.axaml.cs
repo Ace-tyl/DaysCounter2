@@ -203,7 +203,6 @@ namespace DaysCounter2
                     timerText = string.Format(Lang.Resources.ui_timerAgo, fdelta / 86400, fdelta / 3600 % 24, fdelta / 60 % 60, fdelta % 60);
                 }
                 double days = Math.Abs(delta / 86400.0);
-                days = Math.Clamp(days, 1, 1000);
                 // Construct destination text
                 string destinationText = "";
                 if (App.settings.destinationShowingMode != (byte)DestinationShowingModes.None
