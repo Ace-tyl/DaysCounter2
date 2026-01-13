@@ -12,7 +12,7 @@ namespace DaysCounter2.Utils.ChineseLunisolar
         static Dictionary<int, double[]> mstCache = [];
 
         // Get adjusted solar terms by Delta T and Perturbation from Vernal Equinox
-        public static double[] AdjustedSolarTerms(int year, int start = 0, int end = 25)
+        public static double[] AdjustedSolarTerms(int year, int start = 0, int end = 27)
         {
             double[] mst;
             if (mstCache.ContainsKey(year))

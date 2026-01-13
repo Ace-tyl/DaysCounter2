@@ -35,10 +35,10 @@ namespace DaysCounter2
             InitializeComponent();
             TimeZoneSelector.ItemsSource = timeZoneData;
             EventNameValue.Text = ev.name;
-            CalendarSelector.SelectedIndex = lastSelectedIndex = ev.calendar;
+            CalendarSelector.SelectedIndex = lastSelectedIndex = (int)ev.calendar;
             ev.dateTime.InitializeTimeZone();
             if (ev.dateTime.timeZoneDelta == null) { return; } // Impossible
-            if (ev.calendar == 1)
+            if (ev.calendar == CalendarTypes.ChineseLunisolar)
             {
                 LunisolarDateTime lunar = LunisolarDateTime.FromGregorian(ev.dateTime, ev.dateTime.GetJulianDay());
                 YearValue.Value = lunar.year;
@@ -48,7 +48,7 @@ namespace DaysCounter2
                 MinuteValue.Value = lunar.minute;
                 SecondValue.Value = lunar.second;
             }
-            else if (ev.calendar == 2)
+            else if (ev.calendar == CalendarTypes.AlHijri)
             {
                 AlHijriDateTime alHijri = AlHijriDateTime.FromJulianDay(ev.dateTime.GetJulianDay(), (int)ev.dateTime.timeZoneDelta);
                 YearValue.Value = alHijri.year;
@@ -84,7 +84,7 @@ namespace DaysCounter2
             }
             int year = (int)YearValue.Value;
             int month = (int)MonthValue.Value;
-            if (CalendarSelector.SelectedIndex == 1)
+            if (CalendarSelector.SelectedIndex == (int)CalendarTypes.ChineseLunisolar)
             {
                 if (year == -4713 && month == 10)
                 {
@@ -103,7 +103,7 @@ namespace DaysCounter2
                     DayValue.Maximum = LunisolarDateTime.GetDayCountOfMonth(year, month);
                 }
             }
-            else if (CalendarSelector.SelectedIndex == 2)
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.AlHijri)
             {
                 if (year == -5498 && month == 8)
                 {
@@ -146,7 +146,7 @@ namespace DaysCounter2
             // To address October 1582
             int year = (int)YearValue.Value;
             int month = (int)MonthValue.Value;
-            if (CalendarSelector.SelectedIndex == 0 && year == 1582 && month == 10)
+            if (CalendarSelector.SelectedIndex == (int)CalendarTypes.Gregorian && year == 1582 && month == 10)
             {
                 if (DayValue.Value >= 5 && DayValue.Value < 14)
                 {
@@ -166,7 +166,7 @@ namespace DaysCounter2
                 return;
             }
             int year = (int)YearValue.Value;
-            if (CalendarSelector.SelectedIndex == 1)
+            if (CalendarSelector.SelectedIndex == (int)CalendarTypes.ChineseLunisolar)
             {
                 if (year == -4713)
                 {
@@ -182,7 +182,7 @@ namespace DaysCounter2
                 }
                 MonthValue.Maximum = 12;
             }
-            else if (CalendarSelector.SelectedIndex == 2)
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.AlHijri)
             {
                 if (year == -5498)
                 {
@@ -223,12 +223,12 @@ namespace DaysCounter2
 
         void ModifyYearLimits()
         {
-            if (CalendarSelector.SelectedIndex == 1)
+            if (CalendarSelector.SelectedIndex == (int)CalendarTypes.ChineseLunisolar)
             {
                 YearValue.Minimum = -4713;
                 YearValue.Maximum = 9999;
             }
-            else if (CalendarSelector.SelectedIndex == 2)
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.AlHijri)
             {
                 YearValue.Minimum = -5498;
                 YearValue.Maximum = 9666;
@@ -254,7 +254,8 @@ namespace DaysCounter2
 
         MyDateTime? GetInputDateTime()
         {
-            if (YearValue.Value == null || MonthValue.Value == null || DayValue.Value == null || HourValue.Value == null || MinuteValue.Value == null || SecondValue.Value == null)
+            if (YearValue.Value == null || MonthValue.Value == null || DayValue.Value == null
+                || HourValue.Value == null || MinuteValue.Value == null || SecondValue.Value == null)
             {
                 return null;
             }
@@ -273,12 +274,12 @@ namespace DaysCounter2
             {
                 timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
             }
-            if (CalendarSelector.SelectedIndex == 1)
+            if (CalendarSelector.SelectedIndex == (int)CalendarTypes.ChineseLunisolar)
             {
                 double JulianDay = new LunisolarDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
                 return MyDateTime.FromJulianDay(JulianDay, timeZoneDelta);
             }
-            else if (CalendarSelector.SelectedIndex == 2)
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.AlHijri)
             {
                 double JulianDay = new AlHijriDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
                 return MyDateTime.FromJulianDay(JulianDay, timeZoneDelta);
@@ -311,6 +312,7 @@ namespace DaysCounter2
             {
                 return;
             }
+            ModifyYearValue();
             ModifyMonthLimits();
             ModifyMonthValue();
             ModifyDayLimits();
@@ -318,7 +320,7 @@ namespace DaysCounter2
             ModifySaveButton();
             if (YearValue.Value <= 0)
             {
-                if (CalendarSelector.SelectedIndex == 2)
+                if (CalendarSelector.SelectedIndex == (int)CalendarTypes.AlHijri)
                 {
                     YearText.Text = Lang.Resources.editor_date_year + string.Format(Lang.Resources.editor_year_bh, 1 - YearValue.Value);
                 }
@@ -335,10 +337,11 @@ namespace DaysCounter2
 
         private void MonthValue_ValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)
         {
+            ModifyMonthValue();
             ModifyDayLimits();
             ModifyDayValue();
             ModifySaveButton();
-            if (CalendarSelector.SelectedIndex == 1 && MonthValue.Value == 0 && YearValue.Value != null)
+            if (CalendarSelector.SelectedIndex == (int)CalendarTypes.ChineseLunisolar && MonthValue.Value == 0 && YearValue.Value != null)
             {
                 int year = (int)YearValue.Value;
                 int leap = LunisolarDateTime.GetLeapMonth(year);
@@ -377,7 +380,7 @@ namespace DaysCounter2
             {
                 name = EventNameValue.Text,
                 dateTime = dateTime,
-                calendar = CalendarSelector.SelectedIndex
+                calendar = (CalendarTypes)CalendarSelector.SelectedIndex
             };
             if (LoopCheck.IsChecked == true)
             {
@@ -391,11 +394,13 @@ namespace DaysCounter2
 
         private void CalendarSelector_SelectionChanged(object? sender, SelectionChangedEventArgs e)
         {
+            // At calendar changed, a date time conversion should be performed
             if (YearValue == null || MonthValue == null || DayValue == null || HourValue == null || MinuteValue == null || SecondValue == null)
             {
                 return;
             }
-            if (YearValue.Value == null || MonthValue.Value == null || DayValue.Value == null || HourValue.Value == null || MinuteValue.Value == null || SecondValue.Value == null)
+            if (YearValue.Value == null || MonthValue.Value == null || DayValue.Value == null
+                || HourValue.Value == null || MinuteValue.Value == null || SecondValue.Value == null)
             {
                 return;
             }
@@ -414,19 +419,20 @@ namespace DaysCounter2
             {
                 timeZoneDelta = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
             }
+            // Convert from
             double julian;
             MyDateTime gregorian;
-            if (lastSelectedIndex == 0)
+            if (lastSelectedIndex == (int)CalendarTypes.Gregorian)
             {
                 gregorian = new MyDateTime(year, month, day, hour, minute, second, timeZoneDelta);
                 julian = gregorian.GetJulianDay();
             }
-            else if (lastSelectedIndex == 1)
+            else if (lastSelectedIndex == (int)CalendarTypes.ChineseLunisolar)
             {
                 julian = new LunisolarDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
                 gregorian = MyDateTime.FromJulianDay(julian, timeZoneDelta);
             }
-            else if (lastSelectedIndex == 2)
+            else if (lastSelectedIndex == (int)CalendarTypes.AlHijri)
             {
                 julian = new AlHijriDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
                 gregorian = MyDateTime.FromJulianDay(julian, timeZoneDelta);
@@ -442,8 +448,9 @@ namespace DaysCounter2
             ModifyMonthValue();
             ModifyDayLimits();
             ModifyDayValue();
+            // Convert to
             int newSelectedIndex = CalendarSelector.SelectedIndex;
-            if (newSelectedIndex == 0)
+            if (newSelectedIndex == (int)CalendarTypes.Gregorian)
             {
                 YearValue.Value = gregorian.year;
                 MonthValue.Value = gregorian.month;
@@ -452,7 +459,7 @@ namespace DaysCounter2
                 MinuteValue.Value = gregorian.minute;
                 SecondValue.Value = gregorian.second;
             }
-            else if (newSelectedIndex == 1)
+            else if (newSelectedIndex == (int)CalendarTypes.ChineseLunisolar)
             {
                 LunisolarDateTime lunar = LunisolarDateTime.FromGregorian(gregorian, julian);
                 YearValue.Value = lunar.year;
@@ -462,7 +469,7 @@ namespace DaysCounter2
                 MinuteValue.Value = lunar.minute;
                 SecondValue.Value = lunar.second;
             }
-            else if (newSelectedIndex == 2)
+            else if (newSelectedIndex == (int)CalendarTypes.AlHijri)
             {
                 AlHijriDateTime alHijri = AlHijriDateTime.FromJulianDay(julian, timeZoneDelta);
                 YearValue.Value = alHijri.year;

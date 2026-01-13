@@ -116,11 +116,11 @@ namespace DaysCounter2
             CultureInfo usedCulture = culture;
             switch (App.settings.dateTimeCalendar)
             {
-                case 0:
+                case (byte)DisplayCalendarTypes.Gregorian:
                     // Gregorian Calendar
                     usedCulture.DateTimeFormat.Calendar = new GregorianCalendar();
                     break;
-                case 1:
+                case (byte)DisplayCalendarTypes.AlHijri:
                     // AlHijri Calendar
                     usedCulture = ArabicCulture; // Use Arabic culture
                     usedCulture.DateTimeFormat.Calendar = new HijriCalendar();
@@ -206,7 +206,8 @@ namespace DaysCounter2
                 days = Math.Clamp(days, 1, 1000);
                 // Construct destination text
                 string destinationText = "";
-                if (App.settings.destinationShowingMode != 2 && (App.settings.destinationShowingMode != 1 || delta >= 0))
+                if (App.settings.destinationShowingMode != (byte)DestinationShowingModes.None
+                    && (App.settings.destinationShowingMode != (byte)DestinationShowingModes.FutureOnly || delta >= 0))
                 {
                     DateTime? dest = ev.GetDestinationDateTime(myNow, myNowJulian);
                     if (dest == null)
@@ -226,7 +227,9 @@ namespace DaysCounter2
                     delta = delta,
                     timerText = timerText,
                     destinationText = destinationText,
-                    brush = new SolidColorBrush(ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor, Math.Log(days, 1000))),
+                    brush = new SolidColorBrush(
+                        ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor,
+                        Math.Log(days, 1000))),
                     nameInlines = runs
                 });
             }
@@ -286,7 +289,9 @@ namespace DaysCounter2
                 return;
             }
             int selectedItemsCount = TimerList.SelectedItems.Count;
-            var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_delete_warn_title, selectedItemsCount == 1 ? Lang.Resources.ui_delete_warn : string.Format(Lang.Resources.ui_delete_warn_multi, selectedItemsCount), MsBox.Avalonia.Enums.ButtonEnum.YesNo);
+            var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_delete_warn_title,
+                selectedItemsCount == 1 ? Lang.Resources.ui_delete_warn : string.Format(Lang.Resources.ui_delete_warn_multi, selectedItemsCount),
+                MsBox.Avalonia.Enums.ButtonEnum.YesNo);
             var result = await msgbox.ShowWindowDialogAsync(this);
             if (result != MsBox.Avalonia.Enums.ButtonResult.Yes)
             {
@@ -345,12 +350,14 @@ namespace DaysCounter2
                 SaveSettings();
                 if (settingsWindow.languageModified)
                 {
-                    var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_settings_language_title, Lang.Resources.ui_settings_language, MsBox.Avalonia.Enums.ButtonEnum.Ok);
+                    var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_settings_language_title, Lang.Resources.ui_settings_language,
+                        MsBox.Avalonia.Enums.ButtonEnum.Ok);
                     await msgbox.ShowWindowDialogAsync(this);
                 }
                 if (settingsWindow.fontModified)
                 {
-                    var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_settings_font_title, Lang.Resources.ui_settings_font, MsBox.Avalonia.Enums.ButtonEnum.Ok);
+                    var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_settings_font_title, Lang.Resources.ui_settings_font,
+                        MsBox.Avalonia.Enums.ButtonEnum.Ok);
                     await msgbox.ShowWindowDialogAsync(this);
                 }
             }

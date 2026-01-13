@@ -2,6 +2,19 @@
 
 namespace DaysCounter2.Utils
 {
+    public enum DisplayCalendarTypes
+    {
+        Gregorian = 0,
+        AlHijri = 1
+    }
+
+    public enum DestinationShowingModes
+    {
+        Always = 0,
+        FutureOnly = 1,
+        None = 2
+    }
+
     public class SettingsManager
     {
         public string languageId = "";
@@ -11,9 +24,9 @@ namespace DaysCounter2.Utils
         public byte distantColor_a = 0, distantColor_r = 0, distantColor_g = 0, distantColor_b = 0;
 
         public string dateTimeFormat = "yyyy-MM-dd HH:mm:ss";
-        public int dateTimeCalendar = 0;
+        public byte dateTimeCalendar = (byte)DisplayCalendarTypes.Gregorian;
 
-        public byte destinationShowingMode = 0;
+        public byte destinationShowingMode = (byte)DestinationShowingModes.Always;
 
         public string windowFont = "";
 

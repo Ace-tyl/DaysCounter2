@@ -15,13 +15,20 @@ namespace DaysCounter2.Utils
         Years = 5,
     }
 
+    public enum CalendarTypes
+    {
+        Gregorian = 0,
+        ChineseLunisolar = 1,
+        AlHijri = 2,
+    }
+
     public class Event
     {
         public string uuid = Guid.NewGuid().ToString(), name = "Unnamed";
         public MyDateTime dateTime = new MyDateTime();
         public LoopTypes loopType = LoopTypes.None;
         public int loopValue = 1;
-        public int calendar = 0;
+        public CalendarTypes calendar = CalendarTypes.Gregorian;
 
         long GetLoopDestJulian(MyDateTime now, long nowJulian)
         {
@@ -33,7 +40,7 @@ namespace DaysCounter2.Utils
             long destJulian;
             if (loopType == LoopTypes.Years)
             {
-                if (calendar == 1)
+                if (calendar == CalendarTypes.ChineseLunisolar)
                 {
                     LunisolarDateTime lunar = LunisolarDateTime.FromGregorian(destDateTime, destDateTime.GetJulianDay());
                     LunisolarDateTime nowLunar = LunisolarDateTime.FromGregorian(now, nowJulian / 86400.0);
@@ -75,7 +82,7 @@ namespace DaysCounter2.Utils
                     }
                     destDateTime = MyDateTime.FromJulianDay(destLunar.GetJulianDay(), lunar.timeZoneDelta);
                 }
-                else if (calendar == 2)
+                else if (calendar == CalendarTypes.AlHijri)
                 {
                     AlHijriDateTime alHijri = AlHijriDateTime.FromJulianDay(destDateTime.GetJulianDay(), (int)destDateTime.timeZoneDelta);
                     AlHijriDateTime nowAlHijri = AlHijriDateTime.FromJulianDay(nowJulian / 86400.0, (int)now.timeZoneDelta);
@@ -112,7 +119,7 @@ namespace DaysCounter2.Utils
             }
             else if (loopType == LoopTypes.Months)
             {
-                if (calendar == 1)
+                if (calendar == CalendarTypes.ChineseLunisolar)
                 {
                     int count = 0;
                     LunisolarDateTime destLunar = LunisolarDateTime.FromGregorian(destDateTime, destDateTime.GetJulianDay());
@@ -130,7 +137,7 @@ namespace DaysCounter2.Utils
                     }
                     destDateTime = MyDateTime.FromJulianDay(destLunar.GetJulianDay(), destLunar.timeZoneDelta);
                 }
-                else if (calendar == 2)
+                else if (calendar == CalendarTypes.AlHijri)
                 {
                     AlHijriDateTime alHijri = AlHijriDateTime.FromJulianDay(destDateTime.GetJulianDay(), (int)destDateTime.timeZoneDelta);
                     AlHijriDateTime nowAlHijri = AlHijriDateTime.FromJulianDay(nowJulian / 86400.0, (int)now.timeZoneDelta);

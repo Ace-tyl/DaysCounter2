@@ -72,7 +72,7 @@ namespace DaysCounter2
             App.settings.pastColor = pastColor;
             App.settings.distantColor = distantColor;
             App.settings.dateTimeFormat = DateTimeFormatInput.Text ?? "yyyy-MM-dd HH:mm:ss";
-            App.settings.dateTimeCalendar = DateTimeCalendarSelector.SelectedIndex;
+            App.settings.dateTimeCalendar = (byte)DateTimeCalendarSelector.SelectedIndex;
             App.settings.destinationShowingMode = (byte)DestModeSelector.SelectedIndex;
             string oldFamilyName = App.settings.windowFont;
             if (FontSelector.SelectedItem != null)
