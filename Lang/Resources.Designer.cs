@@ -115,6 +115,24 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Event Color.
+        /// </summary>
+        public static string editor_color {
+            get {
+                return ResourceManager.GetString("editor_color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This color will be overlaid onto the background color with the specified opacity..
+        /// </summary>
+        public static string editor_color_warn {
+            get {
+                return ResourceManager.GetString("editor_color_warn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Event Date:.
         /// </summary>
         public static string editor_date {

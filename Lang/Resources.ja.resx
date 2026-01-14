@@ -478,4 +478,10 @@
   <data name="settings_gradient_range" xml:space="preserve">
     <value>範囲（日）</value>
   </data>
+  <data name="editor_color" xml:space="preserve">
+    <value>イベントの色</value>
+  </data>
+  <data name="editor_color_warn" xml:space="preserve">
+    <value>この色は、指定された不透明度で背景色に重ね合わせられます。</value>
+  </data>
 </root>

@@ -478,4 +478,10 @@ The operation is irrevocable!</value>
   <data name="settings_gradient_range" xml:space="preserve">
     <value>Range (Days)</value>
   </data>
+  <data name="editor_color" xml:space="preserve">
+    <value>Event Color</value>
+  </data>
+  <data name="editor_color_warn" xml:space="preserve">
+    <value>This color will be overlaid onto the background color with the specified opacity.</value>
+  </data>
 </root>

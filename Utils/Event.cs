@@ -1,4 +1,5 @@
 ﻿using System;
+using Avalonia.Media;
 using DaysCounter2.Utils.AlHijri;
 using DaysCounter2.Utils.ChineseLunisolar;
 
@@ -29,6 +30,23 @@ namespace DaysCounter2.Utils
         public LoopTypes loopType = LoopTypes.None;
         public int loopValue = 1;
         public CalendarTypes calendar = CalendarTypes.Gregorian;
+        public bool customizeColor = false;
+        public byte color_a = 0, color_r = 0, color_g = 0, color_b = 0;
+
+        public Color color
+        {
+            get
+            {
+                return Color.FromArgb(color_a, color_r, color_g, color_b);
+            }
+            set
+            {
+                color_a = value.A;
+                color_r = value.R;
+                color_g = value.G;
+                color_b = value.B;
+            }
+        }
 
         long GetLoopDestJulian(MyDateTime now, long nowJulian)
         {

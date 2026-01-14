@@ -478,4 +478,10 @@
   <data name="settings_gradient_range" xml:space="preserve">
     <value>범위 (일)</value>
   </data>
+  <data name="editor_color" xml:space="preserve">
+    <value>이벤트 색상</value>
+  </data>
+  <data name="editor_color_warn" xml:space="preserve">
+    <value>이 색상은 지정된 투명도에 따라 배경색 위에 겹쳐집니다.</value>
+  </data>
 </root>

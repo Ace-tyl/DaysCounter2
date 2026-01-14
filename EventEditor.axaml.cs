@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Avalonia.Controls;
+using Avalonia.Media;
 using DaysCounter2.Utils;
 using DaysCounter2.Utils.AlHijri;
 using DaysCounter2.Utils.ChineseLunisolar;
@@ -12,6 +13,7 @@ namespace DaysCounter2
     {
         public Event? savedEvent;
         List<TimeZoneData> timeZoneData { get; set; } = TimeZoneManager.timeZoneData;
+        Color selectedColor;
 
         void SelectTimeZone(int timeZoneDeltaValue)
         {
@@ -28,6 +30,9 @@ namespace DaysCounter2
             DayValue.Value = now.Day;
             int timeZoneDeltaValue = (int)TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes;
             SelectTimeZone(timeZoneDeltaValue);
+            PickColor.BorderBrush = new SolidColorBrush(Color.FromRgb(128, 128, 128));
+            selectedColor = Color.FromRgb(102, 204, 255);
+            SelectedColorChanged();
         }
 
         public EventEditor(Event ev)
@@ -74,6 +79,32 @@ namespace DaysCounter2
                 LoopType.SelectedIndex = (int)ev.loopType;
                 LoopValue.Value = ev.loopValue;
             }
+            ColorCheck.IsChecked = ev.customizeColor;
+            PickColor.BorderBrush = new SolidColorBrush(Color.FromRgb(128, 128, 128));
+            if (ev.customizeColor)
+            {
+                selectedColor = ev.color;
+            }
+            else
+            {
+                selectedColor = Color.FromRgb(102, 204, 255);
+            }
+            SelectedColorChanged();
+        }
+
+        void SelectedColorChanged()
+        {
+            PickColor.Background = new SolidColorBrush(selectedColor);
+            if (selectedColor.A > 128)
+            {
+                PickColor.Foreground = new SolidColorBrush(Color.FromRgb(
+                    (byte)((selectedColor.A + 128) % 256), (byte)((selectedColor.G + 128) % 256), (byte)((selectedColor.B + 128) % 256)));
+            }
+            else
+            {
+                PickColor.Foreground = new SolidColorBrush(Color.FromRgb(128, 128, 128));
+            }
+            PickColor.Content = string.Format("A: {0}, R: {1}, G: {2}, B: {3}", selectedColor.A, selectedColor.R, selectedColor.G, selectedColor.B);
         }
 
         void ModifyDayLimits()
@@ -380,12 +411,17 @@ namespace DaysCounter2
             {
                 name = EventNameValue.Text,
                 dateTime = dateTime,
-                calendar = (CalendarTypes)CalendarSelector.SelectedIndex
+                calendar = (CalendarTypes)CalendarSelector.SelectedIndex,
+                customizeColor = ColorCheck.IsChecked ?? false
             };
             if (LoopCheck.IsChecked == true)
             {
                 savedEvent.loopType = (LoopTypes)LoopType.SelectedIndex;
                 savedEvent.loopValue = LoopValue.Value == null ? 1 : (int)LoopValue.Value;
+            }
+            if (ColorCheck.IsChecked == true)
+            {
+                savedEvent.color = selectedColor;
             }
             Close();
         }
@@ -480,6 +516,27 @@ namespace DaysCounter2
                 SecondValue.Value = alHijri.second;
             }
             lastSelectedIndex = newSelectedIndex;
+        }
+
+        private void ColorCheck_IsCheckedChanged(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            if (ColorCheck.IsChecked == null)
+            {
+                return;
+            }
+            ColorWarn.IsVisible = (bool)ColorCheck.IsChecked;
+            PickColor.IsVisible = (bool)ColorCheck.IsChecked;
+        }
+
+        private async void PickColor_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            ColorSelector colorSelector = new(selectedColor);
+            await colorSelector.ShowDialog(this);
+            if (colorSelector.selectedColor != null)
+            {
+                selectedColor = (Color)colorSelector.selectedColor;
+                SelectedColorChanged();
+            }
         }
     }
 }

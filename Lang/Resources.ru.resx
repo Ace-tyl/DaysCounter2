@@ -478,4 +478,10 @@
   <data name="settings_gradient_range" xml:space="preserve">
     <value>Диапазон (Дней)</value>
   </data>
+  <data name="editor_color" xml:space="preserve">
+    <value>Цвет события</value>
+  </data>
+  <data name="editor_color_warn" xml:space="preserve">
+    <value>Этот цвет будет наложен на цвет фона с заданной непрозрачностью.</value>
+  </data>
 </root>

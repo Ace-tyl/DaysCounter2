@@ -478,4 +478,10 @@ Du kan inte ångra den operationen!</value>
   <data name="settings_gradient_range" xml:space="preserve">
     <value>Räckvidd (dagar)</value>
   </data>
+  <data name="editor_color" xml:space="preserve">
+    <value>Färg</value>
+  </data>
+  <data name="editor_color_warn" xml:space="preserve">
+    <value>Denna färg kommer att överläggas på bakgrundsfärgen med den angivna opaciteten.</value>
+  </data>
 </root>

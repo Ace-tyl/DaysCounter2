@@ -20,7 +20,7 @@ For Linux and macOS users, extract **all** files from the downloaded zip file to
 
 ### Adding Events
 
-To add your first event, click the **New** button, and an event editor window appears. Input your event name and set your event datetime. You can also set your event time zone if the event occurred / will occur in another time zone.
+To add your first event, click the **New** button, and an event editor window appears. Input your event name and set your event datetime. You can set your event time zone if the event occurred / will occur in another time zone. You can also set a specific color for the event.
 
 If necessary, check the **Loop** checkbox and you can set a loop time to your event. When time passed an event with loop time set, the set loop time will be automatically added to event time. This can be used when you want to countdown to (including but not limited to):
 

@@ -44,4 +44,11 @@ public partial class ColorSelector : Window
         double b3 = b1 + (b2 - b1) * rgb_sense;
         return Color.FromArgb((byte)Math.Round(a3), (byte)Math.Round(r3), (byte)Math.Round(g3), (byte)Math.Round(b3));
     }
+
+    // Overlay c1 on top of c2
+    public static Color Overlay(Color c1, Color c2)
+    {
+        Color c1_solid = new Color(255, c1.R, c1.G, c1.B);
+        return Interpolate(c2, c1_solid, c1.A / 255.0);
+    }
 }

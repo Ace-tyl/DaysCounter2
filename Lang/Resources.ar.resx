@@ -478,4 +478,10 @@
   <data name="settings_gradient_range" xml:space="preserve">
     <value>نطاق (يوم)</value>
   </data>
+  <data name="editor_color" xml:space="preserve">
+    <value>لون الحدث</value>
+  </data>
+  <data name="editor_color_warn" xml:space="preserve">
+    <value>سيتم وضع هذا اللون على لون الخلفية مع التعتيم المحدد.</value>
+  </data>
 </root>

@@ -478,4 +478,10 @@
   <data name="settings_gradient_range" xml:space="preserve">
     <value>范围（天）</value>
   </data>
+  <data name="editor_color" xml:space="preserve">
+    <value>事件颜色</value>
+  </data>
+  <data name="editor_color_warn" xml:space="preserve">
+    <value>该颜色将以指定的不透明度叠加到背景颜色上。</value>
+  </data>
 </root>

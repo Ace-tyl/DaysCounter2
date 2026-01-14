@@ -218,41 +218,43 @@ namespace DaysCounter2
                         destinationText = DateTimeString(dest.Value);
                     }
                 }
-                // Construct background brush
-                SolidColorBrush brush;
+                // Construct background
+                Color background;
                 if (App.settings.backgroundGradientMode == (byte)BackgroundGradientModes.Logarithm)
                 {
                     if (App.settings.backgroundGradientLow == App.settings.backgroundGradientHigh)
                     {
-                        brush = new SolidColorBrush(days < App.settings.backgroundGradientLow
+                        background = days < App.settings.backgroundGradientLow
                             ? (delta > 0 ? App.settings.futureColor : App.settings.pastColor)
-                            : App.settings.distantColor);
+                            : App.settings.distantColor;
                     }
                     else
                     {
-                        brush = new SolidColorBrush(
-                            ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor,
-                            Math.Log(days / App.settings.backgroundGradientLow, App.settings.backgroundGradientHigh / App.settings.backgroundGradientLow)));
+                        background = ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor,
+                            Math.Log(days / App.settings.backgroundGradientLow, App.settings.backgroundGradientHigh / App.settings.backgroundGradientLow));
                     }
                 }
                 else if (App.settings.backgroundGradientMode == (byte)BackgroundGradientModes.Linear)
                 {
                     if (App.settings.backgroundGradientLow == App.settings.backgroundGradientHigh)
                     {
-                        brush = new SolidColorBrush(days < App.settings.backgroundGradientLow
+                        background = days < App.settings.backgroundGradientLow
                             ? (delta > 0 ? App.settings.futureColor : App.settings.pastColor)
-                            : App.settings.distantColor);
+                            : App.settings.distantColor;
                     }
                     else
                     {
-                        brush = new SolidColorBrush(
-                            ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor,
-                            (days - App.settings.backgroundGradientLow) / (App.settings.backgroundGradientHigh - App.settings.backgroundGradientLow)));
+                        background = ColorSelector.Interpolate(delta > 0 ? App.settings.futureColor : App.settings.pastColor, App.settings.distantColor,
+                            (days - App.settings.backgroundGradientLow) / (App.settings.backgroundGradientHigh - App.settings.backgroundGradientLow));
                     }
                 }
                 else
                 {
-                    brush = new SolidColorBrush(delta > 0 ? App.settings.futureColor : App.settings.pastColor);
+                    background = delta > 0 ? App.settings.futureColor : App.settings.pastColor;
+                }
+                if (ev.customizeColor)
+                {
+                    background = ColorSelector.Overlay(ev.color, background);
                 }
                 // Add displayed event
                 displayedEvents.Add(new DisplayedEvent
@@ -262,7 +264,7 @@ namespace DaysCounter2
                     delta = delta,
                     timerText = timerText,
                     destinationText = destinationText,
-                    brush = brush,
+                    brush = new SolidColorBrush(background),
                     nameInlines = runs
                 });
             }
