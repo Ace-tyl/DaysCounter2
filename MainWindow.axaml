@@ -10,10 +10,12 @@
         Title="Days Counter 2 by SodiumCl10" Closing="Window_Closing">
     <DockPanel Margin="10" VerticalSpacing="10">
         <Grid DockPanel.Dock="Top">
-            <TextBlock HorizontalAlignment="Center" FontSize="30">Days Counter 2 by SodiumCl10</TextBlock>
+            <DockPanel VerticalSpacing="10">
+                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="30">Days Counter 2 by SodiumCl10</TextBlock>
+                <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontSize="20" x:Name="CurrentTimeText">This line displays current time</TextBlock>
+            </DockPanel>
             <TextBlock HorizontalAlignment="Right" TextAlignment="End" FontSize="15" Foreground="Gray" PointerPressed="VersionBlock_PointerPressed" Cursor="Hand" x:Name="VersionText"></TextBlock>
         </Grid>
-        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontSize="20" x:Name="CurrentTimeText">This line displays current time</TextBlock>
         <TextBox DockPanel.Dock="Top" FontSize="18" x:Name="SearchBox" Watermark="{x:Static lang:Resources.ui_search}" TextChanged="SearchBox_TextChanged"></TextBox>
         <Grid DockPanel.Dock="Bottom" Height="40" ColumnSpacing="10" ColumnDefinitions="*,*,*,*">
             <Button Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="NewEventButton_Click" Content="{x:Static lang:Resources.ui_new}"></Button>

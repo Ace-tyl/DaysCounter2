@@ -31,13 +31,15 @@ namespace DaysCounter2
 
     public partial class MainWindow : Window
     {
-        Thread refreshThread;
+        Thread refreshThread, checkUpdateThread;
         List<Event> events = [];
         List<DisplayedEvent> displayedEvents = [];
         ObservableCollection<DisplayedEvent> Displayed { get; set; } = [];
         string languageId;
         CultureInfo culture;
         static CultureInfo ArabicCulture = CultureInfo.CreateSpecificCulture("ar-SA");
+        UpdateChecker updateChecker = new();
+        bool updateFound = false;
 
         public MainWindow()
         {
@@ -61,10 +63,29 @@ namespace DaysCounter2
             refreshThread.Start();
             languageId = App.settings.languageId;
             culture = CultureInfo.CreateSpecificCulture(languageId);
-            var versionAttribute = (AssemblyFileVersionAttribute?)Assembly.GetExecutingAssembly().GetCustomAttribute(typeof(AssemblyFileVersionAttribute));
-            if (versionAttribute != null)
+            VersionText.Text += Lang.Resources.ui_version + "\n" + updateChecker.currentVersion.ToString();
+            checkUpdateThread = new Thread(CheckForUpdate);
+            checkUpdateThread.Start();
+        }
+
+        public async void CheckForUpdate()
+        {
+            await updateChecker.GetNewestVersion();
+            if (updateChecker.currentVersion.EarlierThan(updateChecker.newestVersion))
             {
-                VersionText.Text += Lang.Resources.ui_version + "\n" + versionAttribute.Version;
+                updateFound = true;
+                Dispatcher.UIThread.Invoke(() =>
+                {
+                    VersionText.Text += "\n" + Lang.Resources.ui_newVersion + "\n" + updateChecker.newestVersion.ToString();
+                    VersionText.Foreground = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                });
+            }
+            else
+            {
+                Dispatcher.UIThread.Invoke(() =>
+                {
+                    VersionText.Text += "\n" + Lang.Resources.ui_newestVersion;
+                });
             }
         }
 
@@ -406,7 +427,12 @@ namespace DaysCounter2
 
         private void VersionBlock_PointerPressed(object? sender, Avalonia.Input.PointerPressedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo() { FileName = "https://github.com/Ace-tyl/DaysCounter2", UseShellExecute = true });
+            string startUrl = string.Format("https://github.com/{0}", App.githubRepo);
+            if (updateFound)
+            {
+                startUrl = updateChecker.releaseUrl;
+            }
+            Process.Start(new ProcessStartInfo() { FileName = startUrl, UseShellExecute = true });
         }
 
         private void SearchBox_TextChanged(object? sender, TextChangedEventArgs e)

@@ -484,4 +484,10 @@
   <data name="editor_color_warn" xml:space="preserve">
     <value>Этот цвет будет наложен на цвет фона с заданной непрозрачностью.</value>
   </data>
+  <data name="ui_newVersion" xml:space="preserve">
+    <value>Доступно обновление</value>
+  </data>
+  <data name="ui_newestVersion" xml:space="preserve">
+    <value>Последняя версия</value>
+  </data>
 </root>

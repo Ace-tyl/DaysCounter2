@@ -484,4 +484,10 @@
   <data name="editor_color_warn" xml:space="preserve">
     <value>이 색상은 지정된 투명도에 따라 배경색 위에 겹쳐집니다.</value>
   </data>
+  <data name="ui_newVersion" xml:space="preserve">
+    <value>업데이트 이용 가능</value>
+  </data>
+  <data name="ui_newestVersion" xml:space="preserve">
+    <value>최신 버전</value>
+  </data>
 </root>

@@ -993,6 +993,24 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Latest Version.
+        /// </summary>
+        public static string ui_newestVersion {
+            get {
+                return ResourceManager.GetString("ui_newestVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Available.
+        /// </summary>
+        public static string ui_newVersion {
+            get {
+                return ResourceManager.GetString("ui_newVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Beyond Display Range.
         /// </summary>
         public static string ui_outOfRange {

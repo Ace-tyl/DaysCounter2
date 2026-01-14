@@ -484,4 +484,10 @@
   <data name="editor_color_warn" xml:space="preserve">
     <value>该颜色将以指定的不透明度叠加到背景颜色上。</value>
   </data>
+  <data name="ui_newVersion" xml:space="preserve">
+    <value>有可用的更新</value>
+  </data>
+  <data name="ui_newestVersion" xml:space="preserve">
+    <value>已为最新版</value>
+  </data>
 </root>

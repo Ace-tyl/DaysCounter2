@@ -484,4 +484,10 @@ The operation is irrevocable!</value>
   <data name="editor_color_warn" xml:space="preserve">
     <value>This color will be overlaid onto the background color with the specified opacity.</value>
   </data>
+  <data name="ui_newVersion" xml:space="preserve">
+    <value>Update Available</value>
+  </data>
+  <data name="ui_newestVersion" xml:space="preserve">
+    <value>Latest Version</value>
+  </data>
 </root>

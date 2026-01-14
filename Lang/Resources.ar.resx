@@ -484,4 +484,10 @@
   <data name="editor_color_warn" xml:space="preserve">
     <value>سيتم وضع هذا اللون على لون الخلفية مع التعتيم المحدد.</value>
   </data>
+  <data name="ui_newVersion" xml:space="preserve">
+    <value>يتوفر تحديث</value>
+  </data>
+  <data name="ui_newestVersion" xml:space="preserve">
+    <value>أحدث إصدار</value>
+  </data>
 </root>

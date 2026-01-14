@@ -16,6 +16,7 @@ namespace DaysCounter2
         public static string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DaysCounter2");
         public static string appFilePath = "", appSettingsPath = "";
         public static SettingsManager settings = new SettingsManager();
+        public static string githubRepo = "Ace-tyl/DaysCounter2";
 
         public override void Initialize()
         {
