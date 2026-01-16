@@ -7,11 +7,11 @@
         x:DataType="local:MainWindow"
         mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450" MinHeight="450" MinWidth="1500"
         x:Class="DaysCounter2.MainWindow"
-        Title="Days Counter 2" Closing="Window_Closing">
+        Title="Days Counter 2" Loaded="Window_Loaded" Closing="Window_Closing">
     <DockPanel Margin="10" VerticalSpacing="10">
         <Grid DockPanel.Dock="Top">
             <DockPanel VerticalSpacing="10">
-                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="30">Days Counter 2</TextBlock>
+                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="30" x:Name="TitleText">Days Counter 2</TextBlock>
                 <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontSize="20" x:Name="CurrentTimeText">This line displays current time</TextBlock>
             </DockPanel>
             <TextBlock HorizontalAlignment="Right" TextAlignment="End" FontSize="15" Foreground="Gray" PointerPressed="VersionBlock_PointerPressed" Cursor="Hand" x:Name="VersionText"></TextBlock>
@@ -35,7 +35,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="{Binding brush}">
-                        <Grid ColumnDefinitions="330,*" ColumnSpacing="10" Margin="10,0,10,0">
+                        <Grid ColumnDefinitions="*,2.5*" ColumnSpacing="10" Margin="10,0,10,0">
                             <TextBlock Text="{Binding timerText}" VerticalAlignment="Center" Grid.Column="0" FontSize="18"></TextBlock>
                             <TextBlock Text="{Binding destinationText}" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="1" FontSize="18" Foreground="Gray"></TextBlock>
                             <TextBlock Inlines="{Binding nameInlines}" VerticalAlignment="Center" Grid.Column="1" FontSize="18"></TextBlock>

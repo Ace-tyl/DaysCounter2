@@ -66,6 +66,7 @@ namespace DaysCounter2.Utils
         public Version currentVersion;
         public Version newestVersion = new(1, 0, 0, 0);
         public string releaseUrl = "";
+        public bool checkFailed = false;
 
         public UpdateChecker()
         {
@@ -106,6 +107,7 @@ namespace DaysCounter2.Utils
             }
             catch
             {
+                checkFailed = true;
             }
         }
     }

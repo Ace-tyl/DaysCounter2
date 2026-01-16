@@ -31,13 +31,13 @@ namespace DaysCounter2
 
     public partial class MainWindow : Window
     {
-        Thread refreshThread, checkUpdateThread;
+        Thread? refreshThread, checkUpdateThread;
         List<Event> events = [];
         HashSet<string> eventUuids = [];
         List<DisplayedEvent> displayedEvents = [];
         ObservableCollection<DisplayedEvent> Displayed { get; set; } = [];
-        string languageId;
-        CultureInfo culture;
+        string languageId = "";
+        CultureInfo culture = CultureInfo.InvariantCulture;
         static CultureInfo ArabicCulture = CultureInfo.CreateSpecificCulture("ar-SA");
         UpdateChecker updateChecker = new();
         bool updateFound = false;
@@ -62,6 +62,10 @@ namespace DaysCounter2
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
             if (File.Exists(App.appFilePath))
             {
                 Stream stream = File.OpenRead(App.appFilePath);
@@ -74,6 +78,11 @@ namespace DaysCounter2
             refreshThread = new Thread(RefreshTimer);
             refreshThread.Start();
             languageId = App.settings.languageId;
+            if (App.fileName != "")
+            {
+                Title = App.appName + " - " + App.fileName + " (" + App.appFilePath + ")";
+                TitleText.Text = App.fileName;
+            }
             culture = CultureInfo.CreateSpecificCulture(languageId);
             VersionText.Text += Lang.Resources.ui_version + "\n" + updateChecker.currentVersion.ToString();
             UpdateExportButtonContent(events.Count);
@@ -84,6 +93,10 @@ namespace DaysCounter2
         public async void CheckForUpdate()
         {
             await updateChecker.GetNewestVersion();
+            if (updateChecker.checkFailed)
+            {
+                return;
+            }
             if (updateChecker.currentVersion.EarlierThan(updateChecker.newestVersion))
             {
                 updateFound = true;
@@ -484,6 +497,10 @@ namespace DaysCounter2
 
         private void Window_Closing(object? sender, WindowClosingEventArgs e)
         {
+            if (refreshThread == null)
+            {
+                return;
+            }
             refreshThread.Interrupt();
             refreshThread.Join();
         }

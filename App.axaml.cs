@@ -16,7 +16,8 @@ namespace DaysCounter2
         public static string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DaysCounter2");
         public static string appFilePath = "", appSettingsPath = "";
         public static SettingsManager settings = new SettingsManager();
-        public static string githubRepo = "Ace-tyl/DaysCounter2";
+        public static string githubRepo = "Ace-tyl/DaysCounter2", appName = "Days Counter 2";
+        public static string fileName = "";
 
         public override void Initialize()
         {
@@ -70,6 +71,19 @@ namespace DaysCounter2
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 desktop.MainWindow = new MainWindow();
+                if (desktop.Args != null && desktop.Args.Length > 0)
+                {
+                    string name = desktop.Args[0];
+                    if (name.EndsWith(".dc2e") && File.Exists(name))
+                    {
+                        FileAttributes attributes = File.GetAttributes(name);
+                        if (!attributes.HasFlag(FileAttributes.ReadOnly))
+                        {
+                            fileName = Path.GetFileNameWithoutExtension(name);
+                            appFilePath = name;
+                        }
+                    }
+                }
             }
 
             base.OnFrameworkInitializationCompleted();
