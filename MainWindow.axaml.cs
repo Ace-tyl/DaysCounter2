@@ -595,6 +595,7 @@ namespace DaysCounter2
                             eventUuids.Add(ev.uuid);
                         }
                         RefreshWindow();
+                        SaveEvents();
                     }
                 }
             }
