@@ -2,7 +2,7 @@
 
 > It is a great honor to invite you to translate this software using Crowdin: https://crowdin.com/project/dayscounter2
 
-Welcome to use Days Counter 2 by SodiumCl10, aka. [Ace-tyl](https://github.com/Ace-tyl).
+Welcome to use *Days Counter 2* !!!
 
 This software is a days counter timer which can count the time between a past or upcoming event and the present, accurate to second.
 
@@ -60,6 +60,14 @@ The Al-Hijri calendar is using 30-year cycle tabular, and may be a 1-day discrep
 To search some events you have added to events list, you can type your searching string in the search box and all events containing this string will be displayed.
 
 Furthermore, you can also use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) in the search box to make a more customized search. For example, you can type `^\d` in the search box to search for events with name beginning with a digit.
+
+### Exporting and Importing Events
+
+To share some events to the community or backup your event list, you can select some events and click the **Export** button. If no events are selected, this will let you to export all displayed events (note that it doesn't equal to all events since some events may be filtered by searching). Exported events are contained in a `.dc2e` file (Days Counter 2 Events file).
+
+To import events to your events list, you can click the **Import** button. All events in the selected events file will be imported to your events list, except for those with the same UUID as an existing event.
+
+> The UUID of an event is determined at saving. Editing and re-saving the event will also modify its UUID, even if no changes are made.
 
 ### Customization
 

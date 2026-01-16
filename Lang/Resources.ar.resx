@@ -204,9 +204,6 @@
   <data name="editor_save" xml:space="preserve">
     <value>حفظ</value>
   </data>
-  <data name="ui_delete_warn_title" xml:space="preserve">
-    <value>تحذير</value>
-  </data>
   <data name="ui_delete_warn" xml:space="preserve">
     <value>هل تريد حقًا حذف هذا الحدث؟
 لا يمكن التراجع عن هذه العملية!</value>
@@ -489,5 +486,42 @@
   </data>
   <data name="ui_newestVersion" xml:space="preserve">
     <value>أحدث إصدار</value>
+  </data>
+  <data name="ui_export_number" xml:space="preserve">
+    <value>تصدير {0} أحداث</value>
+  </data>
+  <data name="ui_import" xml:space="preserve">
+    <value>استيراد</value>
+  </data>
+  <data name="ui_delete_number" xml:space="preserve">
+    <value>حذف {0} أحداث</value>
+  </data>
+  <data name="ui_export" xml:space="preserve">
+    <value>تصدير</value>
+  </data>
+  <data name="ui_export_to" xml:space="preserve">
+    <value>تصدير الأحداث إلى...</value>
+  </data>
+  <data name="ui_export_defaultFilename" xml:space="preserve">
+    <value>تصدير أحداث</value>
+  </data>
+  <data name="ui_export_complete_title" xml:space="preserve">
+    <value>تصدير الانتهاء</value>
+  </data>
+  <data name="ui_export_complete" xml:space="preserve">
+    <value>تم تصدير {0} أحداث بنجاح.</value>
+  </data>
+  <data name="ui_import_warn" xml:space="preserve">
+    <value>سيتم استيراد {0} الحدث (الأحداث) وسيتم حذف {1} الحدث (الأحداث) المكررة.
+لا يمكن التراجع عن هذه العملية!</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>تحذير</value>
+  </data>
+  <data name="ui_import_from" xml:space="preserve">
+    <value>استيراد الأحداث من...</value>
+  </data>
+  <data name="ui_import_wasted" xml:space="preserve">
+    <value>لن يتم استيراد أي أحداث وسيتم حذف {0} الحدث (الأحداث) المكررة.</value>
   </data>
 </root>

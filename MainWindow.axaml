@@ -5,23 +5,25 @@
         xmlns:lang="clr-namespace:DaysCounter2.Lang"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:DataType="local:MainWindow"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" MinHeight="300" MinWidth="700"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450" MinHeight="450" MinWidth="1500"
         x:Class="DaysCounter2.MainWindow"
-        Title="Days Counter 2 by SodiumCl10" Closing="Window_Closing">
+        Title="Days Counter 2" Closing="Window_Closing">
     <DockPanel Margin="10" VerticalSpacing="10">
         <Grid DockPanel.Dock="Top">
             <DockPanel VerticalSpacing="10">
-                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="30">Days Counter 2 by SodiumCl10</TextBlock>
+                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="30">Days Counter 2</TextBlock>
                 <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontSize="20" x:Name="CurrentTimeText">This line displays current time</TextBlock>
             </DockPanel>
             <TextBlock HorizontalAlignment="Right" TextAlignment="End" FontSize="15" Foreground="Gray" PointerPressed="VersionBlock_PointerPressed" Cursor="Hand" x:Name="VersionText"></TextBlock>
         </Grid>
         <TextBox DockPanel.Dock="Top" FontSize="18" x:Name="SearchBox" Watermark="{x:Static lang:Resources.ui_search}" TextChanged="SearchBox_TextChanged"></TextBox>
-        <Grid DockPanel.Dock="Bottom" Height="40" ColumnSpacing="10" ColumnDefinitions="*,*,*,*">
+        <Grid DockPanel.Dock="Bottom" Height="40" ColumnSpacing="10" ColumnDefinitions="*,*,*,*,*,*">
             <Button Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="NewEventButton_Click" Content="{x:Static lang:Resources.ui_new}"></Button>
             <Button Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="Red" IsEnabled="False" x:Name="DeleteButton" Click="DeleteButton_Click" Content="{x:Static lang:Resources.ui_delete}"></Button>
             <Button Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsEnabled="False" x:Name="EditButton" Click="EditButton_Click" Content="{x:Static lang:Resources.ui_edit}"></Button>
-            <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.ui_settings}" Click="SettingsButton_Click"></Button>
+            <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="ExportButton" Click="ExportButton_Click" Content="{x:Static lang:Resources.ui_export}"></Button>
+            <Button Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="ImportButton" Click="ImportButton_Click" Content="{x:Static lang:Resources.ui_import}"></Button>
+            <Button Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{x:Static lang:Resources.ui_settings}" Click="SettingsButton_Click"></Button>
         </Grid>
         <ListBox x:Name="TimerList" ItemsSource="{Binding Displayed}" SelectionChanged="TimerList_SelectionChanged" Padding="0" SelectionMode="Multiple">
             <ListBox.Styles>

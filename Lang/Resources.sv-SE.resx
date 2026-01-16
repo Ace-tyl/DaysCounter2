@@ -204,9 +204,6 @@
   <data name="editor_save" xml:space="preserve">
     <value>Spara</value>
   </data>
-  <data name="ui_delete_warn_title" xml:space="preserve">
-    <value>Varning</value>
-  </data>
   <data name="ui_delete_warn" xml:space="preserve">
     <value>Är du säker att stryka det där evenemanget?
 Du kan inte ångra den operationen!</value>
@@ -489,5 +486,42 @@ Du kan inte ångra den operationen!</value>
   </data>
   <data name="ui_newestVersion" xml:space="preserve">
     <value>Senaste version</value>
+  </data>
+  <data name="ui_export_number" xml:space="preserve">
+    <value>Exportera {0} händelser</value>
+  </data>
+  <data name="ui_import" xml:space="preserve">
+    <value>Importera</value>
+  </data>
+  <data name="ui_delete_number" xml:space="preserve">
+    <value>Ta bort {0} händelser</value>
+  </data>
+  <data name="ui_export" xml:space="preserve">
+    <value>Exportera</value>
+  </data>
+  <data name="ui_export_to" xml:space="preserve">
+    <value>Exportera händelser till...</value>
+  </data>
+  <data name="ui_export_defaultFilename" xml:space="preserve">
+    <value>Exporterade händelser</value>
+  </data>
+  <data name="ui_export_complete_title" xml:space="preserve">
+    <value>Export slutförd</value>
+  </data>
+  <data name="ui_export_complete" xml:space="preserve">
+    <value>Framgångsrikt exporterade {0} händelser.</value>
+  </data>
+  <data name="ui_import_warn" xml:space="preserve">
+    <value>{0} händelse(er) kommer att importeras och {1} duplicerade händelse(er) kommer utelämnas.
+Operationen är oåterkallelig!</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>Varning</value>
+  </data>
+  <data name="ui_import_from" xml:space="preserve">
+    <value>Importera händelser från...</value>
+  </data>
+  <data name="ui_import_wasted" xml:space="preserve">
+    <value>Inga händelser kommer att importeras och {0} duplicerade händelser kommer att utelämnas.</value>
   </data>
 </root>

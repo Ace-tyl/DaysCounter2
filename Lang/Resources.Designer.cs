@@ -946,6 +946,15 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete {0} Events.
+        /// </summary>
+        public static string ui_delete_number {
+            get {
+                return ResourceManager.GetString("ui_delete_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you really want to delete this event?
         ///The operation is irrevocable!.
         /// </summary>
@@ -980,6 +989,97 @@ namespace DaysCounter2.Lang {
         public static string ui_edit {
             get {
                 return ResourceManager.GetString("ui_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export.
+        /// </summary>
+        public static string ui_export {
+            get {
+                return ResourceManager.GetString("ui_export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully exported {0} events..
+        /// </summary>
+        public static string ui_export_complete {
+            get {
+                return ResourceManager.GetString("ui_export_complete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export Completed.
+        /// </summary>
+        public static string ui_export_complete_title {
+            get {
+                return ResourceManager.GetString("ui_export_complete_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exported Events.
+        /// </summary>
+        public static string ui_export_defaultFilename {
+            get {
+                return ResourceManager.GetString("ui_export_defaultFilename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export {0} Events.
+        /// </summary>
+        public static string ui_export_number {
+            get {
+                return ResourceManager.GetString("ui_export_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export Events to....
+        /// </summary>
+        public static string ui_export_to {
+            get {
+                return ResourceManager.GetString("ui_export_to", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import.
+        /// </summary>
+        public static string ui_import {
+            get {
+                return ResourceManager.GetString("ui_import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Events from....
+        /// </summary>
+        public static string ui_import_from {
+            get {
+                return ResourceManager.GetString("ui_import_from", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} event(s) will be imported and {1} duplicate event(s) will be omitted.
+        ///The operation is irrevocable!.
+        /// </summary>
+        public static string ui_import_warn {
+            get {
+                return ResourceManager.GetString("ui_import_warn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No events will be imported and {0} duplicate event(s) will be omitted..
+        /// </summary>
+        public static string ui_import_wasted {
+            get {
+                return ResourceManager.GetString("ui_import_wasted", resourceCulture);
             }
         }
         

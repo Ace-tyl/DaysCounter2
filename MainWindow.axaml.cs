@@ -1,20 +1,19 @@
+using Avalonia.Controls;
+using Avalonia.Controls.Documents;
+using Avalonia.Media;
+using Avalonia.Platform.Storage;
+using Avalonia.Threading;
+using DaysCounter2.Utils;
+using MsBox.Avalonia;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Reflection;
 using System.Runtime.Serialization.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Avalonia.Controls;
-using Avalonia.Controls.Documents;
-using Avalonia.Media;
-using Avalonia.Threading;
-using DaysCounter2.Utils;
-using DaysCounter2.Utils.AlHijri;
-using MsBox.Avalonia;
 
 namespace DaysCounter2
 {
@@ -27,12 +26,14 @@ namespace DaysCounter2
         public string destinationText { get; set; } = "";
         public IBrush brush { get; set; } = new SolidColorBrush();
         public InlineCollection nameInlines { get; set; } = [];
+        public Event correspondEvent { get; set; } = new Event();
     }
 
     public partial class MainWindow : Window
     {
         Thread refreshThread, checkUpdateThread;
         List<Event> events = [];
+        HashSet<string> eventUuids = [];
         List<DisplayedEvent> displayedEvents = [];
         ObservableCollection<DisplayedEvent> Displayed { get; set; } = [];
         string languageId;
@@ -41,29 +42,41 @@ namespace DaysCounter2
         UpdateChecker updateChecker = new();
         bool updateFound = false;
 
+        List<Event> ReadEvents(Stream stream)
+        {
+            List<Event> events = [];
+            try
+            {
+                DataContractJsonSerializer ser = new(typeof(List<Event>));
+                var result = ser.ReadObject(stream);
+                if (result != null)
+                {
+                    events = (List<Event>)result;
+                }
+            }
+            catch { }
+            stream.Close();
+            return events;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
             if (File.Exists(App.appFilePath))
             {
-                FileStream stream = File.OpenRead(App.appFilePath);
-                try
+                Stream stream = File.OpenRead(App.appFilePath);
+                events = ReadEvents(stream);
+                foreach (var ev in events)
                 {
-                    DataContractJsonSerializer ser = new(typeof(List<Event>));
-                    var result = ser.ReadObject(stream);
-                    if (result != null)
-                    {
-                        events = (List<Event>)result;
-                    }
+                    eventUuids.Add(ev.uuid);
                 }
-                catch { }
-                stream.Close();
             }
             refreshThread = new Thread(RefreshTimer);
             refreshThread.Start();
             languageId = App.settings.languageId;
             culture = CultureInfo.CreateSpecificCulture(languageId);
             VersionText.Text += Lang.Resources.ui_version + "\n" + updateChecker.currentVersion.ToString();
+            UpdateExportButtonContent(events.Count);
             checkUpdateThread = new Thread(CheckForUpdate);
             checkUpdateThread.Start();
         }
@@ -89,17 +102,17 @@ namespace DaysCounter2
             }
         }
 
-        void SaveEvents()
+        void SaveEvents(List<Event>? exportedEvents = null, Stream? givenStream = null)
         {
-            FileStream stream = File.Open(App.appFilePath, FileMode.Create, FileAccess.Write);
+            Stream stream = givenStream ?? File.Open(App.appFilePath, FileMode.Create, FileAccess.Write);
             DataContractJsonSerializer ser = new(typeof(List<Event>));
-            ser.WriteObject(stream, events);
+            ser.WriteObject(stream, exportedEvents ?? events);
             stream.Close();
         }
 
         void SaveSettings()
         {
-            FileStream stream = File.Open(App.appSettingsPath, FileMode.Create, FileAccess.Write);
+            Stream stream = File.Open(App.appSettingsPath, FileMode.Create, FileAccess.Write);
             DataContractJsonSerializer ser = new(typeof(SettingsManager));
             ser.WriteObject(stream, App.settings);
             stream.Close();
@@ -147,7 +160,7 @@ namespace DaysCounter2
                     usedCulture.DateTimeFormat.Calendar = new HijriCalendar();
                     break;
             }
-            
+
             try
             {
                 return dateTime.ToString(App.settings.dateTimeFormat, usedCulture);
@@ -286,7 +299,8 @@ namespace DaysCounter2
                     timerText = timerText,
                     destinationText = destinationText,
                     brush = new SolidColorBrush(background),
-                    nameInlines = runs
+                    nameInlines = runs,
+                    correspondEvent = ev,
                 });
             }
             displayedEvents.Sort((a, b) =>
@@ -317,6 +331,10 @@ namespace DaysCounter2
             }
             TimerList.ItemsSource = new ObservableCollection<DisplayedEvent>(displayedEvents);
             TimerList.SelectedIndex = selectedIndex;
+            if (TimerList.SelectedItems == null || TimerList.SelectedIndex == -1)
+            {
+                UpdateExportButtonContent(displayedEvents.Count);
+            }
         }
 
         private async void NewEventButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -326,16 +344,58 @@ namespace DaysCounter2
             if (editor.savedEvent != null)
             {
                 events.Add(editor.savedEvent);
+                eventUuids.Add(editor.savedEvent.uuid);
                 TimerList.SelectedIndex = -1;
                 RefreshWindow();
                 SaveEvents();
             }
         }
 
+        void UpdateExportButtonContent(int items)
+        {
+            if (items == 0)
+            {
+                ExportButton.Content = Lang.Resources.ui_export;
+                ExportButton.IsEnabled = false;
+            }
+            else if (items == 1)
+            {
+                ExportButton.Content = Lang.Resources.ui_export;
+                ExportButton.IsEnabled = true;
+            }
+            else
+            {
+                ExportButton.Content = string.Format(Lang.Resources.ui_export_number, items);
+                ExportButton.IsEnabled = true;
+            }
+        }
+
         private void TimerList_SelectionChanged(object? sender, SelectionChangedEventArgs e)
         {
-            DeleteButton.IsEnabled = (TimerList.SelectedIndex != -1);
-            EditButton.IsEnabled = TimerList.SelectedItems == null ? false : (TimerList.SelectedIndex != -1 && TimerList.SelectedItems.Count == 1);
+            if (TimerList.SelectedItems == null || TimerList.SelectedIndex == -1)
+            {
+                DeleteButton.IsEnabled = false;
+                EditButton.IsEnabled = false;
+                DeleteButton.Content = Lang.Resources.ui_delete;
+                UpdateExportButtonContent(displayedEvents.Count);
+            }
+            else
+            {
+                DeleteButton.IsEnabled = true;
+                if (TimerList.SelectedItems.Count == 1)
+                {
+                    EditButton.IsEnabled = true;
+                    DeleteButton.Content = Lang.Resources.ui_delete;
+                    ExportButton.Content = Lang.Resources.ui_export;
+                    UpdateExportButtonContent(1);
+                }
+                else
+                {
+                    EditButton.IsEnabled = false;
+                    DeleteButton.Content = string.Format(Lang.Resources.ui_delete_number, TimerList.SelectedItems.Count);
+                    UpdateExportButtonContent(TimerList.SelectedItems.Count);
+                }
+            }
         }
 
         private async void DeleteButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -362,6 +422,7 @@ namespace DaysCounter2
             {
                 if (selectedUuids.Contains(events[i].uuid))
                 {
+                    eventUuids.Remove(events[i].uuid);
                     events.Remove(events[i]);
                     i--;
                 }
@@ -387,7 +448,9 @@ namespace DaysCounter2
                     if (editor.savedEvent != null)
                     {
                         events.Remove(ev);
+                        eventUuids.Remove(ev.uuid);
                         events.Add(editor.savedEvent);
+                        eventUuids.Add(editor.savedEvent.uuid);
                         DateTime now = DateTime.Now;
                         RefreshWindow(now);
                         SaveEvents();
@@ -437,7 +500,104 @@ namespace DaysCounter2
 
         private void SearchBox_TextChanged(object? sender, TextChangedEventArgs e)
         {
+            TimerList.SelectedIndex = -1;
             RefreshWindow();
+        }
+
+        static FilePickerFileType Dc2eFileType = new("Days Counter 2 Events")
+        {
+            Patterns = ["*.dc2e"]
+        };
+
+        private async void ExportButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            List<Event> exportedEvents = [];
+            if (TimerList.SelectedItems == null || TimerList.SelectedIndex == -1)
+            {
+                foreach (var item in TimerList.Items)
+                {
+                    if (item == null)
+                    {
+                        continue;
+                    }
+                    exportedEvents.Add(((DisplayedEvent)item).correspondEvent);
+                }
+            }
+            else
+            {
+                foreach (var item in TimerList.SelectedItems)
+                {
+                    if (item == null)
+                    {
+                        continue;
+                    }
+                    exportedEvents.Add(((DisplayedEvent)item).correspondEvent);
+                }
+            }
+            if (exportedEvents.Count == 0)
+            {
+                return;
+            }
+            var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
+            {
+                Title = Lang.Resources.ui_export_to,
+                SuggestedFileName = Lang.Resources.ui_export_defaultFilename,
+                DefaultExtension = "dc2e",
+                FileTypeChoices = [Dc2eFileType]
+            });
+            if (file != null)
+            {
+                Stream stream = await file.OpenWriteAsync();
+                SaveEvents(exportedEvents, stream);
+                file.Dispose();
+                var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_export_complete_title,
+                    string.Format(Lang.Resources.ui_export_complete, exportedEvents.Count));
+                await msgbox.ShowWindowDialogAsync(this);
+            }
+        }
+
+        private async void ImportButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var file = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+            {
+                Title = Lang.Resources.ui_import_from,
+                AllowMultiple = false,
+                FileTypeFilter = [Dc2eFileType]
+            });
+            if (file != null && file.Count > 0)
+            {
+                Stream stream = await file[0].OpenReadAsync();
+                List<Event> newEvents = ReadEvents(stream);
+                List<Event> willInsertEvents = [];
+                foreach (var ev in newEvents)
+                {
+                    if (!eventUuids.Contains(ev.uuid))
+                    {
+                        willInsertEvents.Add(ev);
+                    }
+                }
+                if (willInsertEvents.Count == 0)
+                {
+                    var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_import,
+                        string.Format(Lang.Resources.ui_import_wasted, newEvents.Count));
+                    await msgbox.ShowWindowDialogAsync(this);
+                }
+                else
+                {
+                    var msgbox = MessageBoxManager.GetMessageBoxStandard(Lang.Resources.ui_import,
+                        string.Format(Lang.Resources.ui_import_warn, willInsertEvents.Count, newEvents.Count - willInsertEvents.Count), MsBox.Avalonia.Enums.ButtonEnum.OkCancel);
+                    var msgboxResult = await msgbox.ShowWindowDialogAsync(this);
+                    if (msgboxResult == MsBox.Avalonia.Enums.ButtonResult.Ok)
+                    {
+                        foreach (var ev in willInsertEvents)
+                        {
+                            events.Add(ev);
+                            eventUuids.Add(ev.uuid);
+                        }
+                        RefreshWindow();
+                    }
+                }
+            }
         }
     }
 }

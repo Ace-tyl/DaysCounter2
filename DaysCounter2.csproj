@@ -8,7 +8,7 @@
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <ApplicationIcon>Resources/icon.ico</ApplicationIcon>
     <Platforms>AnyCPU;x64;ARM64</Platforms>
-    <FileVersion>2.1.4.20260114</FileVersion>
+    <FileVersion>2.2.0.20260116</FileVersion>
     <AssemblyVersion></AssemblyVersion>
 	<GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
   </PropertyGroup>

@@ -204,9 +204,6 @@
   <data name="editor_save" xml:space="preserve">
     <value>저장</value>
   </data>
-  <data name="ui_delete_warn_title" xml:space="preserve">
-    <value>주의</value>
-  </data>
   <data name="ui_delete_warn" xml:space="preserve">
     <value>이 이벤트를 삭제하시겠습니까?
 이 작업은 취소할 수 없습니다!</value>
@@ -489,5 +486,42 @@
   </data>
   <data name="ui_newestVersion" xml:space="preserve">
     <value>최신 버전</value>
+  </data>
+  <data name="ui_export_number" xml:space="preserve">
+    <value>{0} 이벤트 내보내기</value>
+  </data>
+  <data name="ui_import" xml:space="preserve">
+    <value>가져오기</value>
+  </data>
+  <data name="ui_delete_number" xml:space="preserve">
+    <value>{0} 이벤트 삭제</value>
+  </data>
+  <data name="ui_export" xml:space="preserve">
+    <value>내보내기</value>
+  </data>
+  <data name="ui_export_to" xml:space="preserve">
+    <value>내보내기...</value>
+  </data>
+  <data name="ui_export_defaultFilename" xml:space="preserve">
+    <value>이벤트 내보내기</value>
+  </data>
+  <data name="ui_export_complete_title" xml:space="preserve">
+    <value>내보내기 완료</value>
+  </data>
+  <data name="ui_export_complete" xml:space="preserve">
+    <value>{0} 이벤트가 내보내기 내보내졌습니다.</value>
+  </data>
+  <data name="ui_import_warn" xml:space="preserve">
+    <value>{0} 이벤트가 가져오기되고, {1} 중복 이벤트는 제외됩니다.
+이 작업은 취소할 수 없습니다!</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>주의</value>
+  </data>
+  <data name="ui_import_from" xml:space="preserve">
+    <value>가져오기...</value>
+  </data>
+  <data name="ui_import_wasted" xml:space="preserve">
+    <value>이벤트가 가져와지지 않으며, {0}개의 중복 이벤트는 제외됩니다.</value>
   </data>
 </root>

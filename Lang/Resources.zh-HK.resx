@@ -204,9 +204,6 @@
   <data name="editor_save" xml:space="preserve">
     <value>保存</value>
   </data>
-  <data name="ui_delete_warn_title" xml:space="preserve">
-    <value>警告</value>
-  </data>
   <data name="ui_delete_warn" xml:space="preserve">
     <value>你真係想刪除呢個事件？
 呢個操作係無法撤銷嘅！</value>
@@ -489,5 +486,42 @@
   </data>
   <data name="ui_newestVersion" xml:space="preserve">
     <value>最新版本</value>
+  </data>
+  <data name="ui_export_number" xml:space="preserve">
+    <value>匯出 {0} 個事件</value>
+  </data>
+  <data name="ui_import" xml:space="preserve">
+    <value>匯入</value>
+  </data>
+  <data name="ui_delete_number" xml:space="preserve">
+    <value>刪除 {0} 個事件</value>
+  </data>
+  <data name="ui_export" xml:space="preserve">
+    <value>匯出</value>
+  </data>
+  <data name="ui_export_to" xml:space="preserve">
+    <value>將事件匯出到...</value>
+  </data>
+  <data name="ui_export_defaultFilename" xml:space="preserve">
+    <value>匯出嘅事件</value>
+  </data>
+  <data name="ui_export_complete_title" xml:space="preserve">
+    <value>匯出完成</value>
+  </data>
+  <data name="ui_export_complete" xml:space="preserve">
+    <value>成功匯出咗 {0} 個文件。</value>
+  </data>
+  <data name="ui_import_warn" xml:space="preserve">
+    <value>會匯入 {0} 個事件，而會省略 {1} 個重複嘅事件。
+呢個操作係無法撤銷嘅！</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="ui_import_from" xml:space="preserve">
+    <value>匯入事件...</value>
+  </data>
+  <data name="ui_import_wasted" xml:space="preserve">
+    <value>唔會匯入任何事件，同埋會省略 {0} 個重複嘅事件。</value>
   </data>
 </root>

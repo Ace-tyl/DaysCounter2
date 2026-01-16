@@ -204,9 +204,6 @@
   <data name="editor_save" xml:space="preserve">
     <value>Сохранить</value>
   </data>
-  <data name="ui_delete_warn_title" xml:space="preserve">
-    <value>Предупреждение</value>
-  </data>
   <data name="ui_delete_warn" xml:space="preserve">
     <value>Вы действительно хотите удалить это событие?
 Действие необратимо!</value>
@@ -489,5 +486,42 @@
   </data>
   <data name="ui_newestVersion" xml:space="preserve">
     <value>Последняя версия</value>
+  </data>
+  <data name="ui_export_number" xml:space="preserve">
+    <value>Экспорт {0} событий</value>
+  </data>
+  <data name="ui_import" xml:space="preserve">
+    <value>Импорт</value>
+  </data>
+  <data name="ui_delete_number" xml:space="preserve">
+    <value>Удалить {0} событий</value>
+  </data>
+  <data name="ui_export" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="ui_export_to" xml:space="preserve">
+    <value>Экспорт событий в...</value>
+  </data>
+  <data name="ui_export_defaultFilename" xml:space="preserve">
+    <value>Экспортированные события</value>
+  </data>
+  <data name="ui_export_complete_title" xml:space="preserve">
+    <value>Экспорт завершен</value>
+  </data>
+  <data name="ui_export_complete" xml:space="preserve">
+    <value>{0} события успешно экспортированы.</value>
+  </data>
+  <data name="ui_import_warn" xml:space="preserve">
+    <value>Будет импортировано {0} событий, а {1} повторяющихся событий будут пропущены.
+Действие необратимо!</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="ui_import_from" xml:space="preserve">
+    <value>Импорт событий из...</value>
+  </data>
+  <data name="ui_import_wasted" xml:space="preserve">
+    <value>События не будут импортированы и повторяющиеся события {0} будут опущены.</value>
   </data>
 </root>

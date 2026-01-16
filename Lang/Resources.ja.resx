@@ -204,9 +204,6 @@
   <data name="editor_save" xml:space="preserve">
     <value>保存</value>
   </data>
-  <data name="ui_delete_warn_title" xml:space="preserve">
-    <value>警告</value>
-  </data>
   <data name="ui_delete_warn" xml:space="preserve">
     <value>本当にこのイベントを削除しますか？
 操作は取り消せません！</value>
@@ -489,5 +486,42 @@
   </data>
   <data name="ui_newestVersion" xml:space="preserve">
     <value>最新バージョン</value>
+  </data>
+  <data name="ui_export_number" xml:space="preserve">
+    <value>{0} イベントを輸出</value>
+  </data>
+  <data name="ui_import" xml:space="preserve">
+    <value>輸入</value>
+  </data>
+  <data name="ui_delete_number" xml:space="preserve">
+    <value>{0} イベントを削除</value>
+  </data>
+  <data name="ui_export" xml:space="preserve">
+    <value>輸出</value>
+  </data>
+  <data name="ui_export_to" xml:space="preserve">
+    <value>輸出予定...</value>
+  </data>
+  <data name="ui_export_defaultFilename" xml:space="preserve">
+    <value>輸出されたイベント</value>
+  </data>
+  <data name="ui_export_complete_title" xml:space="preserve">
+    <value>輸出完了</value>
+  </data>
+  <data name="ui_export_complete" xml:space="preserve">
+    <value>{0} イベントを正常に輸出しました。</value>
+  </data>
+  <data name="ui_import_warn" xml:space="preserve">
+    <value>{0} イベントは輸入され、 {1} 重複イベントは省略されます。
+操作は取り消せません！</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="ui_import_from" xml:space="preserve">
+    <value>輸入...</value>
+  </data>
+  <data name="ui_import_wasted" xml:space="preserve">
+    <value>イベントは輸入されず、{0} 重複イベントは省略されます。</value>
   </data>
 </root>

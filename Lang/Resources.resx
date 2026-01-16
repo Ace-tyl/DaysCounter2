@@ -204,9 +204,6 @@
   <data name="editor_save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="ui_delete_warn_title" xml:space="preserve">
-    <value>Warning</value>
-  </data>
   <data name="ui_delete_warn" xml:space="preserve">
     <value>Do you really want to delete this event?
 The operation is irrevocable!</value>
@@ -489,5 +486,42 @@ The operation is irrevocable!</value>
   </data>
   <data name="ui_newestVersion" xml:space="preserve">
     <value>Latest Version</value>
+  </data>
+  <data name="ui_export_number" xml:space="preserve">
+    <value>Export {0} Events</value>
+  </data>
+  <data name="ui_import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ui_delete_number" xml:space="preserve">
+    <value>Delete {0} Events</value>
+  </data>
+  <data name="ui_export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ui_export_to" xml:space="preserve">
+    <value>Export Events to...</value>
+  </data>
+  <data name="ui_export_defaultFilename" xml:space="preserve">
+    <value>Exported Events</value>
+  </data>
+  <data name="ui_export_complete_title" xml:space="preserve">
+    <value>Export Completed</value>
+  </data>
+  <data name="ui_export_complete" xml:space="preserve">
+    <value>Successfully exported {0} events.</value>
+  </data>
+  <data name="ui_import_warn" xml:space="preserve">
+    <value>{0} event(s) will be imported and {1} duplicate event(s) will be omitted.
+The operation is irrevocable!</value>
+  </data>
+  <data name="ui_delete_warn_title" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="ui_import_from" xml:space="preserve">
+    <value>Import Events from...</value>
+  </data>
+  <data name="ui_import_wasted" xml:space="preserve">
+    <value>No events will be imported and {0} duplicate event(s) will be omitted.</value>
   </data>
 </root>
