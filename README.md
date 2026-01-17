@@ -69,6 +69,8 @@ To import events to your events list, you can click the **Import** button. All e
 
 > The UUID of an event is determined at saving. Editing and re-saving the event will also modify its UUID, even if no changes are made.
 
+Besides, you can also open a `.dc2e` file with Days Counter 2. This turns the program into a viewer or editor of this `.dc2e` file. Only events from this file can be shown and all modifications will be directly sent into this file.
+
 ### Customization
 
 To customize this application, click the **Settings** button. The following properties can be customized:
