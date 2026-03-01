@@ -2,6 +2,7 @@
 using Avalonia.Media;
 using DaysCounter2.Utils.AlHijri;
 using DaysCounter2.Utils.ChineseLunisolar;
+using DaysCounter2.Utils.Persian;
 
 namespace DaysCounter2.Utils
 {
@@ -21,6 +22,7 @@ namespace DaysCounter2.Utils
         Gregorian = 0,
         ChineseLunisolar = 1,
         AlHijri = 2,
+        Persian = 3,
     }
 
     public class Event
@@ -110,7 +112,7 @@ namespace DaysCounter2.Utils
                     alHijri2.AdjustData();
                     if (alHijri2.EarlierThan(nowAlHijri))
                     {
-                        alHijri.year += alHijri2.year + loopValue;
+                        alHijri.year = alHijri2.year + loopValue;
                         alHijri.AdjustData();
                     }
                     else
@@ -118,6 +120,25 @@ namespace DaysCounter2.Utils
                         alHijri = alHijri2;
                     }
                     destDateTime = MyDateTime.FromJulianDay(alHijri.GetJulianDay(), alHijri.timeZoneDelta);
+                }
+                else if (calendar == CalendarTypes.Persian)
+                {
+                    PersianDateTime persian = PersianDateTime.FromJulianDay(destDateTime.GetJulianDay(), (int)destDateTime.timeZoneDelta);
+                    PersianDateTime nowPersian = PersianDateTime.FromJulianDay(nowJulian / 86400.0, (int)now.timeZoneDelta);
+                    int loopsCount = (nowPersian.year - persian.year + loopValue - 1) / loopValue;
+                    PersianDateTime persian2 = persian.Clone();
+                    persian2.year += loopsCount * loopValue;
+                    persian2.AdjustData();
+                    if (persian2.EarlierThan(nowPersian))
+                    {
+                        persian.year = persian2.year + loopValue;
+                        persian.AdjustData();
+                    }
+                    else
+                    {
+                        persian = persian2;
+                    }
+                    destDateTime = MyDateTime.FromJulianDay(persian.GetJulianDay(), persian.timeZoneDelta);
                 }
                 else
                 {
@@ -179,6 +200,31 @@ namespace DaysCounter2.Utils
                         alHijri = alHijri2;
                     }
                     destDateTime = MyDateTime.FromJulianDay(alHijri.GetJulianDay(), alHijri.timeZoneDelta);
+                }
+                else if (calendar == CalendarTypes.Persian)
+                {
+                    PersianDateTime persian = PersianDateTime.FromJulianDay(destDateTime.GetJulianDay(), (int)destDateTime.timeZoneDelta);
+                    PersianDateTime nowPersian = PersianDateTime.FromJulianDay(nowJulian / 86400.0, (int)now.timeZoneDelta);
+                    int dateTimeMonths = persian.year * 12 + persian.month - 1;
+                    int nowMonths = nowPersian.year * 12 + nowPersian.month - 1;
+                    int loopsCount = (nowMonths - dateTimeMonths + loopValue - 1) / loopValue;
+                    int destDateTimeMonths = dateTimeMonths + loopsCount * loopValue;
+                    PersianDateTime persian2 = persian.Clone();
+                    persian2.year = destDateTimeMonths / 12;
+                    persian2.month = destDateTimeMonths % 12 + 1;
+                    persian2.AdjustData();
+                    if (persian2.EarlierThan(nowPersian))
+                    {
+                        destDateTimeMonths += 1;
+                        persian.year = destDateTimeMonths / 12;
+                        persian.month = destDateTimeMonths % 12 + 1;
+                        persian.AdjustData();
+                    }
+                    else
+                    {
+                        persian = persian2;
+                    }
+                    destDateTime = MyDateTime.FromJulianDay(persian.GetJulianDay(), persian.timeZoneDelta);
                 }
                 else
                 {

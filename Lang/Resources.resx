@@ -524,4 +524,7 @@ The operation is irrevocable!</value>
   <data name="ui_import_wasted" xml:space="preserve">
     <value>No events will be imported and {0} duplicate event(s) will be omitted.</value>
   </data>
+  <data name="editor_calendar_persian" xml:space="preserve">
+    <value>Persian</value>
+  </data>
 </root>

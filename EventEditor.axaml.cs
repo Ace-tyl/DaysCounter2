@@ -6,6 +6,7 @@ using Avalonia.Media;
 using DaysCounter2.Utils;
 using DaysCounter2.Utils.AlHijri;
 using DaysCounter2.Utils.ChineseLunisolar;
+using DaysCounter2.Utils.Persian;
 
 namespace DaysCounter2
 {
@@ -62,6 +63,16 @@ namespace DaysCounter2
                 HourValue.Value = alHijri.hour;
                 MinuteValue.Value = alHijri.minute;
                 SecondValue.Value = alHijri.second;
+            }
+            else if (ev.calendar == CalendarTypes.Persian)
+            {
+                PersianDateTime persian = PersianDateTime.FromJulianDay(ev.dateTime.GetJulianDay(), (int)ev.dateTime.timeZoneDelta);
+                YearValue.Value = persian.year;
+                MonthValue.Value = persian.month;
+                DayValue.Value = persian.day;
+                HourValue.Value = persian.hour;
+                MinuteValue.Value = persian.minute;
+                SecondValue.Value = persian.second;
             }
             else
             {
@@ -138,7 +149,7 @@ namespace DaysCounter2
             {
                 if (year == -5498 && month == 8)
                 {
-                    DayValue.Minimum = 16;
+                    DayValue.Minimum = 17;
                 }
                 else
                 {
@@ -151,6 +162,25 @@ namespace DaysCounter2
                 else
                 {
                     DayValue.Maximum = AlHijriDateTime.GetDayCountOfMonth(year, month);
+                }
+            }
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.Persian)
+            {
+                if (year == -5334 && month == 9)
+                {
+                    DayValue.Minimum = 2;
+                }
+                else
+                {
+                    DayValue.Minimum = 1;
+                }
+                if (year == 9378 && month == 10)
+                {
+                    DayValue.Maximum = 15;
+                }
+                else
+                {
+                    DayValue.Maximum = PersianDateTime.GetDayCountOfMonth(year, month);
                 }
             }
             else
@@ -233,6 +263,25 @@ namespace DaysCounter2
                     MonthValue.Maximum = 12;
                 }
             }
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.Persian)
+            {
+                if (year == -5334)
+                {
+                    MonthValue.Minimum = 9;
+                }
+                else
+                {
+                    MonthValue.Minimum = 1;
+                }
+                if (year == 9378)
+                {
+                    MonthValue.Maximum = 10;
+                }
+                else
+                {
+                    MonthValue.Maximum = 12;
+                }
+            }
             else
             {
                 MonthValue.Minimum = 1;
@@ -263,6 +312,11 @@ namespace DaysCounter2
             {
                 YearValue.Minimum = -5498;
                 YearValue.Maximum = 9666;
+            }
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.Persian)
+            {
+                YearValue.Minimum = -5334;
+                YearValue.Maximum = 9378;
             }
             else
             {
@@ -315,6 +369,11 @@ namespace DaysCounter2
                 double JulianDay = new AlHijriDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
                 return MyDateTime.FromJulianDay(JulianDay, timeZoneDelta);
             }
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.Persian)
+            {
+                double JulianDay = new PersianDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
+                return MyDateTime.FromJulianDay(JulianDay, timeZoneDelta);
+            }
             else
             {
                 return new MyDateTime(year, month, day, hour, minute, second, timeZoneDelta);
@@ -351,7 +410,7 @@ namespace DaysCounter2
             ModifySaveButton();
             if (YearValue.Value <= 0)
             {
-                if (CalendarSelector.SelectedIndex == (int)CalendarTypes.AlHijri)
+                if (CalendarSelector.SelectedIndex == (int)CalendarTypes.AlHijri || CalendarSelector.SelectedIndex == (int)CalendarTypes.Persian)
                 {
                     YearText.Text = Lang.Resources.editor_date_year + string.Format(Lang.Resources.editor_year_bh, 1 - YearValue.Value);
                 }
@@ -473,6 +532,11 @@ namespace DaysCounter2
                 julian = new AlHijriDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
                 gregorian = MyDateTime.FromJulianDay(julian, timeZoneDelta);
             }
+            else if (lastSelectedIndex == (int)CalendarTypes.Persian)
+            {
+                julian = new PersianDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
+                gregorian = MyDateTime.FromJulianDay(julian, timeZoneDelta);
+            }
             else
             {
                 gregorian = new MyDateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
@@ -514,6 +578,16 @@ namespace DaysCounter2
                 HourValue.Value = alHijri.hour;
                 MinuteValue.Value = alHijri.minute;
                 SecondValue.Value = alHijri.second;
+            }
+            else if (newSelectedIndex == (int)CalendarTypes.Persian)
+            {
+                PersianDateTime persian = PersianDateTime.FromJulianDay(julian, timeZoneDelta);
+                YearValue.Value = persian.year;
+                MonthValue.Value = persian.month;
+                DayValue.Value = persian.day;
+                HourValue.Value = persian.hour;
+                MinuteValue.Value = persian.minute;
+                SecondValue.Value = persian.second;
             }
             lastSelectedIndex = newSelectedIndex;
         }

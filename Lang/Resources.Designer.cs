@@ -115,6 +115,15 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Persian.
+        /// </summary>
+        public static string editor_calendar_persian {
+            get {
+                return ResourceManager.GetString("editor_calendar_persian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Event Color.
         /// </summary>
         public static string editor_color {

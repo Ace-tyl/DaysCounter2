@@ -64,6 +64,7 @@
                 <ComboBox DockPanel.Dock="Right" VerticalAlignment="Stretch" Width="150" VerticalContentAlignment="Center" x:Name="DateTimeCalendarSelector" SelectedIndex="0">
                     <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_gregorian}"></ComboBoxItem>
                     <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_alhijri}"></ComboBoxItem>
+                    <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_persian}"></ComboBoxItem>
                 </ComboBox>
                 <TextBox VerticalAlignment="Stretch" VerticalContentAlignment="Center" x:Name="DateTimeFormatInput" TextChanged="DateTimeFormatInput_TextChanged"></TextBox>
             </DockPanel>

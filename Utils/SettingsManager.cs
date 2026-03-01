@@ -6,6 +6,7 @@ namespace DaysCounter2.Utils
     {
         Gregorian = 0,
         AlHijri = 1,
+        Persian = 2,
     }
 
     public enum DestinationShowingModes

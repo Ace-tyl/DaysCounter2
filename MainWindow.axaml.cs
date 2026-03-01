@@ -39,6 +39,7 @@ namespace DaysCounter2
         string languageId = "";
         CultureInfo culture = CultureInfo.InvariantCulture;
         static CultureInfo ArabicCulture = CultureInfo.CreateSpecificCulture("ar-SA");
+        static CultureInfo PersianCulture = CultureInfo.CreateSpecificCulture("fa");
         UpdateChecker updateChecker = new();
         bool updateFound = false;
 
@@ -171,6 +172,11 @@ namespace DaysCounter2
                     // AlHijri Calendar
                     usedCulture = ArabicCulture; // Use Arabic culture
                     usedCulture.DateTimeFormat.Calendar = new HijriCalendar();
+                    break;
+                case (byte)DisplayCalendarTypes.Persian:
+                    // Persian Calendar
+                    usedCulture = PersianCulture; // Use Persian culture
+                    usedCulture.DateTimeFormat.Calendar = new PersianCalendar();
                     break;
             }
 

@@ -1,17 +1,18 @@
-﻿using System;
+﻿using DaysCounter2.Utils.AlHijri;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DaysCounter2.Utils.AlHijri
+namespace DaysCounter2.Utils.Persian
 {
-    internal class AlHijriDateTime
+    internal class PersianDateTime
     {
         public int year, month, day, hour, minute, second;
         public int timeZoneDelta;
 
-        public AlHijriDateTime(int year, int month, int day, int hour = 0, int minute = 0, int second = 0, int? timeZoneDelta = null)
+        public PersianDateTime(int year, int month, int day, int hour = 0, int minute = 0, int second = 0, int? timeZoneDelta = null)
         {
             this.year = year;
             this.month = month;
@@ -22,37 +23,50 @@ namespace DaysCounter2.Utils.AlHijri
             this.timeZoneDelta = (int)(timeZoneDelta ?? TimeZoneInfo.Local.BaseUtcOffset.TotalMinutes);
         }
 
-        public AlHijriDateTime Clone()
+        public PersianDateTime Clone()
         {
-            return new AlHijriDateTime(year, month, day, hour, minute, second, timeZoneDelta);
+            return new PersianDateTime(year, month, day, hour, minute, second, timeZoneDelta);
         }
 
-        public static bool IsLeapYear(int year)
+        const double IranianTimeOffset = 3.5 / 24;
+
+        static int JulianYearOffset(int year)
         {
-            const int leapData = 0x252524A4; // leap year data in binary
-            int y30 = (year + 30000) % 30; // in order to prevent negative result
-            return (leapData & (1 << y30)) != 0;
+            int yearGregorian = year + 621;
+            double vernalEquinox = SolarTerm.AdjustedSolarTerms(yearGregorian, 0, 0)[0] + IranianTimeOffset;
+            return (int)Math.Ceiling(vernalEquinox);
+        }
+
+        public static int GetDayCountOfYear(int year)
+        {
+            return JulianYearOffset(year + 1) - JulianYearOffset(year);
         }
 
         public static int GetDayCountOfMonth(int year, int month)
         {
-            if (month % 2 == 1)
+            if (month <= 6)
+            {
+                return 31;
+            }
+            else if (month < 12)
             {
                 return 30;
             }
-            else if (month == 12)
-            {
-                return IsLeapYear(year) ? 30 : 29;
-            }
             else
             {
-                return 29;
+                return GetDayCountOfYear(year) - 336;
             }
+        }
+
+        static int GetDayOfYear(int year, int month, int day)
+        {
+            int[] monthDayCount = [0, 31, 62, 93, 124, 155, 186, 216, 246, 276, 306, 336];
+            return monthDayCount[month - 1] + day - 1;
         }
 
         public bool IsValidData()
         {
-            if (year < -5498)
+            if (year < -5338)
             {
                 return false;
             }
@@ -86,10 +100,10 @@ namespace DaysCounter2.Utils.AlHijri
 
         public void AdjustData()
         {
-            if (year < -5498)
+            if (year < -5338)
             {
                 // This function starts at 4717 BC
-                year = -5498;
+                year = -5338;
             }
             if (month < 1 || month > 12)
             {
@@ -118,29 +132,6 @@ namespace DaysCounter2.Utils.AlHijri
             }
         }
 
-        public static int GetDayCountOfYear(int year)
-        {
-            return IsLeapYear(year) ? 355 : 354;
-        }
-
-        static int GetDayOfYear(int year, int month, int day)
-        {
-            int[] monthDayCount = [0, 30, 59, 89, 118, 148, 177, 207, 236, 266, 295, 325];
-            return monthDayCount[month - 1] + day - 1;
-        }
-
-        const int cycleDays = 10631; // Per 30 years
-        const int julianOffset = -178115; // Julian day of -6000/1/1 (1 Muharram 6001 BH)
-
-        static int JulianYearOffset(int year)
-        {
-            int[] cycleOffset = [0, 354, 708, 1063, 1417, 1771, 2126, 2480, 2835, 3189,
-                3543, 3898, 4252, 4606, 4961, 5315, 5669, 6024, 6378, 6733,
-                7087, 7441, 7796, 8150, 8504, 8859, 9213, 9568, 9922, 10276];
-            int yearOffset = year + 6000;
-            return julianOffset + cycleDays * (yearOffset / 30) + cycleOffset[yearOffset % 30];
-        }
-
         static int JulianDay(int year, int month, int day)
         {
             return JulianYearOffset(year) + GetDayOfYear(year, month, day);
@@ -162,11 +153,7 @@ namespace DaysCounter2.Utils.AlHijri
 
         static Tuple<int, int> MonthDayFromOffset(int year, int offset)
         {
-            int[] monthDay = [0, 30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 29];
-            if (IsLeapYear(year))
-            {
-                monthDay[12]++;
-            }
+            int[] monthDay = [0, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30];
             int month = -1, day = offset;
             for (int i = 1; i <= 12; i++)
             {
@@ -185,13 +172,13 @@ namespace DaysCounter2.Utils.AlHijri
             return new(month, day);
         }
 
-        public static AlHijriDateTime FromJulianDay(double jd, int timeZoneDelta = 0)
+        public static PersianDateTime FromJulianDay(double jd, int timeZoneDelta = 0)
         {
             double jdn = jd + 0.5 + timeZoneDelta / 1440.0;
             int Z = (int)Math.Floor(jdn);
             double F = jdn - Z;
 
-            int left = (Z - julianOffset) / 355 - 6001, right = (Z - julianOffset) / 354 - 5998, offset = 0;
+            int left = Z / 366 - 5336, right = Z / 365 - 5330, offset = 0;
             while (right - left > 1)
             {
                 int mid = (left + right) / 2;
@@ -211,10 +198,10 @@ namespace DaysCounter2.Utils.AlHijri
             int month = monthDay.Item1, day = monthDay.Item2;
 
             int secondOfDay = (int)Math.Floor(F * 86400);
-            return new AlHijriDateTime(year, month, day, secondOfDay / 3600, secondOfDay % 3600 / 60, secondOfDay % 60, timeZoneDelta);
+            return new PersianDateTime(year, month, day, secondOfDay / 3600, secondOfDay % 3600 / 60, secondOfDay % 60, timeZoneDelta);
         }
 
-        public bool EarlierThan(AlHijriDateTime another)
+        public bool EarlierThan(PersianDateTime another)
         {
             if (timeZoneDelta != another.timeZoneDelta)
             {
