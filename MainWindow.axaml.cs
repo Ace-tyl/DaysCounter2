@@ -40,6 +40,7 @@ namespace DaysCounter2
         CultureInfo culture = CultureInfo.InvariantCulture;
         static CultureInfo ArabicCulture = CultureInfo.CreateSpecificCulture("ar-SA");
         static CultureInfo PersianCulture = CultureInfo.CreateSpecificCulture("fa");
+        static CultureInfo HebrewCulture = CultureInfo.CreateSpecificCulture("he");
         UpdateChecker updateChecker = new();
         bool updateFound = false;
 
@@ -177,6 +178,11 @@ namespace DaysCounter2
                     // Persian Calendar
                     usedCulture = PersianCulture; // Use Persian culture
                     usedCulture.DateTimeFormat.Calendar = new PersianCalendar();
+                    break;
+                case (byte)DisplayCalendarTypes.Hebrew:
+                    // Hebrew Calendar
+                    usedCulture = HebrewCulture;
+                    usedCulture.DateTimeFormat.Calendar = new HebrewCalendar();
                     break;
             }
 

@@ -527,4 +527,13 @@ The operation is irrevocable!</value>
   <data name="editor_calendar_persian" xml:space="preserve">
     <value>Persian</value>
   </data>
+  <data name="editor_calendar_hebrew" xml:space="preserve">
+    <value>Hebrew</value>
+  </data>
+  <data name="editor_year_leap" xml:space="preserve">
+    <value> (Leap)</value>
+  </data>
+  <data name="editor_year_common" xml:space="preserve">
+    <value> (Common)</value>
+  </data>
 </root>

@@ -26,6 +26,7 @@
               <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_lunisolar}"></ComboBoxItem>
               <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_alhijri}"></ComboBoxItem>
               <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_persian}"></ComboBoxItem>
+              <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_hebrew}"></ComboBoxItem>
           </ComboBox>
       </Grid>
       <Grid DockPanel.Dock="Top" Height="75" RowDefinitions="*,40" ColumnDefinitions="160,150,150,150,150,*" ColumnSpacing="10" RowSpacing="10">

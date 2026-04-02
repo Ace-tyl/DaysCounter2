@@ -65,6 +65,7 @@
                     <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_gregorian}"></ComboBoxItem>
                     <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_alhijri}"></ComboBoxItem>
                     <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_persian}"></ComboBoxItem>
+                    <ComboBoxItem Content="{x:Static lang:Resources.editor_calendar_hebrew}"></ComboBoxItem>
                 </ComboBox>
                 <TextBox VerticalAlignment="Stretch" VerticalContentAlignment="Center" x:Name="DateTimeFormatInput" TextChanged="DateTimeFormatInput_TextChanged"></TextBox>
             </DockPanel>

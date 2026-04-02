@@ -2,6 +2,7 @@
 using Avalonia.Media;
 using DaysCounter2.Utils.AlHijri;
 using DaysCounter2.Utils.ChineseLunisolar;
+using DaysCounter2.Utils.Hebrew;
 using DaysCounter2.Utils.Persian;
 
 namespace DaysCounter2.Utils
@@ -23,6 +24,7 @@ namespace DaysCounter2.Utils
         ChineseLunisolar = 1,
         AlHijri = 2,
         Persian = 3,
+        Hebrew = 4,
     }
 
     public class Event
@@ -140,6 +142,25 @@ namespace DaysCounter2.Utils
                     }
                     destDateTime = MyDateTime.FromJulianDay(persian.GetJulianDay(), persian.timeZoneDelta);
                 }
+                else if (calendar == CalendarTypes.Hebrew)
+                {
+                    HebrewDateTime hebrew = HebrewDateTime.FromJulianDay(destDateTime.GetJulianDay(), (int)destDateTime.timeZoneDelta);
+                    HebrewDateTime nowHebrew = HebrewDateTime.FromJulianDay(nowJulian / 86400.0, (int)now.timeZoneDelta);
+                    int loopsCount = (nowHebrew.year - hebrew.year + loopValue - 1) / loopValue;
+                    HebrewDateTime hebrew2 = hebrew.Clone();
+                    hebrew2.year += loopsCount * loopValue;
+                    hebrew2.AdjustData();
+                    if (hebrew2.EarlierThan(nowHebrew))
+                    {
+                        hebrew.year = hebrew2.year + loopValue;
+                        hebrew.AdjustData();
+                    }
+                    else
+                    {
+                        hebrew = hebrew2;
+                    }
+                    destDateTime = MyDateTime.FromJulianDay(hebrew.GetJulianDay(), hebrew.timeZoneDelta);
+                }
                 else
                 {
                     int loopsCount = (now.year - dateTime.year + loopValue - 1) / loopValue;
@@ -225,6 +246,24 @@ namespace DaysCounter2.Utils
                         persian = persian2;
                     }
                     destDateTime = MyDateTime.FromJulianDay(persian.GetJulianDay(), persian.timeZoneDelta);
+                }
+                else if (calendar == CalendarTypes.Hebrew)
+                {
+                    int count = 0;
+                    HebrewDateTime destHebrew = HebrewDateTime.FromJulianDay(destDateTime.GetJulianDay(), (int)destDateTime.timeZoneDelta);
+                    int day = destHebrew.day;
+                    HebrewDateTime nowHebrew = HebrewDateTime.FromJulianDay(nowJulian / 86400.0, (int)now.timeZoneDelta);
+                    while (count % loopValue != 0 || destHebrew.EarlierThan(nowHebrew))
+                    {
+                        count++;
+                        var nextMonthResult = HebrewDateTime.NextMonth(destHebrew.year, destHebrew.month);
+                        int year = nextMonthResult.Item1, month = nextMonthResult.Item2;
+                        int nday = Math.Min(day, HebrewDateTime.GetDayCountOfMonth(year, month));
+                        destHebrew.year = year;
+                        destHebrew.month = month;
+                        destHebrew.day = nday;
+                    }
+                    destDateTime = MyDateTime.FromJulianDay(destHebrew.GetJulianDay(), destHebrew.timeZoneDelta);
                 }
                 else
                 {

@@ -527,4 +527,13 @@
   <data name="editor_calendar_persian" xml:space="preserve">
     <value>波斯历</value>
   </data>
+  <data name="editor_calendar_hebrew" xml:space="preserve">
+    <value>犹太历</value>
+  </data>
+  <data name="editor_year_leap" xml:space="preserve">
+    <value>（闰年）</value>
+  </data>
+  <data name="editor_year_common" xml:space="preserve">
+    <value>（平年）</value>
+  </data>
 </root>

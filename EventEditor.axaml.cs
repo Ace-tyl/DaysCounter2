@@ -6,6 +6,7 @@ using Avalonia.Media;
 using DaysCounter2.Utils;
 using DaysCounter2.Utils.AlHijri;
 using DaysCounter2.Utils.ChineseLunisolar;
+using DaysCounter2.Utils.Hebrew;
 using DaysCounter2.Utils.Persian;
 
 namespace DaysCounter2
@@ -73,6 +74,16 @@ namespace DaysCounter2
                 HourValue.Value = persian.hour;
                 MinuteValue.Value = persian.minute;
                 SecondValue.Value = persian.second;
+            }
+            else if (ev.calendar == CalendarTypes.Hebrew)
+            {
+                HebrewDateTime hebrew = HebrewDateTime.FromJulianDay(ev.dateTime.GetJulianDay(), (int)ev.dateTime.timeZoneDelta);
+                YearValue.Value = hebrew.year;
+                MonthValue.Value = hebrew.month;
+                DayValue.Value = hebrew.day;
+                HourValue.Value = hebrew.hour;
+                MinuteValue.Value = hebrew.minute;
+                SecondValue.Value = hebrew.second;
             }
             else
             {
@@ -183,6 +194,25 @@ namespace DaysCounter2
                     DayValue.Maximum = PersianDateTime.GetDayCountOfMonth(year, month);
                 }
             }
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.Hebrew)
+            {
+                if (year == -952 && month == 4)
+                {
+                    DayValue.Minimum = 18;
+                }
+                else
+                {
+                    DayValue.Minimum = 1;
+                }
+                if (year == 13760 && month == 2)
+                {
+                    DayValue.Maximum = 28;
+                }
+                else
+                {
+                    DayValue.Maximum = HebrewDateTime.GetDayCountOfMonth(year, month);
+                }
+            }
             else
             {
                 DayValue.Minimum = 1;
@@ -282,6 +312,29 @@ namespace DaysCounter2
                     MonthValue.Maximum = 12;
                 }
             }
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.Hebrew)
+            {
+                if (year == -952)
+                {
+                    MonthValue.Minimum = 4;
+                }
+                else
+                {
+                    MonthValue.Minimum = 1;
+                }
+                if (year == 13760)
+                {
+                    MonthValue.Maximum = 2;
+                }
+                else if (HebrewCalendarHelper.IsLeapYear(year))
+                {
+                    MonthValue.Maximum = 13;
+                }
+                else
+                {
+                    MonthValue.Maximum = 12;
+                }
+            }
             else
             {
                 MonthValue.Minimum = 1;
@@ -317,6 +370,11 @@ namespace DaysCounter2
             {
                 YearValue.Minimum = -5334;
                 YearValue.Maximum = 9378;
+            }
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.Hebrew)
+            {
+                YearValue.Minimum = -952;
+                YearValue.Maximum = 13760;
             }
             else
             {
@@ -374,6 +432,11 @@ namespace DaysCounter2
                 double JulianDay = new PersianDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
                 return MyDateTime.FromJulianDay(JulianDay, timeZoneDelta);
             }
+            else if (CalendarSelector.SelectedIndex == (int)CalendarTypes.Hebrew)
+            {
+                double JulianDay = new HebrewDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
+                return MyDateTime.FromJulianDay(JulianDay, timeZoneDelta);
+            }
             else
             {
                 return new MyDateTime(year, month, day, hour, minute, second, timeZoneDelta);
@@ -422,6 +485,10 @@ namespace DaysCounter2
             else
             {
                 YearText.Text = Lang.Resources.editor_date_year;
+            }
+            if (CalendarSelector.SelectedIndex == (int)CalendarTypes.Hebrew)
+            {
+                YearText.Text = Lang.Resources.editor_date_year + (HebrewCalendarHelper.IsLeapYear((int)YearValue.Value) ? Lang.Resources.editor_year_leap : Lang.Resources.editor_year_common);
             }
         }
 
@@ -537,6 +604,11 @@ namespace DaysCounter2
                 julian = new PersianDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
                 gregorian = MyDateTime.FromJulianDay(julian, timeZoneDelta);
             }
+            else if (lastSelectedIndex == (int)CalendarTypes.Hebrew)
+            {
+                julian = new HebrewDateTime(year, month, day, hour, minute, second, timeZoneDelta).GetJulianDay();
+                gregorian = MyDateTime.FromJulianDay(julian, timeZoneDelta);
+            }
             else
             {
                 gregorian = new MyDateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
@@ -588,6 +660,16 @@ namespace DaysCounter2
                 HourValue.Value = persian.hour;
                 MinuteValue.Value = persian.minute;
                 SecondValue.Value = persian.second;
+            }
+            else if (newSelectedIndex == (int)CalendarTypes.Hebrew)
+            {
+                HebrewDateTime hebrew = HebrewDateTime.FromJulianDay(julian, timeZoneDelta);
+                YearValue.Value = hebrew.year;
+                MonthValue.Value = hebrew.month;
+                DayValue.Value = hebrew.day;
+                HourValue.Value = hebrew.hour;
+                MinuteValue.Value = hebrew.minute;
+                SecondValue.Value = hebrew.second;
             }
             lastSelectedIndex = newSelectedIndex;
         }
