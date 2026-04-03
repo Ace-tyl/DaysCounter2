@@ -527,14 +527,13 @@
   <data name="editor_calendar_persian" xml:space="preserve">
     <value>波斯曆</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="editor_calendar_hebrew" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="editor_calendar_hebrew" xml:space="preserve">
+    <value>猶太曆</value>
   </data>
-  <data name="editor_year_leap" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="editor_year_leap" xml:space="preserve">
+    <value>（閏年）</value>
   </data>
-  <data name="editor_year_common" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="editor_year_common" xml:space="preserve">
+    <value>（平年）</value>
   </data>
 </root>
