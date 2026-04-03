@@ -367,7 +367,7 @@ namespace DaysCounter2.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Leap.
+        ///   Looks up a localized string similar to  (Leap).
         /// </summary>
         public static string editor_year_leap {
             get {
